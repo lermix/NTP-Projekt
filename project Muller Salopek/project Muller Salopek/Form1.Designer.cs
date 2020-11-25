@@ -30,6 +30,7 @@
         {
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
+            this.fontDialog1 = new System.Windows.Forms.FontDialog();
             this.SuspendLayout();
             // 
             // dateTimePicker1
@@ -63,6 +64,7 @@
         #endregion
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.CheckedListBox checkedListBox1;
+        private System.Windows.Forms.FontDialog fontDialog1;
     }
 }
 
