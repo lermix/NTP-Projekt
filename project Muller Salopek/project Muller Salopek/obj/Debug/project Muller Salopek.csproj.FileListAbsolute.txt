@@ -1,0 +1,10 @@
+C:\Users\stjep\OneDrive\Dokumenti\GitHub\NTP-Projekt\project Muller Salopek\project Muller Salopek\bin\Debug\project Muller Salopek.exe.config
+C:\Users\stjep\OneDrive\Dokumenti\GitHub\NTP-Projekt\project Muller Salopek\project Muller Salopek\bin\Debug\project Muller Salopek.exe
+C:\Users\stjep\OneDrive\Dokumenti\GitHub\NTP-Projekt\project Muller Salopek\project Muller Salopek\bin\Debug\project Muller Salopek.pdb
+C:\Users\stjep\OneDrive\Dokumenti\GitHub\NTP-Projekt\project Muller Salopek\project Muller Salopek\obj\Debug\project Muller Salopek.csprojAssemblyReference.cache
+C:\Users\stjep\OneDrive\Dokumenti\GitHub\NTP-Projekt\project Muller Salopek\project Muller Salopek\obj\Debug\project_Muller_Salopek.Form1.resources
+C:\Users\stjep\OneDrive\Dokumenti\GitHub\NTP-Projekt\project Muller Salopek\project Muller Salopek\obj\Debug\project_Muller_Salopek.Properties.Resources.resources
+C:\Users\stjep\OneDrive\Dokumenti\GitHub\NTP-Projekt\project Muller Salopek\project Muller Salopek\obj\Debug\project Muller Salopek.csproj.GenerateResource.cache
+C:\Users\stjep\OneDrive\Dokumenti\GitHub\NTP-Projekt\project Muller Salopek\project Muller Salopek\obj\Debug\project Muller Salopek.csproj.CoreCompileInputs.cache
+C:\Users\stjep\OneDrive\Dokumenti\GitHub\NTP-Projekt\project Muller Salopek\project Muller Salopek\obj\Debug\project Muller Salopek.exe
+C:\Users\stjep\OneDrive\Dokumenti\GitHub\NTP-Projekt\project Muller Salopek\project Muller Salopek\obj\Debug\project Muller Salopek.pdb
