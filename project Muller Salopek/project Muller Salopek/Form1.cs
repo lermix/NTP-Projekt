@@ -15,9 +15,20 @@ namespace project_Muller_Salopek
         public Form1()
         {
             InitializeComponent();
+            listViewArticles.View = View.Details;
+            listViewArticles.Columns.Add("Sifra");
+            listViewArticles.Columns.Add("NazivArtikla");
+            listViewArticles.Columns.Add("Cijena");
+
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void ArticleButtonClicked(object sender, EventArgs e)
+        {
+            var button = (Button)sender;
+            listViewArticles.Items.Add(new ListViewItem(new string[] { "0000 ", button.Text, "100" }));
+        }
+
+        private void tabSale_Click(object sender, EventArgs e)
         {
 
         }
