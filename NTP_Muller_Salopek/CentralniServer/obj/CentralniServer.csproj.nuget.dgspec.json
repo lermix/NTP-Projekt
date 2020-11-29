@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\stjep\\OneDrive\\Dokumenti\\GitHub\\NTP-Projekt\\project Muller Salopek\\CentralniServer\\CentralniServer.csproj": {}
+    "C:\\Users\\stjep\\OneDrive\\Dokumenti\\GitHub\\NTP-Projekt\\NTP_Muller_Salopek\\CentralniServer\\CentralniServer.csproj": {}
   },
   "projects": {
-    "C:\\Users\\stjep\\OneDrive\\Dokumenti\\GitHub\\NTP-Projekt\\project Muller Salopek\\CentralniServer\\CentralniServer.csproj": {
+    "C:\\Users\\stjep\\OneDrive\\Dokumenti\\GitHub\\NTP-Projekt\\NTP_Muller_Salopek\\CentralniServer\\CentralniServer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\stjep\\OneDrive\\Dokumenti\\GitHub\\NTP-Projekt\\project Muller Salopek\\CentralniServer\\CentralniServer.csproj",
+        "projectUniqueName": "C:\\Users\\stjep\\OneDrive\\Dokumenti\\GitHub\\NTP-Projekt\\NTP_Muller_Salopek\\CentralniServer\\CentralniServer.csproj",
         "projectName": "CentralniServer",
-        "projectPath": "C:\\Users\\stjep\\OneDrive\\Dokumenti\\GitHub\\NTP-Projekt\\project Muller Salopek\\CentralniServer\\CentralniServer.csproj",
+        "projectPath": "C:\\Users\\stjep\\OneDrive\\Dokumenti\\GitHub\\NTP-Projekt\\NTP_Muller_Salopek\\CentralniServer\\CentralniServer.csproj",
         "packagesPath": "C:\\Users\\stjep\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\stjep\\OneDrive\\Dokumenti\\GitHub\\NTP-Projekt\\project Muller Salopek\\CentralniServer\\obj\\",
+        "outputPath": "C:\\Users\\stjep\\OneDrive\\Dokumenti\\GitHub\\NTP-Projekt\\NTP_Muller_Salopek\\CentralniServer\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\stjep\\AppData\\Roaming\\NuGet\\NuGet.Config",
