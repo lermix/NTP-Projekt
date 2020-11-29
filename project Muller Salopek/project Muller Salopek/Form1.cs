@@ -55,6 +55,10 @@ namespace project_Muller_Salopek
                 this.label2.Text = "Server response: " + responseString;
                 return;
             }
+
+        private void btnComplete_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

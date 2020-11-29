@@ -69,6 +69,7 @@
             // 
             // tabSale
             // 
+            this.tabSale.Controls.Add(this.btnComplete);
             this.tabSale.Controls.Add(this.tabControlArticles);
             this.tabSale.Controls.Add(this.label1);
             this.tabSale.Controls.Add(this.listViewArticles);
@@ -146,7 +147,7 @@
             this.listViewArticles.HideSelection = false;
             this.listViewArticles.Location = new System.Drawing.Point(6, 27);
             this.listViewArticles.Name = "listViewArticles";
-            this.listViewArticles.Size = new System.Drawing.Size(246, 262);
+            this.listViewArticles.Size = new System.Drawing.Size(296, 389);
             this.listViewArticles.TabIndex = 0;
             this.listViewArticles.UseCompatibleStateImageBehavior = false;
             // 
@@ -249,6 +250,16 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // btnComplete
+            // 
+            this.btnComplete.Location = new System.Drawing.Point(312, 363);
+            this.btnComplete.Name = "btnComplete";
+            this.btnComplete.Size = new System.Drawing.Size(113, 48);
+            this.btnComplete.TabIndex = 4;
+            this.btnComplete.Text = "Complete order";
+            this.btnComplete.UseVisualStyleBackColor = true;
+            this.btnComplete.Click += new System.EventHandler(this.btnComplete_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -291,6 +302,7 @@
         private System.Windows.Forms.TabPage tabReports;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnComplete;
     }
 }
 
