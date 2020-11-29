@@ -39,16 +39,25 @@
             this.label1 = new System.Windows.Forms.Label();
             this.listViewArticles = new System.Windows.Forms.ListView();
             this.tabProperties = new System.Windows.Forms.TabPage();
+            this.lblAdminLogin = new System.Windows.Forms.Label();
+            this.lblAdminPass = new System.Windows.Forms.Label();
+            this.lblAdminUsername = new System.Windows.Forms.Label();
+            this.tBoxAdminPass = new System.Windows.Forms.TextBox();
+            this.tBoxAdminUsername = new System.Windows.Forms.TextBox();
+            this.btnAdminLogin = new System.Windows.Forms.Button();
+            this.tabReports = new System.Windows.Forms.TabPage();
             this.tabMainControl.SuspendLayout();
             this.tabSale.SuspendLayout();
             this.tabControlArticles.SuspendLayout();
             this.tabArctile1.SuspendLayout();
+            this.tabProperties.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabMainControl
             // 
             this.tabMainControl.Controls.Add(this.tabSale);
             this.tabMainControl.Controls.Add(this.tabProperties);
+            this.tabMainControl.Controls.Add(this.tabReports);
             this.tabMainControl.Location = new System.Drawing.Point(2, 2);
             this.tabMainControl.Name = "tabMainControl";
             this.tabMainControl.SelectedIndex = 0;
@@ -67,7 +76,6 @@
             this.tabSale.TabIndex = 0;
             this.tabSale.Text = "Sale";
             this.tabSale.UseVisualStyleBackColor = true;
-            this.tabSale.Click += new System.EventHandler(this.tabSale_Click);
             // 
             // tabControlArticles
             // 
@@ -141,6 +149,12 @@
             // 
             // tabProperties
             // 
+            this.tabProperties.Controls.Add(this.lblAdminLogin);
+            this.tabProperties.Controls.Add(this.lblAdminPass);
+            this.tabProperties.Controls.Add(this.lblAdminUsername);
+            this.tabProperties.Controls.Add(this.tBoxAdminPass);
+            this.tabProperties.Controls.Add(this.tBoxAdminUsername);
+            this.tabProperties.Controls.Add(this.btnAdminLogin);
             this.tabProperties.Location = new System.Drawing.Point(4, 25);
             this.tabProperties.Name = "tabProperties";
             this.tabProperties.Padding = new System.Windows.Forms.Padding(3);
@@ -148,6 +162,67 @@
             this.tabProperties.TabIndex = 1;
             this.tabProperties.Text = "Properties";
             this.tabProperties.UseVisualStyleBackColor = true;
+            // 
+            // lblAdminLogin
+            // 
+            this.lblAdminLogin.AutoSize = true;
+            this.lblAdminLogin.Location = new System.Drawing.Point(346, 90);
+            this.lblAdminLogin.Name = "lblAdminLogin";
+            this.lblAdminLogin.Size = new System.Drawing.Size(98, 17);
+            this.lblAdminLogin.TabIndex = 5;
+            this.lblAdminLogin.Text = "ADMIN LOGIN";
+            // 
+            // lblAdminPass
+            // 
+            this.lblAdminPass.AutoSize = true;
+            this.lblAdminPass.Location = new System.Drawing.Point(293, 197);
+            this.lblAdminPass.Name = "lblAdminPass";
+            this.lblAdminPass.Size = new System.Drawing.Size(69, 17);
+            this.lblAdminPass.TabIndex = 4;
+            this.lblAdminPass.Text = "Password";
+            // 
+            // lblAdminUsername
+            // 
+            this.lblAdminUsername.AutoSize = true;
+            this.lblAdminUsername.Location = new System.Drawing.Point(289, 142);
+            this.lblAdminUsername.Name = "lblAdminUsername";
+            this.lblAdminUsername.Size = new System.Drawing.Size(73, 17);
+            this.lblAdminUsername.TabIndex = 3;
+            this.lblAdminUsername.Text = "Username";
+            // 
+            // tBoxAdminPass
+            // 
+            this.tBoxAdminPass.Location = new System.Drawing.Point(368, 194);
+            this.tBoxAdminPass.Name = "tBoxAdminPass";
+            this.tBoxAdminPass.Size = new System.Drawing.Size(100, 22);
+            this.tBoxAdminPass.TabIndex = 2;
+            // 
+            // tBoxAdminUsername
+            // 
+            this.tBoxAdminUsername.Location = new System.Drawing.Point(368, 142);
+            this.tBoxAdminUsername.Name = "tBoxAdminUsername";
+            this.tBoxAdminUsername.Size = new System.Drawing.Size(100, 22);
+            this.tBoxAdminUsername.TabIndex = 1;
+            // 
+            // btnAdminLogin
+            // 
+            this.btnAdminLogin.Location = new System.Drawing.Point(349, 244);
+            this.btnAdminLogin.Name = "btnAdminLogin";
+            this.btnAdminLogin.Size = new System.Drawing.Size(75, 23);
+            this.btnAdminLogin.TabIndex = 0;
+            this.btnAdminLogin.Text = "Login";
+            this.btnAdminLogin.UseVisualStyleBackColor = true;
+            this.btnAdminLogin.Click += new System.EventHandler(this.btnAdminLogin_Click);
+            // 
+            // tabReports
+            // 
+            this.tabReports.Location = new System.Drawing.Point(4, 25);
+            this.tabReports.Name = "tabReports";
+            this.tabReports.Padding = new System.Windows.Forms.Padding(3);
+            this.tabReports.Size = new System.Drawing.Size(792, 419);
+            this.tabReports.TabIndex = 2;
+            this.tabReports.Text = "Reports";
+            this.tabReports.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -162,6 +237,8 @@
             this.tabSale.PerformLayout();
             this.tabControlArticles.ResumeLayout(false);
             this.tabArctile1.ResumeLayout(false);
+            this.tabProperties.ResumeLayout(false);
+            this.tabProperties.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -178,6 +255,13 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ListView listViewArticles;
         private System.Windows.Forms.TabPage tabProperties;
+        private System.Windows.Forms.Label lblAdminLogin;
+        private System.Windows.Forms.Label lblAdminPass;
+        private System.Windows.Forms.Label lblAdminUsername;
+        private System.Windows.Forms.TextBox tBoxAdminPass;
+        private System.Windows.Forms.TextBox tBoxAdminUsername;
+        private System.Windows.Forms.Button btnAdminLogin;
+        private System.Windows.Forms.TabPage tabReports;
     }
 }
 

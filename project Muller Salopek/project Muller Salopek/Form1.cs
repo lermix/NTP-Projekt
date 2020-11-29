@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace project_Muller_Salopek
 {
     public partial class Form1 : Form
@@ -28,9 +29,10 @@ namespace project_Muller_Salopek
             listViewArticles.Items.Add(new ListViewItem(new string[] { "0000 ", button.Text, "100" }));
         }
 
-        private void tabSale_Click(object sender, EventArgs e)
+        private void btnAdminLogin_Click(object sender, EventArgs e)
         {
-
+            PropertiesForm propertiesForm = new PropertiesForm();
+            propertiesForm.ShowDialog();
         }
     }
 }
