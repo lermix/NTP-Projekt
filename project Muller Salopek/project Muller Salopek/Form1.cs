@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Net.Http;
 
 
 namespace project_Muller_Salopek
@@ -33,6 +34,27 @@ namespace project_Muller_Salopek
         {
             PropertiesForm propertiesForm = new PropertiesForm();
             propertiesForm.ShowDialog();
+        }
+
+        private void tabReports_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private async void button1_Click(object sender, EventArgs e)
+        {
+            using (HttpClient client = new HttpClient())
+            {
+                // Izmijeniti prema potrebi
+                var URL_SERVERA = @"https://localhost:44391";
+                var NASTAVAK = @"/Home/RequestTest";
+
+                string responseString = await client.GetStringAsync(URL_SERVERA + NASTAVAK);
+                // Remove trailing white spaces:
+                responseString.Trim();
+                this.label2.Text = "Server response: " + responseString;
+                return;
+            }
         }
     }
 }

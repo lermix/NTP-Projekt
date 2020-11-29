@@ -29,3 +29,5 @@ C:\Users\stjep\OneDrive\Dokumenti\GitHub\NTP-Projekt\project Muller Salopek\Cent
 C:\Users\stjep\OneDrive\Dokumenti\GitHub\NTP-Projekt\project Muller Salopek\CentralniServer\obj\Debug\netcoreapp3.1\CentralniServer.pdb
 C:\Users\stjep\OneDrive\Dokumenti\GitHub\NTP-Projekt\project Muller Salopek\CentralniServer\obj\Debug\netcoreapp3.1\CentralniServer.genruntimeconfig.cache
 C:\Users\stjep\OneDrive\Dokumenti\GitHub\NTP-Projekt\project Muller Salopek\CentralniServer\obj\Debug\netcoreapp3.1\CentralniServer.csproj.CopyComplete
+C:\Users\stjep\OneDrive\Dokumenti\GitHub\NTP-Projekt\project Muller Salopek\CentralniServer\obj\Debug\netcoreapp3.1\CentralniServer.Properties.Resources.resources
+C:\Users\stjep\OneDrive\Dokumenti\GitHub\NTP-Projekt\project Muller Salopek\CentralniServer\obj\Debug\netcoreapp3.1\CentralniServer.csproj.GenerateResource.cache
