@@ -34,5 +34,11 @@ namespace project_Muller_Salopek
             PropertiesForm propertiesForm = new PropertiesForm();
             propertiesForm.ShowDialog();
         }
+
+
+        private void btnComplete_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
