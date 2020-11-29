@@ -49,16 +49,22 @@ namespace project_Muller_Salopek
                 var URL_SERVERA = @"https://localhost:44391";
                 var NASTAVAK = @"/Home/RequestTest";
 
-                string responseString = await client.GetStringAsync(URL_SERVERA + NASTAVAK);
-                // Remove trailing white spaces:
-                responseString.Trim();
+                string responseString = "";
+                try
+                {
+                    responseString = await client.GetStringAsync(URL_SERVERA + NASTAVAK);
+                    // Remove trailing white spaces:
+                    responseString.Trim();
+                }
+                catch
+                {
+                    responseString = "NO RESPONSE";
+                }
                 this.label2.Text = "Server response: " + responseString;
                 return;
             }
-
-        private void btnComplete_Click(object sender, EventArgs e)
-        {
-
         }
+
+
     }
 }

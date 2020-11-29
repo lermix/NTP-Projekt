@@ -258,7 +258,6 @@
             this.btnComplete.TabIndex = 4;
             this.btnComplete.Text = "Complete order";
             this.btnComplete.UseVisualStyleBackColor = true;
-            this.btnComplete.Click += new System.EventHandler(this.btnComplete_Click);
             // 
             // Form1
             // 

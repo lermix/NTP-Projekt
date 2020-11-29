@@ -1,17 +1,30 @@
 ﻿@{
+    var urlHost = Context.Request.Host;
 
+    var exampleUrl = @"https://" + urlHost + @"/Home/RequestTest";
+    var exampleResponse = ViewData["RequestTestExample"];
 }
 
 <!DOCTYPE html>
 <html>
 <head>
     <title>@CentralniServer.Properties.Resources.ServerTitle</title>
-    <
+    <style>
+        .text-center {
+            text-align: center!important;
+        }
+    </style>
 </head>
 <body>
     <div>
-        <h1 class="display-4">Welcome to server @CentralniServer.Properties.Resources.ServerTitle</h1>
+        <h1 class="text-center">Welcome to @CentralniServer.Properties.Resources.ServerTitle</h1>
         <p>The server is online!</p>
+    </div>
+    <div>
+        <ul>
+            <li>Example call: <pre><a href="@exampleUrl" target="_blank">@exampleUrl</a></pre></li>
+            <li>Response: <pre>@exampleResponse</pre></li>
+        </ul>
     </div>
 </body>
 </html>
