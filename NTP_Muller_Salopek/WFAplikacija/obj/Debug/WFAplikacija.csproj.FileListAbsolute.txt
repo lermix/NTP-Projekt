@@ -1,0 +1,9 @@
+C:\Users\stjep\OneDrive\Dokumenti\GitHub\NTP-Projekt\NTP_Muller_Salopek\WFAplikacija\obj\Debug\project_Muller_Salopek.Form1.resources
+C:\Users\stjep\OneDrive\Dokumenti\GitHub\NTP-Projekt\NTP_Muller_Salopek\WFAplikacija\obj\Debug\project_Muller_Salopek.Properties.Resources.resources
+C:\Users\stjep\OneDrive\Dokumenti\GitHub\NTP-Projekt\NTP_Muller_Salopek\WFAplikacija\obj\Debug\WFAplikacija.csproj.GenerateResource.cache
+C:\Users\stjep\OneDrive\Dokumenti\GitHub\NTP-Projekt\NTP_Muller_Salopek\WFAplikacija\obj\Debug\WFAplikacija.csproj.CoreCompileInputs.cache
+C:\Users\stjep\OneDrive\Dokumenti\GitHub\NTP-Projekt\NTP_Muller_Salopek\WFAplikacija\obj\Debug\project Muller Salopek.exe
+C:\Users\stjep\OneDrive\Dokumenti\GitHub\NTP-Projekt\NTP_Muller_Salopek\WFAplikacija\obj\Debug\project Muller Salopek.pdb
+C:\Users\stjep\OneDrive\Dokumenti\GitHub\NTP-Projekt\NTP_Muller_Salopek\WFAplikacija\bin\Debug\project Muller Salopek.exe.config
+C:\Users\stjep\OneDrive\Dokumenti\GitHub\NTP-Projekt\NTP_Muller_Salopek\WFAplikacija\bin\Debug\project Muller Salopek.exe
+C:\Users\stjep\OneDrive\Dokumenti\GitHub\NTP-Projekt\NTP_Muller_Salopek\WFAplikacija\bin\Debug\project Muller Salopek.pdb

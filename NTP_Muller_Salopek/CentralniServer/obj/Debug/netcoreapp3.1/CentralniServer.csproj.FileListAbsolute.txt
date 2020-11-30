@@ -1,0 +1,66 @@
+C:\Users\stjep\OneDrive\Dokumenti\GitHub\NTP-Projekt\project Muller Salopek\CentralniServer\bin\Debug\netcoreapp3.1\appsettings.Development.json
+C:\Users\stjep\OneDrive\Dokumenti\GitHub\NTP-Projekt\project Muller Salopek\CentralniServer\bin\Debug\netcoreapp3.1\appsettings.json
+C:\Users\stjep\OneDrive\Dokumenti\GitHub\NTP-Projekt\project Muller Salopek\CentralniServer\bin\Debug\netcoreapp3.1\CentralniServer.exe
+C:\Users\stjep\OneDrive\Dokumenti\GitHub\NTP-Projekt\project Muller Salopek\CentralniServer\bin\Debug\netcoreapp3.1\CentralniServer.deps.json
+C:\Users\stjep\OneDrive\Dokumenti\GitHub\NTP-Projekt\project Muller Salopek\CentralniServer\bin\Debug\netcoreapp3.1\CentralniServer.runtimeconfig.json
+C:\Users\stjep\OneDrive\Dokumenti\GitHub\NTP-Projekt\project Muller Salopek\CentralniServer\bin\Debug\netcoreapp3.1\CentralniServer.runtimeconfig.dev.json
+C:\Users\stjep\OneDrive\Dokumenti\GitHub\NTP-Projekt\project Muller Salopek\CentralniServer\bin\Debug\netcoreapp3.1\CentralniServer.dll
+C:\Users\stjep\OneDrive\Dokumenti\GitHub\NTP-Projekt\project Muller Salopek\CentralniServer\bin\Debug\netcoreapp3.1\CentralniServer.pdb
+C:\Users\stjep\OneDrive\Dokumenti\GitHub\NTP-Projekt\project Muller Salopek\CentralniServer\bin\Debug\netcoreapp3.1\CentralniServer.Views.dll
+C:\Users\stjep\OneDrive\Dokumenti\GitHub\NTP-Projekt\project Muller Salopek\CentralniServer\bin\Debug\netcoreapp3.1\CentralniServer.Views.pdb
+C:\Users\stjep\OneDrive\Dokumenti\GitHub\NTP-Projekt\project Muller Salopek\CentralniServer\obj\Debug\netcoreapp3.1\CentralniServer.csprojAssemblyReference.cache
+C:\Users\stjep\OneDrive\Dokumenti\GitHub\NTP-Projekt\project Muller Salopek\CentralniServer\obj\Debug\netcoreapp3.1\CentralniServer.AssemblyInfoInputs.cache
+C:\Users\stjep\OneDrive\Dokumenti\GitHub\NTP-Projekt\project Muller Salopek\CentralniServer\obj\Debug\netcoreapp3.1\CentralniServer.AssemblyInfo.cs
+C:\Users\stjep\OneDrive\Dokumenti\GitHub\NTP-Projekt\project Muller Salopek\CentralniServer\obj\Debug\netcoreapp3.1\CentralniServer.csproj.CoreCompileInputs.cache
+C:\Users\stjep\OneDrive\Dokumenti\GitHub\NTP-Projekt\project Muller Salopek\CentralniServer\obj\Debug\netcoreapp3.1\CentralniServer.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\stjep\OneDrive\Dokumenti\GitHub\NTP-Projekt\project Muller Salopek\CentralniServer\obj\Debug\netcoreapp3.1\CentralniServer.RazorAssemblyInfo.cache
+C:\Users\stjep\OneDrive\Dokumenti\GitHub\NTP-Projekt\project Muller Salopek\CentralniServer\obj\Debug\netcoreapp3.1\CentralniServer.RazorAssemblyInfo.cs
+C:\Users\stjep\OneDrive\Dokumenti\GitHub\NTP-Projekt\project Muller Salopek\CentralniServer\obj\Debug\netcoreapp3.1\staticwebassets\CentralniServer.StaticWebAssets.Manifest.cache
+C:\Users\stjep\OneDrive\Dokumenti\GitHub\NTP-Projekt\project Muller Salopek\CentralniServer\obj\Debug\netcoreapp3.1\staticwebassets\CentralniServer.StaticWebAssets.xml
+C:\Users\stjep\OneDrive\Dokumenti\GitHub\NTP-Projekt\project Muller Salopek\CentralniServer\obj\Debug\netcoreapp3.1\scopedcss\bundle\CentralniServer.styles.css
+C:\Users\stjep\OneDrive\Dokumenti\GitHub\NTP-Projekt\project Muller Salopek\CentralniServer\obj\Debug\netcoreapp3.1\CentralniServer.TagHelpers.input.cache
+C:\Users\stjep\OneDrive\Dokumenti\GitHub\NTP-Projekt\project Muller Salopek\CentralniServer\obj\Debug\netcoreapp3.1\CentralniServer.TagHelpers.output.cache
+C:\Users\stjep\OneDrive\Dokumenti\GitHub\NTP-Projekt\project Muller Salopek\CentralniServer\obj\Debug\netcoreapp3.1\CentralniServer.RazorCoreGenerate.cache
+C:\Users\stjep\OneDrive\Dokumenti\GitHub\NTP-Projekt\project Muller Salopek\CentralniServer\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
+C:\Users\stjep\OneDrive\Dokumenti\GitHub\NTP-Projekt\project Muller Salopek\CentralniServer\obj\Debug\netcoreapp3.1\CentralniServer.RazorTargetAssemblyInfo.cache
+C:\Users\stjep\OneDrive\Dokumenti\GitHub\NTP-Projekt\project Muller Salopek\CentralniServer\obj\Debug\netcoreapp3.1\CentralniServer.RazorTargetAssemblyInfo.cs
+C:\Users\stjep\OneDrive\Dokumenti\GitHub\NTP-Projekt\project Muller Salopek\CentralniServer\obj\Debug\netcoreapp3.1\CentralniServer.Views.pdb
+C:\Users\stjep\OneDrive\Dokumenti\GitHub\NTP-Projekt\project Muller Salopek\CentralniServer\obj\Debug\netcoreapp3.1\CentralniServer.dll
+C:\Users\stjep\OneDrive\Dokumenti\GitHub\NTP-Projekt\project Muller Salopek\CentralniServer\obj\Debug\netcoreapp3.1\CentralniServer.pdb
+C:\Users\stjep\OneDrive\Dokumenti\GitHub\NTP-Projekt\project Muller Salopek\CentralniServer\obj\Debug\netcoreapp3.1\CentralniServer.genruntimeconfig.cache
+C:\Users\stjep\OneDrive\Dokumenti\GitHub\NTP-Projekt\project Muller Salopek\CentralniServer\obj\Debug\netcoreapp3.1\CentralniServer.csproj.CopyComplete
+C:\Users\stjep\OneDrive\Dokumenti\GitHub\NTP-Projekt\project Muller Salopek\CentralniServer\obj\Debug\netcoreapp3.1\CentralniServer.Properties.Resources.resources
+C:\Users\stjep\OneDrive\Dokumenti\GitHub\NTP-Projekt\project Muller Salopek\CentralniServer\obj\Debug\netcoreapp3.1\CentralniServer.csproj.GenerateResource.cache
+C:\Users\stjep\OneDrive\Dokumenti\GitHub\NTP-Projekt\NTP_Muller_Salopek\CentralniServer\obj\Debug\netcoreapp3.1\CentralniServer.csprojAssemblyReference.cache
+C:\Users\stjep\OneDrive\Dokumenti\GitHub\NTP-Projekt\NTP_Muller_Salopek\CentralniServer\obj\Debug\netcoreapp3.1\CentralniServer.Properties.Resources.resources
+C:\Users\stjep\OneDrive\Dokumenti\GitHub\NTP-Projekt\NTP_Muller_Salopek\CentralniServer\obj\Debug\netcoreapp3.1\CentralniServer.csproj.GenerateResource.cache
+C:\Users\stjep\OneDrive\Dokumenti\GitHub\NTP-Projekt\NTP_Muller_Salopek\CentralniServer\obj\Debug\netcoreapp3.1\CentralniServer.AssemblyInfoInputs.cache
+C:\Users\stjep\OneDrive\Dokumenti\GitHub\NTP-Projekt\NTP_Muller_Salopek\CentralniServer\obj\Debug\netcoreapp3.1\CentralniServer.AssemblyInfo.cs
+C:\Users\stjep\OneDrive\Dokumenti\GitHub\NTP-Projekt\NTP_Muller_Salopek\CentralniServer\obj\Debug\netcoreapp3.1\CentralniServer.csproj.CoreCompileInputs.cache
+C:\Users\stjep\OneDrive\Dokumenti\GitHub\NTP-Projekt\NTP_Muller_Salopek\CentralniServer\obj\Debug\netcoreapp3.1\CentralniServer.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\stjep\OneDrive\Dokumenti\GitHub\NTP-Projekt\NTP_Muller_Salopek\CentralniServer\obj\Debug\netcoreapp3.1\CentralniServer.RazorAssemblyInfo.cache
+C:\Users\stjep\OneDrive\Dokumenti\GitHub\NTP-Projekt\NTP_Muller_Salopek\CentralniServer\obj\Debug\netcoreapp3.1\CentralniServer.RazorAssemblyInfo.cs
+C:\Users\stjep\OneDrive\Dokumenti\GitHub\NTP-Projekt\NTP_Muller_Salopek\CentralniServer\obj\Debug\netcoreapp3.1\staticwebassets\CentralniServer.StaticWebAssets.Manifest.cache
+C:\Users\stjep\OneDrive\Dokumenti\GitHub\NTP-Projekt\NTP_Muller_Salopek\CentralniServer\obj\Debug\netcoreapp3.1\staticwebassets\CentralniServer.StaticWebAssets.xml
+C:\Users\stjep\OneDrive\Dokumenti\GitHub\NTP-Projekt\NTP_Muller_Salopek\CentralniServer\obj\Debug\netcoreapp3.1\scopedcss\bundle\CentralniServer.styles.css
+C:\Users\stjep\OneDrive\Dokumenti\GitHub\NTP-Projekt\NTP_Muller_Salopek\CentralniServer\obj\Debug\netcoreapp3.1\CentralniServer.TagHelpers.input.cache
+C:\Users\stjep\OneDrive\Dokumenti\GitHub\NTP-Projekt\NTP_Muller_Salopek\CentralniServer\obj\Debug\netcoreapp3.1\CentralniServer.TagHelpers.output.cache
+C:\Users\stjep\OneDrive\Dokumenti\GitHub\NTP-Projekt\NTP_Muller_Salopek\CentralniServer\obj\Debug\netcoreapp3.1\CentralniServer.RazorCoreGenerate.cache
+C:\Users\stjep\OneDrive\Dokumenti\GitHub\NTP-Projekt\NTP_Muller_Salopek\CentralniServer\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
+C:\Users\stjep\OneDrive\Dokumenti\GitHub\NTP-Projekt\NTP_Muller_Salopek\CentralniServer\obj\Debug\netcoreapp3.1\CentralniServer.RazorTargetAssemblyInfo.cache
+C:\Users\stjep\OneDrive\Dokumenti\GitHub\NTP-Projekt\NTP_Muller_Salopek\CentralniServer\obj\Debug\netcoreapp3.1\CentralniServer.RazorTargetAssemblyInfo.cs
+C:\Users\stjep\OneDrive\Dokumenti\GitHub\NTP-Projekt\NTP_Muller_Salopek\CentralniServer\obj\Debug\netcoreapp3.1\CentralniServer.dll
+C:\Users\stjep\OneDrive\Dokumenti\GitHub\NTP-Projekt\NTP_Muller_Salopek\CentralniServer\obj\Debug\netcoreapp3.1\CentralniServer.pdb
+C:\Users\stjep\OneDrive\Dokumenti\GitHub\NTP-Projekt\NTP_Muller_Salopek\CentralniServer\bin\Debug\netcoreapp3.1\appsettings.Development.json
+C:\Users\stjep\OneDrive\Dokumenti\GitHub\NTP-Projekt\NTP_Muller_Salopek\CentralniServer\bin\Debug\netcoreapp3.1\appsettings.json
+C:\Users\stjep\OneDrive\Dokumenti\GitHub\NTP-Projekt\NTP_Muller_Salopek\CentralniServer\bin\Debug\netcoreapp3.1\CentralniServer.exe
+C:\Users\stjep\OneDrive\Dokumenti\GitHub\NTP-Projekt\NTP_Muller_Salopek\CentralniServer\bin\Debug\netcoreapp3.1\CentralniServer.deps.json
+C:\Users\stjep\OneDrive\Dokumenti\GitHub\NTP-Projekt\NTP_Muller_Salopek\CentralniServer\bin\Debug\netcoreapp3.1\CentralniServer.runtimeconfig.json
+C:\Users\stjep\OneDrive\Dokumenti\GitHub\NTP-Projekt\NTP_Muller_Salopek\CentralniServer\bin\Debug\netcoreapp3.1\CentralniServer.runtimeconfig.dev.json
+C:\Users\stjep\OneDrive\Dokumenti\GitHub\NTP-Projekt\NTP_Muller_Salopek\CentralniServer\bin\Debug\netcoreapp3.1\CentralniServer.dll
+C:\Users\stjep\OneDrive\Dokumenti\GitHub\NTP-Projekt\NTP_Muller_Salopek\CentralniServer\bin\Debug\netcoreapp3.1\CentralniServer.pdb
+C:\Users\stjep\OneDrive\Dokumenti\GitHub\NTP-Projekt\NTP_Muller_Salopek\CentralniServer\bin\Debug\netcoreapp3.1\CentralniServer.Views.dll
+C:\Users\stjep\OneDrive\Dokumenti\GitHub\NTP-Projekt\NTP_Muller_Salopek\CentralniServer\bin\Debug\netcoreapp3.1\CentralniServer.Views.pdb
+C:\Users\stjep\OneDrive\Dokumenti\GitHub\NTP-Projekt\NTP_Muller_Salopek\CentralniServer\obj\Debug\netcoreapp3.1\CentralniServer.Views.pdb
+C:\Users\stjep\OneDrive\Dokumenti\GitHub\NTP-Projekt\NTP_Muller_Salopek\CentralniServer\obj\Debug\netcoreapp3.1\CentralniServer.genruntimeconfig.cache
+C:\Users\stjep\OneDrive\Dokumenti\GitHub\NTP-Projekt\NTP_Muller_Salopek\CentralniServer\obj\Debug\netcoreapp3.1\CentralniServer.csproj.CopyComplete
