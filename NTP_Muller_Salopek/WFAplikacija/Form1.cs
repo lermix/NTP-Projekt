@@ -9,17 +9,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Net.Http;
-
-
-
+using project_Muller_Salopek.Data;
 
 namespace project_Muller_Salopek
 {
     public partial class Form1 : Form
     {
 
-        List<Article> allArticles = new List<Article>();
         List<Article> order = new List<Article>();
+        ArticleList allArticles = new ArticleList();
 
         public Form1()
         {
@@ -32,16 +30,8 @@ namespace project_Muller_Salopek
             listViewArticles.Columns.Add("Quantity");
             listViewArticles.Columns.Add("Price");
 
-            //Dohavti sve dostupne artikle u listu            
-            allArticles = XmlManager.GetArticles(); //NIJE DOVRSENO
-
-
-            //TEST DODAJ ARTIKL U LISTU
-            Article testArticle = new Article(0,"test","Article1", 5);
-            Article testArticle2 = new Article(1, "test2", "Article2", 10);
-            allArticles.Add(testArticle);
-            allArticles.Add(testArticle2);
-
+            //Dohavti sve dostupne artikle u ArtiklListu            
+            allArticles = XmlManager.GetArticles(); 
 
         }
 
@@ -52,7 +42,13 @@ namespace project_Muller_Salopek
 
             //Povuci podatke o artiklu iz liste artikala
             Article article = new Article();
-            article = allArticles.FirstOrDefault(tempArticle => tempArticle.checkButtonName(button.Text));
+            article = allArticles.articles.FirstOrDefault(tempArticle => tempArticle.checkButtonName(button.Text));
+
+            if (article == null)
+            {
+                Console.WriteLine("Article with that buttonName does not exist");
+                return;
+            }           
 
             //Provjeri je li artikl vec na racunu
             bool sameArticleFound = false;
@@ -129,5 +125,6 @@ namespace project_Muller_Salopek
             XmlManager.AddArticlesListToAllBillsXml(order);
             listViewArticles.Items.Clear();
         }
+
     }
 }

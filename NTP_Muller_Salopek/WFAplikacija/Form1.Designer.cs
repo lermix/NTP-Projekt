@@ -120,7 +120,7 @@
             this.btnArticle2.Name = "btnArticle2";
             this.btnArticle2.Size = new System.Drawing.Size(75, 75);
             this.btnArticle2.TabIndex = 1;
-            this.btnArticle2.Text = "Article2";
+            this.btnArticle2.Text = "Sprite";
             this.btnArticle2.UseVisualStyleBackColor = true;
             this.btnArticle2.Click += new System.EventHandler(this.ArticleButtonClicked);
             // 
@@ -130,7 +130,7 @@
             this.btnArticle1.Name = "btnArticle1";
             this.btnArticle1.Size = new System.Drawing.Size(75, 75);
             this.btnArticle1.TabIndex = 0;
-            this.btnArticle1.Text = "Article1";
+            this.btnArticle1.Text = "CocaCola";
             this.btnArticle1.UseVisualStyleBackColor = true;
             this.btnArticle1.Click += new System.EventHandler(this.ArticleButtonClicked);
             // 

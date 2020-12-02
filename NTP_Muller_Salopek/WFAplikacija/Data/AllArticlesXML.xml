@@ -1,9 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
+<ArticlesCollection>
 <Articles>
-  <Article>
-    <ID>0</ID>
-    <name>test</name>
-    <buttonName>Article1</buttonName>
-    <price>5</price>
-  </Article>
+  <Article ID="0" name="CocaCola" buttonName="CocaCola" price="12" />
+  <Article ID="1" name="Sprite" buttonName="Sprite" price="12" />
 </Articles>
+</ArticlesCollection>

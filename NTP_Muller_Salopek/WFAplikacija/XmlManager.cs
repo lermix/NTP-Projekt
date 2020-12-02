@@ -1,4 +1,5 @@
-﻿using project_Muller_Salopek.dataObjects;
+﻿using project_Muller_Salopek.Data;
+using project_Muller_Salopek.dataObjects;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -25,9 +26,25 @@ namespace project_Muller_Salopek
 
 
         //Dohvaca artikl prema buttonName atributu iz AllArticlesXML -- NIJE DOVRSENO
-        public static List<Article> GetArticles()
+        public static ArticleList GetArticles()
         {
-            Console.WriteLine("a");
+            Console.WriteLine("reading");
+
+            ArticleList allArticles = null;
+
+            //Dodavanje root elementa kako bi serializer znao koji je root element
+            XmlRootAttribute xRoot = new XmlRootAttribute();
+            xRoot.ElementName = "ArticlesCollection";
+            xRoot.IsNullable = true;
+
+            XmlSerializer serializer = new XmlSerializer(typeof(ArticleList), xRoot);
+            XmlReader reader = AllArticlesXml.CreateReader();
+         
+            allArticles = (ArticleList)serializer.Deserialize(reader);
+            reader.Close();
+
+            Console.WriteLine("reading succesful");
+
             return allArticles;
         }
 
@@ -64,22 +81,22 @@ namespace project_Muller_Salopek
 
         }
 
-        public void AddArticleToAllArticlesXml(Article article)
+        public static void AddArticleToAllArticlesXml(Article article)
         {
-            var articleRoot = new XElement("Article");
-            AllArticlesXml.Root.Add(articleRoot);
+            var articleElement = new XElement("Article");
+            AllArticlesXml.Root.Add(articleElement);
 
-            List<XElement> articleElements = new List<XElement>
+            List<XAttribute> articleAtributes = new List<XAttribute>
             { 
-                new XElement("ID", article.ID),
-                new XElement("name", article.name),
-                new XElement("buttonName", article.buttonName),
-                new XElement("price", article.price)
+                new XAttribute("ID", article.ID),
+                new XAttribute("name", article.name),
+                new XAttribute("buttonName", article.buttonName),
+                new XAttribute("price", article.price)
             };
 
-            foreach (XElement xElement in articleElements)
+            foreach (XAttribute xElement in articleAtributes)
             {
-                articleRoot.Add(xElement);
+                articleElement.Add(xElement);
             }
 
             AllArticlesXml.Save("../../Data/AllArticlesXML.xml");

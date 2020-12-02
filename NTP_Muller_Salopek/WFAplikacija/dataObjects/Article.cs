@@ -7,13 +7,21 @@ using System.Xml.Serialization;
 
 namespace project_Muller_Salopek.dataObjects
 {
+    [Serializable()]
+    [XmlRoot("Article")]
     public class Article
     {
+        [XmlAttribute("ID")]
         public int ID { get; set; }
+        [XmlAttribute("name")]
         public string name { get; set; }
+        [XmlAttribute("buttonName")]
         public string buttonName { get; set; }
+        [XmlAttribute("price")]
         public float price { get; set; }
-        public float quantity { get; set; }
+        [XmlAttribute("quantity")]
+        public float quantity { get; set; } //Namijenjeno samo za racune
+        [XmlAttribute("totalPrice")]
         public float totalPrice { get { return price * quantity; } set { totalPrice = price * quantity; } }
 
         public Article (int _ID, string _name, string _buttonName, float _price)
@@ -33,7 +41,9 @@ namespace project_Muller_Salopek.dataObjects
             quantity = _quantity;
         }
         public Article ()
-        { }
+        {
+            quantity = 1;
+        }
 
         public bool checkButtonName(string buttonNameToCompare)
         {

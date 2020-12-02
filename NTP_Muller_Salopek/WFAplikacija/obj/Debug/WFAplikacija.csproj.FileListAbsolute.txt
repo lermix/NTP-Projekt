@@ -16,3 +16,4 @@ C:\Users\Alen\Desktop\faks\NTP projekt\NTP-Projekt\NTP_Muller_Salopek\WFAplikaci
 C:\Users\Alen\Desktop\faks\NTP projekt\NTP-Projekt\NTP_Muller_Salopek\WFAplikacija\obj\Debug\WFAplikacija.csproj.GenerateResource.cache
 C:\Users\Alen\Desktop\faks\NTP projekt\NTP-Projekt\NTP_Muller_Salopek\WFAplikacija\obj\Debug\project Muller Salopek.exe
 C:\Users\Alen\Desktop\faks\NTP projekt\NTP-Projekt\NTP_Muller_Salopek\WFAplikacija\obj\Debug\project Muller Salopek.pdb
+C:\Users\Alen\Desktop\faks\NTP projekt\NTP-Projekt\NTP_Muller_Salopek\WFAplikacija\obj\Debug\project_Muller_Salopek.PropertiesForm.resources
