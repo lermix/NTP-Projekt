@@ -7,18 +7,14 @@ using System.Xml.Serialization;
 
 namespace project_Muller_Salopek.dataObjects
 {
-    [Serializable]
-    [XmlRoot("Article")]
     public class Article
     {
-        [XmlElement("ID")]
         public int ID { get; set; }
-        [XmlElement("name")]
         public string name { get; set; }
-        [XmlElement("buttonName")]
         public string buttonName { get; set; }
-        [XmlElement("price")]
         public float price { get; set; }
+        public float quantity { get; set; }
+        public float totalPrice { get { return price * quantity; } set { totalPrice = price * quantity; } }
 
         public Article (int _ID, string _name, string _buttonName, float _price)
         {
@@ -26,6 +22,15 @@ namespace project_Muller_Salopek.dataObjects
             name = _name;
             buttonName = _buttonName;
             price = _price;
+            quantity = 1;
+        }
+        public Article(int _ID, string _name, string _buttonName,float _quantity, float _price)
+        {
+            ID = _ID;
+            name = _name;
+            buttonName = _buttonName;
+            price = _price;
+            quantity = _quantity;
         }
         public Article ()
         { }

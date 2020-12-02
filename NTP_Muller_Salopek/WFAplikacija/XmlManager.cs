@@ -6,9 +6,10 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
 using System.Xml.Linq;
 using System.Xml.Serialization;
-
+using System.Xml.Xsl;
 
 namespace project_Muller_Salopek
 {
@@ -18,22 +19,71 @@ namespace project_Muller_Salopek
     {
         static List<Article> allArticles = new List<Article>();
 
-        //NIJE DOVRSENO
-        XDocument AllArticlesXML = XDocument.Load(@"assets\Data\AllArticlesXML.xml");
-        
+        static XDocument AllArticlesXml = XDocument.Load("../../Data/AllArticlesXML.xml");
+        static XDocument AllBillsXml = XDocument.Load("../../Data/AllBills.xml");
+        //var path = Environment.GetFolderPath("../../Data/AllBills.xml");
+
 
         //Dohvaca artikl prema buttonName atributu iz AllArticlesXML -- NIJE DOVRSENO
         public static List<Article> GetArticles()
         {
+            Console.WriteLine("a");
             return allArticles;
         }
 
-        //Dodaje artikl u AllArticlesXML --- NIJE DOVRSENO
-        public void AddArticle()
+        public static void AddArticlesListToAllBillsXml(List<Article> articles)
         {
-            Article a = new Article(0, "test", "Article1", 5);
-            XmlSerializer serializer = new XmlSerializer(a.GetType());
-            serializer.Serialize(Console.Out, a);
+            var billRoot = new XElement("Bill");
+            //info racuna
+            billRoot.Add(new XAttribute("Time", DateTime.Now.ToString("F")));
+            billRoot.Add(new XAttribute("User", "TEST"));
+            float totalPrice = 0;
+
+            foreach (Article article in articles)
+            {
+                XElement articleElement = new XElement("Article");
+                List<XAttribute> articleAttributes = new List<XAttribute>
+                {
+                    new XAttribute("ID", article.ID),
+                    new XAttribute("name", article.name),
+                    new XAttribute("quantity", article.quantity),
+                    new XAttribute("price", article.price),
+                    new XAttribute("totalPrice", article.totalPrice)
+                };
+                foreach (XAttribute attribute in articleAttributes)
+                {
+                    articleElement.Add(attribute);
+                }
+                billRoot.Add(articleElement);
+                totalPrice += article.totalPrice;
+            }
+
+            billRoot.Add(new XAttribute("Total", totalPrice));
+            AllBillsXml.Root.Add(billRoot);
+            AllBillsXml.Save("../../Data/AllBills.xml");
+
+        }
+
+        public void AddArticleToAllArticlesXml(Article article)
+        {
+            var articleRoot = new XElement("Article");
+            AllArticlesXml.Root.Add(articleRoot);
+
+            List<XElement> articleElements = new List<XElement>
+            { 
+                new XElement("ID", article.ID),
+                new XElement("name", article.name),
+                new XElement("buttonName", article.buttonName),
+                new XElement("price", article.price)
+            };
+
+            foreach (XElement xElement in articleElements)
+            {
+                articleRoot.Add(xElement);
+            }
+
+            AllArticlesXml.Save("../../Data/AllArticlesXML.xml");
+
         }
 
 

@@ -27,12 +27,20 @@ namespace project_Muller_Salopek
 
             //Konfiguracija listViewArticles
             listViewArticles.View = View.Details;
-            listViewArticles.Columns.Add("Sifra");
-            listViewArticles.Columns.Add("NazivArtikla");
-            listViewArticles.Columns.Add("Cijena");
+            listViewArticles.Columns.Add("ID");
+            listViewArticles.Columns.Add("Name");
+            listViewArticles.Columns.Add("Quantity");
+            listViewArticles.Columns.Add("Price");
 
             //Dohavti sve dostupne artikle u listu            
             allArticles = XmlManager.GetArticles(); //NIJE DOVRSENO
+
+
+            //TEST DODAJ ARTIKL U LISTU
+            Article testArticle = new Article(0,"test","Article1", 5);
+            Article testArticle2 = new Article(1, "test2", "Article2", 10);
+            allArticles.Add(testArticle);
+            allArticles.Add(testArticle2);
 
 
         }
@@ -46,16 +54,38 @@ namespace project_Muller_Salopek
             Article article = new Article();
             article = allArticles.FirstOrDefault(tempArticle => tempArticle.checkButtonName(button.Text));
 
-            //Dodaj artikl u listu za prikaz
-            listViewArticles.Items.Add(new ListViewItem(new string[] { article.ID.ToString(), article.name, article.price.ToString() }));
+            //Provjeri je li artikl vec na racunu
+            bool sameArticleFound = false;
+            foreach (Article a in order)
+            {
+                if (a.ID == article.ID)
+                {
+                    a.quantity += 1;
+                    sameArticleFound = true;
+                }
+            }
 
-            //Dodaj artikl na racun
-            order.Add(article);
+            if (sameArticleFound == false)
+            {
+                //Dodaj artikl u listu za prikaz
+                listViewArticles.Items.Add(new ListViewItem(
+                new string[] { article.ID.ToString(), article.name, article.quantity.ToString(), article.totalPrice.ToString() }));
 
-            //Dodaj Artikl u xmlFFile - NIJE DOVRSENO
-            XmlManager xmlManager = new XmlManager();
-            xmlManager.AddArticle();
+                //Dodaj artikl na racun
+                order.Add(article);
+            }
+            else
+            {
+                listViewArticles.Items.Clear();
+                foreach (Article a in order)
+                {
+                    listViewArticles.Items.Add(new ListViewItem(
+                    new string[] { a.ID.ToString(), a.name, a.quantity.ToString(), a.totalPrice.ToString() }));
+                }
+            }
 
+
+            
         }
 
         private void btnAdminLogin_Click(object sender, EventArgs e)
@@ -93,6 +123,11 @@ namespace project_Muller_Salopek
             }
         }
 
-
+        private void btnComplete_Click(object sender, EventArgs e)
+        {
+            //Dodaj racun u AllBills.xml
+            XmlManager.AddArticlesListToAllBillsXml(order);
+            listViewArticles.Items.Clear();
+        }
     }
 }

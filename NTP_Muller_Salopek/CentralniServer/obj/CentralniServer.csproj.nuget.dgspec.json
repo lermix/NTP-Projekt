@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Alen\\Desktop\\faks\\NTP projekt\\NTP-Projekt\\project Muller Salopek\\CentralniServer\\CentralniServer.csproj": {}
+    "C:\\Users\\Alen\\Desktop\\faks\\NTP projekt\\NTP-Projekt\\NTP_Muller_Salopek\\CentralniServer\\CentralniServer.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Alen\\Desktop\\faks\\NTP projekt\\NTP-Projekt\\project Muller Salopek\\CentralniServer\\CentralniServer.csproj": {
+    "C:\\Users\\Alen\\Desktop\\faks\\NTP projekt\\NTP-Projekt\\NTP_Muller_Salopek\\CentralniServer\\CentralniServer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Alen\\Desktop\\faks\\NTP projekt\\NTP-Projekt\\project Muller Salopek\\CentralniServer\\CentralniServer.csproj",
+        "projectUniqueName": "C:\\Users\\Alen\\Desktop\\faks\\NTP projekt\\NTP-Projekt\\NTP_Muller_Salopek\\CentralniServer\\CentralniServer.csproj",
         "projectName": "CentralniServer",
-        "projectPath": "C:\\Users\\Alen\\Desktop\\faks\\NTP projekt\\NTP-Projekt\\project Muller Salopek\\CentralniServer\\CentralniServer.csproj",
+        "projectPath": "C:\\Users\\Alen\\Desktop\\faks\\NTP projekt\\NTP-Projekt\\NTP_Muller_Salopek\\CentralniServer\\CentralniServer.csproj",
         "packagesPath": "C:\\Users\\Alen\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Alen\\Desktop\\faks\\NTP projekt\\NTP-Projekt\\project Muller Salopek\\CentralniServer\\obj\\",
+        "outputPath": "C:\\Users\\Alen\\Desktop\\faks\\NTP projekt\\NTP-Projekt\\NTP_Muller_Salopek\\CentralniServer\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Alen\\AppData\\Roaming\\NuGet\\NuGet.Config",

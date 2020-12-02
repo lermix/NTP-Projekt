@@ -1,1 +1,9 @@
-﻿<?xml version="1.0" encoding="utf-8" ?> 
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Articles>
+  <Article>
+    <ID>0</ID>
+    <name>test</name>
+    <buttonName>Article1</buttonName>
+    <price>5</price>
+  </Article>
+</Articles>
