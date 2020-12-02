@@ -47,6 +47,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="dataObjects\Article.cs" />
+    <Compile Include="dataObjects\Bill.cs" />
+    <Compile Include="dataObjects\User.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
