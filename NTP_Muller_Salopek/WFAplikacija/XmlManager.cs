@@ -22,10 +22,9 @@ namespace project_Muller_Salopek
 
         static XDocument AllArticlesXml = XDocument.Load("../../Data/AllArticlesXML.xml");
         static XDocument AllBillsXml = XDocument.Load("../../Data/AllBills.xml");
-        //var path = Environment.GetFolderPath("../../Data/AllBills.xml");
 
 
-        //Dohvaca artikl prema buttonName atributu iz AllArticlesXML -- NIJE DOVRSENO
+        //Dohvaca artikl prema buttonName atributu iz AllArticlesXML
         public static ArticleList GetArticles()
         {
             Console.WriteLine("reading");
