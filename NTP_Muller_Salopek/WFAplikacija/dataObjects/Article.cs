@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
 
-namespace project_Muller_Salopek.dataObjects
+namespace WFAplikacija.dataObjects
 {
     [Serializable()]
     [XmlRoot("Article")]

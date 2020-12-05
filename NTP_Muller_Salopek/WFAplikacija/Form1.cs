@@ -1,4 +1,4 @@
-﻿using project_Muller_Salopek.dataObjects;
+﻿using WFAplikacija.dataObjects;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,9 +9,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Net.Http;
-using project_Muller_Salopek.Data;
+using WFAplikacija.Data;
 
-namespace project_Muller_Salopek
+namespace WFAplikacija
 {
     public partial class Form1 : Form
     {
@@ -95,28 +95,13 @@ namespace project_Muller_Salopek
 
         }
 
-        private async void button1_Click(object sender, EventArgs e)
+        private void checkServerButton_Click(object sender, EventArgs e)
         {
-            using (HttpClient client = new HttpClient())
-            {
-                // Izmijeniti prema potrebi
-                var URL_SERVERA = @"https://localhost:44391";
-                var NASTAVAK = @"/Home/RequestTest";
+            this.checkServerResponseLabel.Text = "Sending request...";
 
-                string responseString = "";
-                try
-                {
-                    responseString = await client.GetStringAsync(URL_SERVERA + NASTAVAK);
-                    // Remove trailing white spaces:
-                    responseString.Trim();
-                }
-                catch
-                {
-                    responseString = "NO RESPONSE";
-                }
-                this.label2.Text = "Server response: " + responseString;
-                return;
-            }
+            Action<string> onResponse = (string response) => { this.checkServerResponseLabel.Text = "Server response: " + response; };
+            Action onError = () => { this.checkServerResponseLabel.Text = "ERROR - No response."; };
+            WFAplikacija.RESTManager.Get(WFAplikacija.Properties.Resources.CentralniServerURL + @"Home/RequestTest", onResponse, onError);
         }
 
         private void btnComplete_Click(object sender, EventArgs e)
@@ -126,5 +111,14 @@ namespace project_Muller_Salopek
             listViewArticles.Items.Clear();
         }
 
+        private void sendGetRequestButton_Click(object sender, EventArgs e)
+        {
+            string url = this.customGetRequestBaseTextBox.Text + this.customGetRequestActionTextBox.Text;
+            this.customGetRequestResponseLabel.Text = "Sending request to " + url;
+
+            Action<string> onResponse = (string response) => { this.customGetRequestResponseLabel.Text = "Server response: " + response; };
+            Action onError = () => { this.customGetRequestResponseLabel.Text = "ERROR - No response."; };
+            WFAplikacija.RESTManager.Get(url, onResponse, onError);
+        }
     }
 }

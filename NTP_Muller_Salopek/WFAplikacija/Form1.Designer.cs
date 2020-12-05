@@ -1,4 +1,4 @@
-﻿namespace project_Muller_Salopek
+﻿namespace WFAplikacija
 {
     partial class Form1
     {
@@ -47,8 +47,16 @@
             this.tBoxAdminUsername = new System.Windows.Forms.TextBox();
             this.btnAdminLogin = new System.Windows.Forms.Button();
             this.tabReports = new System.Windows.Forms.TabPage();
+            this.customGetRequestResponseLabel = new System.Windows.Forms.Label();
+            this.sendGetRequestButton = new System.Windows.Forms.Button();
+            this.customGetRequestActionTextBox = new System.Windows.Forms.TextBox();
+            this.customRequestUrlLabel = new System.Windows.Forms.Label();
+            this.customRequestLabel = new System.Windows.Forms.Label();
+            this.checkServerResponseLabel = new System.Windows.Forms.Label();
+            this.checkServerButton = new System.Windows.Forms.Button();
+            this.checkServerMainLabel = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.customGetRequestBaseTextBox = new System.Windows.Forms.TextBox();
             this.tabMainControl.SuspendLayout();
             this.tabSale.SuspendLayout();
             this.tabControlArticles.SuspendLayout();
@@ -231,8 +239,16 @@
             // 
             // tabReports
             // 
+            this.tabReports.Controls.Add(this.customGetRequestBaseTextBox);
             this.tabReports.Controls.Add(this.label2);
-            this.tabReports.Controls.Add(this.button1);
+            this.tabReports.Controls.Add(this.checkServerMainLabel);
+            this.tabReports.Controls.Add(this.customGetRequestResponseLabel);
+            this.tabReports.Controls.Add(this.sendGetRequestButton);
+            this.tabReports.Controls.Add(this.customGetRequestActionTextBox);
+            this.tabReports.Controls.Add(this.customRequestUrlLabel);
+            this.tabReports.Controls.Add(this.customRequestLabel);
+            this.tabReports.Controls.Add(this.checkServerResponseLabel);
+            this.tabReports.Controls.Add(this.checkServerButton);
             this.tabReports.Location = new System.Drawing.Point(4, 25);
             this.tabReports.Name = "tabReports";
             this.tabReports.Padding = new System.Windows.Forms.Padding(3);
@@ -242,24 +258,96 @@
             this.tabReports.UseVisualStyleBackColor = true;
             this.tabReports.Click += new System.EventHandler(this.tabReports_Click);
             // 
+            // customGetRequestResponseLabel
+            // 
+            this.customGetRequestResponseLabel.AutoSize = true;
+            this.customGetRequestResponseLabel.Location = new System.Drawing.Point(92, 180);
+            this.customGetRequestResponseLabel.Name = "customGetRequestResponseLabel";
+            this.customGetRequestResponseLabel.Size = new System.Drawing.Size(184, 17);
+            this.customGetRequestResponseLabel.TabIndex = 6;
+            this.customGetRequestResponseLabel.Text = "Press Send to get response";
+            // 
+            // sendGetRequestButton
+            // 
+            this.sendGetRequestButton.Location = new System.Drawing.Point(15, 178);
+            this.sendGetRequestButton.Name = "sendGetRequestButton";
+            this.sendGetRequestButton.Size = new System.Drawing.Size(75, 23);
+            this.sendGetRequestButton.TabIndex = 5;
+            this.sendGetRequestButton.Text = "Send";
+            this.sendGetRequestButton.UseVisualStyleBackColor = true;
+            this.sendGetRequestButton.Click += new System.EventHandler(this.sendGetRequestButton_Click);
+            // 
+            // customGetRequestActionTextBox
+            // 
+            this.customGetRequestActionTextBox.Location = new System.Drawing.Point(70, 145);
+            this.customGetRequestActionTextBox.Name = "customGetRequestActionTextBox";
+            this.customGetRequestActionTextBox.Size = new System.Drawing.Size(180, 22);
+            this.customGetRequestActionTextBox.TabIndex = 4;
+            // 
+            // customRequestUrlLabel
+            // 
+            this.customRequestUrlLabel.AutoSize = true;
+            this.customRequestUrlLabel.Location = new System.Drawing.Point(12, 123);
+            this.customRequestUrlLabel.Name = "customRequestUrlLabel";
+            this.customRequestUrlLabel.Size = new System.Drawing.Size(44, 17);
+            this.customRequestUrlLabel.TabIndex = 3;
+            this.customRequestUrlLabel.Text = "Base:";
+            // 
+            // customRequestLabel
+            // 
+            this.customRequestLabel.AutoSize = true;
+            this.customRequestLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.customRequestLabel.Location = new System.Drawing.Point(10, 90);
+            this.customRequestLabel.Name = "customRequestLabel";
+            this.customRequestLabel.Size = new System.Drawing.Size(344, 25);
+            this.customRequestLabel.TabIndex = 2;
+            this.customRequestLabel.Text = "Custom GET request (write to textbox)";
+            // 
+            // checkServerResponseLabel
+            // 
+            this.checkServerResponseLabel.AutoSize = true;
+            this.checkServerResponseLabel.Location = new System.Drawing.Point(93, 53);
+            this.checkServerResponseLabel.Name = "checkServerResponseLabel";
+            this.checkServerResponseLabel.Size = new System.Drawing.Size(214, 17);
+            this.checkServerResponseLabel.TabIndex = 1;
+            this.checkServerResponseLabel.Text = "Press button to get server status";
+            // 
+            // checkServerButton
+            // 
+            this.checkServerButton.Location = new System.Drawing.Point(10, 50);
+            this.checkServerButton.Name = "checkServerButton";
+            this.checkServerButton.Size = new System.Drawing.Size(81, 23);
+            this.checkServerButton.TabIndex = 0;
+            this.checkServerButton.Text = "Send";
+            this.checkServerButton.UseVisualStyleBackColor = true;
+            this.checkServerButton.Click += new System.EventHandler(this.checkServerButton_Click);
+            // 
+            // checkServerMainLabel
+            // 
+            this.checkServerMainLabel.AutoSize = true;
+            this.checkServerMainLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.checkServerMainLabel.Location = new System.Drawing.Point(10, 22);
+            this.checkServerMainLabel.Name = "checkServerMainLabel";
+            this.checkServerMainLabel.Size = new System.Drawing.Size(615, 25);
+            this.checkServerMainLabel.TabIndex = 8;
+            this.checkServerMainLabel.Text = "Check server status (URL: https://localhost:5001/Home/RequestTest)";
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(159, 9);
+            this.label2.Location = new System.Drawing.Point(13, 147);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(218, 17);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Press button to get server status.";
+            this.label2.Size = new System.Drawing.Size(51, 17);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Action:";
             // 
-            // button1
+            // customGetRequestBaseTextBox
             // 
-            this.button1.Location = new System.Drawing.Point(6, 6);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(147, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "CHECK SERVER";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.customGetRequestBaseTextBox.Location = new System.Drawing.Point(70, 120);
+            this.customGetRequestBaseTextBox.Name = "customGetRequestBaseTextBox";
+            this.customGetRequestBaseTextBox.Size = new System.Drawing.Size(180, 22);
+            this.customGetRequestBaseTextBox.TabIndex = 10;
+            this.customGetRequestBaseTextBox.Text = "https://www.google.com";
             // 
             // Form1
             // 
@@ -301,9 +389,17 @@
         private System.Windows.Forms.TextBox tBoxAdminUsername;
         private System.Windows.Forms.Button btnAdminLogin;
         private System.Windows.Forms.TabPage tabReports;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button checkServerButton;
+        private System.Windows.Forms.Label checkServerResponseLabel;
         private System.Windows.Forms.Button btnComplete;
+        private System.Windows.Forms.Label customRequestLabel;
+        private System.Windows.Forms.Label customRequestUrlLabel;
+        private System.Windows.Forms.TextBox customGetRequestActionTextBox;
+        private System.Windows.Forms.Label customGetRequestResponseLabel;
+        private System.Windows.Forms.Button sendGetRequestButton;
+        private System.Windows.Forms.Label checkServerMainLabel;
+        private System.Windows.Forms.TextBox customGetRequestBaseTextBox;
+        private System.Windows.Forms.Label label2;
     }
 }
 
