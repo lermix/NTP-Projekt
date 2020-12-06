@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace project_Muller_Salopek.dataObjects
+namespace WFAplikacija.dataObjects
 {
     class User
     {

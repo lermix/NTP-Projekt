@@ -7,3 +7,4 @@ C:\Users\stjep\OneDrive\Dokumenti\GitHub\NTP-Projekt\NTP_Muller_Salopek\SQLProje
 C:\Users\stjep\OneDrive\Dokumenti\GitHub\NTP-Projekt\NTP_Muller_Salopek\SQLProjekt\obj\Debug\refactor.xml
 C:\Users\stjep\OneDrive\Dokumenti\GitHub\NTP-Projekt\NTP_Muller_Salopek\SQLProjekt\obj\Debug\postdeploy.sql
 C:\Users\stjep\OneDrive\Dokumenti\GitHub\NTP-Projekt\NTP_Muller_Salopek\SQLProjekt\obj\Debug\predeploy.sql
+C:\Users\stjep\OneDrive\Dokumenti\GitHub\NTP-Projekt\NTP_Muller_Salopek\SQLProjekt\obj\Debug\SQLProjekt.sqlprojAssemblyReference.cache

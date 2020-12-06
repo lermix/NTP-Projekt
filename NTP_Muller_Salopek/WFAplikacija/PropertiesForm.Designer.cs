@@ -1,4 +1,4 @@
-﻿namespace project_Muller_Salopek
+﻿namespace WFAplikacija
 {
     partial class PropertiesForm
     {

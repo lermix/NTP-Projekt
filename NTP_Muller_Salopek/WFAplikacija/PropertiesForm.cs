@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace project_Muller_Salopek
+namespace WFAplikacija
 {
     public partial class PropertiesForm : Form
     {

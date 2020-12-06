@@ -1,5 +1,5 @@
-﻿using project_Muller_Salopek.Data;
-using project_Muller_Salopek.dataObjects;
+﻿using WFAplikacija.Data;
+using WFAplikacija.dataObjects;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -12,7 +12,7 @@ using System.Xml.Linq;
 using System.Xml.Serialization;
 using System.Xml.Xsl;
 
-namespace project_Muller_Salopek
+namespace WFAplikacija
 {
 
     //Bavi se xml fileovima

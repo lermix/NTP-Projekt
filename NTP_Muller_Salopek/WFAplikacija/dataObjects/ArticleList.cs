@@ -1,4 +1,4 @@
-﻿using project_Muller_Salopek.dataObjects;
+﻿using WFAplikacija.dataObjects;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
 
-namespace project_Muller_Salopek.Data
+namespace WFAplikacija.Data
 {
     [Serializable()]
     [XmlRoot("Articles")]
