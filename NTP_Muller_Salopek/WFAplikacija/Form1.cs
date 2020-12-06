@@ -31,7 +31,8 @@ namespace project_Muller_Salopek
             listViewArticles.Columns.Add("Price");
 
             //Dohavti sve dostupne artikle u ArtiklListu            
-            allArticles = XmlManager.GetArticles(); 
+            allArticles = XmlManager.GetArticles();
+
 
         }
 

@@ -1,7 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Bills>
-  <Bill Time="Wednesday, December 2, 2020 11:17:08 AM" User="TEST" Total="40">
-    <Article ID="0" name="test" quantity="2" price="5" totalPrice="10" />
-    <Article ID="1" name="test2" quantity="3" price="10" totalPrice="30" />
-  </Bill>
-</Bills>
+<BillsCollection>
+  <Bills>
+    <Bill Time="Wednesday, December 2, 2020 11:17:08 AM" User="TEST" Total="40">
+      <Article ID="0" name="test" quantity="2" price="5" totalPrice="10" />
+      <Article ID="1" name="test2" quantity="3" price="10" totalPrice="30" />
+    </Bill>
+  </Bills>
+</BillsCollection>

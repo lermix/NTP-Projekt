@@ -23,6 +23,80 @@ namespace project_Muller_Salopek
         static XDocument AllArticlesXml = XDocument.Load("../../Data/AllArticlesXML.xml");
         static XDocument AllBillsXml = XDocument.Load("../../Data/AllBills.xml");
 
+        public static void addObjectToXml(object objectToAdd)
+        {
+            Console.WriteLine("Appending objet to xml.");
+            //DODAJEMO ARTIKL
+            if (objectToAdd.GetType() == typeof(Article))
+            {
+                Console.WriteLine("ObjectToAdd is Article.");
+
+                Article article = (Article)objectToAdd;
+                var articleElement = new XElement("Article");
+
+                //Add element
+                AllArticlesXml.Root.Element("Articles").Add(articleElement);
+
+                //Atributes to add
+                List<XAttribute> articleAtributes = new List<XAttribute>
+                {
+                    new XAttribute("ID", article.ID),
+                    new XAttribute("name", article.name),
+                    new XAttribute("buttonName", article.buttonName),
+                    new XAttribute("price", article.price)
+                };
+
+                //Add atributes
+                foreach (XAttribute xElement in articleAtributes)
+                {
+                    articleElement.Add(xElement);
+                }
+
+                //Save
+                AllArticlesXml.Save("../../Data/AllArticlesXML.xml");
+            }
+            else if (objectToAdd.GetType() == typeof(Bill))
+            {
+                Console.WriteLine("ObjectToAdd is Bill.");
+
+                Bill bill = (Bill)objectToAdd;
+                float totalPrice = 0;
+                var billElement = new XElement("Bill");
+                billElement.Add(new XAttribute("Time", DateTime.Now.ToString("F")));
+                billElement.Add(new XAttribute("User", "TEST"));
+
+                //Add element
+                AllBillsXml.Root.Element("Bills").Add(billElement);
+
+                //Add articles to bill
+                foreach (Article article in bill.articles)
+                {
+                    XElement articleElement = new XElement("Article");
+                    List<XAttribute> articleAttributes = new List<XAttribute>
+                    {
+                        new XAttribute("ID", article.ID),
+                        new XAttribute("name", article.name),
+                        new XAttribute("quantity", article.quantity),
+                        new XAttribute("price", article.price),
+                        new XAttribute("totalPrice", article.totalPrice)
+                    };
+                    foreach (XAttribute attribute in articleAttributes)
+                    {
+                        articleElement.Add(attribute);
+                    }
+                    billElement.Add(articleElement);
+                    totalPrice += article.totalPrice;
+                }
+
+                billElement.Add(new XAttribute("Total", totalPrice));
+
+                //Save
+                AllBillsXml.Save("../../Data/AllBills.xml");
+            }
+
+
+        }
+
 
         //Dohvaca artikl prema buttonName atributu iz AllArticlesXML
         public static ArticleList GetArticles()
@@ -77,28 +151,6 @@ namespace project_Muller_Salopek
             billRoot.Add(new XAttribute("Total", totalPrice));
             AllBillsXml.Root.Add(billRoot);
             AllBillsXml.Save("../../Data/AllBills.xml");
-
-        }
-
-        public static void AddArticleToAllArticlesXml(Article article)
-        {
-            var articleElement = new XElement("Article");
-            AllArticlesXml.Root.Add(articleElement);
-
-            List<XAttribute> articleAtributes = new List<XAttribute>
-            { 
-                new XAttribute("ID", article.ID),
-                new XAttribute("name", article.name),
-                new XAttribute("buttonName", article.buttonName),
-                new XAttribute("price", article.price)
-            };
-
-            foreach (XAttribute xElement in articleAtributes)
-            {
-                articleElement.Add(xElement);
-            }
-
-            AllArticlesXml.Save("../../Data/AllArticlesXML.xml");
 
         }
 

@@ -9,7 +9,7 @@ namespace project_Muller_Salopek.dataObjects
     class Bill
     {
         public DateTime dateTime { get; set; }
-        public List<Article> aeticles { get; set; }
+        public List<Article> articles { get; set; }
         public User user { get; set; }
         public int totalPrice { get; set; }
 
