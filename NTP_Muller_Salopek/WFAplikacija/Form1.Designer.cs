@@ -47,6 +47,18 @@
             this.tBoxAdminUsername = new System.Windows.Forms.TextBox();
             this.btnAdminLogin = new System.Windows.Forms.Button();
             this.tabReports = new System.Windows.Forms.TabPage();
+            this.sampleLoginExampleBodyLabel = new System.Windows.Forms.Label();
+            this.sampleLoginExampleTitleLabel = new System.Windows.Forms.Label();
+            this.sampleLoginUsernameTextBox = new System.Windows.Forms.TextBox();
+            this.sampleLoginPasswordLabel = new System.Windows.Forms.Label();
+            this.sampleLoginResponseLabel = new System.Windows.Forms.Label();
+            this.sendSampleLoginButton = new System.Windows.Forms.Button();
+            this.sampleLoginPasswordTextBox = new System.Windows.Forms.TextBox();
+            this.sampleLoginUsernameLabel = new System.Windows.Forms.Label();
+            this.sampleLoginLabel = new System.Windows.Forms.Label();
+            this.customGetRequestBaseTextBox = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.checkServerMainLabel = new System.Windows.Forms.Label();
             this.customGetRequestResponseLabel = new System.Windows.Forms.Label();
             this.sendGetRequestButton = new System.Windows.Forms.Button();
             this.customGetRequestActionTextBox = new System.Windows.Forms.TextBox();
@@ -54,9 +66,6 @@
             this.customRequestLabel = new System.Windows.Forms.Label();
             this.checkServerResponseLabel = new System.Windows.Forms.Label();
             this.checkServerButton = new System.Windows.Forms.Button();
-            this.checkServerMainLabel = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.customGetRequestBaseTextBox = new System.Windows.Forms.TextBox();
             this.tabMainControl.SuspendLayout();
             this.tabSale.SuspendLayout();
             this.tabControlArticles.SuspendLayout();
@@ -239,6 +248,15 @@
             // 
             // tabReports
             // 
+            this.tabReports.Controls.Add(this.sampleLoginExampleBodyLabel);
+            this.tabReports.Controls.Add(this.sampleLoginExampleTitleLabel);
+            this.tabReports.Controls.Add(this.sampleLoginUsernameTextBox);
+            this.tabReports.Controls.Add(this.sampleLoginPasswordLabel);
+            this.tabReports.Controls.Add(this.sampleLoginResponseLabel);
+            this.tabReports.Controls.Add(this.sendSampleLoginButton);
+            this.tabReports.Controls.Add(this.sampleLoginPasswordTextBox);
+            this.tabReports.Controls.Add(this.sampleLoginUsernameLabel);
+            this.tabReports.Controls.Add(this.sampleLoginLabel);
             this.tabReports.Controls.Add(this.customGetRequestBaseTextBox);
             this.tabReports.Controls.Add(this.label2);
             this.tabReports.Controls.Add(this.checkServerMainLabel);
@@ -258,10 +276,120 @@
             this.tabReports.UseVisualStyleBackColor = true;
             this.tabReports.Click += new System.EventHandler(this.tabReports_Click);
             // 
+            // sampleLoginExampleBodyLabel
+            // 
+            this.sampleLoginExampleBodyLabel.AutoSize = true;
+            this.sampleLoginExampleBodyLabel.Location = new System.Drawing.Point(274, 264);
+            this.sampleLoginExampleBodyLabel.Name = "sampleLoginExampleBodyLabel";
+            this.sampleLoginExampleBodyLabel.Size = new System.Drawing.Size(119, 34);
+            this.sampleLoginExampleBodyLabel.TabIndex = 19;
+            this.sampleLoginExampleBodyLabel.Text = "Username: admin\nPassword: 123";
+            // 
+            // sampleLoginExampleTitleLabel
+            // 
+            this.sampleLoginExampleTitleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.sampleLoginExampleTitleLabel.Location = new System.Drawing.Point(274, 247);
+            this.sampleLoginExampleTitleLabel.Name = "sampleLoginExampleTitleLabel";
+            this.sampleLoginExampleTitleLabel.Size = new System.Drawing.Size(119, 17);
+            this.sampleLoginExampleTitleLabel.TabIndex = 18;
+            this.sampleLoginExampleTitleLabel.Text = "Sample user";
+            this.sampleLoginExampleTitleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // sampleLoginUsernameTextBox
+            // 
+            this.sampleLoginUsernameTextBox.Location = new System.Drawing.Point(88, 247);
+            this.sampleLoginUsernameTextBox.Name = "sampleLoginUsernameTextBox";
+            this.sampleLoginUsernameTextBox.Size = new System.Drawing.Size(180, 22);
+            this.sampleLoginUsernameTextBox.TabIndex = 17;
+            this.sampleLoginUsernameTextBox.Text = "admin";
+            // 
+            // sampleLoginPasswordLabel
+            // 
+            this.sampleLoginPasswordLabel.AutoSize = true;
+            this.sampleLoginPasswordLabel.Location = new System.Drawing.Point(13, 274);
+            this.sampleLoginPasswordLabel.Name = "sampleLoginPasswordLabel";
+            this.sampleLoginPasswordLabel.Size = new System.Drawing.Size(73, 17);
+            this.sampleLoginPasswordLabel.TabIndex = 16;
+            this.sampleLoginPasswordLabel.Text = "Password:";
+            // 
+            // sampleLoginResponseLabel
+            // 
+            this.sampleLoginResponseLabel.AutoSize = true;
+            this.sampleLoginResponseLabel.Location = new System.Drawing.Point(92, 307);
+            this.sampleLoginResponseLabel.Name = "sampleLoginResponseLabel";
+            this.sampleLoginResponseLabel.Size = new System.Drawing.Size(184, 17);
+            this.sampleLoginResponseLabel.TabIndex = 15;
+            this.sampleLoginResponseLabel.Text = "Press Send to get response";
+            // 
+            // sendSampleLoginButton
+            // 
+            this.sendSampleLoginButton.Location = new System.Drawing.Point(15, 305);
+            this.sendSampleLoginButton.Name = "sendSampleLoginButton";
+            this.sendSampleLoginButton.Size = new System.Drawing.Size(75, 23);
+            this.sendSampleLoginButton.TabIndex = 14;
+            this.sendSampleLoginButton.Text = "Send";
+            this.sendSampleLoginButton.UseVisualStyleBackColor = true;
+            this.sendSampleLoginButton.Click += new System.EventHandler(this.sendSampleLoginButton_Click);
+            // 
+            // sampleLoginPasswordTextBox
+            // 
+            this.sampleLoginPasswordTextBox.Location = new System.Drawing.Point(88, 272);
+            this.sampleLoginPasswordTextBox.Name = "sampleLoginPasswordTextBox";
+            this.sampleLoginPasswordTextBox.Size = new System.Drawing.Size(180, 22);
+            this.sampleLoginPasswordTextBox.TabIndex = 13;
+            this.sampleLoginPasswordTextBox.Text = "123";
+            // 
+            // sampleLoginUsernameLabel
+            // 
+            this.sampleLoginUsernameLabel.AutoSize = true;
+            this.sampleLoginUsernameLabel.Location = new System.Drawing.Point(12, 250);
+            this.sampleLoginUsernameLabel.Name = "sampleLoginUsernameLabel";
+            this.sampleLoginUsernameLabel.Size = new System.Drawing.Size(77, 17);
+            this.sampleLoginUsernameLabel.TabIndex = 12;
+            this.sampleLoginUsernameLabel.Text = "Username:";
+            // 
+            // sampleLoginLabel
+            // 
+            this.sampleLoginLabel.AutoSize = true;
+            this.sampleLoginLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.sampleLoginLabel.Location = new System.Drawing.Point(10, 217);
+            this.sampleLoginLabel.Name = "sampleLoginLabel";
+            this.sampleLoginLabel.Size = new System.Drawing.Size(125, 25);
+            this.sampleLoginLabel.TabIndex = 11;
+            this.sampleLoginLabel.Text = "Sample login";
+            // 
+            // customGetRequestBaseTextBox
+            // 
+            this.customGetRequestBaseTextBox.Location = new System.Drawing.Point(70, 120);
+            this.customGetRequestBaseTextBox.Name = "customGetRequestBaseTextBox";
+            this.customGetRequestBaseTextBox.Size = new System.Drawing.Size(180, 22);
+            this.customGetRequestBaseTextBox.TabIndex = 10;
+            this.customGetRequestBaseTextBox.Text = "https://www.google.com";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(13, 147);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(51, 17);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Action:";
+            // 
+            // checkServerMainLabel
+            // 
+            this.checkServerMainLabel.AutoSize = true;
+            this.checkServerMainLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.checkServerMainLabel.Location = new System.Drawing.Point(10, 22);
+            this.checkServerMainLabel.Name = "checkServerMainLabel";
+            this.checkServerMainLabel.Size = new System.Drawing.Size(502, 25);
+            this.checkServerMainLabel.TabIndex = 8;
+            this.checkServerMainLabel.Text = "Check server status (URL: https://localhost:5001/Status)";
+            // 
             // customGetRequestResponseLabel
             // 
             this.customGetRequestResponseLabel.AutoSize = true;
             this.customGetRequestResponseLabel.Location = new System.Drawing.Point(92, 180);
+            this.customGetRequestResponseLabel.MaximumSize = new System.Drawing.Size(500, 34);
             this.customGetRequestResponseLabel.Name = "customGetRequestResponseLabel";
             this.customGetRequestResponseLabel.Size = new System.Drawing.Size(184, 17);
             this.customGetRequestResponseLabel.TabIndex = 6;
@@ -322,33 +450,6 @@
             this.checkServerButton.UseVisualStyleBackColor = true;
             this.checkServerButton.Click += new System.EventHandler(this.checkServerButton_Click);
             // 
-            // checkServerMainLabel
-            // 
-            this.checkServerMainLabel.AutoSize = true;
-            this.checkServerMainLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.checkServerMainLabel.Location = new System.Drawing.Point(10, 22);
-            this.checkServerMainLabel.Name = "checkServerMainLabel";
-            this.checkServerMainLabel.Size = new System.Drawing.Size(615, 25);
-            this.checkServerMainLabel.TabIndex = 8;
-            this.checkServerMainLabel.Text = "Check server status (URL: https://localhost:5001/Home/RequestTest)";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(13, 147);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(51, 17);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "Action:";
-            // 
-            // customGetRequestBaseTextBox
-            // 
-            this.customGetRequestBaseTextBox.Location = new System.Drawing.Point(70, 120);
-            this.customGetRequestBaseTextBox.Name = "customGetRequestBaseTextBox";
-            this.customGetRequestBaseTextBox.Size = new System.Drawing.Size(180, 22);
-            this.customGetRequestBaseTextBox.TabIndex = 10;
-            this.customGetRequestBaseTextBox.Text = "https://www.google.com";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -400,6 +501,15 @@
         private System.Windows.Forms.Label checkServerMainLabel;
         private System.Windows.Forms.TextBox customGetRequestBaseTextBox;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label sampleLoginExampleTitleLabel;
+        private System.Windows.Forms.TextBox sampleLoginUsernameTextBox;
+        private System.Windows.Forms.Label sampleLoginPasswordLabel;
+        private System.Windows.Forms.Label sampleLoginResponseLabel;
+        private System.Windows.Forms.Button sendSampleLoginButton;
+        private System.Windows.Forms.TextBox sampleLoginPasswordTextBox;
+        private System.Windows.Forms.Label sampleLoginUsernameLabel;
+        private System.Windows.Forms.Label sampleLoginLabel;
+        private System.Windows.Forms.Label sampleLoginExampleBodyLabel;
     }
 }
 

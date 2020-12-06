@@ -1,8 +1,10 @@
 ﻿@{
     var urlHost = Context.Request.Host;
+    var baseUrl = @"https://" + urlHost;
 
-    var exampleUrl = @"https://" + urlHost + @"/Home/RequestTest";
-    var exampleResponse = ViewData["RequestTestExample"];
+    var exampleUrl = baseUrl + @"/Status";
+    // Response taken from StatusController.cs
+    var exampleResponse = "OK";
 }
 
 <!DOCTYPE html>
@@ -12,6 +14,20 @@
     <style>
         .text-center {
             text-align: center!important;
+        }
+        #options_table {
+            width: 100%;
+            max-width: 1200px;
+        }
+        #options_table > thead {
+            text-align: center;
+        }
+        #options_table > thead > tr:first-child {
+            font-weight: bold;
+            padding: .5rem 1rem;
+        }
+        #options_table td {
+            border: 1px solid rgba(0, 0, 0, 0.2);
         }
     </style>
 </head>
@@ -26,5 +42,68 @@
             <li>Response: <pre>@exampleResponse</pre></li>
         </ul>
     </div>
+    <div>
+        <h3>List of requests and responses:</h3>
+        <table id="options_table">
+            <thead>
+                <tr>
+                    <td>
+                        Method
+                    </td>
+                    <td>
+                        Link
+                    </td>
+                    <td>
+                        Body aguments (if any)<br />
+                        Shown in format: "var_1": "value_1", "var_2": "value_2", ...
+                    </td>
+                    <td>
+                        Response
+                    </td>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Inserted through JavaScript -->
+            </tbody>
+        </table>
+    </div>
+
+    <template id="template_options_tr">
+        <tr>
+            <td>{method}</td>
+            <td>{link}</td>
+            <td>{body}</td>
+            <td>{response}</td>
+        </tr>
+    </template>
+
+    <script>
+        var table_body = document.querySelector("#options_table > tbody");
+        var option_html = document.querySelector("#template_options_tr").innerHTML;
+        var baseUrl = "@baseUrl";
+
+        function addOption(method, link, body, response) {
+            if (!body)
+                body = "No body.";
+            else
+                body = JSON.stringify(body);
+
+            table_body.insertAdjacentHTML("beforeend",
+                option_html.replace(`{method}`, method).replace(`{link}`, link).replace(`{body}`, body).replace(`{response}`, response)
+            );
+        }
+
+        function onLoad() {
+            addOption("GET", baseUrl + " (+ /Home/Index)", null, `HTML of this page.`);
+            addOption("GET", baseUrl + "/Status", null, `"OK" (server is alive)`);
+            addOption("POST", baseUrl + "/User", { username: "admin", password: "falkjsdnfalkjsdnflkjasndf ('123' after SHA512 hash)" },
+                `"Y" (correct) <br />
+                "N_Username" (incorrect username) <br />
+                "N_Password" (incorrect password)`
+            );
+        }
+
+        onLoad();
+    </script>
 </body>
 </html>

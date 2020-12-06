@@ -6,13 +6,8 @@ namespace CentralniServer.Controllers
     {
         public IActionResult Index()
         {
-            ViewData["RequestTestExample"] = RequestTest();
             return View();
         }
 
-        public string RequestTest()
-        {
-            return "OK";
-        }
     }
 }

@@ -61,7 +61,7 @@ namespace WFAplikacija.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to https://localhost:5001/.
+        ///   Looks up a localized string similar to https://localhost:5001.
         /// </summary>
         public static string CentralniServerURL {
             get {

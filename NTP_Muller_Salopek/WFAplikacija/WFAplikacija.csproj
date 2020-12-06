@@ -67,7 +67,8 @@
       <DependentUpon>PropertiesForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RemoteCommunicators\RESTManager.cs" />
+    <Compile Include="Tools\Cryptography.cs" />
+    <Compile Include="Tools\RESTManager.cs" />
     <Compile Include="XmlManager.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

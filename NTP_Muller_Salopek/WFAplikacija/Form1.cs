@@ -98,11 +98,12 @@ namespace WFAplikacija
 
         private void checkServerButton_Click(object sender, EventArgs e)
         {
-            this.checkServerResponseLabel.Text = "Sending request...";
+            string url = WFAplikacija.Properties.Resources.CentralniServerURL + @"/Status";
+            this.checkServerResponseLabel.Text = "Sending request to " + url;
 
             Action<string> onResponse = (string response) => { this.checkServerResponseLabel.Text = "Server response: " + response; };
             Action onError = () => { this.checkServerResponseLabel.Text = "ERROR - No response."; };
-            WFAplikacija.RESTManager.Get(WFAplikacija.Properties.Resources.CentralniServerURL + @"Home/RequestTest", onResponse, onError);
+            WFAplikacija.Tools.RESTManager.Get(WFAplikacija.Properties.Resources.CentralniServerURL + @"/Status", onResponse, onError);
         }
 
         private void btnComplete_Click(object sender, EventArgs e)
@@ -119,7 +120,27 @@ namespace WFAplikacija
 
             Action<string> onResponse = (string response) => { this.customGetRequestResponseLabel.Text = "Server response: " + response; };
             Action onError = () => { this.customGetRequestResponseLabel.Text = "ERROR - No response."; };
-            WFAplikacija.RESTManager.Get(url, onResponse, onError);
+            WFAplikacija.Tools.RESTManager.Get(url, onResponse, onError);
+        }
+
+        private void sendSampleLoginButton_Click(object sender, EventArgs e)
+        {
+            string url = WFAplikacija.Properties.Resources.CentralniServerURL + @"/User";
+
+            var usernameText = this.sampleLoginUsernameTextBox.Text;
+            var passwordText = this.sampleLoginPasswordTextBox.Text;
+            var hashedPasswordText = WFAplikacija.Tools.Cryptography.makeSha512(passwordText);
+
+            this.sampleLoginResponseLabel.Text = "Sending request to " + url +
+                "\nUser: " + usernameText +
+                "\nHashed password: " + hashedPasswordText;
+            var postRequestBody = new Dictionary<string, string>{
+                { "username", usernameText },
+                { "hashedPassword", hashedPasswordText }
+            };
+            Action<string> onResponse = (string response) => { this.sampleLoginResponseLabel.Text = "Server response: " + response; };
+            Action onError = () => { this.sampleLoginResponseLabel.Text = "ERROR - No response."; };
+            WFAplikacija.Tools.RESTManager.Post(url, postRequestBody, onResponse, onError);
         }
     }
 }
