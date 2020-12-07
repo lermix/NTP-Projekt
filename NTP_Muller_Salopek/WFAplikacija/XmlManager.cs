@@ -20,13 +20,15 @@ namespace WFAplikacija
     {
         static List<Article> allArticles = new List<Article>();
 
+        public static User user { get; set; }
+
         static XDocument AllArticlesXml = XDocument.Load("../../Data/AllArticlesXML.xml");
         static XDocument AllBillsXml = XDocument.Load("../../Data/AllBills.xml");
 
         public static void addObjectToXml(object objectToAdd)
         {
             Console.WriteLine("Appending objet to xml.");
-            //DODAJEMO ARTIKL
+            //DODAJEMO ARTIKL-----------------------------------
             if (objectToAdd.GetType() == typeof(Article))
             {
                 Console.WriteLine("ObjectToAdd is Article.");
@@ -55,6 +57,7 @@ namespace WFAplikacija
                 //Save
                 AllArticlesXml.Save("../../Data/AllArticlesXML.xml");
             }
+            //DODAJEMO RACUN-----------------------------------------
             else if (objectToAdd.GetType() == typeof(Bill))
             {
                 Console.WriteLine("ObjectToAdd is Bill.");
@@ -62,8 +65,10 @@ namespace WFAplikacija
                 Bill bill = (Bill)objectToAdd;
                 float totalPrice = 0;
                 var billElement = new XElement("Bill");
-                billElement.Add(new XAttribute("Time", DateTime.Now.ToString("F")));
-                billElement.Add(new XAttribute("User", "TEST"));
+                billElement.Add(new XAttribute("ID", bill.id));
+                billElement.Add(new XAttribute("Time", DateTime.Now.ToString("dd-MM-yyy HH:mm")));
+                billElement.Add(new XAttribute("User", user.username));
+                billElement.Add(new XAttribute("SavedToDatabase", user.username));
 
                 //Add element
                 AllBillsXml.Root.Element("Bills").Add(billElement);
@@ -101,7 +106,7 @@ namespace WFAplikacija
         //Dohvaca artikl prema buttonName atributu iz AllArticlesXML
         public static ArticleList GetArticles()
         {
-            Console.WriteLine("reading");
+            Console.WriteLine("reading Articles");
 
             ArticleList allArticles = null;
 
@@ -121,38 +126,29 @@ namespace WFAplikacija
             return allArticles;
         }
 
-        public static void AddArticlesListToAllBillsXml(List<Article> articles)
+        public static BillList GetBills()
         {
-            var billRoot = new XElement("Bill");
-            //info racuna
-            billRoot.Add(new XAttribute("Time", DateTime.Now.ToString("F")));
-            billRoot.Add(new XAttribute("User", "TEST"));
-            float totalPrice = 0;
+            Console.WriteLine("reading bills");
 
-            foreach (Article article in articles)
-            {
-                XElement articleElement = new XElement("Article");
-                List<XAttribute> articleAttributes = new List<XAttribute>
-                {
-                    new XAttribute("ID", article.ID),
-                    new XAttribute("name", article.name),
-                    new XAttribute("quantity", article.quantity),
-                    new XAttribute("price", article.price),
-                    new XAttribute("totalPrice", article.totalPrice)
-                };
-                foreach (XAttribute attribute in articleAttributes)
-                {
-                    articleElement.Add(attribute);
-                }
-                billRoot.Add(articleElement);
-                totalPrice += article.totalPrice;
-            }
+            BillList allBills = null;
 
-            billRoot.Add(new XAttribute("Total", totalPrice));
-            AllBillsXml.Root.Add(billRoot);
-            AllBillsXml.Save("../../Data/AllBills.xml");
+            //Dodavanje root elementa kako bi serializer znao koji je root element
+            XmlRootAttribute xRoot = new XmlRootAttribute();
+            xRoot.ElementName = "BillsCollection";
+            xRoot.IsNullable = true;
 
+            XmlSerializer serializer = new XmlSerializer(typeof(BillList), xRoot);
+            XmlReader reader = AllBillsXml.CreateReader();
+
+            allBills = (BillList)serializer.Deserialize(reader);
+            reader.Close();
+
+            Console.WriteLine("reading succesful");
+
+            return allBills;
         }
+
+
 
 
 

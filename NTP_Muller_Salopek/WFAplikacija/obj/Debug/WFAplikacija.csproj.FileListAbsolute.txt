@@ -1,15 +1,7 @@
 C:\Users\stjep\OneDrive\Dokumenti\GitHub\NTP-Projekt\NTP_Muller_Salopek\WFAplikacija\obj\Debug\WFAplikacija.csproj.GenerateResource.cache
 C:\Users\stjep\OneDrive\Dokumenti\GitHub\NTP-Projekt\NTP_Muller_Salopek\WFAplikacija\obj\Debug\WFAplikacija.csproj.CoreCompileInputs.cache
-C:\Users\Alen\Desktop\faks\NTP projekt\NTP-Projekt\NTP_Muller_Salopek\WFAplikacija\bin\Debug\project Muller Salopek.exe.config
-C:\Users\Alen\Desktop\faks\NTP projekt\NTP-Projekt\NTP_Muller_Salopek\WFAplikacija\bin\Debug\project Muller Salopek.exe
-C:\Users\Alen\Desktop\faks\NTP projekt\NTP-Projekt\NTP_Muller_Salopek\WFAplikacija\bin\Debug\project Muller Salopek.pdb
 C:\Users\Alen\Desktop\faks\NTP projekt\NTP-Projekt\NTP_Muller_Salopek\WFAplikacija\obj\Debug\WFAplikacija.csprojAssemblyReference.cache
-C:\Users\Alen\Desktop\faks\NTP projekt\NTP-Projekt\NTP_Muller_Salopek\WFAplikacija\obj\Debug\project_Muller_Salopek.Form1.resources
-C:\Users\Alen\Desktop\faks\NTP projekt\NTP-Projekt\NTP_Muller_Salopek\WFAplikacija\obj\Debug\project_Muller_Salopek.Properties.Resources.resources
 C:\Users\Alen\Desktop\faks\NTP projekt\NTP-Projekt\NTP_Muller_Salopek\WFAplikacija\obj\Debug\WFAplikacija.csproj.GenerateResource.cache
-C:\Users\Alen\Desktop\faks\NTP projekt\NTP-Projekt\NTP_Muller_Salopek\WFAplikacija\obj\Debug\project Muller Salopek.exe
-C:\Users\Alen\Desktop\faks\NTP projekt\NTP-Projekt\NTP_Muller_Salopek\WFAplikacija\obj\Debug\project Muller Salopek.pdb
-C:\Users\Alen\Desktop\faks\NTP projekt\NTP-Projekt\NTP_Muller_Salopek\WFAplikacija\obj\Debug\project_Muller_Salopek.PropertiesForm.resources
 C:\Users\stjep\OneDrive\Dokumenti\GitHub\NTP-Projekt\NTP_Muller_Salopek\WFAplikacija\bin\Debug\Newtonsoft.Json.dll
 C:\Users\stjep\OneDrive\Dokumenti\GitHub\NTP-Projekt\NTP_Muller_Salopek\WFAplikacija\bin\Debug\Newtonsoft.Json.xml
 C:\Users\stjep\OneDrive\Dokumenti\GitHub\NTP-Projekt\NTP_Muller_Salopek\WFAplikacija\obj\Debug\WFAplikacija.csproj.CopyComplete
@@ -22,3 +14,14 @@ C:\Users\stjep\OneDrive\Dokumenti\GitHub\NTP-Projekt\NTP_Muller_Salopek\WFAplika
 C:\Users\stjep\OneDrive\Dokumenti\GitHub\NTP-Projekt\NTP_Muller_Salopek\WFAplikacija\obj\Debug\WFAplikacija.exe
 C:\Users\stjep\OneDrive\Dokumenti\GitHub\NTP-Projekt\NTP_Muller_Salopek\WFAplikacija\obj\Debug\WFAplikacija.pdb
 C:\Users\stjep\OneDrive\Dokumenti\GitHub\NTP-Projekt\NTP_Muller_Salopek\WFAplikacija\obj\Debug\WFAplikacija.csprojAssemblyReference.cache
+C:\Users\Alen\Desktop\faks\NTP projekt\NTP-Projekt\NTP_Muller_Salopek\WFAplikacija\bin\Debug\WFAplikacija.exe.config
+C:\Users\Alen\Desktop\faks\NTP projekt\NTP-Projekt\NTP_Muller_Salopek\WFAplikacija\bin\Debug\WFAplikacija.exe
+C:\Users\Alen\Desktop\faks\NTP projekt\NTP-Projekt\NTP_Muller_Salopek\WFAplikacija\bin\Debug\WFAplikacija.pdb
+C:\Users\Alen\Desktop\faks\NTP projekt\NTP-Projekt\NTP_Muller_Salopek\WFAplikacija\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Alen\Desktop\faks\NTP projekt\NTP-Projekt\NTP_Muller_Salopek\WFAplikacija\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Alen\Desktop\faks\NTP projekt\NTP-Projekt\NTP_Muller_Salopek\WFAplikacija\obj\Debug\WFAplikacija.Form1.resources
+C:\Users\Alen\Desktop\faks\NTP projekt\NTP-Projekt\NTP_Muller_Salopek\WFAplikacija\obj\Debug\WFAplikacija.PropertiesForm.resources
+C:\Users\Alen\Desktop\faks\NTP projekt\NTP-Projekt\NTP_Muller_Salopek\WFAplikacija\obj\Debug\WFAplikacija.Properties.Resources.resources
+C:\Users\Alen\Desktop\faks\NTP projekt\NTP-Projekt\NTP_Muller_Salopek\WFAplikacija\obj\Debug\WFAplikacija.csproj.CopyComplete
+C:\Users\Alen\Desktop\faks\NTP projekt\NTP-Projekt\NTP_Muller_Salopek\WFAplikacija\obj\Debug\WFAplikacija.exe
+C:\Users\Alen\Desktop\faks\NTP projekt\NTP-Projekt\NTP_Muller_Salopek\WFAplikacija\obj\Debug\WFAplikacija.pdb

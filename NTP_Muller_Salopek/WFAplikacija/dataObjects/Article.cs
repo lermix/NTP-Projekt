@@ -50,5 +50,15 @@ namespace WFAplikacija.dataObjects
             return (buttonName == buttonNameToCompare) ? true : false;
         }
 
+        public override string ToString()
+        {
+            string returnValue =
+                "ID:" + ID + "\r\n" +
+                "name:" + name + "\r\n" +
+                "button name:" + buttonName + "\r\n" +
+                "price:" + price + "\r\n";
+            return returnValue;
+        }
+
     }
 }

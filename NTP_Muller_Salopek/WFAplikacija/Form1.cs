@@ -16,7 +16,7 @@ namespace WFAplikacija
     public partial class Form1 : Form
     {
 
-        List<Article> order = new List<Article>();
+        List<Article> orderArticles = new List<Article>();
         ArticleList allArticles = new ArticleList();
 
         public Form1()
@@ -32,6 +32,19 @@ namespace WFAplikacija
 
             //Dohavti sve dostupne artikle u ArtiklListu            
             allArticles = XmlManager.GetArticles();
+
+            //Postavi usera
+            User user = new User(0, "TESTN", "TESTS", "TEST");
+            XmlManager.user = user;
+
+            //TEST ZONE
+            BillList testList = new BillList();
+            testList = XmlManager.GetBills();
+            foreach (Bill bill in testList.bills)
+            {
+                Console.WriteLine(bill.ToString());
+                //Console.WriteLine(bill.getArticlesAsString());
+            }
 
 
         }
@@ -53,7 +66,7 @@ namespace WFAplikacija
 
             //Provjeri je li artikl vec na racunu
             bool sameArticleFound = false;
-            foreach (Article a in order)
+            foreach (Article a in orderArticles)
             {
                 if (a.ID == article.ID)
                 {
@@ -69,12 +82,12 @@ namespace WFAplikacija
                 new string[] { article.ID.ToString(), article.name, article.quantity.ToString(), article.totalPrice.ToString() }));
 
                 //Dodaj artikl na racun
-                order.Add(article);
+                orderArticles.Add(article);
             }
             else
             {
                 listViewArticles.Items.Clear();
-                foreach (Article a in order)
+                foreach (Article a in orderArticles)
                 {
                     listViewArticles.Items.Add(new ListViewItem(
                     new string[] { a.ID.ToString(), a.name, a.quantity.ToString(), a.totalPrice.ToString() }));
@@ -83,6 +96,19 @@ namespace WFAplikacija
 
 
             
+        }
+
+        private void btnComplete_Click(object sender, EventArgs e)
+        {
+            //Dodaj racun u AllBills.xml
+            Bill order = new Bill();
+            order.id = 0;
+            order.articles = orderArticles;
+
+            XmlManager.addObjectToXml(order);
+
+            listViewArticles.Items.Clear();
+            orderArticles.Clear();
         }
 
         private void btnAdminLogin_Click(object sender, EventArgs e)
@@ -105,12 +131,7 @@ namespace WFAplikacija
             WFAplikacija.RESTManager.Get(WFAplikacija.Properties.Resources.CentralniServerURL + @"Home/RequestTest", onResponse, onError);
         }
 
-        private void btnComplete_Click(object sender, EventArgs e)
-        {
-            //Dodaj racun u AllBills.xml
-            XmlManager.AddArticlesListToAllBillsXml(order);
-            listViewArticles.Items.Clear();
-        }
+       
 
         private void sendGetRequestButton_Click(object sender, EventArgs e)
         {
