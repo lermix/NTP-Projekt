@@ -9,7 +9,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Net.Http;
-using WFAplikacija.Data;
 
 namespace WFAplikacija
 {
@@ -17,7 +16,9 @@ namespace WFAplikacija
     {
 
         List<Article> orderArticles = new List<Article>();
-        ArticleList allArticles = new ArticleList();
+        ArticleCollection allArticles = new ArticleCollection();
+        Bill order = new Bill();
+
 
         public Form1()
         {
@@ -30,6 +31,9 @@ namespace WFAplikacija
             listViewArticles.Columns.Add("Quantity");
             listViewArticles.Columns.Add("Price");
 
+            //konfiguracija racuna
+            order.totalPrice = 0;
+
             //Dohavti sve dostupne artikle u ArtiklListu            
             allArticles = XmlManager.GetArticles();
 
@@ -38,11 +42,12 @@ namespace WFAplikacija
             XmlManager.user = user;
 
             //TEST ZONE
-            BillList testList = new BillList();
+            BillCollection testList = new BillCollection();
+            //testList = XmlManager.GetBills();
             testList = XmlManager.GetBills();
-            foreach (Bill bill in testList.bills)
+            foreach (Article a in allArticles.articles)
             {
-                Console.WriteLine(bill.ToString());
+                Console.WriteLine(a.ToString());
                 //Console.WriteLine(bill.getArticlesAsString());
             }
 
@@ -62,7 +67,11 @@ namespace WFAplikacija
             {
                 Console.WriteLine("Article with that buttonName does not exist");
                 return;
-            }           
+            }
+
+            //Povecaj ukupnu cijenu
+            order.totalPrice += article.price;
+            lblTotalNum.Text = order.totalPrice.ToString();
 
             //Provjeri je li artikl vec na racunu
             bool sameArticleFound = false;
@@ -101,7 +110,6 @@ namespace WFAplikacija
         private void btnComplete_Click(object sender, EventArgs e)
         {
             //Dodaj racun u AllBills.xml
-            Bill order = new Bill();
             order.id = 0;
             order.articles = orderArticles;
 

@@ -1,5 +1,4 @@
-﻿using WFAplikacija.Data;
-using WFAplikacija.dataObjects;
+﻿using WFAplikacija.dataObjects;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -36,9 +35,6 @@ namespace WFAplikacija
                 Article article = (Article)objectToAdd;
                 var articleElement = new XElement("Article");
 
-                //Add element
-                AllArticlesXml.Root.Element("Articles").Add(articleElement);
-
                 //Atributes to add
                 List<XAttribute> articleAtributes = new List<XAttribute>
                 {
@@ -54,6 +50,9 @@ namespace WFAplikacija
                     articleElement.Add(xElement);
                 }
 
+                //Add element
+                AllArticlesXml.Root.Add(articleElement);
+
                 //Save
                 AllArticlesXml.Save("../../Data/AllArticlesXML.xml");
             }
@@ -61,17 +60,17 @@ namespace WFAplikacija
             else if (objectToAdd.GetType() == typeof(Bill))
             {
                 Console.WriteLine("ObjectToAdd is Bill.");
-
                 Bill bill = (Bill)objectToAdd;
+
+                //root
+                XElement billElement = new XElement("Bill");
+
+                //Atributes
                 float totalPrice = 0;
-                var billElement = new XElement("Bill");
                 billElement.Add(new XAttribute("ID", bill.id));
                 billElement.Add(new XAttribute("Time", DateTime.Now.ToString("dd-MM-yyy HH:mm")));
                 billElement.Add(new XAttribute("User", user.username));
                 billElement.Add(new XAttribute("SavedToDatabase", user.username));
-
-                //Add element
-                AllBillsXml.Root.Element("Bills").Add(billElement);
 
                 //Add articles to bill
                 foreach (Article article in bill.articles)
@@ -93,7 +92,11 @@ namespace WFAplikacija
                     totalPrice += article.totalPrice;
                 }
 
-                billElement.Add(new XAttribute("Total", totalPrice));
+                //Add total price
+                billElement.Add(new XAttribute("Total", bill.totalPrice));
+
+                //Add element
+                AllBillsXml.Root.Add(billElement);
 
                 //Save
                 AllBillsXml.Save("../../Data/AllBills.xml");
@@ -104,48 +107,39 @@ namespace WFAplikacija
 
 
         //Dohvaca artikl prema buttonName atributu iz AllArticlesXML
-        public static ArticleList GetArticles()
+        public static ArticleCollection GetArticles()
         {
             Console.WriteLine("reading Articles");
+            ArticleCollection articles = new ArticleCollection();
 
-            ArticleList allArticles = null;
+            XmlSerializer serializer = new XmlSerializer(typeof(ArticleCollection));
 
-            //Dodavanje root elementa kako bi serializer znao koji je root element
-            XmlRootAttribute xRoot = new XmlRootAttribute();
-            xRoot.ElementName = "ArticlesCollection";
-            xRoot.IsNullable = true;
-
-            XmlSerializer serializer = new XmlSerializer(typeof(ArticleList), xRoot);
-            XmlReader reader = AllArticlesXml.CreateReader();
-         
-            allArticles = (ArticleList)serializer.Deserialize(reader);
-            reader.Close();
+            using (StreamReader reader = new StreamReader(@"../../Data/AllArticlesXML.xml"))
+            {
+                articles = (ArticleCollection)serializer.Deserialize(reader);
+            }
 
             Console.WriteLine("reading succesful");
-
-            return allArticles;
+            return articles;
         }
 
-        public static BillList GetBills()
+        public static BillCollection GetBills()
         {
             Console.WriteLine("reading bills");
+            BillCollection bills = new BillCollection();
 
-            BillList allBills = null;
+            XmlSerializer serializer = new XmlSerializer(typeof(BillCollection));
 
-            //Dodavanje root elementa kako bi serializer znao koji je root element
-            XmlRootAttribute xRoot = new XmlRootAttribute();
-            xRoot.ElementName = "BillsCollection";
-            xRoot.IsNullable = true;
-
-            XmlSerializer serializer = new XmlSerializer(typeof(BillList), xRoot);
-            XmlReader reader = AllBillsXml.CreateReader();
-
-            allBills = (BillList)serializer.Deserialize(reader);
-            reader.Close();
+            using (StreamReader reader = new StreamReader(@"../../Data/AllBills.xml"))
+            {
+                bills = (BillCollection)serializer.Deserialize(reader);
+            }
 
             Console.WriteLine("reading succesful");
+            return bills;
 
-            return allBills;
+
+            
         }
 
 

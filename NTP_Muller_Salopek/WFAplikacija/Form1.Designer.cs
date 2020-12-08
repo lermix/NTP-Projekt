@@ -66,6 +66,8 @@
             this.customRequestLabel = new System.Windows.Forms.Label();
             this.checkServerResponseLabel = new System.Windows.Forms.Label();
             this.checkServerButton = new System.Windows.Forms.Button();
+            this.lblTotal = new System.Windows.Forms.Label();
+            this.lblTotalNum = new System.Windows.Forms.Label();
             this.tabMainControl.SuspendLayout();
             this.tabSale.SuspendLayout();
             this.tabControlArticles.SuspendLayout();
@@ -82,11 +84,13 @@
             this.tabMainControl.Location = new System.Drawing.Point(2, 2);
             this.tabMainControl.Name = "tabMainControl";
             this.tabMainControl.SelectedIndex = 0;
-            this.tabMainControl.Size = new System.Drawing.Size(800, 448);
+            this.tabMainControl.Size = new System.Drawing.Size(800, 473);
             this.tabMainControl.TabIndex = 0;
             // 
             // tabSale
             // 
+            this.tabSale.Controls.Add(this.lblTotalNum);
+            this.tabSale.Controls.Add(this.lblTotal);
             this.tabSale.Controls.Add(this.btnComplete);
             this.tabSale.Controls.Add(this.tabControlArticles);
             this.tabSale.Controls.Add(this.label1);
@@ -94,7 +98,7 @@
             this.tabSale.Location = new System.Drawing.Point(4, 25);
             this.tabSale.Name = "tabSale";
             this.tabSale.Padding = new System.Windows.Forms.Padding(3);
-            this.tabSale.Size = new System.Drawing.Size(792, 419);
+            this.tabSale.Size = new System.Drawing.Size(792, 444);
             this.tabSale.TabIndex = 0;
             this.tabSale.Text = "Sale";
             this.tabSale.UseVisualStyleBackColor = true;
@@ -450,11 +454,29 @@
             this.checkServerButton.UseVisualStyleBackColor = true;
             this.checkServerButton.Click += new System.EventHandler(this.checkServerButton_Click);
             // 
+            // lblTotal
+            // 
+            this.lblTotal.AutoSize = true;
+            this.lblTotal.Location = new System.Drawing.Point(7, 419);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(58, 17);
+            this.lblTotal.TabIndex = 5;
+            this.lblTotal.Text = "TOTAL:";
+            // 
+            // lblTotalNum
+            // 
+            this.lblTotalNum.AutoSize = true;
+            this.lblTotalNum.Location = new System.Drawing.Point(71, 419);
+            this.lblTotalNum.Name = "lblTotalNum";
+            this.lblTotalNum.Size = new System.Drawing.Size(16, 17);
+            this.lblTotalNum.TabIndex = 6;
+            this.lblTotalNum.Text = "0";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 478);
             this.Controls.Add(this.tabMainControl);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -510,6 +532,8 @@
         private System.Windows.Forms.Label sampleLoginUsernameLabel;
         private System.Windows.Forms.Label sampleLoginLabel;
         private System.Windows.Forms.Label sampleLoginExampleBodyLabel;
+        private System.Windows.Forms.Label lblTotalNum;
+        private System.Windows.Forms.Label lblTotal;
     }
 }
 

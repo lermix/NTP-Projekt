@@ -50,10 +50,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="dataObjects\Article.cs" />
+    <Compile Include="dataObjects\ArticleCollection.cs" />
     <Compile Include="dataObjects\Bill.cs" />
-    <Compile Include="dataObjects\BillList.cs" />
+    <Compile Include="dataObjects\BillCollection.cs" />
     <Compile Include="dataObjects\User.cs" />
-    <Compile Include="dataObjects\ArticleList.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

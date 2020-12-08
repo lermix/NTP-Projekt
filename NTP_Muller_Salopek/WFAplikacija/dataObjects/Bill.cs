@@ -8,20 +8,20 @@ using System.Xml.Serialization;
 namespace WFAplikacija.dataObjects
 {
     [Serializable()]
-    [XmlRoot("Bills")]
+    [XmlRoot("Bill")]
     public class Bill
     {
         private DateTime dateTimePrivate;
-        
-        [XmlArray("Bill")]
-        [XmlArrayItem("Article", typeof(Article))]
+
+        [XmlElement(ElementName = "Article")]
         public List<Article> articles { get; set; }
         [XmlAttribute("User")]
         public string user { get; set; } //Username
         [XmlAttribute("Total")]
-        public int totalPrice { get; set; }
+        public float totalPrice { get; set; }
         [XmlAttribute("ID")]
         public int id { get; set; }
+
         [XmlAttribute("Time")]
         public string dateTimeString
         {
@@ -60,4 +60,5 @@ namespace WFAplikacija.dataObjects
         }
 
     }
+
 }
