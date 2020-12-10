@@ -26,6 +26,7 @@ namespace WFAplikacija
 
         public static void addObjectToXml(object objectToAdd)
         {
+            if (objectToAdd == null){return;}
             Console.WriteLine("Appending objet to xml.");
             //DODAJEMO ARTIKL-----------------------------------
             if (objectToAdd.GetType() == typeof(Article))
@@ -136,11 +137,33 @@ namespace WFAplikacija
             }
 
             Console.WriteLine("reading succesful");
-            return bills;
-
-
-            
+            return bills;            
         }
+
+        public static void ReplaceArticle(Article newArticle)
+        {
+            /*
+            Console.WriteLine("Replacing Article", newArticle);
+            var query = from articles in AllArticlesXml.Root.Elements("Article")
+                        select articles;
+            foreach (XElement article in query)
+            {
+                Console.WriteLine("ID SEARCH: ", article.Attribute("name").Value);
+                if (int.Parse(article.Attribute("ID").Value) == newArticle.ID)
+                {
+                    Console.WriteLine("Article found");
+                    article.Attribute("name").Value = newArticle.name;
+                    article.Attribute("buttonName").Value = newArticle.buttonName;
+                    article.Attribute("price").Value = newArticle.price.ToString();
+                }
+            }*/
+
+            var target = AllArticlesXml.Elements().Where(e => e.Attribute("ID").Value == "0").Single();
+            target.Attribute("price").Value = newArticle.price.ToString();
+            AllArticlesXml.Save("../../Data/AllArticlesXML.xml");
+        }
+
+        
 
 
 

@@ -53,10 +53,10 @@ namespace WFAplikacija.dataObjects
         public override string ToString()
         {
             string returnValue =
-                "ID:" + ID + "\r\n" +
-                "name:" + name + "\r\n" +
-                "button name:" + buttonName + "\r\n" +
-                "price:" + price + "\r\n";
+                "ID: " + ID + " | " +
+                "name: " + name + " | " +
+                "button name: " + buttonName + " | " +
+                "price: " + price + " | ";
             return returnValue;
         }
 

@@ -42,14 +42,7 @@ namespace WFAplikacija
             XmlManager.user = user;
 
             //TEST ZONE
-            BillCollection testList = new BillCollection();
-            //testList = XmlManager.GetBills();
-            testList = XmlManager.GetBills();
-            foreach (Article a in allArticles.articles)
-            {
-                Console.WriteLine(a.ToString());
-                //Console.WriteLine(bill.getArticlesAsString());
-            }
+            
 
 
         }

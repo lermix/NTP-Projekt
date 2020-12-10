@@ -1,6 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ArticleCollection>
-    <Article ID="0" name="CocaCola" buttonName="CocaCola" price="12" />
-    <Article ID="1" name="Sprite" buttonName="Sprite" price="12" />
-    <Article ID="2" name="Kava" buttonName="Kava" price="8" />
+  <Article ID="0" name="CocaCola" buttonName="CocaCola" price="12" />
+  <Article ID="1" name="Sprite" buttonName="Sprite" price="12" />
+  <Article ID="2" name="Kava" buttonName="Kava" price="8" />
+  <Article ID="3" name="Nescaffe vanilija" buttonName="Ness Vanilija" price="15" />
+  <Article ID="4" name="Nescaffe Cokolada" buttonName="Ness Cokolada" price="15" />
+  <Article ID="5" name="Pan" buttonName="Pan" price="20" />
 </ArticleCollection>
