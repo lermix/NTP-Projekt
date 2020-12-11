@@ -12,18 +12,26 @@ namespace WFAplikacija.Tools
     class Cryptography
     {
         /// <summary>
-        /// Method that calculates SHA512 hash and returns it as a string.
+        /// Method that converts bytes that were hashed into a string. String may not contain readable/printable characters.
         /// </summary>
-        public static string makeSha512(string input)
+        public static string byteArrayToString(byte[] hash)
         {
-            string resultString;
+            return System.Text.Encoding.Default.GetString(hash);
+        }
+
+        /// <summary>
+        /// Method that calculates SHA512 hash and returns it as byte[] of length 64 (512 bits = 64 Bytes.
+        /// To get it as a string, use method WFAplikacija.Tools.Cryptography.byteArrayToString.
+        /// </summary>
+        public static byte[] makeSha512(string input)
+        {
+            byte[] hash;
             using (System.Security.Cryptography.SHA512 shaM = new System.Security.Cryptography.SHA512Managed())
             {
                 var data = System.Text.Encoding.UTF8.GetBytes(input);
-                byte[] hash = shaM.ComputeHash(data);
-                resultString = System.Text.Encoding.Default.GetString(hash);
+                hash = shaM.ComputeHash(data);
             }
-            return resultString;
+            return hash;
         }
     }
 }
