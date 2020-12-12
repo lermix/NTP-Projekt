@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Net.Http;
+using WFAplikacija.Tools;
 
 namespace WFAplikacija
 {
@@ -16,7 +17,7 @@ namespace WFAplikacija
     {
 
         List<Article> orderArticles = new List<Article>();
-        ArticleCollection allArticles = new ArticleCollection();
+        ArticleCollection articleCollection = new ArticleCollection();
         Bill order = new Bill();
 
 
@@ -35,16 +36,13 @@ namespace WFAplikacija
             order.totalPrice = 0;
 
             //Dohavti sve dostupne artikle u ArtiklListu            
-            allArticles = XmlManager.GetArticles();
+            articleCollection = XmlManager.GetArticles();
 
             //Postavi usera
             User user = new User(0, "TESTN", "TESTS", "TEST");
             XmlManager.user = user;
-
             //TEST ZONE
-            
-
-
+            PDFManager.BillsXmlToPdf();
         }
 
         private void ArticleButtonClicked(object sender, EventArgs e)
@@ -54,7 +52,7 @@ namespace WFAplikacija
 
             //Povuci podatke o artiklu iz liste artikala
             Article article = new Article();
-            article = allArticles.articles.FirstOrDefault(tempArticle => tempArticle.checkButtonName(button.Text));
+            article = articleCollection.articles.FirstOrDefault(tempArticle => tempArticle.checkButtonName(button.Text));
 
             if (article == null)
             {
@@ -145,13 +143,18 @@ namespace WFAplikacija
             WFAplikacija.Tools.RESTManager.Get(url, onResponse, onError);
         }
 
-        private void sendSampleLoginButton_Click(object sender, EventArgs e)
+      private void sendSampleLoginButton_Click(object sender, EventArgs e)
         {
             string url = WFAplikacija.Properties.Resources.CentralniServerURL + @"/User";
 
             var usernameText = this.sampleLoginUsernameTextBox.Text;
             var passwordText = this.sampleLoginPasswordTextBox.Text;
-            var hashedPasswordText = WFAplikacija.Tools.Cryptography.makeSha512(passwordText);
+
+            //Moj edit da se rijesim errora
+            string hashedPasswordText = WFAplikacija.Tools.Cryptography.makeSha512(passwordText).ToString();
+
+            
+
 
             this.sampleLoginResponseLabel.Text = "Sending request to " + url +
                 "\nUser: " + usernameText +
@@ -163,6 +166,31 @@ namespace WFAplikacija
             Action<string> onResponse = (string response) => { this.sampleLoginResponseLabel.Text = "Server response: " + response; };
             Action onError = () => { this.sampleLoginResponseLabel.Text = "ERROR - No response."; };
             WFAplikacija.Tools.RESTManager.Post(url, postRequestBody, onResponse, onError);
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            //DataGridView config
+            dtReports.ColumnCount = 5;
+            dtReports.Columns[0].Name = "ID";
+            dtReports.Columns[1].Name = "user";
+            dtReports.Columns[2].Name = "total";
+            dtReports.Columns[3].Name = "time";
+            dtReports.Columns[4].Name = "number of articles";
+            
+            //Add bills to dataGridView
+            BillCollection billCollection = XmlManager.GetBills();
+            for (int i = 0; i < billCollection.Bills.Count; i++)
+            {               
+                dtReports.Rows.Add(new string[] {
+                    billCollection.Bills[i].id.ToString(),
+                    billCollection.Bills[i].user,
+                    billCollection.Bills[i].totalPrice.ToString(),
+                    billCollection.Bills[i].dateTime.ToString(),
+                    billCollection.Bills[i].articles.Count.ToString()
+                });
+            }
+            
         }
     }
 }

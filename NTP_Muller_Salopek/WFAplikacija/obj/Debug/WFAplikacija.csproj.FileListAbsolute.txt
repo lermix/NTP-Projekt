@@ -25,3 +25,12 @@ C:\Users\Alen\Desktop\faks\NTP projekt\NTP-Projekt\NTP_Muller_Salopek\WFAplikaci
 C:\Users\Alen\Desktop\faks\NTP projekt\NTP-Projekt\NTP_Muller_Salopek\WFAplikacija\obj\Debug\WFAplikacija.csproj.CopyComplete
 C:\Users\Alen\Desktop\faks\NTP projekt\NTP-Projekt\NTP_Muller_Salopek\WFAplikacija\obj\Debug\WFAplikacija.exe
 C:\Users\Alen\Desktop\faks\NTP projekt\NTP-Projekt\NTP_Muller_Salopek\WFAplikacija\obj\Debug\WFAplikacija.pdb
+C:\Users\Alen\Desktop\faks\NTP projekt\NTP-Projekt\NTP_Muller_Salopek\WFAplikacija\bin\Debug\Syncfusion.Compression.Base.dll
+C:\Users\Alen\Desktop\faks\NTP projekt\NTP-Projekt\NTP_Muller_Salopek\WFAplikacija\bin\Debug\Syncfusion.Licensing.dll
+C:\Users\Alen\Desktop\faks\NTP projekt\NTP-Projekt\NTP_Muller_Salopek\WFAplikacija\bin\Debug\Syncfusion.Pdf.Base.dll
+C:\Users\Alen\Desktop\faks\NTP projekt\NTP-Projekt\NTP_Muller_Salopek\WFAplikacija\bin\Debug\Syncfusion.Compression.Base.xml
+C:\Users\Alen\Desktop\faks\NTP projekt\NTP-Projekt\NTP_Muller_Salopek\WFAplikacija\bin\Debug\Syncfusion.Pdf.Base.xml
+C:\Users\Alen\Desktop\faks\NTP projekt\NTP-Projekt\NTP_Muller_Salopek\WFAplikacija\bin\Debug\Syncfusion.HtmlConverter.Base.dll
+C:\Users\Alen\Desktop\faks\NTP projekt\NTP-Projekt\NTP_Muller_Salopek\WFAplikacija\bin\Debug\Microsoft.mshtml.dll
+C:\Users\Alen\Desktop\faks\NTP projekt\NTP-Projekt\NTP_Muller_Salopek\WFAplikacija\bin\Debug\System.Buffers.dll
+C:\Users\Alen\Desktop\faks\NTP projekt\NTP-Projekt\NTP_Muller_Salopek\WFAplikacija\bin\Debug\Syncfusion.HtmlConverter.Base.xml

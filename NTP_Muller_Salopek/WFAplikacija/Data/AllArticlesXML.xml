@@ -6,4 +6,5 @@
   <Article ID="3" name="Nescaffe vanilija" buttonName="Ness Vanilija" price="15" />
   <Article ID="4" name="Nescaffe Cokolada" buttonName="Ness Cokolada" price="15" />
   <Article ID="5" name="Pan" buttonName="Pan" price="20" />
+  <Article ID="7" name="Vodka" buttonName="Vodka" price="12" />
 </ArticleCollection>

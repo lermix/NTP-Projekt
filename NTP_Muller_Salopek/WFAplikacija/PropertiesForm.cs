@@ -23,10 +23,6 @@ namespace WFAplikacija
             //konfiguracija izgleda            
             EditAndDeleteListShow(false);
 
-            articlesCollection = XmlManager.GetArticles();
-
-
-
         }
 
         private void cmbArticleManager_SelectedIndexChanged(object sender, EventArgs e)
@@ -38,14 +34,17 @@ namespace WFAplikacija
                 case "Insert article":
                     txtBoxEnabled(true);
                     EditAndDeleteListShow(false);
+                    txtBoxArticleManagerId.Text = XmlManager.getNextIDArticle().ToString();
                     break;
                 case "Delete article":
                     txtBoxEnabled(false);
                     EditAndDeleteListShow(true);
+                    txtBoxArticleManagerId.Text = "";
                     break;
                 case "Edit article":
                     txtBoxEnabled(true);
                     EditAndDeleteListShow(true);
+                    txtBoxArticleManagerId.Text = "";
                     break;
                 default:
                     break;
@@ -61,15 +60,24 @@ namespace WFAplikacija
                     {
                         XmlManager.addObjectToXml(GetFormArticle());
                         InserAndEditControlsClear();
+                        txtBoxArticleManagerId.Text = XmlManager.getNextIDArticle().ToString();
                     }                    
                     break;
                 case "Delete article":
+                    if (GetFormArticle() != null)
+                    {
+                        XmlManager.DeleteArticle(GetFormArticle());
+                        InserAndEditControlsClear();
+                    }
                     break;
                 case "Edit article":
                     if (GetFormArticle() != null)
                     {
                         XmlManager.ReplaceArticle(GetFormArticle());
                         InserAndEditControlsClear();
+
+                        listBoxArticleManagerArticles.Items.Clear();
+                        FIllListBox();
                     }                    
                     break;
                 default:
@@ -78,10 +86,8 @@ namespace WFAplikacija
         }
 
         private void listBoxArticleManagerArticles_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            //ID prema listBoxu
-            int Id = int.Parse(listBoxArticleManagerArticles.SelectedItem.ToString()[4].ToString());
-            Article articleSelected = articlesCollection.articles.First(item => item.ID == Id);
+        { 
+            Article articleSelected = (Article)listBoxArticleManagerArticles.SelectedItem;
             FillTxtBoxesWithSelectedArticle(articleSelected);
 
         }
@@ -152,7 +158,7 @@ namespace WFAplikacija
         {
             Article article = new Article();
             float price = 0;
-            article.ID = 11;
+            article.ID = int.Parse(txtBoxArticleManagerId.Text);
             if(float.TryParse(txtBoxArticleManagerPrice.Text,out price))
             {
                 article.price = price;
@@ -192,9 +198,10 @@ namespace WFAplikacija
         }
         private void FIllListBox()
         {
+            articlesCollection = XmlManager.GetArticles();
             for (int i = 0; i < articlesCollection.articles.Count; i++)
             {
-                listBoxArticleManagerArticles.Items.Add(articlesCollection.articles[i].ToString());
+                listBoxArticleManagerArticles.Items.Add(articlesCollection.articles[i]);
             }
         }
 

@@ -15,14 +15,17 @@ namespace WFAplikacija
 {
 
     //Bavi se xml fileovima
-    public class XmlManager
+    public static class XmlManager
     {
+        public static string AllArticlesXmlLoaction = "../../Data/AllArticlesXML.xml";
+        public static string AllBillXmlLoaction = "../../Data/AllBills.xml";
+
         static List<Article> allArticles = new List<Article>();
 
         public static User user { get; set; }
 
-        static XDocument AllArticlesXml = XDocument.Load("../../Data/AllArticlesXML.xml");
-        static XDocument AllBillsXml = XDocument.Load("../../Data/AllBills.xml");
+        static XDocument AllArticlesXml = XDocument.Load(AllArticlesXmlLoaction);
+        static XDocument AllBillsXml = XDocument.Load(AllBillXmlLoaction);
 
         public static void addObjectToXml(object objectToAdd)
         {
@@ -142,26 +145,24 @@ namespace WFAplikacija
 
         public static void ReplaceArticle(Article newArticle)
         {
-            /*
-            Console.WriteLine("Replacing Article", newArticle);
-            var query = from articles in AllArticlesXml.Root.Elements("Article")
-                        select articles;
-            foreach (XElement article in query)
-            {
-                Console.WriteLine("ID SEARCH: ", article.Attribute("name").Value);
-                if (int.Parse(article.Attribute("ID").Value) == newArticle.ID)
-                {
-                    Console.WriteLine("Article found");
-                    article.Attribute("name").Value = newArticle.name;
-                    article.Attribute("buttonName").Value = newArticle.buttonName;
-                    article.Attribute("price").Value = newArticle.price.ToString();
-                }
-            }*/
-
-            var target = AllArticlesXml.Elements().Where(e => e.Attribute("ID").Value == "0").Single();
+            var target = AllArticlesXml.Root.Elements().Where(e => e.Attribute("ID").Value == newArticle.ID.ToString()).Single();
             target.Attribute("price").Value = newArticle.price.ToString();
             AllArticlesXml.Save("../../Data/AllArticlesXML.xml");
         }
+
+        public static void DeleteArticle(Article articleToDelete)
+        {
+            var target = AllArticlesXml.Root.Elements().Where(e => e.Attribute("ID").Value == articleToDelete.ID.ToString()).Single();
+            target.Remove();
+            AllArticlesXml.Save("../../Data/AllArticlesXML.xml");
+        }
+
+        public static int getNextIDArticle()
+        {
+            int target = AllArticlesXml.Root.Elements().Max(e => (int)e.Attribute("ID"));
+            return target+1;
+        }
+
 
         
 

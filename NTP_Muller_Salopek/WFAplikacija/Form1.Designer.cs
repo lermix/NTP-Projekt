@@ -31,6 +31,8 @@
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
             this.tabMainControl = new System.Windows.Forms.TabControl();
             this.tabSale = new System.Windows.Forms.TabPage();
+            this.lblTotalNum = new System.Windows.Forms.Label();
+            this.lblTotal = new System.Windows.Forms.Label();
             this.btnComplete = new System.Windows.Forms.Button();
             this.tabControlArticles = new System.Windows.Forms.TabControl();
             this.tabArctile1 = new System.Windows.Forms.TabPage();
@@ -46,7 +48,7 @@
             this.tBoxAdminPass = new System.Windows.Forms.TextBox();
             this.tBoxAdminUsername = new System.Windows.Forms.TextBox();
             this.btnAdminLogin = new System.Windows.Forms.Button();
-            this.tabReports = new System.Windows.Forms.TabPage();
+            this.tabDatabase = new System.Windows.Forms.TabPage();
             this.sampleLoginExampleBodyLabel = new System.Windows.Forms.Label();
             this.sampleLoginExampleTitleLabel = new System.Windows.Forms.Label();
             this.sampleLoginUsernameTextBox = new System.Windows.Forms.TextBox();
@@ -66,25 +68,33 @@
             this.customRequestLabel = new System.Windows.Forms.Label();
             this.checkServerResponseLabel = new System.Windows.Forms.Label();
             this.checkServerButton = new System.Windows.Forms.Button();
-            this.lblTotal = new System.Windows.Forms.Label();
-            this.lblTotalNum = new System.Windows.Forms.Label();
+            this.tabReports = new System.Windows.Forms.TabPage();
+            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.pdfConfig1 = new Syncfusion.Pdf.PdfConfig();
+            this.dtReports = new System.Windows.Forms.DataGridView();
             this.tabMainControl.SuspendLayout();
             this.tabSale.SuspendLayout();
             this.tabControlArticles.SuspendLayout();
             this.tabArctile1.SuspendLayout();
             this.tabProperties.SuspendLayout();
+            this.tabDatabase.SuspendLayout();
             this.tabReports.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtReports)).BeginInit();
             this.SuspendLayout();
             // 
             // tabMainControl
             // 
             this.tabMainControl.Controls.Add(this.tabSale);
             this.tabMainControl.Controls.Add(this.tabProperties);
+            this.tabMainControl.Controls.Add(this.tabDatabase);
             this.tabMainControl.Controls.Add(this.tabReports);
-            this.tabMainControl.Location = new System.Drawing.Point(2, 2);
+            this.tabMainControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabMainControl.Location = new System.Drawing.Point(0, 0);
             this.tabMainControl.Name = "tabMainControl";
             this.tabMainControl.SelectedIndex = 0;
-            this.tabMainControl.Size = new System.Drawing.Size(800, 473);
+            this.tabMainControl.Size = new System.Drawing.Size(800, 478);
             this.tabMainControl.TabIndex = 0;
             // 
             // tabSale
@@ -98,14 +108,32 @@
             this.tabSale.Location = new System.Drawing.Point(4, 25);
             this.tabSale.Name = "tabSale";
             this.tabSale.Padding = new System.Windows.Forms.Padding(3);
-            this.tabSale.Size = new System.Drawing.Size(792, 444);
+            this.tabSale.Size = new System.Drawing.Size(792, 449);
             this.tabSale.TabIndex = 0;
             this.tabSale.Text = "Sale";
             this.tabSale.UseVisualStyleBackColor = true;
             // 
+            // lblTotalNum
+            // 
+            this.lblTotalNum.AutoSize = true;
+            this.lblTotalNum.Location = new System.Drawing.Point(71, 419);
+            this.lblTotalNum.Name = "lblTotalNum";
+            this.lblTotalNum.Size = new System.Drawing.Size(16, 17);
+            this.lblTotalNum.TabIndex = 6;
+            this.lblTotalNum.Text = "0";
+            // 
+            // lblTotal
+            // 
+            this.lblTotal.AutoSize = true;
+            this.lblTotal.Location = new System.Drawing.Point(7, 419);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(58, 17);
+            this.lblTotal.TabIndex = 5;
+            this.lblTotal.Text = "TOTAL:";
+            // 
             // btnComplete
             // 
-            this.btnComplete.Location = new System.Drawing.Point(308, 388);
+            this.btnComplete.Location = new System.Drawing.Point(312, 393);
             this.btnComplete.Name = "btnComplete";
             this.btnComplete.Size = new System.Drawing.Size(75, 23);
             this.btnComplete.TabIndex = 4;
@@ -194,7 +222,7 @@
             this.tabProperties.Location = new System.Drawing.Point(4, 25);
             this.tabProperties.Name = "tabProperties";
             this.tabProperties.Padding = new System.Windows.Forms.Padding(3);
-            this.tabProperties.Size = new System.Drawing.Size(792, 419);
+            this.tabProperties.Size = new System.Drawing.Size(792, 444);
             this.tabProperties.TabIndex = 1;
             this.tabProperties.Text = "Properties";
             this.tabProperties.UseVisualStyleBackColor = true;
@@ -250,35 +278,35 @@
             this.btnAdminLogin.UseVisualStyleBackColor = true;
             this.btnAdminLogin.Click += new System.EventHandler(this.btnAdminLogin_Click);
             // 
-            // tabReports
+            // tabDatabase
             // 
-            this.tabReports.Controls.Add(this.sampleLoginExampleBodyLabel);
-            this.tabReports.Controls.Add(this.sampleLoginExampleTitleLabel);
-            this.tabReports.Controls.Add(this.sampleLoginUsernameTextBox);
-            this.tabReports.Controls.Add(this.sampleLoginPasswordLabel);
-            this.tabReports.Controls.Add(this.sampleLoginResponseLabel);
-            this.tabReports.Controls.Add(this.sendSampleLoginButton);
-            this.tabReports.Controls.Add(this.sampleLoginPasswordTextBox);
-            this.tabReports.Controls.Add(this.sampleLoginUsernameLabel);
-            this.tabReports.Controls.Add(this.sampleLoginLabel);
-            this.tabReports.Controls.Add(this.customGetRequestBaseTextBox);
-            this.tabReports.Controls.Add(this.label2);
-            this.tabReports.Controls.Add(this.checkServerMainLabel);
-            this.tabReports.Controls.Add(this.customGetRequestResponseLabel);
-            this.tabReports.Controls.Add(this.sendGetRequestButton);
-            this.tabReports.Controls.Add(this.customGetRequestActionTextBox);
-            this.tabReports.Controls.Add(this.customRequestUrlLabel);
-            this.tabReports.Controls.Add(this.customRequestLabel);
-            this.tabReports.Controls.Add(this.checkServerResponseLabel);
-            this.tabReports.Controls.Add(this.checkServerButton);
-            this.tabReports.Location = new System.Drawing.Point(4, 25);
-            this.tabReports.Name = "tabReports";
-            this.tabReports.Padding = new System.Windows.Forms.Padding(3);
-            this.tabReports.Size = new System.Drawing.Size(792, 419);
-            this.tabReports.TabIndex = 2;
-            this.tabReports.Text = "Reports";
-            this.tabReports.UseVisualStyleBackColor = true;
-            this.tabReports.Click += new System.EventHandler(this.tabReports_Click);
+            this.tabDatabase.Controls.Add(this.sampleLoginExampleBodyLabel);
+            this.tabDatabase.Controls.Add(this.sampleLoginExampleTitleLabel);
+            this.tabDatabase.Controls.Add(this.sampleLoginUsernameTextBox);
+            this.tabDatabase.Controls.Add(this.sampleLoginPasswordLabel);
+            this.tabDatabase.Controls.Add(this.sampleLoginResponseLabel);
+            this.tabDatabase.Controls.Add(this.sendSampleLoginButton);
+            this.tabDatabase.Controls.Add(this.sampleLoginPasswordTextBox);
+            this.tabDatabase.Controls.Add(this.sampleLoginUsernameLabel);
+            this.tabDatabase.Controls.Add(this.sampleLoginLabel);
+            this.tabDatabase.Controls.Add(this.customGetRequestBaseTextBox);
+            this.tabDatabase.Controls.Add(this.label2);
+            this.tabDatabase.Controls.Add(this.checkServerMainLabel);
+            this.tabDatabase.Controls.Add(this.customGetRequestResponseLabel);
+            this.tabDatabase.Controls.Add(this.sendGetRequestButton);
+            this.tabDatabase.Controls.Add(this.customGetRequestActionTextBox);
+            this.tabDatabase.Controls.Add(this.customRequestUrlLabel);
+            this.tabDatabase.Controls.Add(this.customRequestLabel);
+            this.tabDatabase.Controls.Add(this.checkServerResponseLabel);
+            this.tabDatabase.Controls.Add(this.checkServerButton);
+            this.tabDatabase.Location = new System.Drawing.Point(4, 25);
+            this.tabDatabase.Name = "tabDatabase";
+            this.tabDatabase.Padding = new System.Windows.Forms.Padding(3);
+            this.tabDatabase.Size = new System.Drawing.Size(792, 444);
+            this.tabDatabase.TabIndex = 2;
+            this.tabDatabase.Text = "Database";
+            this.tabDatabase.UseVisualStyleBackColor = true;
+            this.tabDatabase.Click += new System.EventHandler(this.tabReports_Click);
             // 
             // sampleLoginExampleBodyLabel
             // 
@@ -454,23 +482,66 @@
             this.checkServerButton.UseVisualStyleBackColor = true;
             this.checkServerButton.Click += new System.EventHandler(this.checkServerButton_Click);
             // 
-            // lblTotal
+            // tabReports
             // 
-            this.lblTotal.AutoSize = true;
-            this.lblTotal.Location = new System.Drawing.Point(7, 419);
-            this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(58, 17);
-            this.lblTotal.TabIndex = 5;
-            this.lblTotal.Text = "TOTAL:";
+            this.tabReports.Controls.Add(this.dtReports);
+            this.tabReports.Controls.Add(this.radioButton3);
+            this.tabReports.Controls.Add(this.radioButton2);
+            this.tabReports.Controls.Add(this.radioButton1);
+            this.tabReports.Location = new System.Drawing.Point(4, 25);
+            this.tabReports.Name = "tabReports";
+            this.tabReports.Padding = new System.Windows.Forms.Padding(3);
+            this.tabReports.Size = new System.Drawing.Size(792, 449);
+            this.tabReports.TabIndex = 3;
+            this.tabReports.Text = "Reports";
+            this.tabReports.UseVisualStyleBackColor = true;
             // 
-            // lblTotalNum
+            // radioButton3
             // 
-            this.lblTotalNum.AutoSize = true;
-            this.lblTotalNum.Location = new System.Drawing.Point(71, 419);
-            this.lblTotalNum.Name = "lblTotalNum";
-            this.lblTotalNum.Size = new System.Drawing.Size(16, 17);
-            this.lblTotalNum.TabIndex = 6;
-            this.lblTotalNum.Text = "0";
+            this.radioButton3.AutoSize = true;
+            this.radioButton3.Location = new System.Drawing.Point(3, 60);
+            this.radioButton3.Name = "radioButton3";
+            this.radioButton3.Size = new System.Drawing.Size(110, 21);
+            this.radioButton3.TabIndex = 2;
+            this.radioButton3.TabStop = true;
+            this.radioButton3.Text = "radioButton3";
+            this.radioButton3.UseVisualStyleBackColor = true;
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(6, 33);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(75, 21);
+            this.radioButton2.TabIndex = 1;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "Articles";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(6, 6);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(54, 21);
+            this.radioButton1.TabIndex = 0;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "BIlls";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.Click += new System.EventHandler(this.radioButton1_CheckedChanged);
+            // 
+            // dtReports
+            // 
+            this.dtReports.AllowUserToAddRows = false;
+            this.dtReports.AllowUserToDeleteRows = false;
+            this.dtReports.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtReports.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dtReports.Location = new System.Drawing.Point(119, 6);
+            this.dtReports.Name = "dtReports";
+            this.dtReports.RowHeadersWidth = 51;
+            this.dtReports.RowTemplate.Height = 24;
+            this.dtReports.Size = new System.Drawing.Size(667, 432);
+            this.dtReports.TabIndex = 4;
             // 
             // Form1
             // 
@@ -487,8 +558,11 @@
             this.tabArctile1.ResumeLayout(false);
             this.tabProperties.ResumeLayout(false);
             this.tabProperties.PerformLayout();
+            this.tabDatabase.ResumeLayout(false);
+            this.tabDatabase.PerformLayout();
             this.tabReports.ResumeLayout(false);
             this.tabReports.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtReports)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -511,7 +585,7 @@
         private System.Windows.Forms.TextBox tBoxAdminPass;
         private System.Windows.Forms.TextBox tBoxAdminUsername;
         private System.Windows.Forms.Button btnAdminLogin;
-        private System.Windows.Forms.TabPage tabReports;
+        private System.Windows.Forms.TabPage tabDatabase;
         private System.Windows.Forms.Button checkServerButton;
         private System.Windows.Forms.Label checkServerResponseLabel;
         private System.Windows.Forms.Button btnComplete;
@@ -534,6 +608,12 @@
         private System.Windows.Forms.Label sampleLoginExampleBodyLabel;
         private System.Windows.Forms.Label lblTotalNum;
         private System.Windows.Forms.Label lblTotal;
+        private System.Windows.Forms.TabPage tabReports;
+        private System.Windows.Forms.RadioButton radioButton3;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.DataGridView dtReports;
+        private Syncfusion.Pdf.PdfConfig pdfConfig1;
     }
 }
 
