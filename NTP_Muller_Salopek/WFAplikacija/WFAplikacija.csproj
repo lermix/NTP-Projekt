@@ -83,7 +83,7 @@
     <Compile Include="Tools\Cryptography.cs" />
     <Compile Include="Tools\PDFManager.cs" />
     <Compile Include="Tools\RESTManager.cs" />
-    <Compile Include="XmlManager.cs" />
+    <Compile Include="Tools\XmlManager.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -117,6 +117,9 @@
   <ItemGroup>
     <Content Include="Data\AllArticlesXML.xml" />
     <Content Include="Data\AllBills.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="PDFReports\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -11,7 +11,7 @@ using System.Xml.Linq;
 using System.Xml.Serialization;
 using System.Xml.Xsl;
 
-namespace WFAplikacija
+namespace WFAplikacija.Tools
 {
 
     //Bavi se xml fileovima

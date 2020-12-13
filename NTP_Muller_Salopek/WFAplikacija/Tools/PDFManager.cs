@@ -86,7 +86,7 @@ namespace WFAplikacija.Tools
             PdfDocument document = htmlToPDFConverter.Convert(Path.GetFullPath(XmlManager.AllBillXmlLoaction));
 
             //Save the PDF document
-            document.Save(@"C:\Users\Alen\Desktop\output.pdf");
+            document.Save(@"../../PDFReports/output.pdf");
 
             //Close the instance of PdfDocument
             document.Close(true);
