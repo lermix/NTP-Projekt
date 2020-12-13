@@ -69,11 +69,11 @@
             this.checkServerResponseLabel = new System.Windows.Forms.Label();
             this.checkServerButton = new System.Windows.Forms.Button();
             this.tabReports = new System.Windows.Forms.TabPage();
+            this.dtReports = new System.Windows.Forms.DataGridView();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.pdfConfig1 = new Syncfusion.Pdf.PdfConfig();
-            this.dtReports = new System.Windows.Forms.DataGridView();
             this.tabMainControl.SuspendLayout();
             this.tabSale.SuspendLayout();
             this.tabControlArticles.SuspendLayout();
@@ -222,7 +222,7 @@
             this.tabProperties.Location = new System.Drawing.Point(4, 25);
             this.tabProperties.Name = "tabProperties";
             this.tabProperties.Padding = new System.Windows.Forms.Padding(3);
-            this.tabProperties.Size = new System.Drawing.Size(792, 444);
+            this.tabProperties.Size = new System.Drawing.Size(792, 449);
             this.tabProperties.TabIndex = 1;
             this.tabProperties.Text = "Properties";
             this.tabProperties.UseVisualStyleBackColor = true;
@@ -302,7 +302,7 @@
             this.tabDatabase.Location = new System.Drawing.Point(4, 25);
             this.tabDatabase.Name = "tabDatabase";
             this.tabDatabase.Padding = new System.Windows.Forms.Padding(3);
-            this.tabDatabase.Size = new System.Drawing.Size(792, 444);
+            this.tabDatabase.Size = new System.Drawing.Size(792, 449);
             this.tabDatabase.TabIndex = 2;
             this.tabDatabase.Text = "Database";
             this.tabDatabase.UseVisualStyleBackColor = true;
@@ -496,6 +496,19 @@
             this.tabReports.Text = "Reports";
             this.tabReports.UseVisualStyleBackColor = true;
             // 
+            // dtReports
+            // 
+            this.dtReports.AllowUserToAddRows = false;
+            this.dtReports.AllowUserToDeleteRows = false;
+            this.dtReports.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtReports.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dtReports.Location = new System.Drawing.Point(119, 6);
+            this.dtReports.Name = "dtReports";
+            this.dtReports.RowHeadersWidth = 51;
+            this.dtReports.RowTemplate.Height = 24;
+            this.dtReports.Size = new System.Drawing.Size(667, 432);
+            this.dtReports.TabIndex = 4;
+            // 
             // radioButton3
             // 
             this.radioButton3.AutoSize = true;
@@ -529,19 +542,6 @@
             this.radioButton1.Text = "BIlls";
             this.radioButton1.UseVisualStyleBackColor = true;
             this.radioButton1.Click += new System.EventHandler(this.radioButton1_CheckedChanged);
-            // 
-            // dtReports
-            // 
-            this.dtReports.AllowUserToAddRows = false;
-            this.dtReports.AllowUserToDeleteRows = false;
-            this.dtReports.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtReports.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dtReports.Location = new System.Drawing.Point(119, 6);
-            this.dtReports.Name = "dtReports";
-            this.dtReports.RowHeadersWidth = 51;
-            this.dtReports.RowTemplate.Height = 24;
-            this.dtReports.Size = new System.Drawing.Size(667, 432);
-            this.dtReports.TabIndex = 4;
             // 
             // Form1
             // 

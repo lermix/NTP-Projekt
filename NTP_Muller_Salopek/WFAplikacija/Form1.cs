@@ -41,8 +41,9 @@ namespace WFAplikacija
             //Postavi usera
             User user = new User(0, "TESTN", "TESTS", "TEST");
             XmlManager.user = user;
+
             //TEST ZONE
-            PDFManager.BillsXmlToPdf();
+            //PDFManager.BillsXmlToPdf();
         }
 
         private void ArticleButtonClicked(object sender, EventArgs e)
@@ -170,6 +171,10 @@ namespace WFAplikacija
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
+            // Clear previous data
+            dtReports.Rows.Clear();
+            dtReports.Refresh();
+
             //DataGridView config
             dtReports.ColumnCount = 5;
             dtReports.Columns[0].Name = "ID";
@@ -177,7 +182,7 @@ namespace WFAplikacija
             dtReports.Columns[2].Name = "total";
             dtReports.Columns[3].Name = "time";
             dtReports.Columns[4].Name = "number of articles";
-            
+
             //Add bills to dataGridView
             BillCollection billCollection = XmlManager.GetBills();
             for (int i = 0; i < billCollection.Bills.Count; i++)
@@ -192,5 +197,6 @@ namespace WFAplikacija
             }
             
         }
+
     }
 }

@@ -118,8 +118,6 @@
     <Content Include="Data\AllArticlesXML.xml" />
     <Content Include="Data\AllBills.xml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="PDFReports\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
