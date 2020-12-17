@@ -48,7 +48,13 @@
             this.tBoxAdminPass = new System.Windows.Forms.TextBox();
             this.tBoxAdminUsername = new System.Windows.Forms.TextBox();
             this.btnAdminLogin = new System.Windows.Forms.Button();
+            this.tabReports = new System.Windows.Forms.TabPage();
+            this.dtReports = new System.Windows.Forms.DataGridView();
+            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.tabDatabase = new System.Windows.Forms.TabPage();
+            this.programmableButtonLabel = new System.Windows.Forms.Label();
             this.sampleLoginExampleBodyLabel = new System.Windows.Forms.Label();
             this.sampleLoginExampleTitleLabel = new System.Windows.Forms.Label();
             this.sampleLoginUsernameTextBox = new System.Windows.Forms.TextBox();
@@ -68,28 +74,24 @@
             this.customRequestLabel = new System.Windows.Forms.Label();
             this.checkServerResponseLabel = new System.Windows.Forms.Label();
             this.checkServerButton = new System.Windows.Forms.Button();
-            this.tabReports = new System.Windows.Forms.TabPage();
-            this.dtReports = new System.Windows.Forms.DataGridView();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.pdfConfig1 = new Syncfusion.Pdf.PdfConfig();
+            this.programmableButton = new System.Windows.Forms.Button();
             this.tabMainControl.SuspendLayout();
             this.tabSale.SuspendLayout();
             this.tabControlArticles.SuspendLayout();
             this.tabArctile1.SuspendLayout();
             this.tabProperties.SuspendLayout();
-            this.tabDatabase.SuspendLayout();
             this.tabReports.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtReports)).BeginInit();
+            this.tabDatabase.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabMainControl
             // 
             this.tabMainControl.Controls.Add(this.tabSale);
             this.tabMainControl.Controls.Add(this.tabProperties);
-            this.tabMainControl.Controls.Add(this.tabDatabase);
             this.tabMainControl.Controls.Add(this.tabReports);
+            this.tabMainControl.Controls.Add(this.tabDatabase);
             this.tabMainControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabMainControl.Location = new System.Drawing.Point(0, 0);
             this.tabMainControl.Name = "tabMainControl";
@@ -278,8 +280,71 @@
             this.btnAdminLogin.UseVisualStyleBackColor = true;
             this.btnAdminLogin.Click += new System.EventHandler(this.btnAdminLogin_Click);
             // 
+            // tabReports
+            // 
+            this.tabReports.Controls.Add(this.dtReports);
+            this.tabReports.Controls.Add(this.radioButton3);
+            this.tabReports.Controls.Add(this.radioButton2);
+            this.tabReports.Controls.Add(this.radioButton1);
+            this.tabReports.Location = new System.Drawing.Point(4, 25);
+            this.tabReports.Name = "tabReports";
+            this.tabReports.Padding = new System.Windows.Forms.Padding(3);
+            this.tabReports.Size = new System.Drawing.Size(792, 449);
+            this.tabReports.TabIndex = 3;
+            this.tabReports.Text = "Reports";
+            this.tabReports.UseVisualStyleBackColor = true;
+            // 
+            // dtReports
+            // 
+            this.dtReports.AllowUserToAddRows = false;
+            this.dtReports.AllowUserToDeleteRows = false;
+            this.dtReports.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtReports.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dtReports.Location = new System.Drawing.Point(119, 6);
+            this.dtReports.Name = "dtReports";
+            this.dtReports.RowHeadersWidth = 51;
+            this.dtReports.RowTemplate.Height = 24;
+            this.dtReports.Size = new System.Drawing.Size(667, 432);
+            this.dtReports.TabIndex = 4;
+            // 
+            // radioButton3
+            // 
+            this.radioButton3.AutoSize = true;
+            this.radioButton3.Location = new System.Drawing.Point(3, 60);
+            this.radioButton3.Name = "radioButton3";
+            this.radioButton3.Size = new System.Drawing.Size(110, 21);
+            this.radioButton3.TabIndex = 2;
+            this.radioButton3.TabStop = true;
+            this.radioButton3.Text = "radioButton3";
+            this.radioButton3.UseVisualStyleBackColor = true;
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(6, 33);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(75, 21);
+            this.radioButton2.TabIndex = 1;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "Articles";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(6, 6);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(54, 21);
+            this.radioButton1.TabIndex = 0;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "BIlls";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.Click += new System.EventHandler(this.radioButton1_CheckedChanged);
+            // 
             // tabDatabase
             // 
+            this.tabDatabase.Controls.Add(this.programmableButton);
+            this.tabDatabase.Controls.Add(this.programmableButtonLabel);
             this.tabDatabase.Controls.Add(this.sampleLoginExampleBodyLabel);
             this.tabDatabase.Controls.Add(this.sampleLoginExampleTitleLabel);
             this.tabDatabase.Controls.Add(this.sampleLoginUsernameTextBox);
@@ -304,9 +369,19 @@
             this.tabDatabase.Padding = new System.Windows.Forms.Padding(3);
             this.tabDatabase.Size = new System.Drawing.Size(792, 449);
             this.tabDatabase.TabIndex = 2;
-            this.tabDatabase.Text = "Database";
+            this.tabDatabase.Text = "Playground";
             this.tabDatabase.UseVisualStyleBackColor = true;
             this.tabDatabase.Click += new System.EventHandler(this.tabReports_Click);
+            // 
+            // programmableButtonLabel
+            // 
+            this.programmableButtonLabel.AutoSize = true;
+            this.programmableButtonLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.programmableButtonLabel.Location = new System.Drawing.Point(11, 411);
+            this.programmableButtonLabel.Name = "programmableButtonLabel";
+            this.programmableButtonLabel.Size = new System.Drawing.Size(349, 25);
+            this.programmableButtonLabel.TabIndex = 20;
+            this.programmableButtonLabel.Text = "Debug button (Attach any function to it)";
             // 
             // sampleLoginExampleBodyLabel
             // 
@@ -482,66 +557,16 @@
             this.checkServerButton.UseVisualStyleBackColor = true;
             this.checkServerButton.Click += new System.EventHandler(this.checkServerButton_Click);
             // 
-            // tabReports
+            // programmableButton
             // 
-            this.tabReports.Controls.Add(this.dtReports);
-            this.tabReports.Controls.Add(this.radioButton3);
-            this.tabReports.Controls.Add(this.radioButton2);
-            this.tabReports.Controls.Add(this.radioButton1);
-            this.tabReports.Location = new System.Drawing.Point(4, 25);
-            this.tabReports.Name = "tabReports";
-            this.tabReports.Padding = new System.Windows.Forms.Padding(3);
-            this.tabReports.Size = new System.Drawing.Size(792, 449);
-            this.tabReports.TabIndex = 3;
-            this.tabReports.Text = "Reports";
-            this.tabReports.UseVisualStyleBackColor = true;
-            // 
-            // dtReports
-            // 
-            this.dtReports.AllowUserToAddRows = false;
-            this.dtReports.AllowUserToDeleteRows = false;
-            this.dtReports.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtReports.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dtReports.Location = new System.Drawing.Point(119, 6);
-            this.dtReports.Name = "dtReports";
-            this.dtReports.RowHeadersWidth = 51;
-            this.dtReports.RowTemplate.Height = 24;
-            this.dtReports.Size = new System.Drawing.Size(667, 432);
-            this.dtReports.TabIndex = 4;
-            // 
-            // radioButton3
-            // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(3, 60);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(110, 21);
-            this.radioButton3.TabIndex = 2;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "radioButton3";
-            this.radioButton3.UseVisualStyleBackColor = true;
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(6, 33);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(75, 21);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Articles";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(6, 6);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(54, 21);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "BIlls";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            this.radioButton1.Click += new System.EventHandler(this.radioButton1_CheckedChanged);
+            this.programmableButton.BackColor = System.Drawing.Color.Red;
+            this.programmableButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.programmableButton.Location = new System.Drawing.Point(363, 410);
+            this.programmableButton.Name = "programmableButton";
+            this.programmableButton.Size = new System.Drawing.Size(30, 30);
+            this.programmableButton.TabIndex = 21;
+            this.programmableButton.UseVisualStyleBackColor = false;
+            this.programmableButton.Click += new System.EventHandler(this.programmableButton_Click);
             // 
             // Form1
             // 
@@ -558,11 +583,11 @@
             this.tabArctile1.ResumeLayout(false);
             this.tabProperties.ResumeLayout(false);
             this.tabProperties.PerformLayout();
-            this.tabDatabase.ResumeLayout(false);
-            this.tabDatabase.PerformLayout();
             this.tabReports.ResumeLayout(false);
             this.tabReports.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtReports)).EndInit();
+            this.tabDatabase.ResumeLayout(false);
+            this.tabDatabase.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -614,6 +639,8 @@
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.DataGridView dtReports;
         private Syncfusion.Pdf.PdfConfig pdfConfig1;
+        private System.Windows.Forms.Label programmableButtonLabel;
+        private System.Windows.Forms.Button programmableButton;
     }
 }
 

@@ -198,5 +198,11 @@ namespace WFAplikacija
             
         }
 
+        private void programmableButton_Click(object sender, EventArgs e)
+        {
+            string username = "admin";
+            string password = "123";
+            WFAplikacija.Tools.LoginManager.storeAdmin(username, password);
+        }
     }
 }
