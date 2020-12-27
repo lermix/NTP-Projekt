@@ -30,6 +30,14 @@ namespace WFAplikacija
                 this.Close();
             };
             appForm.Show();
+
+            // if not admin, hide admin tab
+            if (WFAplikacija.Tools.Session.user == null ||
+                WFAplikacija.Tools.Session.user.role != WFAplikacija.DataObjects.UserRole.Admin)
+            {
+                appForm.RemoveAdminTab();
+            }
+
             // Hide LoginForm so that app keeps running
             this.Hide();
         }
@@ -38,7 +46,7 @@ namespace WFAplikacija
         {
             string username = usernameTextBox.Text;
             string password = passwordTextBox.Text;
-
+            
             if (WFAplikacija.Tools.UserManager.Login(username, password))
             {
                 this.ShowMainApp();

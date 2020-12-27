@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
 
-namespace WFAplikacija.dataObjects
+namespace WFAplikacija.DataObjects
 {
     [XmlRoot(ElementName = "BillCollection")]
     public class BillCollection

@@ -20,6 +20,11 @@
             base.Dispose(disposing);
         }
 
+        public void RemoveAdminTab()
+        {
+            this.tabMainControl.Controls.Remove(this.tabAdmin);
+        }
+
         #region Windows Form Designer generated code
 
         /// <summary>
@@ -42,19 +47,13 @@
             this.tabArticle2 = new System.Windows.Forms.TabPage();
             this.label1 = new System.Windows.Forms.Label();
             this.listViewArticles = new System.Windows.Forms.ListView();
-            this.tabProperties = new System.Windows.Forms.TabPage();
-            this.lblAdminLogin = new System.Windows.Forms.Label();
-            this.lblAdminPass = new System.Windows.Forms.Label();
-            this.lblAdminUsername = new System.Windows.Forms.Label();
-            this.tBoxAdminPass = new System.Windows.Forms.TextBox();
-            this.tBoxAdminUsername = new System.Windows.Forms.TextBox();
-            this.btnAdminLogin = new System.Windows.Forms.Button();
             this.tabReports = new System.Windows.Forms.TabPage();
             this.dtReports = new System.Windows.Forms.DataGridView();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.tabDatabase = new System.Windows.Forms.TabPage();
+            this.tabAdmin = new System.Windows.Forms.TabPage();
+            this.openPropertiesButton = new System.Windows.Forms.Button();
             this.programmableButton = new System.Windows.Forms.Button();
             this.programmableButtonLabel = new System.Windows.Forms.Label();
             this.sampleLoginExampleBodyLabel = new System.Windows.Forms.Label();
@@ -81,18 +80,16 @@
             this.tabSale.SuspendLayout();
             this.tabControlArticles.SuspendLayout();
             this.tabArctile1.SuspendLayout();
-            this.tabProperties.SuspendLayout();
             this.tabReports.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtReports)).BeginInit();
-            this.tabDatabase.SuspendLayout();
+            this.tabAdmin.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabMainControl
             // 
             this.tabMainControl.Controls.Add(this.tabSale);
-            this.tabMainControl.Controls.Add(this.tabProperties);
             this.tabMainControl.Controls.Add(this.tabReports);
-            this.tabMainControl.Controls.Add(this.tabDatabase);
+            this.tabMainControl.Controls.Add(this.tabAdmin);
             this.tabMainControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabMainControl.Location = new System.Drawing.Point(0, 0);
             this.tabMainControl.Name = "tabMainControl";
@@ -201,9 +198,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(7, 7);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(56, 17);
+            this.label1.Size = new System.Drawing.Size(36, 17);
             this.label1.TabIndex = 1;
-            this.label1.Text = "RACUN";
+            this.label1.Text = "BILL";
             // 
             // listViewArticles
             // 
@@ -213,73 +210,6 @@
             this.listViewArticles.Size = new System.Drawing.Size(296, 389);
             this.listViewArticles.TabIndex = 0;
             this.listViewArticles.UseCompatibleStateImageBehavior = false;
-            // 
-            // tabProperties
-            // 
-            this.tabProperties.Controls.Add(this.lblAdminLogin);
-            this.tabProperties.Controls.Add(this.lblAdminPass);
-            this.tabProperties.Controls.Add(this.lblAdminUsername);
-            this.tabProperties.Controls.Add(this.tBoxAdminPass);
-            this.tabProperties.Controls.Add(this.tBoxAdminUsername);
-            this.tabProperties.Controls.Add(this.btnAdminLogin);
-            this.tabProperties.Location = new System.Drawing.Point(4, 25);
-            this.tabProperties.Name = "tabProperties";
-            this.tabProperties.Padding = new System.Windows.Forms.Padding(3);
-            this.tabProperties.Size = new System.Drawing.Size(792, 449);
-            this.tabProperties.TabIndex = 1;
-            this.tabProperties.Text = "Properties";
-            this.tabProperties.UseVisualStyleBackColor = true;
-            // 
-            // lblAdminLogin
-            // 
-            this.lblAdminLogin.AutoSize = true;
-            this.lblAdminLogin.Location = new System.Drawing.Point(346, 90);
-            this.lblAdminLogin.Name = "lblAdminLogin";
-            this.lblAdminLogin.Size = new System.Drawing.Size(98, 17);
-            this.lblAdminLogin.TabIndex = 5;
-            this.lblAdminLogin.Text = "ADMIN LOGIN";
-            // 
-            // lblAdminPass
-            // 
-            this.lblAdminPass.AutoSize = true;
-            this.lblAdminPass.Location = new System.Drawing.Point(293, 197);
-            this.lblAdminPass.Name = "lblAdminPass";
-            this.lblAdminPass.Size = new System.Drawing.Size(69, 17);
-            this.lblAdminPass.TabIndex = 4;
-            this.lblAdminPass.Text = "Password";
-            // 
-            // lblAdminUsername
-            // 
-            this.lblAdminUsername.AutoSize = true;
-            this.lblAdminUsername.Location = new System.Drawing.Point(289, 142);
-            this.lblAdminUsername.Name = "lblAdminUsername";
-            this.lblAdminUsername.Size = new System.Drawing.Size(73, 17);
-            this.lblAdminUsername.TabIndex = 3;
-            this.lblAdminUsername.Text = "Username";
-            // 
-            // tBoxAdminPass
-            // 
-            this.tBoxAdminPass.Location = new System.Drawing.Point(368, 194);
-            this.tBoxAdminPass.Name = "tBoxAdminPass";
-            this.tBoxAdminPass.Size = new System.Drawing.Size(100, 22);
-            this.tBoxAdminPass.TabIndex = 2;
-            // 
-            // tBoxAdminUsername
-            // 
-            this.tBoxAdminUsername.Location = new System.Drawing.Point(368, 142);
-            this.tBoxAdminUsername.Name = "tBoxAdminUsername";
-            this.tBoxAdminUsername.Size = new System.Drawing.Size(100, 22);
-            this.tBoxAdminUsername.TabIndex = 1;
-            // 
-            // btnAdminLogin
-            // 
-            this.btnAdminLogin.Location = new System.Drawing.Point(349, 244);
-            this.btnAdminLogin.Name = "btnAdminLogin";
-            this.btnAdminLogin.Size = new System.Drawing.Size(75, 23);
-            this.btnAdminLogin.TabIndex = 0;
-            this.btnAdminLogin.Text = "Login";
-            this.btnAdminLogin.UseVisualStyleBackColor = true;
-            this.btnAdminLogin.Click += new System.EventHandler(this.btnAdminLogin_Click);
             // 
             // tabReports
             // 
@@ -342,43 +272,54 @@
             this.radioButton1.UseVisualStyleBackColor = true;
             this.radioButton1.Click += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
-            // tabDatabase
+            // tabAdmin
             // 
-            this.tabDatabase.Controls.Add(this.programmableButton);
-            this.tabDatabase.Controls.Add(this.programmableButtonLabel);
-            this.tabDatabase.Controls.Add(this.sampleLoginExampleBodyLabel);
-            this.tabDatabase.Controls.Add(this.sampleLoginExampleTitleLabel);
-            this.tabDatabase.Controls.Add(this.sampleLoginUsernameTextBox);
-            this.tabDatabase.Controls.Add(this.sampleLoginPasswordLabel);
-            this.tabDatabase.Controls.Add(this.sampleLoginResponseLabel);
-            this.tabDatabase.Controls.Add(this.sendSampleLoginButton);
-            this.tabDatabase.Controls.Add(this.sampleLoginPasswordTextBox);
-            this.tabDatabase.Controls.Add(this.sampleLoginUsernameLabel);
-            this.tabDatabase.Controls.Add(this.sampleLoginLabel);
-            this.tabDatabase.Controls.Add(this.customGetRequestBaseTextBox);
-            this.tabDatabase.Controls.Add(this.label2);
-            this.tabDatabase.Controls.Add(this.checkServerMainLabel);
-            this.tabDatabase.Controls.Add(this.customGetRequestResponseLabel);
-            this.tabDatabase.Controls.Add(this.sendGetRequestButton);
-            this.tabDatabase.Controls.Add(this.customGetRequestActionTextBox);
-            this.tabDatabase.Controls.Add(this.customRequestUrlLabel);
-            this.tabDatabase.Controls.Add(this.customRequestLabel);
-            this.tabDatabase.Controls.Add(this.checkServerResponseLabel);
-            this.tabDatabase.Controls.Add(this.checkServerButton);
-            this.tabDatabase.Location = new System.Drawing.Point(4, 25);
-            this.tabDatabase.Name = "tabDatabase";
-            this.tabDatabase.Padding = new System.Windows.Forms.Padding(3);
-            this.tabDatabase.Size = new System.Drawing.Size(792, 449);
-            this.tabDatabase.TabIndex = 2;
-            this.tabDatabase.Text = "Playground";
-            this.tabDatabase.UseVisualStyleBackColor = true;
-            this.tabDatabase.Click += new System.EventHandler(this.tabReports_Click);
+            this.tabAdmin.Controls.Add(this.openPropertiesButton);
+            this.tabAdmin.Controls.Add(this.programmableButton);
+            this.tabAdmin.Controls.Add(this.programmableButtonLabel);
+            this.tabAdmin.Controls.Add(this.sampleLoginExampleBodyLabel);
+            this.tabAdmin.Controls.Add(this.sampleLoginExampleTitleLabel);
+            this.tabAdmin.Controls.Add(this.sampleLoginUsernameTextBox);
+            this.tabAdmin.Controls.Add(this.sampleLoginPasswordLabel);
+            this.tabAdmin.Controls.Add(this.sampleLoginResponseLabel);
+            this.tabAdmin.Controls.Add(this.sendSampleLoginButton);
+            this.tabAdmin.Controls.Add(this.sampleLoginPasswordTextBox);
+            this.tabAdmin.Controls.Add(this.sampleLoginUsernameLabel);
+            this.tabAdmin.Controls.Add(this.sampleLoginLabel);
+            this.tabAdmin.Controls.Add(this.customGetRequestBaseTextBox);
+            this.tabAdmin.Controls.Add(this.label2);
+            this.tabAdmin.Controls.Add(this.checkServerMainLabel);
+            this.tabAdmin.Controls.Add(this.customGetRequestResponseLabel);
+            this.tabAdmin.Controls.Add(this.sendGetRequestButton);
+            this.tabAdmin.Controls.Add(this.customGetRequestActionTextBox);
+            this.tabAdmin.Controls.Add(this.customRequestUrlLabel);
+            this.tabAdmin.Controls.Add(this.customRequestLabel);
+            this.tabAdmin.Controls.Add(this.checkServerResponseLabel);
+            this.tabAdmin.Controls.Add(this.checkServerButton);
+            this.tabAdmin.Location = new System.Drawing.Point(4, 25);
+            this.tabAdmin.Name = "tabAdmin";
+            this.tabAdmin.Padding = new System.Windows.Forms.Padding(3);
+            this.tabAdmin.Size = new System.Drawing.Size(792, 449);
+            this.tabAdmin.TabIndex = 2;
+            this.tabAdmin.Text = "Admin";
+            this.tabAdmin.UseVisualStyleBackColor = true;
+            this.tabAdmin.Click += new System.EventHandler(this.tabReports_Click);
+            // 
+            // openPropertiesButton
+            // 
+            this.openPropertiesButton.Location = new System.Drawing.Point(683, 0);
+            this.openPropertiesButton.Name = "openPropertiesButton";
+            this.openPropertiesButton.Size = new System.Drawing.Size(109, 35);
+            this.openPropertiesButton.TabIndex = 22;
+            this.openPropertiesButton.Text = "Properties";
+            this.openPropertiesButton.UseVisualStyleBackColor = true;
+            this.openPropertiesButton.Click += new System.EventHandler(this.openPropertiesButton_Click);
             // 
             // programmableButton
             // 
             this.programmableButton.BackColor = System.Drawing.Color.Red;
             this.programmableButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.programmableButton.Location = new System.Drawing.Point(363, 410);
+            this.programmableButton.Location = new System.Drawing.Point(15, 410);
             this.programmableButton.Name = "programmableButton";
             this.programmableButton.Size = new System.Drawing.Size(30, 30);
             this.programmableButton.TabIndex = 21;
@@ -389,11 +330,11 @@
             // 
             this.programmableButtonLabel.AutoSize = true;
             this.programmableButtonLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.programmableButtonLabel.Location = new System.Drawing.Point(11, 411);
+            this.programmableButtonLabel.Location = new System.Drawing.Point(51, 411);
             this.programmableButtonLabel.Name = "programmableButtonLabel";
-            this.programmableButtonLabel.Size = new System.Drawing.Size(349, 25);
+            this.programmableButtonLabel.Size = new System.Drawing.Size(198, 25);
             this.programmableButtonLabel.TabIndex = 20;
-            this.programmableButtonLabel.Text = "Debug button (Attach any function to it)";
+            this.programmableButtonLabel.Text = "Programmable button";
             // 
             // sampleLoginExampleBodyLabel
             // 
@@ -425,7 +366,7 @@
             // sampleLoginPasswordLabel
             // 
             this.sampleLoginPasswordLabel.AutoSize = true;
-            this.sampleLoginPasswordLabel.Location = new System.Drawing.Point(13, 274);
+            this.sampleLoginPasswordLabel.Location = new System.Drawing.Point(12, 274);
             this.sampleLoginPasswordLabel.Name = "sampleLoginPasswordLabel";
             this.sampleLoginPasswordLabel.Size = new System.Drawing.Size(73, 17);
             this.sampleLoginPasswordLabel.TabIndex = 16;
@@ -434,7 +375,7 @@
             // sampleLoginResponseLabel
             // 
             this.sampleLoginResponseLabel.AutoSize = true;
-            this.sampleLoginResponseLabel.Location = new System.Drawing.Point(92, 307);
+            this.sampleLoginResponseLabel.Location = new System.Drawing.Point(96, 307);
             this.sampleLoginResponseLabel.Name = "sampleLoginResponseLabel";
             this.sampleLoginResponseLabel.Size = new System.Drawing.Size(184, 17);
             this.sampleLoginResponseLabel.TabIndex = 15;
@@ -488,7 +429,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(13, 147);
+            this.label2.Location = new System.Drawing.Point(12, 147);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(51, 17);
             this.label2.TabIndex = 9;
@@ -500,14 +441,14 @@
             this.checkServerMainLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.checkServerMainLabel.Location = new System.Drawing.Point(10, 22);
             this.checkServerMainLabel.Name = "checkServerMainLabel";
-            this.checkServerMainLabel.Size = new System.Drawing.Size(502, 25);
+            this.checkServerMainLabel.Size = new System.Drawing.Size(492, 25);
             this.checkServerMainLabel.TabIndex = 8;
-            this.checkServerMainLabel.Text = "Check server status (URL: https://localhost:5001/Status)";
+            this.checkServerMainLabel.Text = "Check server status (URL: http://localhost:5001/Status)";
             // 
             // customGetRequestResponseLabel
             // 
             this.customGetRequestResponseLabel.AutoSize = true;
-            this.customGetRequestResponseLabel.Location = new System.Drawing.Point(92, 180);
+            this.customGetRequestResponseLabel.Location = new System.Drawing.Point(96, 180);
             this.customGetRequestResponseLabel.MaximumSize = new System.Drawing.Size(500, 34);
             this.customGetRequestResponseLabel.Name = "customGetRequestResponseLabel";
             this.customGetRequestResponseLabel.Size = new System.Drawing.Size(184, 17);
@@ -553,7 +494,7 @@
             // checkServerResponseLabel
             // 
             this.checkServerResponseLabel.AutoSize = true;
-            this.checkServerResponseLabel.Location = new System.Drawing.Point(93, 53);
+            this.checkServerResponseLabel.Location = new System.Drawing.Point(96, 53);
             this.checkServerResponseLabel.Name = "checkServerResponseLabel";
             this.checkServerResponseLabel.Size = new System.Drawing.Size(214, 17);
             this.checkServerResponseLabel.TabIndex = 1;
@@ -561,9 +502,9 @@
             // 
             // checkServerButton
             // 
-            this.checkServerButton.Location = new System.Drawing.Point(10, 50);
+            this.checkServerButton.Location = new System.Drawing.Point(15, 50);
             this.checkServerButton.Name = "checkServerButton";
-            this.checkServerButton.Size = new System.Drawing.Size(81, 23);
+            this.checkServerButton.Size = new System.Drawing.Size(75, 23);
             this.checkServerButton.TabIndex = 0;
             this.checkServerButton.Text = "Send";
             this.checkServerButton.UseVisualStyleBackColor = true;
@@ -583,13 +524,11 @@
             this.tabSale.PerformLayout();
             this.tabControlArticles.ResumeLayout(false);
             this.tabArctile1.ResumeLayout(false);
-            this.tabProperties.ResumeLayout(false);
-            this.tabProperties.PerformLayout();
             this.tabReports.ResumeLayout(false);
             this.tabReports.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtReports)).EndInit();
-            this.tabDatabase.ResumeLayout(false);
-            this.tabDatabase.PerformLayout();
+            this.tabAdmin.ResumeLayout(false);
+            this.tabAdmin.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -605,14 +544,7 @@
         private System.Windows.Forms.TabPage tabArticle2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ListView listViewArticles;
-        private System.Windows.Forms.TabPage tabProperties;
-        private System.Windows.Forms.Label lblAdminLogin;
-        private System.Windows.Forms.Label lblAdminPass;
-        private System.Windows.Forms.Label lblAdminUsername;
-        private System.Windows.Forms.TextBox tBoxAdminPass;
-        private System.Windows.Forms.TextBox tBoxAdminUsername;
-        private System.Windows.Forms.Button btnAdminLogin;
-        private System.Windows.Forms.TabPage tabDatabase;
+        private System.Windows.Forms.TabPage tabAdmin;
         private System.Windows.Forms.Button checkServerButton;
         private System.Windows.Forms.Label checkServerResponseLabel;
         private System.Windows.Forms.Button btnComplete;
@@ -643,6 +575,7 @@
         private Syncfusion.Pdf.PdfConfig pdfConfig1;
         private System.Windows.Forms.Label programmableButtonLabel;
         private System.Windows.Forms.Button programmableButton;
+        private System.Windows.Forms.Button openPropertiesButton;
     }
 }
 

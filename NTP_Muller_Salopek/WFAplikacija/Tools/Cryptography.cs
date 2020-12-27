@@ -12,14 +12,6 @@ namespace WFAplikacija.Tools
     class Cryptography
     {
         /// <summary>
-        /// Method that converts bytes that were hashed into a string. String may not contain readable/printable characters.
-        /// </summary>
-        public static string byteArrayToString(byte[] hash)
-        {
-            return System.Text.Encoding.Default.GetString(hash);
-        }
-
-        /// <summary>
         /// Method that calculates SHA512 hash and returns it as byte[] of length 64 (512 bits = 64 Bytes.
         /// To get it as a string, use method WFAplikacija.Tools.Cryptography.byteArrayToString.
         /// </summary>

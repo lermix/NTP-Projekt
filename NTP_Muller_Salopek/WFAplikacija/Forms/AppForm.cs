@@ -1,4 +1,4 @@
-﻿using WFAplikacija.dataObjects;
+﻿using WFAplikacija.DataObjects;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -37,10 +37,6 @@ namespace WFAplikacija
 
             //Dohavti sve dostupne artikle u ArtiklListu            
             articleCollection = XmlManager.GetArticles();
-
-            //Postavi usera
-            User user = new User(0, "TESTN", "TESTS", "TEST");
-            XmlManager.user = user;
 
             //TEST ZONE
             //PDFManager.BillsXmlToPdf();
@@ -154,9 +150,6 @@ namespace WFAplikacija
             //Moj edit da se rijesim errora
             string hashedPasswordText = WFAplikacija.Tools.Cryptography.makeSha512(passwordText).ToString();
 
-            
-
-
             this.sampleLoginResponseLabel.Text = "Sending request to " + url +
                 "\nUser: " + usernameText +
                 "\nHashed password: " + hashedPasswordText;
@@ -200,8 +193,13 @@ namespace WFAplikacija
 
         private void programmableButton_Click(object sender, EventArgs e)
         {
-
+            // Testing area
         }
 
+        private void openPropertiesButton_Click(object sender, EventArgs e)
+        {
+            PropertiesForm propertiesForm = new PropertiesForm();
+            propertiesForm.ShowDialog();
+        }
     }
 }
