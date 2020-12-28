@@ -79,7 +79,7 @@
             this.tabArticleManager.Padding = new System.Windows.Forms.Padding(3);
             this.tabArticleManager.Size = new System.Drawing.Size(790, 407);
             this.tabArticleManager.TabIndex = 0;
-            this.tabArticleManager.Text = "Article Manager";
+            this.tabArticleManager.Text = global::WFAplikacija.Lang.Dictionary.PFProductManager;
             this.tabArticleManager.UseVisualStyleBackColor = true;
             // 
             // listBoxArticleManagerArticles
@@ -100,7 +100,7 @@
             this.btnArticleManagerComplete.Name = "btnArticleManagerComplete";
             this.btnArticleManagerComplete.Size = new System.Drawing.Size(100, 50);
             this.btnArticleManagerComplete.TabIndex = 12;
-            this.btnArticleManagerComplete.Text = "Complete";
+            this.btnArticleManagerComplete.Text = WFAplikacija.Lang.Dictionary.PFComplete;
             this.btnArticleManagerComplete.UseVisualStyleBackColor = true;
             this.btnArticleManagerComplete.Click += new System.EventHandler(this.btnArticleManagerComplete_Click);
             // 
@@ -118,7 +118,7 @@
             this.lblArticleManagerPrice.Name = "lblArticleManagerPrice";
             this.lblArticleManagerPrice.Size = new System.Drawing.Size(39, 17);
             this.lblArticleManagerPrice.TabIndex = 10;
-            this.lblArticleManagerPrice.Text = "price";
+            this.lblArticleManagerPrice.Text = WFAplikacija.Lang.Dictionary.PFPrice;
             // 
             // txtBoxArticleManagerBtnName
             // 
@@ -150,7 +150,7 @@
             this.lblArticleManagerName.Name = "lblArticleManagerName";
             this.lblArticleManagerName.Size = new System.Drawing.Size(45, 17);
             this.lblArticleManagerName.TabIndex = 6;
-            this.lblArticleManagerName.Text = "Name";
+            this.lblArticleManagerName.Text = WFAplikacija.Lang.Dictionary.PFProductName;
             // 
             // txtBoxArticleManagerId
             // 
@@ -167,7 +167,7 @@
             this.lblArticleManagerID.Name = "lblArticleManagerID";
             this.lblArticleManagerID.Size = new System.Drawing.Size(21, 17);
             this.lblArticleManagerID.TabIndex = 4;
-            this.lblArticleManagerID.Text = "ID";
+            this.lblArticleManagerID.Text = WFAplikacija.Lang.Dictionary.PFProductID;
             // 
             // lblChoseArticle
             // 
@@ -176,24 +176,24 @@
             this.lblChoseArticle.Name = "lblChoseArticle";
             this.lblChoseArticle.Size = new System.Drawing.Size(90, 17);
             this.lblChoseArticle.TabIndex = 3;
-            this.lblChoseArticle.Text = "Chose article";
+            this.lblChoseArticle.Text = WFAplikacija.Lang.Dictionary.PFChooseProduct;
             // 
             // lblOperation
             // 
             this.lblOperation.AutoSize = true;
             this.lblOperation.Location = new System.Drawing.Point(6, 3);
             this.lblOperation.Name = "lblOperation";
-            this.lblOperation.Size = new System.Drawing.Size(71, 17);
+            this.lblOperation.Size = new System.Drawing.Size(47, 17);
             this.lblOperation.TabIndex = 1;
-            this.lblOperation.Text = "Operation";
+            this.lblOperation.Text = WFAplikacija.Lang.Dictionary.PFAction;
             // 
             // cmbArticleManager
             // 
             this.cmbArticleManager.FormattingEnabled = true;
             this.cmbArticleManager.Items.AddRange(new object[] {
-            "Insert article",
-            "Delete article",
-            "Edit article"});
+            global::WFAplikacija.Lang.Dictionary.PFActionInsert,
+            global::WFAplikacija.Lang.Dictionary.PFActionDelete,
+            global::WFAplikacija.Lang.Dictionary.PFActionEdit});
             this.cmbArticleManager.Location = new System.Drawing.Point(9, 23);
             this.cmbArticleManager.Name = "cmbArticleManager";
             this.cmbArticleManager.Size = new System.Drawing.Size(121, 24);
@@ -218,7 +218,7 @@
             this.Controls.Add(this.tabControlProperties);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "PropertiesForm";
-            this.Text = "Cashapp Properties";
+            this.Text = WFAplikacija.Lang.Dictionary.PFNameofForm;
             this.tabControlProperties.ResumeLayout(false);
             this.tabArticleManager.ResumeLayout(false);
             this.tabArticleManager.PerformLayout();

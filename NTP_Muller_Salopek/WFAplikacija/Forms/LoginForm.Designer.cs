@@ -21,6 +21,19 @@ namespace WFAplikacija
             base.Dispose(disposing);
         }
 
+        /// <summary>
+        /// Refresh visible text using the language from session.
+        /// </summary>
+        public void RefreshDisplayText()
+        {
+            this.label2.Text = WFAplikacija.Lang.Dictionary.LFLoginMessage;
+            this.usernameLabel.Text = WFAplikacija.Lang.Dictionary.LFUsername;
+            this.passwordLabel.Text = WFAplikacija.Lang.Dictionary.LFPassword;
+            this.loginButton.Text = WFAplikacija.Lang.Dictionary.LFLogin;
+            this.messageLabel.Text = WFAplikacija.Lang.Dictionary.LFPressButton;
+            this.langSelectLabel.Text = WFAplikacija.Lang.Dictionary.LFLanguage;
+        }
+
         #region Windows Form Designer generated code
 
         /// <summary>
@@ -39,6 +52,8 @@ namespace WFAplikacija
             this.usernameTextBox = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
+            this.langComboBox = new System.Windows.Forms.ComboBox();
+            this.langSelectLabel = new System.Windows.Forms.Label();
             this.loginPanel.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -85,7 +100,7 @@ namespace WFAplikacija
             this.loginButton.Name = "loginButton";
             this.loginButton.Size = new System.Drawing.Size(75, 32);
             this.loginButton.TabIndex = 5;
-            this.loginButton.Text = "Login";
+            this.loginButton.Text = global::WFAplikacija.Lang.Dictionary.LFLogin;
             this.loginButton.UseVisualStyleBackColor = false;
             this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
             // 
@@ -151,12 +166,39 @@ namespace WFAplikacija
             this.label2.TabIndex = 0;
             this.label2.Text = "Login to Cashapp";
             // 
+            // langComboBox
+            // 
+            this.langComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.langComboBox.FormattingEnabled = true;
+            this.langComboBox.Items.AddRange(new object[] {
+            "English",
+            "Hrvatski"});
+            this.langComboBox.Location = new System.Drawing.Point(17, 36);
+            this.langComboBox.Name = "langComboBox";
+            this.langComboBox.Size = new System.Drawing.Size(94, 24);
+            this.langComboBox.TabIndex = 24;
+            this.langComboBox.SelectedIndexChanged += new System.EventHandler(this.langComboBox_SelectedIndexChanged);
+            this.langComboBox.SelectedIndex = 0; // By default set English
+            // 
+            // langSelectLabel
+            // 
+            this.langSelectLabel.AutoSize = true;
+            this.langSelectLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.langSelectLabel.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.langSelectLabel.Location = new System.Drawing.Point(13, 13);
+            this.langSelectLabel.Name = "langSelectLabel";
+            this.langSelectLabel.Size = new System.Drawing.Size(87, 20);
+            this.langSelectLabel.TabIndex = 25;
+            this.langSelectLabel.Text = "Language:";
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSeaGreen;
             this.ClientSize = new System.Drawing.Size(782, 453);
+            this.Controls.Add(this.langSelectLabel);
+            this.Controls.Add(this.langComboBox);
             this.Controls.Add(this.loginPanel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "LoginForm";
@@ -180,5 +222,7 @@ namespace WFAplikacija
         private System.Windows.Forms.Label usernameLabel;
         private System.Windows.Forms.Button loginButton;
         private System.Windows.Forms.Label messageLabel;
+        private System.Windows.Forms.ComboBox langComboBox;
+        private System.Windows.Forms.Label langSelectLabel;
     }
 }

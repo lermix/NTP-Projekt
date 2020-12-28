@@ -44,3 +44,7 @@ C:\Users\stjep\OneDrive\Dokumenti\GitHub\NTP-Projekt\NTP_Muller_Salopek\WFAplika
 C:\Users\stjep\OneDrive\Dokumenti\GitHub\NTP-Projekt\NTP_Muller_Salopek\WFAplikacija\obj\Debug\WFAplikacija.exe
 C:\Users\stjep\OneDrive\Dokumenti\GitHub\NTP-Projekt\NTP_Muller_Salopek\WFAplikacija\obj\Debug\WFAplikacija.pdb
 C:\Users\stjep\OneDrive\Dokumenti\GitHub\NTP-Projekt\NTP_Muller_Salopek\WFAplikacija\obj\Debug\WFAplikacija.csprojAssemblyReference.cache
+C:\Users\stjep\OneDrive\Dokumenti\GitHub\NTP-Projekt\NTP_Muller_Salopek\WFAplikacija\bin\Debug\hr\WFAplikacija.resources.dll
+C:\Users\stjep\OneDrive\Dokumenti\GitHub\NTP-Projekt\NTP_Muller_Salopek\WFAplikacija\obj\Debug\WFAplikacija.Lang.Dictionary.resources
+C:\Users\stjep\OneDrive\Dokumenti\GitHub\NTP-Projekt\NTP_Muller_Salopek\WFAplikacija\obj\Debug\WFAplikacija.Lang.Dictionary.hr.resources
+C:\Users\stjep\OneDrive\Dokumenti\GitHub\NTP-Projekt\NTP_Muller_Salopek\WFAplikacija\obj\Debug\hr\WFAplikacija.resources.dll

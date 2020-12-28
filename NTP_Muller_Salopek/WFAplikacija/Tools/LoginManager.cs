@@ -79,6 +79,11 @@ namespace WFAplikacija.Tools
                             return adminFound ? 1 : -1;
                     }
                 }
+                catch (IndexOutOfRangeException e)
+                {
+                    br.Close();
+                    return 0;
+                }
                 catch (IOException e)
                 {
                     // EOF or Exception, so return 0 (invalid login)

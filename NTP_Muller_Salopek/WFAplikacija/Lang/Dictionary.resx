@@ -1,0 +1,276 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AFTabSale" xml:space="preserve">
+    <value>Sale</value>
+    <comment>AppForm</comment>
+  </data>
+  <data name="AFLabelTotal" xml:space="preserve">
+    <value>TOTAL:</value>
+    <comment>AppForm</comment>
+  </data>
+  <data name="AFButtonComplete" xml:space="preserve">
+    <value>Complete</value>
+    <comment>AppForm</comment>
+  </data>
+  <data name="AFProductTypeDrink" xml:space="preserve">
+    <value>Drinks</value>
+    <comment>AppForm</comment>
+  </data>
+  <data name="AFProductSprite" xml:space="preserve">
+    <value>Sprite</value>
+    <comment>AppForm</comment>
+  </data>
+  <data name="AFProductCocaCola" xml:space="preserve">
+    <value>CocaCola</value>
+    <comment>AppForm</comment>
+  </data>
+  <data name="AFProductTypeFood" xml:space="preserve">
+    <value>Food</value>
+    <comment>AppForm</comment>
+  </data>
+  <data name="AFLabelBill" xml:space="preserve">
+    <value>BILL</value>
+    <comment>AppForm</comment>
+  </data>
+  <data name="AFTabReports" xml:space="preserve">
+    <value>Reports</value>
+    <comment>AppForm</comment>
+  </data>
+  <data name="AFButtonProducts" xml:space="preserve">
+    <value>Products</value>
+    <comment>AppForm</comment>
+  </data>
+  <data name="AFButtonBills" xml:space="preserve">
+    <value>Bills</value>
+    <comment>AppForm</comment>
+  </data>
+  <data name="AFTabAdmin" xml:space="preserve">
+    <value>Admin</value>
+    <comment>AppForm</comment>
+  </data>
+  <data name="AFButtonProperties" xml:space="preserve">
+    <value>Properties</value>
+    <comment>AppForm</comment>
+  </data>
+  <data name="AFLabelProgrammableButton" xml:space="preserve">
+    <value>Programmable button</value>
+    <comment>AppForm</comment>
+  </data>
+  <data name="AFButtonSend" xml:space="preserve">
+    <value>Send</value>
+    <comment>AppForm</comment>
+  </data>
+  <data name="AFLabelUsername" xml:space="preserve">
+    <value>Username</value>
+    <comment>AppForm</comment>
+  </data>
+  <data name="AFLabelSampleLogin" xml:space="preserve">
+    <value>Sample login</value>
+    <comment>AppForm</comment>
+  </data>
+  <data name="AFLabelPressSend" xml:space="preserve">
+    <value>Press send</value>
+    <comment>AppForm</comment>
+  </data>
+  <data name="AFCurrentLanguage" xml:space="preserve">
+    <value>English</value>
+    <comment>AppForm</comment>
+  </data>
+  <data name="AFLabelCheckServer" xml:space="preserve">
+    <value>Check server</value>
+    <comment>AppForm</comment>
+  </data>
+  <data name="AFLabelCustomREST" xml:space="preserve">
+    <value>Custom REST request</value>
+    <comment>AppForm</comment>
+  </data>
+  <data name="AFLabelCurrentLanguage" xml:space="preserve">
+    <value>Current language</value>
+    <comment>AppForm</comment>
+  </data>
+  <data name="LFLoginMessage" xml:space="preserve">
+    <value>Login to Cashapp</value>
+    <comment>LoginForm</comment>
+  </data>
+  <data name="LFUsername" xml:space="preserve">
+    <value>Username</value>
+    <comment>LoginForm</comment>
+  </data>
+  <data name="LFPassword" xml:space="preserve">
+    <value>Password</value>
+    <comment>LoginForm</comment>
+  </data>
+  <data name="LFLogin" xml:space="preserve">
+    <value>Login</value>
+    <comment>LoginForm</comment>
+  </data>
+  <data name="LFPressButton" xml:space="preserve">
+    <value>Press button to login</value>
+    <comment>LoginForm</comment>
+  </data>
+  <data name="LFLanguage" xml:space="preserve">
+    <value>Language:</value>
+    <comment>LoginForm</comment>
+  </data>
+  <data name="PFProductManager" xml:space="preserve">
+    <value>Product Manager</value>
+    <comment>PropertiesForm</comment>
+  </data>
+  <data name="PFAction" xml:space="preserve">
+    <value>Action</value>
+    <comment>PropertiesForm</comment>
+  </data>
+  <data name="PFActionInsert" xml:space="preserve">
+    <value>Insert product</value>
+    <comment>PropertiesForm</comment>
+  </data>
+  <data name="PFActionDelete" xml:space="preserve">
+    <value>Delete product</value>
+    <comment>PropertiesForm</comment>
+  </data>
+  <data name="PFActionEdit" xml:space="preserve">
+    <value>Edit product</value>
+    <comment>PropertiesForm</comment>
+  </data>
+  <data name="PFNameofForm" xml:space="preserve">
+    <value>Cashapp Properties</value>
+    <comment>PropertiesForm</comment>
+  </data>
+  <data name="PFComplete" xml:space="preserve">
+    <value>Complete</value>
+    <comment>PropertiesForm</comment>
+  </data>
+  <data name="PFPrice" xml:space="preserve">
+    <value>Price</value>
+    <comment>PropertiesForm</comment>
+  </data>
+  <data name="PFProductName" xml:space="preserve">
+    <value>Name</value>
+    <comment>PropertiesForm</comment>
+  </data>
+  <data name="PFProductID" xml:space="preserve">
+    <value>ID</value>
+    <comment>PropertiesForm</comment>
+  </data>
+  <data name="PFChooseProduct" xml:space="preserve">
+    <value>Choose product</value>
+    <comment>PropertiesForm</comment>
+  </data>
+</root>

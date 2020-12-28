@@ -46,7 +46,8 @@ namespace WFAplikacija
         {
             string username = usernameTextBox.Text;
             string password = passwordTextBox.Text;
-            
+
+            // For now ignore login == true all the time
             if (WFAplikacija.Tools.UserManager.Login(username, password))
             {
                 this.ShowMainApp();
@@ -69,5 +70,14 @@ namespace WFAplikacija
             messageLabel.Text = defaultMessage;
         }
 
+        private void langComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int langIndex = this.langComboBox.SelectedIndex;
+            // Default select is English
+            WFAplikacija.Tools.Language lang = langIndex == 1 ? Tools.Language.Croatian : Tools.Language.English;
+            WFAplikacija.Tools.LanguageManager.SetLanguage(lang);
+            // Refresh text of current login form
+            this.RefreshDisplayText();
+        }
     }
 }

@@ -76,6 +76,7 @@
             this.checkServerResponseLabel = new System.Windows.Forms.Label();
             this.checkServerButton = new System.Windows.Forms.Button();
             this.pdfConfig1 = new Syncfusion.Pdf.PdfConfig();
+            this.label3 = new System.Windows.Forms.Label();
             this.tabMainControl.SuspendLayout();
             this.tabSale.SuspendLayout();
             this.tabControlArticles.SuspendLayout();
@@ -110,7 +111,7 @@
             this.tabSale.Padding = new System.Windows.Forms.Padding(3);
             this.tabSale.Size = new System.Drawing.Size(792, 449);
             this.tabSale.TabIndex = 0;
-            this.tabSale.Text = "Sale";
+            this.tabSale.Text = WFAplikacija.Lang.Dictionary.AFTabSale;
             this.tabSale.UseVisualStyleBackColor = true;
             // 
             // lblTotalNum
@@ -129,7 +130,7 @@
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(58, 17);
             this.lblTotal.TabIndex = 5;
-            this.lblTotal.Text = "TOTAL:";
+            this.lblTotal.Text = WFAplikacija.Lang.Dictionary.AFLabelTotal;
             // 
             // btnComplete
             // 
@@ -137,7 +138,7 @@
             this.btnComplete.Name = "btnComplete";
             this.btnComplete.Size = new System.Drawing.Size(75, 23);
             this.btnComplete.TabIndex = 4;
-            this.btnComplete.Text = "Complete";
+            this.btnComplete.Text = WFAplikacija.Lang.Dictionary.AFButtonComplete;
             this.btnComplete.UseVisualStyleBackColor = true;
             this.btnComplete.Click += new System.EventHandler(this.btnComplete_Click);
             // 
@@ -160,7 +161,7 @@
             this.tabArctile1.Padding = new System.Windows.Forms.Padding(3);
             this.tabArctile1.Size = new System.Drawing.Size(423, 233);
             this.tabArctile1.TabIndex = 0;
-            this.tabArctile1.Text = "tabArctile1";
+            this.tabArctile1.Text = WFAplikacija.Lang.Dictionary.AFProductTypeDrink;
             this.tabArctile1.UseVisualStyleBackColor = true;
             // 
             // btnArticle2
@@ -169,7 +170,7 @@
             this.btnArticle2.Name = "btnArticle2";
             this.btnArticle2.Size = new System.Drawing.Size(75, 75);
             this.btnArticle2.TabIndex = 1;
-            this.btnArticle2.Text = "Sprite";
+            this.btnArticle2.Text = WFAplikacija.Lang.Dictionary.AFProductSprite;
             this.btnArticle2.UseVisualStyleBackColor = true;
             this.btnArticle2.Click += new System.EventHandler(this.ArticleButtonClicked);
             // 
@@ -179,7 +180,7 @@
             this.btnArticle1.Name = "btnArticle1";
             this.btnArticle1.Size = new System.Drawing.Size(75, 75);
             this.btnArticle1.TabIndex = 0;
-            this.btnArticle1.Text = "CocaCola";
+            this.btnArticle1.Text = WFAplikacija.Lang.Dictionary.AFProductCocaCola;
             this.btnArticle1.UseVisualStyleBackColor = true;
             this.btnArticle1.Click += new System.EventHandler(this.ArticleButtonClicked);
             // 
@@ -190,7 +191,7 @@
             this.tabArticle2.Padding = new System.Windows.Forms.Padding(3);
             this.tabArticle2.Size = new System.Drawing.Size(423, 233);
             this.tabArticle2.TabIndex = 1;
-            this.tabArticle2.Text = "tabArticle2";
+            this.tabArticle2.Text = WFAplikacija.Lang.Dictionary.AFProductTypeFood;
             this.tabArticle2.UseVisualStyleBackColor = true;
             // 
             // label1
@@ -200,7 +201,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(36, 17);
             this.label1.TabIndex = 1;
-            this.label1.Text = "BILL";
+            this.label1.Text = WFAplikacija.Lang.Dictionary.AFLabelBill;
             // 
             // listViewArticles
             // 
@@ -222,7 +223,7 @@
             this.tabReports.Padding = new System.Windows.Forms.Padding(3);
             this.tabReports.Size = new System.Drawing.Size(792, 449);
             this.tabReports.TabIndex = 3;
-            this.tabReports.Text = "Reports";
+            this.tabReports.Text = WFAplikacija.Lang.Dictionary.AFTabReports;
             this.tabReports.UseVisualStyleBackColor = true;
             // 
             // dtReports
@@ -257,7 +258,7 @@
             this.radioButton2.Size = new System.Drawing.Size(75, 21);
             this.radioButton2.TabIndex = 1;
             this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Articles";
+            this.radioButton2.Text = WFAplikacija.Lang.Dictionary.AFButtonProducts;
             this.radioButton2.UseVisualStyleBackColor = true;
             // 
             // radioButton1
@@ -268,12 +269,13 @@
             this.radioButton1.Size = new System.Drawing.Size(54, 21);
             this.radioButton1.TabIndex = 0;
             this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "BIlls";
+            this.radioButton1.Text = WFAplikacija.Lang.Dictionary.AFButtonBills;
             this.radioButton1.UseVisualStyleBackColor = true;
             this.radioButton1.Click += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
             // tabAdmin
             // 
+            this.tabAdmin.Controls.Add(this.label3);
             this.tabAdmin.Controls.Add(this.openPropertiesButton);
             this.tabAdmin.Controls.Add(this.programmableButton);
             this.tabAdmin.Controls.Add(this.programmableButtonLabel);
@@ -301,7 +303,7 @@
             this.tabAdmin.Padding = new System.Windows.Forms.Padding(3);
             this.tabAdmin.Size = new System.Drawing.Size(792, 449);
             this.tabAdmin.TabIndex = 2;
-            this.tabAdmin.Text = "Admin";
+            this.tabAdmin.Text = WFAplikacija.Lang.Dictionary.AFTabAdmin;
             this.tabAdmin.UseVisualStyleBackColor = true;
             this.tabAdmin.Click += new System.EventHandler(this.tabReports_Click);
             // 
@@ -311,7 +313,7 @@
             this.openPropertiesButton.Name = "openPropertiesButton";
             this.openPropertiesButton.Size = new System.Drawing.Size(109, 35);
             this.openPropertiesButton.TabIndex = 22;
-            this.openPropertiesButton.Text = "Properties";
+            this.openPropertiesButton.Text = WFAplikacija.Lang.Dictionary.AFButtonProperties;
             this.openPropertiesButton.UseVisualStyleBackColor = true;
             this.openPropertiesButton.Click += new System.EventHandler(this.openPropertiesButton_Click);
             // 
@@ -334,7 +336,7 @@
             this.programmableButtonLabel.Name = "programmableButtonLabel";
             this.programmableButtonLabel.Size = new System.Drawing.Size(198, 25);
             this.programmableButtonLabel.TabIndex = 20;
-            this.programmableButtonLabel.Text = "Programmable button";
+            this.programmableButtonLabel.Text = WFAplikacija.Lang.Dictionary.AFLabelProgrammableButton;
             // 
             // sampleLoginExampleBodyLabel
             // 
@@ -379,7 +381,7 @@
             this.sampleLoginResponseLabel.Name = "sampleLoginResponseLabel";
             this.sampleLoginResponseLabel.Size = new System.Drawing.Size(184, 17);
             this.sampleLoginResponseLabel.TabIndex = 15;
-            this.sampleLoginResponseLabel.Text = "Press Send to get response";
+            this.sampleLoginResponseLabel.Text = WFAplikacija.Lang.Dictionary.AFLabelPressSend;
             // 
             // sendSampleLoginButton
             // 
@@ -387,7 +389,7 @@
             this.sendSampleLoginButton.Name = "sendSampleLoginButton";
             this.sendSampleLoginButton.Size = new System.Drawing.Size(75, 23);
             this.sendSampleLoginButton.TabIndex = 14;
-            this.sendSampleLoginButton.Text = "Send";
+            this.sendSampleLoginButton.Text = WFAplikacija.Lang.Dictionary.AFButtonSend;
             this.sendSampleLoginButton.UseVisualStyleBackColor = true;
             this.sendSampleLoginButton.Click += new System.EventHandler(this.sendSampleLoginButton_Click);
             // 
@@ -406,7 +408,7 @@
             this.sampleLoginUsernameLabel.Name = "sampleLoginUsernameLabel";
             this.sampleLoginUsernameLabel.Size = new System.Drawing.Size(77, 17);
             this.sampleLoginUsernameLabel.TabIndex = 12;
-            this.sampleLoginUsernameLabel.Text = "Username:";
+            this.sampleLoginUsernameLabel.Text = WFAplikacija.Lang.Dictionary.AFLabelUsername;
             // 
             // sampleLoginLabel
             // 
@@ -416,7 +418,7 @@
             this.sampleLoginLabel.Name = "sampleLoginLabel";
             this.sampleLoginLabel.Size = new System.Drawing.Size(125, 25);
             this.sampleLoginLabel.TabIndex = 11;
-            this.sampleLoginLabel.Text = "Sample login";
+            this.sampleLoginLabel.Text = WFAplikacija.Lang.Dictionary.AFLabelSampleLogin;
             // 
             // customGetRequestBaseTextBox
             // 
@@ -443,7 +445,7 @@
             this.checkServerMainLabel.Name = "checkServerMainLabel";
             this.checkServerMainLabel.Size = new System.Drawing.Size(492, 25);
             this.checkServerMainLabel.TabIndex = 8;
-            this.checkServerMainLabel.Text = "Check server status (URL: http://localhost:5001/Status)";
+            this.checkServerMainLabel.Text = WFAplikacija.Lang.Dictionary.AFLabelCheckServer + " (URL: http://localhost:5001/Status)";
             // 
             // customGetRequestResponseLabel
             // 
@@ -453,7 +455,7 @@
             this.customGetRequestResponseLabel.Name = "customGetRequestResponseLabel";
             this.customGetRequestResponseLabel.Size = new System.Drawing.Size(184, 17);
             this.customGetRequestResponseLabel.TabIndex = 6;
-            this.customGetRequestResponseLabel.Text = "Press Send to get response";
+            this.customGetRequestResponseLabel.Text = WFAplikacija.Lang.Dictionary.AFLabelPressSend;
             // 
             // sendGetRequestButton
             // 
@@ -461,7 +463,7 @@
             this.sendGetRequestButton.Name = "sendGetRequestButton";
             this.sendGetRequestButton.Size = new System.Drawing.Size(75, 23);
             this.sendGetRequestButton.TabIndex = 5;
-            this.sendGetRequestButton.Text = "Send";
+            this.sendGetRequestButton.Text = WFAplikacija.Lang.Dictionary.AFButtonSend;
             this.sendGetRequestButton.UseVisualStyleBackColor = true;
             this.sendGetRequestButton.Click += new System.EventHandler(this.sendGetRequestButton_Click);
             // 
@@ -489,7 +491,7 @@
             this.customRequestLabel.Name = "customRequestLabel";
             this.customRequestLabel.Size = new System.Drawing.Size(344, 25);
             this.customRequestLabel.TabIndex = 2;
-            this.customRequestLabel.Text = "Custom GET request (write to textbox)";
+            this.customRequestLabel.Text = WFAplikacija.Lang.Dictionary.AFLabelCustomREST;
             // 
             // checkServerResponseLabel
             // 
@@ -498,7 +500,7 @@
             this.checkServerResponseLabel.Name = "checkServerResponseLabel";
             this.checkServerResponseLabel.Size = new System.Drawing.Size(214, 17);
             this.checkServerResponseLabel.TabIndex = 1;
-            this.checkServerResponseLabel.Text = "Press button to get server status";
+            this.checkServerResponseLabel.Text = WFAplikacija.Lang.Dictionary.AFLabelPressSend;
             // 
             // checkServerButton
             // 
@@ -506,9 +508,18 @@
             this.checkServerButton.Name = "checkServerButton";
             this.checkServerButton.Size = new System.Drawing.Size(75, 23);
             this.checkServerButton.TabIndex = 0;
-            this.checkServerButton.Text = "Send";
+            this.checkServerButton.Text = WFAplikacija.Lang.Dictionary.AFButtonSend;
             this.checkServerButton.UseVisualStyleBackColor = true;
             this.checkServerButton.Click += new System.EventHandler(this.checkServerButton_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(15, 387);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(126, 17);
+            this.label3.TabIndex = 23;
+            this.label3.Text = WFAplikacija.Lang.Dictionary.AFLabelCurrentLanguage + ": " + WFAplikacija.Lang.Dictionary.AFCurrentLanguage;
             // 
             // AppForm
             // 
@@ -576,6 +587,7 @@
         private System.Windows.Forms.Label programmableButtonLabel;
         private System.Windows.Forms.Button programmableButton;
         private System.Windows.Forms.Button openPropertiesButton;
+        private System.Windows.Forms.Label label3;
     }
 }
 
