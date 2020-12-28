@@ -120,4 +120,7 @@
   <data name="CentralniServerURL" xml:space="preserve">
     <value>https://localhost:5001</value>
   </data>
+  <data name="testAB" xml:space="preserve">
+    <value>A</value>
+  </data>
 </root>

@@ -194,9 +194,7 @@ namespace WFAplikacija
         private void programmableButton_Click(object sender, EventArgs e)
         {
             // Testing area
-            WFAplikacija.Lang.Dictionary.Culture = new System.Globalization.CultureInfo("hr-HR");
-
-            this.label3.Text = "Current language: " + WFAplikacija.Lang.Dictionary.AFCurrentLanguage;
+            this.testABLabel.Text = WFAplikacija.Properties.Resources.testAB;
         }
 
         private void openPropertiesButton_Click(object sender, EventArgs e)
