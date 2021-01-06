@@ -1,22 +1,22 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BillCollection>
-  <Bill ID="1000" Time="06-12-2020 13:28" User="TEST" SavedToDatabase="TEST" Total="24">
+  <Bill ID="1000" Time="06-12-2020 13:28" User="Admin" SavedToDatabase="TEST" Total="24">
     <Article ID="0" name="CocaCola" quantity="1" price="12" totalPrice="12" />
     <Article ID="1" name="Sprite" quantity="1" price="12" totalPrice="12" />
   </Bill>
-  <Bill ID="1001" Time="06-12-2020 13:28" User="TEST" SavedToDatabase="TEST" Total="36">
+  <Bill ID="1001" Time="06-12-2020 13:28" User="Admin" SavedToDatabase="TEST" Total="36">
     <Article ID="0" name="CocaCola" quantity="2" price="12" totalPrice="24" />
     <Article ID="1" name="Sprite" quantity="1" price="12" totalPrice="12" />
   </Bill>
-  <Bill ID="1002" Time="08-12-2020 12:31" User="TEST" SavedToDatabase="TEST" Total="36">
+  <Bill ID="1002" Time="08-12-2020 12:31" User="Worker" SavedToDatabase="TEST" Total="36">
     <Article ID="0" name="CocaCola" quantity="2" price="12" totalPrice="24" />
     <Article ID="1" name="Sprite" quantity="1" price="12" totalPrice="12" />
   </Bill>
-  <Bill ID="0" Time="11-12-2020 13:11" User="TEST" SavedToDatabase="TEST" Total="48">
+  <Bill ID="1003" Time="11-12-2020 13:11" User="Worker" SavedToDatabase="TEST" Total="48">
     <Article ID="0" name="CocaCola" quantity="3" price="12" totalPrice="36" />
     <Article ID="1" name="Sprite" quantity="1" price="12" totalPrice="12" />
   </Bill>
-  <Bill ID="0" Time="14-12-2020 12:52" User="TEST" SavedToDatabase="TEST" Total="36">
+  <Bill ID="1004" Time="14-12-2020 12:52" User="TEST" SavedToDatabase="TEST" Total="36">
     <Article ID="0" name="CocaCola" quantity="2" price="12" totalPrice="24" />
     <Article ID="1" name="Sprite" quantity="1" price="12" totalPrice="12" />
   </Bill>

@@ -48,11 +48,16 @@
             this.label1 = new System.Windows.Forms.Label();
             this.listViewArticles = new System.Windows.Forms.ListView();
             this.tabReports = new System.Windows.Forms.TabPage();
+            this.tBoxFilter = new System.Windows.Forms.TextBox();
+            this.cmbFilterFunction = new System.Windows.Forms.ComboBox();
+            this.cmbFilterColumn = new System.Windows.Forms.ComboBox();
+            this.lblFilter = new System.Windows.Forms.Label();
+            this.btnReportsSave = new System.Windows.Forms.Button();
             this.dtReports = new System.Windows.Forms.DataGridView();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.tabAdmin = new System.Windows.Forms.TabPage();
+            this.testABLabel = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.openPropertiesButton = new System.Windows.Forms.Button();
             this.programmableButton = new System.Windows.Forms.Button();
@@ -77,7 +82,7 @@
             this.checkServerResponseLabel = new System.Windows.Forms.Label();
             this.checkServerButton = new System.Windows.Forms.Button();
             this.pdfConfig1 = new Syncfusion.Pdf.PdfConfig();
-            this.testABLabel = new System.Windows.Forms.Label();
+            this.btnFilter = new System.Windows.Forms.Button();
             this.tabMainControl.SuspendLayout();
             this.tabSale.SuspendLayout();
             this.tabControlArticles.SuspendLayout();
@@ -96,7 +101,7 @@
             this.tabMainControl.Location = new System.Drawing.Point(0, 0);
             this.tabMainControl.Name = "tabMainControl";
             this.tabMainControl.SelectedIndex = 0;
-            this.tabMainControl.Size = new System.Drawing.Size(800, 478);
+            this.tabMainControl.Size = new System.Drawing.Size(1085, 571);
             this.tabMainControl.TabIndex = 0;
             // 
             // tabSale
@@ -110,7 +115,7 @@
             this.tabSale.Location = new System.Drawing.Point(4, 25);
             this.tabSale.Name = "tabSale";
             this.tabSale.Padding = new System.Windows.Forms.Padding(3);
-            this.tabSale.Size = new System.Drawing.Size(792, 449);
+            this.tabSale.Size = new System.Drawing.Size(1077, 542);
             this.tabSale.TabIndex = 0;
             this.tabSale.Text = global::WFAplikacija.Lang.Dictionary.AFTabSale;
             this.tabSale.UseVisualStyleBackColor = true;
@@ -147,10 +152,10 @@
             // 
             this.tabControlArticles.Controls.Add(this.tabArctile1);
             this.tabControlArticles.Controls.Add(this.tabArticle2);
-            this.tabControlArticles.Location = new System.Drawing.Point(308, 27);
+            this.tabControlArticles.Location = new System.Drawing.Point(468, 7);
             this.tabControlArticles.Name = "tabControlArticles";
             this.tabControlArticles.SelectedIndex = 0;
-            this.tabControlArticles.Size = new System.Drawing.Size(431, 262);
+            this.tabControlArticles.Size = new System.Drawing.Size(606, 306);
             this.tabControlArticles.TabIndex = 3;
             // 
             // tabArctile1
@@ -160,7 +165,7 @@
             this.tabArctile1.Location = new System.Drawing.Point(4, 25);
             this.tabArctile1.Name = "tabArctile1";
             this.tabArctile1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabArctile1.Size = new System.Drawing.Size(423, 233);
+            this.tabArctile1.Size = new System.Drawing.Size(598, 277);
             this.tabArctile1.TabIndex = 0;
             this.tabArctile1.Text = global::WFAplikacija.Lang.Dictionary.AFProductTypeDrink;
             this.tabArctile1.UseVisualStyleBackColor = true;
@@ -190,7 +195,7 @@
             this.tabArticle2.Location = new System.Drawing.Point(4, 25);
             this.tabArticle2.Name = "tabArticle2";
             this.tabArticle2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabArticle2.Size = new System.Drawing.Size(423, 233);
+            this.tabArticle2.Size = new System.Drawing.Size(598, 277);
             this.tabArticle2.TabIndex = 1;
             this.tabArticle2.Text = global::WFAplikacija.Lang.Dictionary.AFProductTypeFood;
             this.tabArticle2.UseVisualStyleBackColor = true;
@@ -215,17 +220,70 @@
             // 
             // tabReports
             // 
+            this.tabReports.Controls.Add(this.btnFilter);
+            this.tabReports.Controls.Add(this.tBoxFilter);
+            this.tabReports.Controls.Add(this.cmbFilterFunction);
+            this.tabReports.Controls.Add(this.cmbFilterColumn);
+            this.tabReports.Controls.Add(this.lblFilter);
+            this.tabReports.Controls.Add(this.btnReportsSave);
             this.tabReports.Controls.Add(this.dtReports);
-            this.tabReports.Controls.Add(this.radioButton3);
             this.tabReports.Controls.Add(this.radioButton2);
             this.tabReports.Controls.Add(this.radioButton1);
             this.tabReports.Location = new System.Drawing.Point(4, 25);
             this.tabReports.Name = "tabReports";
             this.tabReports.Padding = new System.Windows.Forms.Padding(3);
-            this.tabReports.Size = new System.Drawing.Size(792, 449);
+            this.tabReports.Size = new System.Drawing.Size(1077, 542);
             this.tabReports.TabIndex = 3;
             this.tabReports.Text = global::WFAplikacija.Lang.Dictionary.AFTabReports;
             this.tabReports.UseVisualStyleBackColor = true;
+            // 
+            // tBoxFilter
+            // 
+            this.tBoxFilter.Location = new System.Drawing.Point(8, 192);
+            this.tBoxFilter.Name = "tBoxFilter";
+            this.tBoxFilter.Size = new System.Drawing.Size(121, 22);
+            this.tBoxFilter.TabIndex = 9;
+            // 
+            // cmbFilterFunction
+            // 
+            this.cmbFilterFunction.FormattingEnabled = true;
+            this.cmbFilterFunction.Items.AddRange(new object[] {
+            "Is equal to",
+            "Is greater than",
+            "Is less than",
+            "Is not equal to",
+            "Starts with"});
+            this.cmbFilterFunction.Location = new System.Drawing.Point(8, 149);
+            this.cmbFilterFunction.Name = "cmbFilterFunction";
+            this.cmbFilterFunction.Size = new System.Drawing.Size(121, 24);
+            this.cmbFilterFunction.TabIndex = 8;
+            // 
+            // cmbFilterColumn
+            // 
+            this.cmbFilterColumn.FormattingEnabled = true;
+            this.cmbFilterColumn.Location = new System.Drawing.Point(8, 108);
+            this.cmbFilterColumn.Name = "cmbFilterColumn";
+            this.cmbFilterColumn.Size = new System.Drawing.Size(121, 24);
+            this.cmbFilterColumn.TabIndex = 7;
+            // 
+            // lblFilter
+            // 
+            this.lblFilter.AutoSize = true;
+            this.lblFilter.Location = new System.Drawing.Point(8, 83);
+            this.lblFilter.Name = "lblFilter";
+            this.lblFilter.Size = new System.Drawing.Size(74, 17);
+            this.lblFilter.TabIndex = 6;
+            this.lblFilter.Text = "FILTER by";
+            // 
+            // btnReportsSave
+            // 
+            this.btnReportsSave.Location = new System.Drawing.Point(3, 511);
+            this.btnReportsSave.Name = "btnReportsSave";
+            this.btnReportsSave.Size = new System.Drawing.Size(75, 23);
+            this.btnReportsSave.TabIndex = 5;
+            this.btnReportsSave.Text = "SAVE";
+            this.btnReportsSave.UseVisualStyleBackColor = true;
+            this.btnReportsSave.Click += new System.EventHandler(this.btnReportsSave_Click);
             // 
             // dtReports
             // 
@@ -233,23 +291,12 @@
             this.dtReports.AllowUserToDeleteRows = false;
             this.dtReports.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtReports.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dtReports.Location = new System.Drawing.Point(119, 6);
+            this.dtReports.Location = new System.Drawing.Point(161, 6);
             this.dtReports.Name = "dtReports";
             this.dtReports.RowHeadersWidth = 51;
             this.dtReports.RowTemplate.Height = 24;
-            this.dtReports.Size = new System.Drawing.Size(667, 432);
+            this.dtReports.Size = new System.Drawing.Size(910, 528);
             this.dtReports.TabIndex = 4;
-            // 
-            // radioButton3
-            // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(3, 60);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(110, 21);
-            this.radioButton3.TabIndex = 2;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "radioButton3";
-            this.radioButton3.UseVisualStyleBackColor = true;
             // 
             // radioButton2
             // 
@@ -258,9 +305,9 @@
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(85, 21);
             this.radioButton2.TabIndex = 1;
-            this.radioButton2.TabStop = true;
             this.radioButton2.Text = global::WFAplikacija.Lang.Dictionary.AFButtonProducts;
             this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
             // 
             // radioButton1
             // 
@@ -269,7 +316,6 @@
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(54, 21);
             this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
             this.radioButton1.Text = global::WFAplikacija.Lang.Dictionary.AFButtonBills;
             this.radioButton1.UseVisualStyleBackColor = true;
             this.radioButton1.Click += new System.EventHandler(this.radioButton1_CheckedChanged);
@@ -303,11 +349,20 @@
             this.tabAdmin.Location = new System.Drawing.Point(4, 25);
             this.tabAdmin.Name = "tabAdmin";
             this.tabAdmin.Padding = new System.Windows.Forms.Padding(3);
-            this.tabAdmin.Size = new System.Drawing.Size(792, 449);
+            this.tabAdmin.Size = new System.Drawing.Size(1077, 542);
             this.tabAdmin.TabIndex = 2;
             this.tabAdmin.Text = global::WFAplikacija.Lang.Dictionary.AFTabAdmin;
             this.tabAdmin.UseVisualStyleBackColor = true;
             this.tabAdmin.Click += new System.EventHandler(this.tabReports_Click);
+            // 
+            // testABLabel
+            // 
+            this.testABLabel.AutoSize = true;
+            this.testABLabel.Location = new System.Drawing.Point(735, 67);
+            this.testABLabel.Name = "testABLabel";
+            this.testABLabel.Size = new System.Drawing.Size(49, 17);
+            this.testABLabel.TabIndex = 24;
+            this.testABLabel.Text = "testAB";
             // 
             // label3
             // 
@@ -523,20 +578,21 @@
             this.checkServerButton.UseVisualStyleBackColor = true;
             this.checkServerButton.Click += new System.EventHandler(this.checkServerButton_Click);
             // 
-            // testABLabel
+            // btnFilter
             // 
-            this.testABLabel.AutoSize = true;
-            this.testABLabel.Location = new System.Drawing.Point(735, 67);
-            this.testABLabel.Name = "testABLabel";
-            this.testABLabel.Size = new System.Drawing.Size(49, 17);
-            this.testABLabel.TabIndex = 24;
-            this.testABLabel.Text = "testAB";
+            this.btnFilter.Location = new System.Drawing.Point(54, 239);
+            this.btnFilter.Name = "btnFilter";
+            this.btnFilter.Size = new System.Drawing.Size(75, 23);
+            this.btnFilter.TabIndex = 10;
+            this.btnFilter.Text = "Filter";
+            this.btnFilter.UseVisualStyleBackColor = true;
+            this.btnFilter.Click += new System.EventHandler(this.btnFilter_Click);
             // 
             // AppForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 478);
+            this.ClientSize = new System.Drawing.Size(1085, 571);
             this.Controls.Add(this.tabMainControl);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AppForm";
@@ -590,7 +646,6 @@
         private System.Windows.Forms.Label lblTotalNum;
         private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.TabPage tabReports;
-        private System.Windows.Forms.RadioButton radioButton3;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.DataGridView dtReports;
@@ -600,6 +655,12 @@
         private System.Windows.Forms.Button openPropertiesButton;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label testABLabel;
+        private System.Windows.Forms.Button btnReportsSave;
+        private System.Windows.Forms.ComboBox cmbFilterColumn;
+        private System.Windows.Forms.Label lblFilter;
+        private System.Windows.Forms.ComboBox cmbFilterFunction;
+        private System.Windows.Forms.TextBox tBoxFilter;
+        private System.Windows.Forms.Button btnFilter;
     }
 }
 

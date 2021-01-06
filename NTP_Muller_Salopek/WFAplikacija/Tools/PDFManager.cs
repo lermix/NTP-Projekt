@@ -14,18 +14,18 @@ using System.Text;
 using System.Threading.Tasks;
 using Syncfusion.HtmlConverter;
 using System.IO;
+using System.Collections;
+using WFAplikacija.DataObjects;
 
 // Syncfusion.Pdf.WinForms nuGet package needed
 namespace WFAplikacija.Tools
 {
+    /// <summary>
+    /// Creates pdf document with table created from list, 
+    /// Location example @"C:\Users\Alen\Desktop\output.pdf"
+    /// </summary>
     public static class PDFManager
     {
-        /// <summary>
-        /// Creates pdf document with table created from list, 
-        /// Location example @"C:\Users\Alen\Desktop\output.pdf"
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="items"></param>
         public static void createPDFfromList<T>(List<T> items, string title, string location)
         {
             //Create a new PDF document
@@ -46,7 +46,7 @@ namespace WFAplikacija.Tools
             var myType = typeof(T);
             DataTable dataTable = new DataTable();
             foreach (PropertyInfo info in myType.GetProperties())
-            {
+            {                
                 dataTable.Columns.Add(new DataColumn(info.Name, info.PropertyType));
             }
             foreach (var item in items)
@@ -54,7 +54,7 @@ namespace WFAplikacija.Tools
                 DataRow dr = dataTable.NewRow();
                 foreach (PropertyInfo info in myType.GetProperties())
                 {
-                    dr[info.Name] = info.GetValue(item);
+                    dr[info.Name] = info.GetValue(item); 
                 }
                 dataTable.Rows.Add(dr);
             }
@@ -68,7 +68,7 @@ namespace WFAplikacija.Tools
             doc.Close(true);
         }
 
-        public static void BillsXmlToPdf()
+        public static void BillsXmlToPdf(string saveLocation)
         {
             //Initialize the HtmlToPdfConverter with IE rendering engine
             HtmlToPdfConverter htmlToPDFConverter = new HtmlToPdfConverter(HtmlRenderingEngine.IE);
@@ -87,7 +87,7 @@ namespace WFAplikacija.Tools
 
             //Save the PDF document
             //document.Save(@"../../PDFReports/output.pdf");
-            //document.Save(@"C:\Users\stjep\OneDrive\Radna Površina\output.pdf");
+            document.Save(saveLocation);
 
             //Close the instance of PdfDocument
             document.Close(true);

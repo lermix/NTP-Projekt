@@ -32,17 +32,17 @@ namespace WFAplikacija
             FIllListBox();
             switch (cmbArticleManager.SelectedItem.ToString())
             {
-                case "Insert article":
+                case "Insert product":
                     txtBoxEnabled(true);
                     EditAndDeleteListShow(false);
                     txtBoxArticleManagerId.Text = XmlManager.getNextIDArticle().ToString();
                     break;
-                case "Delete article":
+                case "Delete product":
                     txtBoxEnabled(false);
                     EditAndDeleteListShow(true);
                     txtBoxArticleManagerId.Text = "";
                     break;
-                case "Edit article":
+                case "Edit product":
                     txtBoxEnabled(true);
                     EditAndDeleteListShow(true);
                     txtBoxArticleManagerId.Text = "";
@@ -93,6 +93,8 @@ namespace WFAplikacija
 
         }
 
+
+        //Functions used inside this class --------------------------------------------------------------------
         private void InsertAndEditControlsShow(bool Show)
         {
             if (Show)
