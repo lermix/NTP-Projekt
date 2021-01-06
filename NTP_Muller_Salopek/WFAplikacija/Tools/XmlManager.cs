@@ -1,4 +1,4 @@
-﻿using WFAplikacija.dataObjects;
+﻿using WFAplikacija.DataObjects;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -11,7 +11,7 @@ using System.Xml.Linq;
 using System.Xml.Serialization;
 using System.Xml.Xsl;
 
-namespace WFAplikacija
+namespace WFAplikacija.Tools
 {
 
     //Bavi se xml fileovima
@@ -21,8 +21,6 @@ namespace WFAplikacija
         public static string AllBillXmlLoaction = "../../Data/AllBills.xml";
 
         static List<Article> allArticles = new List<Article>();
-
-        public static User user { get; set; }
 
         static XDocument AllArticlesXml = XDocument.Load(AllArticlesXmlLoaction);
         static XDocument AllBillsXml = XDocument.Load(AllBillXmlLoaction);
@@ -73,8 +71,8 @@ namespace WFAplikacija
                 float totalPrice = 0;
                 billElement.Add(new XAttribute("ID", bill.id));
                 billElement.Add(new XAttribute("Time", DateTime.Now.ToString("dd-MM-yyy HH:mm")));
-                billElement.Add(new XAttribute("User", user.username));
-                billElement.Add(new XAttribute("SavedToDatabase", user.username));
+                billElement.Add(new XAttribute("User", WFAplikacija.Tools.Session.user.username));
+                billElement.Add(new XAttribute("SavedToDatabase", WFAplikacija.Tools.Session.user.username));
 
                 //Add articles to bill
                 foreach (Article article in bill.articles)

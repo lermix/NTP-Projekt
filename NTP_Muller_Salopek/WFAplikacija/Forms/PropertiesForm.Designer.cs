@@ -28,8 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PropertiesForm));
             this.tabControlProperties = new System.Windows.Forms.TabControl();
             this.tabArticleManager = new System.Windows.Forms.TabPage();
+            this.listBoxArticleManagerArticles = new System.Windows.Forms.ListBox();
+            this.btnArticleManagerComplete = new System.Windows.Forms.Button();
             this.txtBoxArticleManagerPrice = new System.Windows.Forms.TextBox();
             this.lblArticleManagerPrice = new System.Windows.Forms.Label();
             this.txtBoxArticleManagerBtnName = new System.Windows.Forms.TextBox();
@@ -42,8 +45,6 @@
             this.lblOperation = new System.Windows.Forms.Label();
             this.cmbArticleManager = new System.Windows.Forms.ComboBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.btnArticleManagerComplete = new System.Windows.Forms.Button();
-            this.listBoxArticleManagerArticles = new System.Windows.Forms.ListBox();
             this.tabControlProperties.SuspendLayout();
             this.tabArticleManager.SuspendLayout();
             this.SuspendLayout();
@@ -78,8 +79,30 @@
             this.tabArticleManager.Padding = new System.Windows.Forms.Padding(3);
             this.tabArticleManager.Size = new System.Drawing.Size(790, 407);
             this.tabArticleManager.TabIndex = 0;
-            this.tabArticleManager.Text = "Article Manager";
+            this.tabArticleManager.Text = global::WFAplikacija.Lang.Dictionary.PFProductManager;
             this.tabArticleManager.UseVisualStyleBackColor = true;
+            // 
+            // listBoxArticleManagerArticles
+            // 
+            this.listBoxArticleManagerArticles.AllowDrop = true;
+            this.listBoxArticleManagerArticles.FormattingEnabled = true;
+            this.listBoxArticleManagerArticles.HorizontalScrollbar = true;
+            this.listBoxArticleManagerArticles.ItemHeight = 16;
+            this.listBoxArticleManagerArticles.Location = new System.Drawing.Point(398, 26);
+            this.listBoxArticleManagerArticles.Name = "listBoxArticleManagerArticles";
+            this.listBoxArticleManagerArticles.Size = new System.Drawing.Size(384, 308);
+            this.listBoxArticleManagerArticles.TabIndex = 13;
+            this.listBoxArticleManagerArticles.SelectedIndexChanged += new System.EventHandler(this.listBoxArticleManagerArticles_SelectedIndexChanged);
+            // 
+            // btnArticleManagerComplete
+            // 
+            this.btnArticleManagerComplete.Location = new System.Drawing.Point(684, 354);
+            this.btnArticleManagerComplete.Name = "btnArticleManagerComplete";
+            this.btnArticleManagerComplete.Size = new System.Drawing.Size(100, 50);
+            this.btnArticleManagerComplete.TabIndex = 12;
+            this.btnArticleManagerComplete.Text = WFAplikacija.Lang.Dictionary.PFComplete;
+            this.btnArticleManagerComplete.UseVisualStyleBackColor = true;
+            this.btnArticleManagerComplete.Click += new System.EventHandler(this.btnArticleManagerComplete_Click);
             // 
             // txtBoxArticleManagerPrice
             // 
@@ -95,7 +118,7 @@
             this.lblArticleManagerPrice.Name = "lblArticleManagerPrice";
             this.lblArticleManagerPrice.Size = new System.Drawing.Size(39, 17);
             this.lblArticleManagerPrice.TabIndex = 10;
-            this.lblArticleManagerPrice.Text = "price";
+            this.lblArticleManagerPrice.Text = WFAplikacija.Lang.Dictionary.PFPrice;
             // 
             // txtBoxArticleManagerBtnName
             // 
@@ -127,7 +150,7 @@
             this.lblArticleManagerName.Name = "lblArticleManagerName";
             this.lblArticleManagerName.Size = new System.Drawing.Size(45, 17);
             this.lblArticleManagerName.TabIndex = 6;
-            this.lblArticleManagerName.Text = "Name";
+            this.lblArticleManagerName.Text = WFAplikacija.Lang.Dictionary.PFProductName;
             // 
             // txtBoxArticleManagerId
             // 
@@ -144,7 +167,7 @@
             this.lblArticleManagerID.Name = "lblArticleManagerID";
             this.lblArticleManagerID.Size = new System.Drawing.Size(21, 17);
             this.lblArticleManagerID.TabIndex = 4;
-            this.lblArticleManagerID.Text = "ID";
+            this.lblArticleManagerID.Text = WFAplikacija.Lang.Dictionary.PFProductID;
             // 
             // lblChoseArticle
             // 
@@ -153,24 +176,24 @@
             this.lblChoseArticle.Name = "lblChoseArticle";
             this.lblChoseArticle.Size = new System.Drawing.Size(90, 17);
             this.lblChoseArticle.TabIndex = 3;
-            this.lblChoseArticle.Text = "Chose article";
+            this.lblChoseArticle.Text = WFAplikacija.Lang.Dictionary.PFChooseProduct;
             // 
             // lblOperation
             // 
             this.lblOperation.AutoSize = true;
             this.lblOperation.Location = new System.Drawing.Point(6, 3);
             this.lblOperation.Name = "lblOperation";
-            this.lblOperation.Size = new System.Drawing.Size(71, 17);
+            this.lblOperation.Size = new System.Drawing.Size(47, 17);
             this.lblOperation.TabIndex = 1;
-            this.lblOperation.Text = "Operation";
+            this.lblOperation.Text = WFAplikacija.Lang.Dictionary.PFAction;
             // 
             // cmbArticleManager
             // 
             this.cmbArticleManager.FormattingEnabled = true;
             this.cmbArticleManager.Items.AddRange(new object[] {
-            "Insert article",
-            "Delete article",
-            "Edit article"});
+            global::WFAplikacija.Lang.Dictionary.PFActionInsert,
+            global::WFAplikacija.Lang.Dictionary.PFActionDelete,
+            global::WFAplikacija.Lang.Dictionary.PFActionEdit});
             this.cmbArticleManager.Location = new System.Drawing.Point(9, 23);
             this.cmbArticleManager.Name = "cmbArticleManager";
             this.cmbArticleManager.Size = new System.Drawing.Size(121, 24);
@@ -182,32 +205,10 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(768, 407);
+            this.tabPage2.Size = new System.Drawing.Size(790, 407);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // btnArticleManagerComplete
-            // 
-            this.btnArticleManagerComplete.Location = new System.Drawing.Point(684, 354);
-            this.btnArticleManagerComplete.Name = "btnArticleManagerComplete";
-            this.btnArticleManagerComplete.Size = new System.Drawing.Size(100, 50);
-            this.btnArticleManagerComplete.TabIndex = 12;
-            this.btnArticleManagerComplete.Text = "Complete";
-            this.btnArticleManagerComplete.UseVisualStyleBackColor = true;
-            this.btnArticleManagerComplete.Click += new System.EventHandler(this.btnArticleManagerComplete_Click);
-            // 
-            // listBoxArticleManagerArticles
-            // 
-            this.listBoxArticleManagerArticles.AllowDrop = true;
-            this.listBoxArticleManagerArticles.FormattingEnabled = true;
-            this.listBoxArticleManagerArticles.HorizontalScrollbar = true;
-            this.listBoxArticleManagerArticles.ItemHeight = 16;
-            this.listBoxArticleManagerArticles.Location = new System.Drawing.Point(398, 26);
-            this.listBoxArticleManagerArticles.Name = "listBoxArticleManagerArticles";
-            this.listBoxArticleManagerArticles.Size = new System.Drawing.Size(384, 308);
-            this.listBoxArticleManagerArticles.TabIndex = 13;
-            this.listBoxArticleManagerArticles.SelectedIndexChanged += new System.EventHandler(this.listBoxArticleManagerArticles_SelectedIndexChanged);
             // 
             // PropertiesForm
             // 
@@ -215,8 +216,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.tabControlProperties);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "PropertiesForm";
-            this.Text = "Properties";
+            this.Text = WFAplikacija.Lang.Dictionary.PFNameofForm;
             this.tabControlProperties.ResumeLayout(false);
             this.tabArticleManager.ResumeLayout(false);
             this.tabArticleManager.PerformLayout();

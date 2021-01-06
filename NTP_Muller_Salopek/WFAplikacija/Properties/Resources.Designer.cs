@@ -68,5 +68,14 @@ namespace WFAplikacija.Properties {
                 return ResourceManager.GetString("CentralniServerURL", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A.
+        /// </summary>
+        public static string testAB {
+            get {
+                return ResourceManager.GetString("testAB", resourceCulture);
+            }
+        }
     }
 }
