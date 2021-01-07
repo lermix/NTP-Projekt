@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.WindowsAPICodePack.Dialogs;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,15 +16,20 @@ namespace WFAplikacija
     public partial class PropertiesForm : Form
     {
         ArticleCollection articlesCollection = new ArticleCollection();
-        
 
-        public PropertiesForm()
+        AppForm appForm;
+
+
+
+        public PropertiesForm(AppForm mainForm)
         {
             InitializeComponent();
 
+            appForm = mainForm;
             //konfiguracija izgleda            
             EditAndDeleteListShow(false);
 
+            //Ini manager
         }
 
         private void cmbArticleManager_SelectedIndexChanged(object sender, EventArgs e)
@@ -94,7 +100,7 @@ namespace WFAplikacija
         }
 
 
-        //Functions used inside this class --------------------------------------------------------------------
+//Functions used inside this class -------------------------------------------------------------------------------
         private void InsertAndEditControlsShow(bool Show)
         {
             if (Show)
@@ -208,6 +214,39 @@ namespace WFAplikacija
             }
         }
 
-        
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            listBoxAddToSale.Items.Clear();
+            articlesCollection = XmlManager.GetArticles();
+            for (int i = 0; i < articlesCollection.articles.Count; i++)
+            {
+                listBoxAddToSale.Items.Add(articlesCollection.articles[i]);
+            }
+        }
+
+        private void btnAddToSale_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(cmbAddToSale.Text))
+            {
+                if (listBoxAddToSale.SelectedItems.Count != 0)
+                {
+                    Article articleSelected = (Article)listBoxAddToSale.SelectedItem;
+                    appForm.ChangeButtonText(cmbAddToSale.Text, articleSelected.buttonName);
+
+                    IniFilesManager MyIni = new IniFilesManager("Settings.ini");
+
+                    MyIni.Write(cmbAddToSale.Text, articleSelected.buttonName);
+                }
+                else
+                {
+                    MessageBox.Show("Plesae select article");
+                }                
+            }
+            else
+            {
+                MessageBox.Show("Please select button");
+            }
+            
+        }
     }
 }

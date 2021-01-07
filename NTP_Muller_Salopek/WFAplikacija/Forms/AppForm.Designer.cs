@@ -48,6 +48,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.listViewArticles = new System.Windows.Forms.ListView();
             this.tabReports = new System.Windows.Forms.TabPage();
+            this.btnReportsBack = new System.Windows.Forms.Button();
+            this.btnReportsBillInfo = new System.Windows.Forms.Button();
+            this.lblBillInfo = new System.Windows.Forms.Label();
+            this.btnFilter = new System.Windows.Forms.Button();
             this.tBoxFilter = new System.Windows.Forms.TextBox();
             this.cmbFilterFunction = new System.Windows.Forms.ComboBox();
             this.cmbFilterColumn = new System.Windows.Forms.ComboBox();
@@ -82,7 +86,19 @@
             this.checkServerResponseLabel = new System.Windows.Forms.Label();
             this.checkServerButton = new System.Windows.Forms.Button();
             this.pdfConfig1 = new Syncfusion.Pdf.PdfConfig();
-            this.btnFilter = new System.Windows.Forms.Button();
+            this.btnReportsSaveAllBills = new System.Windows.Forms.Button();
+            this.btnArticle3 = new System.Windows.Forms.Button();
+            this.btnArticle4 = new System.Windows.Forms.Button();
+            this.btnArticle5 = new System.Windows.Forms.Button();
+            this.btnArticle6 = new System.Windows.Forms.Button();
+            this.btnArticle7 = new System.Windows.Forms.Button();
+            this.btnArticle8 = new System.Windows.Forms.Button();
+            this.btnArticle9 = new System.Windows.Forms.Button();
+            this.btnArticle10 = new System.Windows.Forms.Button();
+            this.btnArticle11 = new System.Windows.Forms.Button();
+            this.btnArticle12 = new System.Windows.Forms.Button();
+            this.btnArticle13 = new System.Windows.Forms.Button();
+            this.btnArticle14 = new System.Windows.Forms.Button();
             this.tabMainControl.SuspendLayout();
             this.tabSale.SuspendLayout();
             this.tabControlArticles.SuspendLayout();
@@ -160,6 +176,18 @@
             // 
             // tabArctile1
             // 
+            this.tabArctile1.Controls.Add(this.btnArticle14);
+            this.tabArctile1.Controls.Add(this.btnArticle13);
+            this.tabArctile1.Controls.Add(this.btnArticle12);
+            this.tabArctile1.Controls.Add(this.btnArticle11);
+            this.tabArctile1.Controls.Add(this.btnArticle10);
+            this.tabArctile1.Controls.Add(this.btnArticle9);
+            this.tabArctile1.Controls.Add(this.btnArticle8);
+            this.tabArctile1.Controls.Add(this.btnArticle7);
+            this.tabArctile1.Controls.Add(this.btnArticle6);
+            this.tabArctile1.Controls.Add(this.btnArticle5);
+            this.tabArctile1.Controls.Add(this.btnArticle4);
+            this.tabArctile1.Controls.Add(this.btnArticle3);
             this.tabArctile1.Controls.Add(this.btnArticle2);
             this.tabArctile1.Controls.Add(this.btnArticle1);
             this.tabArctile1.Location = new System.Drawing.Point(4, 25);
@@ -220,6 +248,10 @@
             // 
             // tabReports
             // 
+            this.tabReports.Controls.Add(this.btnReportsSaveAllBills);
+            this.tabReports.Controls.Add(this.btnReportsBack);
+            this.tabReports.Controls.Add(this.btnReportsBillInfo);
+            this.tabReports.Controls.Add(this.lblBillInfo);
             this.tabReports.Controls.Add(this.btnFilter);
             this.tabReports.Controls.Add(this.tBoxFilter);
             this.tabReports.Controls.Add(this.cmbFilterFunction);
@@ -236,6 +268,45 @@
             this.tabReports.TabIndex = 3;
             this.tabReports.Text = global::WFAplikacija.Lang.Dictionary.AFTabReports;
             this.tabReports.UseVisualStyleBackColor = true;
+            // 
+            // btnReportsBack
+            // 
+            this.btnReportsBack.Location = new System.Drawing.Point(11, 391);
+            this.btnReportsBack.Name = "btnReportsBack";
+            this.btnReportsBack.Size = new System.Drawing.Size(129, 37);
+            this.btnReportsBack.TabIndex = 13;
+            this.btnReportsBack.Text = "Back";
+            this.btnReportsBack.UseVisualStyleBackColor = true;
+            this.btnReportsBack.Click += new System.EventHandler(this.btnReportsBack_Click);
+            // 
+            // btnReportsBillInfo
+            // 
+            this.btnReportsBillInfo.Location = new System.Drawing.Point(11, 338);
+            this.btnReportsBillInfo.Name = "btnReportsBillInfo";
+            this.btnReportsBillInfo.Size = new System.Drawing.Size(127, 47);
+            this.btnReportsBillInfo.TabIndex = 12;
+            this.btnReportsBillInfo.Text = "Show selected BIll";
+            this.btnReportsBillInfo.UseVisualStyleBackColor = true;
+            this.btnReportsBillInfo.Click += new System.EventHandler(this.btnReportsBillInfo_Click);
+            // 
+            // lblBillInfo
+            // 
+            this.lblBillInfo.AutoSize = true;
+            this.lblBillInfo.Location = new System.Drawing.Point(29, 318);
+            this.lblBillInfo.Name = "lblBillInfo";
+            this.lblBillInfo.Size = new System.Drawing.Size(72, 17);
+            this.lblBillInfo.TabIndex = 11;
+            this.lblBillInfo.Text = "BILL INFO";
+            // 
+            // btnFilter
+            // 
+            this.btnFilter.Location = new System.Drawing.Point(54, 239);
+            this.btnFilter.Name = "btnFilter";
+            this.btnFilter.Size = new System.Drawing.Size(75, 23);
+            this.btnFilter.TabIndex = 10;
+            this.btnFilter.Text = "Filter";
+            this.btnFilter.UseVisualStyleBackColor = true;
+            this.btnFilter.Click += new System.EventHandler(this.btnFilter_Click);
             // 
             // tBoxFilter
             // 
@@ -353,7 +424,6 @@
             this.tabAdmin.TabIndex = 2;
             this.tabAdmin.Text = global::WFAplikacija.Lang.Dictionary.AFTabAdmin;
             this.tabAdmin.UseVisualStyleBackColor = true;
-            this.tabAdmin.Click += new System.EventHandler(this.tabReports_Click);
             // 
             // testABLabel
             // 
@@ -578,15 +648,123 @@
             this.checkServerButton.UseVisualStyleBackColor = true;
             this.checkServerButton.Click += new System.EventHandler(this.checkServerButton_Click);
             // 
-            // btnFilter
+            // btnReportsSaveAllBills
             // 
-            this.btnFilter.Location = new System.Drawing.Point(54, 239);
-            this.btnFilter.Name = "btnFilter";
-            this.btnFilter.Size = new System.Drawing.Size(75, 23);
-            this.btnFilter.TabIndex = 10;
-            this.btnFilter.Text = "Filter";
-            this.btnFilter.UseVisualStyleBackColor = true;
-            this.btnFilter.Click += new System.EventHandler(this.btnFilter_Click);
+            this.btnReportsSaveAllBills.Location = new System.Drawing.Point(11, 434);
+            this.btnReportsSaveAllBills.Name = "btnReportsSaveAllBills";
+            this.btnReportsSaveAllBills.Size = new System.Drawing.Size(127, 43);
+            this.btnReportsSaveAllBills.TabIndex = 14;
+            this.btnReportsSaveAllBills.Text = "Save all bills as xml";
+            this.btnReportsSaveAllBills.UseVisualStyleBackColor = true;
+            this.btnReportsSaveAllBills.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnArticle3
+            // 
+            this.btnArticle3.Location = new System.Drawing.Point(168, 6);
+            this.btnArticle3.Name = "btnArticle3";
+            this.btnArticle3.Size = new System.Drawing.Size(75, 75);
+            this.btnArticle3.TabIndex = 2;
+            this.btnArticle3.UseVisualStyleBackColor = true;
+            this.btnArticle3.Click += new System.EventHandler(this.ArticleButtonClicked);
+            // 
+            // btnArticle4
+            // 
+            this.btnArticle4.Location = new System.Drawing.Point(249, 6);
+            this.btnArticle4.Name = "btnArticle4";
+            this.btnArticle4.Size = new System.Drawing.Size(75, 75);
+            this.btnArticle4.TabIndex = 3;
+            this.btnArticle4.UseVisualStyleBackColor = true;
+            this.btnArticle4.Click += new System.EventHandler(this.ArticleButtonClicked);
+            // 
+            // btnArticle5
+            // 
+            this.btnArticle5.Location = new System.Drawing.Point(330, 6);
+            this.btnArticle5.Name = "btnArticle5";
+            this.btnArticle5.Size = new System.Drawing.Size(75, 75);
+            this.btnArticle5.TabIndex = 4;
+            this.btnArticle5.UseVisualStyleBackColor = true;
+            this.btnArticle5.Click += new System.EventHandler(this.ArticleButtonClicked);
+            // 
+            // btnArticle6
+            // 
+            this.btnArticle6.Location = new System.Drawing.Point(411, 6);
+            this.btnArticle6.Name = "btnArticle6";
+            this.btnArticle6.Size = new System.Drawing.Size(75, 75);
+            this.btnArticle6.TabIndex = 5;
+            this.btnArticle6.UseVisualStyleBackColor = true;
+            this.btnArticle6.Click += new System.EventHandler(this.ArticleButtonClicked);
+            // 
+            // btnArticle7
+            // 
+            this.btnArticle7.Location = new System.Drawing.Point(492, 6);
+            this.btnArticle7.Name = "btnArticle7";
+            this.btnArticle7.Size = new System.Drawing.Size(75, 75);
+            this.btnArticle7.TabIndex = 6;
+            this.btnArticle7.UseVisualStyleBackColor = true;
+            this.btnArticle7.Click += new System.EventHandler(this.ArticleButtonClicked);
+            // 
+            // btnArticle8
+            // 
+            this.btnArticle8.Location = new System.Drawing.Point(6, 97);
+            this.btnArticle8.Name = "btnArticle8";
+            this.btnArticle8.Size = new System.Drawing.Size(75, 75);
+            this.btnArticle8.TabIndex = 7;
+            this.btnArticle8.UseVisualStyleBackColor = true;
+            this.btnArticle8.Click += new System.EventHandler(this.ArticleButtonClicked);
+            // 
+            // btnArticle9
+            // 
+            this.btnArticle9.Location = new System.Drawing.Point(87, 97);
+            this.btnArticle9.Name = "btnArticle9";
+            this.btnArticle9.Size = new System.Drawing.Size(75, 75);
+            this.btnArticle9.TabIndex = 8;
+            this.btnArticle9.UseVisualStyleBackColor = true;
+            this.btnArticle9.Click += new System.EventHandler(this.ArticleButtonClicked);
+            // 
+            // btnArticle10
+            // 
+            this.btnArticle10.Location = new System.Drawing.Point(168, 97);
+            this.btnArticle10.Name = "btnArticle10";
+            this.btnArticle10.Size = new System.Drawing.Size(75, 75);
+            this.btnArticle10.TabIndex = 9;
+            this.btnArticle10.UseVisualStyleBackColor = true;
+            this.btnArticle10.Click += new System.EventHandler(this.ArticleButtonClicked);
+            // 
+            // btnArticle11
+            // 
+            this.btnArticle11.Location = new System.Drawing.Point(249, 97);
+            this.btnArticle11.Name = "btnArticle11";
+            this.btnArticle11.Size = new System.Drawing.Size(75, 75);
+            this.btnArticle11.TabIndex = 10;
+            this.btnArticle11.UseVisualStyleBackColor = true;
+            this.btnArticle11.Click += new System.EventHandler(this.ArticleButtonClicked);
+            // 
+            // btnArticle12
+            // 
+            this.btnArticle12.Location = new System.Drawing.Point(330, 97);
+            this.btnArticle12.Name = "btnArticle12";
+            this.btnArticle12.Size = new System.Drawing.Size(75, 75);
+            this.btnArticle12.TabIndex = 11;
+            this.btnArticle12.UseVisualStyleBackColor = true;
+            this.btnArticle12.Click += new System.EventHandler(this.ArticleButtonClicked);
+            // 
+            // btnArticle13
+            // 
+            this.btnArticle13.Location = new System.Drawing.Point(411, 97);
+            this.btnArticle13.Name = "btnArticle13";
+            this.btnArticle13.Size = new System.Drawing.Size(75, 75);
+            this.btnArticle13.TabIndex = 12;
+            this.btnArticle13.UseVisualStyleBackColor = true;
+            this.btnArticle13.Click += new System.EventHandler(this.ArticleButtonClicked);
+            // 
+            // btnArticle14
+            // 
+            this.btnArticle14.Location = new System.Drawing.Point(492, 97);
+            this.btnArticle14.Name = "btnArticle14";
+            this.btnArticle14.Size = new System.Drawing.Size(75, 75);
+            this.btnArticle14.TabIndex = 13;
+            this.btnArticle14.UseVisualStyleBackColor = true;
+            this.btnArticle14.Click += new System.EventHandler(this.ArticleButtonClicked);
             // 
             // AppForm
             // 
@@ -661,6 +839,22 @@
         private System.Windows.Forms.ComboBox cmbFilterFunction;
         private System.Windows.Forms.TextBox tBoxFilter;
         private System.Windows.Forms.Button btnFilter;
+        private System.Windows.Forms.Button btnReportsBack;
+        private System.Windows.Forms.Button btnReportsBillInfo;
+        private System.Windows.Forms.Label lblBillInfo;
+        private System.Windows.Forms.Button btnReportsSaveAllBills;
+        private System.Windows.Forms.Button btnArticle14;
+        private System.Windows.Forms.Button btnArticle13;
+        private System.Windows.Forms.Button btnArticle12;
+        private System.Windows.Forms.Button btnArticle11;
+        private System.Windows.Forms.Button btnArticle10;
+        private System.Windows.Forms.Button btnArticle9;
+        private System.Windows.Forms.Button btnArticle8;
+        private System.Windows.Forms.Button btnArticle7;
+        private System.Windows.Forms.Button btnArticle6;
+        private System.Windows.Forms.Button btnArticle5;
+        private System.Windows.Forms.Button btnArticle4;
+        private System.Windows.Forms.Button btnArticle3;
     }
 }
 

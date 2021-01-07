@@ -97,6 +97,7 @@
       <DependentUpon>PropertiesForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tools\IniFilesManager.cs" />
     <Compile Include="Tools\LanguageManager.cs" />
     <Compile Include="Tools\Session.cs" />
     <Compile Include="Tools\UserManager.cs" />

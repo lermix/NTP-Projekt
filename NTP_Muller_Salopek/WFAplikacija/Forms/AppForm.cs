@@ -14,22 +14,30 @@ using Microsoft.WindowsAPICodePack.Dialogs;
 
 namespace WFAplikacija
 {
+    /// <summary>
+    /// Main form
+    /// 
+    /// Warning!!!
+    /// When adding article button it must be added to articleButtonList in getAllArticleButtons() function
+    /// </summary>
     public partial class AppForm : Form
     {
-
+        //Sale
         List<Article> orderArticles = new List<Article>();
         ArticleCollection articleCollection = new ArticleCollection();
         Bill order = new Bill();
 
+        //Collections
         BillCollection billCollection = XmlManager.GetBills();
         ArticleCollection articlesCollection = XmlManager.GetArticles();
 
-
+        //Reports
+        string ShownObject = "";
 
         public AppForm()
         {
             InitializeComponent();
-
+           
             //Konfiguracija listViewArticles
             listViewArticles.View = View.Details;
             listViewArticles.Columns.Add("ID");
@@ -41,14 +49,32 @@ namespace WFAplikacija
             order.totalPrice = 0;
 
             //Dohavti sve dostupne artikle u ArtiklListu            
-            articleCollection = XmlManager.GetArticles();
+            articleCollection = XmlManager.GetArticles();                      
 
-            //TEST ZONE
-            //PDFManager.BillsXmlToPdf();
+            //Reports conf
+            lblBillInfo.Hide();
+            btnReportsBack.Hide();
+            btnReportsBillInfo.Hide();
+            btnReportsSaveAllBills.Hide();
+
+            //Load article layout
+
+            IniFilesManager MyIni = new IniFilesManager("Settings.ini");
+
+            foreach (Button button in getAllArticleButtons())
+            {
+                if (MyIni.KeyExists(button.Name))
+                {
+                   button.Text = MyIni.Read(button.Name);
+                }
+            }
+
         }
 
+//SALE---------------------------------------------------------------------------------------------------------------
+
         private void ArticleButtonClicked(object sender, EventArgs e)
-        {
+        {         
             //Dohvati koji button je stisnut
             var button = (Button)sender;
 
@@ -103,25 +129,29 @@ namespace WFAplikacija
         private void btnComplete_Click(object sender, EventArgs e)
         {
             //Dodaj racun u AllBills.xml
-            order.id = 0;
+            order.id = billCollection.Bills.Last().id+1;
             order.articles = orderArticles;
 
-            XmlManager.addObjectToXml(order);
+            ChangeButtonText("btnArticle3", "Kava");
+
+            if (order.articles.Count != 0)
+            {
+                XmlManager.addObjectToXml(order);
+            }
 
             listViewArticles.Items.Clear();
             orderArticles.Clear();
         }
 
+
+//ADMIN-------------------------------------------------------------------------------------------------------
         private void btnAdminLogin_Click(object sender, EventArgs e)
         {
-            PropertiesForm propertiesForm = new PropertiesForm();
+            PropertiesForm propertiesForm = new PropertiesForm(this);
             propertiesForm.ShowDialog();
         }
 
-        private void tabReports_Click(object sender, EventArgs e)
-        {
-
-        }
+//SERVER-------------------------------------------------------------------------------------------------------
 
         private void checkServerButton_Click(object sender, EventArgs e)
         {
@@ -175,21 +205,58 @@ namespace WFAplikacija
 
         private void openPropertiesButton_Click(object sender, EventArgs e)
         {
-            PropertiesForm propertiesForm = new PropertiesForm();
+            PropertiesForm propertiesForm = new PropertiesForm(this);
             propertiesForm.ShowDialog();
         }
 
+//HELPING FUNCTIONS-------------------------------------------------------------------------------------------------------
+        private List<Button> getAllArticleButtons()
+        {
+            List<Button> allArticleButton = new List<Button> {
+            btnArticle1, btnArticle2, btnArticle3, btnArticle4,
+            btnArticle5, btnArticle6, btnArticle7, btnArticle8,
+            btnArticle9, btnArticle10, btnArticle11, btnArticle12,
+            btnArticle13, btnArticle14};
+
+            return allArticleButton;
+        }
+
+        public void ChangeButtonText(string btnName, string text)
+        {
+            foreach (Button button in getAllArticleButtons())
+            {
+                if(button.Name == btnName)
+                {
+                    button.Text = text;
+                    MessageBox.Show("selected button: " + btnName + "\r\n" +
+                            "text changed to: " + text);
+                }
+            }
+        }
 
 //REPORTS-------------------------------------------------------------------------------------------------------------------
+//dtReports uses tag property to keep track of what is shown so it is easier to add shown objects to list
+//WARNING: when adding to dtReports change tag accordingly tags(Bills, Articles, BillArticles)
+//         *BillArticles have quantity and totalPrice
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
-            AddBillsToDtReports();          
+            AddBillsToDtReports();
+            dtReports.Tag = "Bills";
+            lblBillInfo.Show();
+            btnReportsBack.Show();
+            btnReportsBillInfo.Show();
+            btnReportsSaveAllBills.Show();
         }
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
             addArticlesToDtReports();
+            dtReports.Tag = "Articles";
+            lblBillInfo.Hide();
+            btnReportsBack.Hide();
+            btnReportsBillInfo.Hide();
+            btnReportsSaveAllBills.Hide();
         }
 
         private void btnReportsSave_Click(object sender, EventArgs e)
@@ -200,19 +267,26 @@ namespace WFAplikacija
 
             if (dialog.ShowDialog() == CommonFileDialogResult.Ok)
             {
-                if (radioButton1.Checked)//BILLS
+                if (dtReports.Tag.ToString() == "Bills")//BILLS
                 {
                     String saveLocation = dialog.FileName + "/bills_" + DateTime.Now.ToString("dd_MM_yyy_HHmmss") + ".pdf";
                     saveLocation = saveLocation.Replace("\\", "/");
                     MessageBox.Show("You selected: " + saveLocation);
-                    PDFManager.createPDFfromList<Bill>(DataGridBillsToList(), "Bills", @saveLocation);
+                    PDFManager.createPDFfromList<Bill>(DataGridBillsToList(), "Bills", @saveLocation, true);
                 }
-                else//ARTICLES
+                else if(dtReports.Tag.ToString() == "Articles")//ARTICLES
                 {
                     String saveLocation = dialog.FileName + "/Articles_" + DateTime.Now.ToString("dd_MM_yyy_HHmmss") + ".pdf";
                     saveLocation = saveLocation.Replace("\\", "/");
                     MessageBox.Show("You selected: " + saveLocation);
-                    PDFManager.createPDFfromList<Article>(DataGridArticlesToList(), "Articles", @saveLocation);
+                    PDFManager.createPDFfromList<Article>(DataGridArticlesToList(), "Articles", @saveLocation, true);
+                }
+                else if(dtReports.Tag.ToString() == "BillArticles") //Bill Articles
+                {
+                    String saveLocation = dialog.FileName + "/BillArticles_" + DateTime.Now.ToString("dd_MM_yyy_HHmmss") + ".pdf";
+                    saveLocation = saveLocation.Replace("\\", "/");
+                    MessageBox.Show("You selected: " + saveLocation);
+                    PDFManager.createPDFfromList<Article>(DataGridBillArticlesToList(), "Bill articles", @saveLocation, false);
                 }
                 
                 //PDFManager.BillsXmlToPdf(@saveLocation);
@@ -252,6 +326,24 @@ namespace WFAplikacija
                 tempArticle.ID = int.Parse(row.Cells[0].Value.ToString());
                 tempArticle.name = row.Cells[1].Value.ToString();
                 tempArticle.price = int.Parse(row.Cells[2].Value.ToString());
+
+                articleFromDataGridList.Add(tempArticle);
+            }
+
+            return articleFromDataGridList;
+        }
+
+        private List<Article> DataGridBillArticlesToList()
+        {
+            List<Article> articleFromDataGridList = new List<Article>();
+
+            foreach (DataGridViewRow row in dtReports.Rows)
+            {
+                Article tempArticle = new Article();
+                tempArticle.ID = int.Parse(row.Cells[0].Value.ToString());
+                tempArticle.name = row.Cells[1].Value.ToString();
+                tempArticle.price = int.Parse(row.Cells[2].Value.ToString());
+                tempArticle.quantity = int.Parse(row.Cells[3].Value.ToString());                
 
                 articleFromDataGridList.Add(tempArticle);
             }
@@ -392,12 +484,12 @@ namespace WFAplikacija
             dtReports.Refresh();
 
             //DataGridView config
-            dtReports.ColumnCount = 5;
+            dtReports.ColumnCount = 3;
             dtReports.Columns[0].Name = "ID";
             dtReports.Columns[1].Name = "name";
             dtReports.Columns[2].Name = "price";
 
-            //Add bills to dataGridView
+            //Add articles to dataGridView
             for (int i = 0; i < articlesCollection.articles.Count; i++)
             {
                 dtReports.Rows.Add(new string[] {
@@ -412,6 +504,72 @@ namespace WFAplikacija
             for (int i = 0; i < dtReports.Columns.Count; i++)
             {
                 cmbFilterColumn.Items.Add(dtReports.Columns[i].Name);
+            }
+        }
+
+        private void btnReportsBillInfo_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int billID = int.Parse(dtReports.SelectedRows[0].Cells["ID"].Value.ToString());
+                Bill selectedBill = billCollection.Bills.Find(x => x.id == billID);
+
+                // Clear previous data
+                dtReports.Columns.Clear();
+                dtReports.Rows.Clear();
+                dtReports.Refresh();
+
+                //DataGridView config
+                dtReports.ColumnCount = 5;
+                dtReports.Columns[0].Name = "ID";
+                dtReports.Columns[1].Name = "name";
+                dtReports.Columns[2].Name = "price";
+                dtReports.Columns[3].Name = "quantity";
+                dtReports.Columns[4].Name = "total price";
+
+                //Add articles to dataGridView
+                for (int i = 0; i < selectedBill.articles.Count; i++)
+                {
+                    dtReports.Rows.Add(new string[] {
+                    selectedBill.articles[i].ID.ToString(),
+                    selectedBill.articles[i].name,
+                    selectedBill.articles[i].price.ToString(),
+                    selectedBill.articles[i].quantity.ToString(),
+                    selectedBill.articles[i].totalPrice.ToString()
+                    });
+                }
+
+                //Tag change
+                dtReports.Tag = "BillArticles";
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("You must select row not cell");
+                return;
+            }
+            
+            
+        }
+
+        private void btnReportsBack_Click(object sender, EventArgs e)
+        {
+            AddBillsToDtReports();
+            dtReports.Tag = "Bills";
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            CommonOpenFileDialog dialog = new CommonOpenFileDialog();
+            dialog.InitialDirectory = "C:\\Users";
+            dialog.IsFolderPicker = true;
+
+            if (dialog.ShowDialog() == CommonFileDialogResult.Ok)
+            {
+                String saveLocation = dialog.FileName + "/AllBills_" + DateTime.Now.ToString("dd_MM_yyy_HHmmss") + ".pdf";
+                saveLocation = saveLocation.Replace("\\", "/");
+                MessageBox.Show("You selected: " + saveLocation);
+                PDFManager.BillsXmlToPdf(@saveLocation);
             }
         }
     }

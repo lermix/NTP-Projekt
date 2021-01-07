@@ -26,7 +26,9 @@ namespace WFAplikacija.Tools
     /// </summary>
     public static class PDFManager
     {
-        public static void createPDFfromList<T>(List<T> items, string title, string location)
+        public static List<string> specifiedProperties = new List<string>{ "buttonName", "quantity", "totalPrice"};
+
+        public static void createPDFfromList<T>(List<T> items, string title, string location, bool removeSpecifedProperties)
         {
             //Create a new PDF document
             PdfDocument doc = new PdfDocument();
@@ -42,19 +44,35 @@ namespace WFAplikacija.Tools
         
             //Create a PdfGrid
             PdfGrid pdfGrid = new PdfGrid();
-            //Create table from list
+            //Create table from list           
             var myType = typeof(T);
             DataTable dataTable = new DataTable();
             foreach (PropertyInfo info in myType.GetProperties())
-            {                
-                dataTable.Columns.Add(new DataColumn(info.Name, info.PropertyType));
+            {
+                if (!specifiedProperties.Contains(info.Name) && removeSpecifedProperties)
+                {
+                    dataTable.Columns.Add(new DataColumn(info.Name, info.PropertyType));
+                }
+                else
+                {
+                    dataTable.Columns.Add(new DataColumn(info.Name, info.PropertyType));
+                }
+                
             }
             foreach (var item in items)
             {
                 DataRow dr = dataTable.NewRow();
                 foreach (PropertyInfo info in myType.GetProperties())
                 {
-                    dr[info.Name] = info.GetValue(item); 
+                    if (!specifiedProperties.Contains(info.Name) && removeSpecifedProperties)
+                    {
+                        dr[info.Name] = info.GetValue(item);
+                    }
+                    else
+                    {
+                        dr[info.Name] = info.GetValue(item);
+                    }
+                    
                 }
                 dataTable.Rows.Add(dr);
             }
