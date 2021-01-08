@@ -137,6 +137,7 @@
     <comment>Form INI key</comment>
   </data>
   <data name="SettingsIniFile" xml:space="preserve">
-    <value>Settings.ini</value>
+    <value>../../Settings.ini</value>
+    <comment>Path to INI file in the project root</comment>
   </data>
 </root>

@@ -106,7 +106,7 @@ namespace WFAplikacija.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Settings.ini.
+        ///   Looks up a localized string similar to ../../Settings.ini.
         /// </summary>
         public static string SettingsIniFile {
             get {

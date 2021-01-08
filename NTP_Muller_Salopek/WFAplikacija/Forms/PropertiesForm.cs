@@ -263,7 +263,7 @@ namespace WFAplikacija
                     Article articleSelected = (Article)listBoxAddToSale.SelectedItem;
                     appForm.ChangeButtonText(cmbAddToSale.Text, articleSelected.buttonName);
 
-                    IniFilesManager MyIni = new IniFilesManager("Settings.ini");
+                    IniFilesManager MyIni = new IniFilesManager(WFAplikacija.Properties.Resources.SettingsIniFile);
 
                     MyIni.Write(cmbAddToSale.Text, articleSelected.buttonName);
                 }

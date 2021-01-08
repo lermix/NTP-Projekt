@@ -71,7 +71,6 @@ namespace WFAplikacija
 
         }
 
-
         /// <summary>
         /// Load layout from an INI file if exists
         /// </summary>

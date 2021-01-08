@@ -20,8 +20,8 @@ namespace WFAplikacija.Tools
     /// </summary>
     public static class XmlManager
     {
-        public static string AllArticlesXmlLoaction = "../../Data/AllArticlesXML.xml";
-        public static string AllBillXmlLoaction = "../../Data/AllBills.xml";
+        public static string AllArticlesXmlLoaction = @"../../Data/AllArticlesXML.xml";
+        public static string AllBillXmlLoaction = @"../../Data/AllBills.xml";
 
         static XDocument AllArticlesXml = XDocument.Load(AllArticlesXmlLoaction);
         static XDocument AllBillsXml = XDocument.Load(AllBillXmlLoaction);
@@ -57,7 +57,7 @@ namespace WFAplikacija.Tools
                 AllArticlesXml.Root.Add(articleElement);
 
                 //Save
-                AllArticlesXml.Save("../../Data/AllArticlesXML.xml");
+                AllArticlesXml.Save(AllArticlesXmlLoaction);
             }
             //DODAJEMO RACUN-----------------------------------------
             else if (objectToAdd.GetType() == typeof(Bill))
@@ -103,7 +103,7 @@ namespace WFAplikacija.Tools
                 AllBillsXml.Root.Add(billElement);
 
                 //Save
-                AllBillsXml.Save("../../Data/AllBills.xml");
+                AllBillsXml.Save(AllBillXmlLoaction);
             }
 
 
@@ -119,7 +119,7 @@ namespace WFAplikacija.Tools
             XmlSerializer serializer = new XmlSerializer(typeof(ArticleCollection));
 
             //Reads the document and stores it in reader variable
-            using (StreamReader reader = new StreamReader(@"../../Data/AllArticlesXML.xml"))
+            using (StreamReader reader = new StreamReader(AllArticlesXmlLoaction))
             {
                 articles = (ArticleCollection)serializer.Deserialize(reader);
             }
@@ -135,7 +135,7 @@ namespace WFAplikacija.Tools
 
             XmlSerializer serializer = new XmlSerializer(typeof(BillCollection));
 
-            using (StreamReader reader = new StreamReader(@"../../Data/AllBills.xml"))
+            using (StreamReader reader = new StreamReader(AllBillXmlLoaction))
             {
                 bills = (BillCollection)serializer.Deserialize(reader);
             }
@@ -148,14 +148,14 @@ namespace WFAplikacija.Tools
         {
             var target = AllArticlesXml.Root.Elements().Where(e => e.Attribute("ID").Value == newArticle.ID.ToString()).Single();
             target.Attribute("price").Value = newArticle.price.ToString();
-            AllArticlesXml.Save("../../Data/AllArticlesXML.xml");
+            AllArticlesXml.Save(AllArticlesXmlLoaction);
         }
 
         public static void DeleteArticle(Article articleToDelete)
         {
             var target = AllArticlesXml.Root.Elements().Where(e => e.Attribute("ID").Value == articleToDelete.ID.ToString()).Single();
             target.Remove();
-            AllArticlesXml.Save("../../Data/AllArticlesXML.xml");
+            AllArticlesXml.Save(AllArticlesXmlLoaction);
         }
 
         //Max 1000 after that it collides with bills
