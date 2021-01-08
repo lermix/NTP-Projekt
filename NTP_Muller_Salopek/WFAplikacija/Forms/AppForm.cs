@@ -59,7 +59,7 @@ namespace WFAplikacija
 
             //Load article layout
 
-            IniFilesManager MyIni = new IniFilesManager("Settings.ini");
+            IniFilesManager MyIni = new IniFilesManager(WFAplikacija.Properties.Resources.SettingsIniFile);
 
             foreach (Button button in getAllArticleButtons())
             {
@@ -71,7 +71,38 @@ namespace WFAplikacija
 
         }
 
-//SALE---------------------------------------------------------------------------------------------------------------
+
+        /// <summary>
+        /// Load layout from an INI file if exists
+        /// </summary>
+        public void LoadFormLayout()
+        {
+            IniFilesManager settings = new IniFilesManager(WFAplikacija.Properties.Resources.SettingsIniFile);
+
+            if (settings.KeyExists(WFAplikacija.Properties.Resources.IniWidthKey))
+                this.Width = Int32.Parse(settings.Read(WFAplikacija.Properties.Resources.IniWidthKey));
+            if (settings.KeyExists(WFAplikacija.Properties.Resources.IniHeightKey))
+                this.Height = Int32.Parse(settings.Read(WFAplikacija.Properties.Resources.IniHeightKey));
+            if (settings.KeyExists(WFAplikacija.Properties.Resources.IniXPosKey))
+                this.Left = Int32.Parse(settings.Read(WFAplikacija.Properties.Resources.IniXPosKey));
+            if (settings.KeyExists(WFAplikacija.Properties.Resources.IniYPosKey))
+                this.Top = Int32.Parse(settings.Read(WFAplikacija.Properties.Resources.IniYPosKey));
+        }
+
+        /// <summary>
+        /// Save layout to INI file
+        /// </summary>
+        public void SaveFormLayout()
+        {
+            IniFilesManager settings = new IniFilesManager(WFAplikacija.Properties.Resources.SettingsIniFile);
+
+            settings.Write(WFAplikacija.Properties.Resources.IniWidthKey, this.Width.ToString());
+            settings.Write(WFAplikacija.Properties.Resources.IniHeightKey, this.Height.ToString());
+            settings.Write(WFAplikacija.Properties.Resources.IniXPosKey, this.Left.ToString());
+            settings.Write(WFAplikacija.Properties.Resources.IniYPosKey, this.Top.ToString());
+        }
+
+        //SALE---------------------------------------------------------------------------------------------------------------
 
         private void ArticleButtonClicked(object sender, EventArgs e)
         {         
@@ -148,6 +179,14 @@ namespace WFAplikacija
         private void btnAdminLogin_Click(object sender, EventArgs e)
         {
             PropertiesForm propertiesForm = new PropertiesForm(this);
+            propertiesForm.LoadFormLayout();
+            propertiesForm.FormClosing += delegate {
+                // Save app layout
+                propertiesForm.SaveFormLayout();
+                // Closing PropertiesForm shows AppForm
+                this.LoadFormLayout();
+                this.Show();
+            };
             propertiesForm.ShowDialog();
         }
 
@@ -200,16 +239,25 @@ namespace WFAplikacija
         private void programmableButton_Click(object sender, EventArgs e)
         {
             // Testing area
-            this.testABLabel.Text = WFAplikacija.Properties.Resources.testAB;
         }
 
         private void openPropertiesButton_Click(object sender, EventArgs e)
         {
+            this.Hide();
             PropertiesForm propertiesForm = new PropertiesForm(this);
+            propertiesForm.Location = this.Location;
+            propertiesForm.StartPosition = this.StartPosition;
+            propertiesForm.FormClosing += delegate {
+                // Save app layout
+                propertiesForm.SaveFormLayout();
+                // Closing PropertiesForm shows AppForm
+                this.LoadFormLayout();
+                this.Show();
+            };
             propertiesForm.ShowDialog();
         }
 
-//HELPING FUNCTIONS-------------------------------------------------------------------------------------------------------
+// HELPING FUNCTIONS -------------------------------------------------------------------------------------------------------
         private List<Button> getAllArticleButtons()
         {
             List<Button> allArticleButton = new List<Button> {

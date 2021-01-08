@@ -120,7 +120,23 @@
   <data name="CentralniServerURL" xml:space="preserve">
     <value>https://localhost:5001</value>
   </data>
-  <data name="testAB" xml:space="preserve">
-    <value>A</value>
+  <data name="IniHeightKey" xml:space="preserve">
+    <value>FormHeight</value>
+    <comment>Form INI key</comment>
+  </data>
+  <data name="IniWidthKey" xml:space="preserve">
+    <value>FormWidth</value>
+    <comment>Form INI key</comment>
+  </data>
+  <data name="IniXPosKey" xml:space="preserve">
+    <value>FormXPos</value>
+    <comment>Form INI key</comment>
+  </data>
+  <data name="IniYPosKey" xml:space="preserve">
+    <value>FormYPos</value>
+    <comment>Form INI key</comment>
+  </data>
+  <data name="SettingsIniFile" xml:space="preserve">
+    <value>Settings.ini</value>
   </data>
 </root>

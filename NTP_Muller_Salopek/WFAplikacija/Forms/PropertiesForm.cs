@@ -32,6 +32,36 @@ namespace WFAplikacija
             //Ini manager
         }
 
+        /// <summary>
+        /// Load layout from an INI file if exists
+        /// </summary>
+        public void LoadFormLayout()
+        {
+            IniFilesManager settings = new IniFilesManager(WFAplikacija.Properties.Resources.SettingsIniFile);
+
+            if (settings.KeyExists(WFAplikacija.Properties.Resources.IniWidthKey))
+                this.Width = Int32.Parse(settings.Read(WFAplikacija.Properties.Resources.IniWidthKey));
+            if (settings.KeyExists(WFAplikacija.Properties.Resources.IniHeightKey))
+                this.Height = Int32.Parse(settings.Read(WFAplikacija.Properties.Resources.IniHeightKey));
+            if (settings.KeyExists(WFAplikacija.Properties.Resources.IniXPosKey))
+                this.Left = Int32.Parse(settings.Read(WFAplikacija.Properties.Resources.IniXPosKey));
+            if (settings.KeyExists(WFAplikacija.Properties.Resources.IniYPosKey))
+                this.Top = Int32.Parse(settings.Read(WFAplikacija.Properties.Resources.IniYPosKey));
+        }
+
+        /// <summary>
+        /// Save layout to INI file
+        /// </summary>
+        public void SaveFormLayout()
+        {
+            IniFilesManager settings = new IniFilesManager(WFAplikacija.Properties.Resources.SettingsIniFile);
+
+            settings.Write(WFAplikacija.Properties.Resources.IniWidthKey, this.Width.ToString());
+            settings.Write(WFAplikacija.Properties.Resources.IniHeightKey, this.Height.ToString());
+            settings.Write(WFAplikacija.Properties.Resources.IniXPosKey, this.Left.ToString());
+            settings.Write(WFAplikacija.Properties.Resources.IniYPosKey, this.Top.ToString());
+        }
+
         private void cmbArticleManager_SelectedIndexChanged(object sender, EventArgs e)
         {
             listBoxArticleManagerArticles.Items.Clear();

@@ -74,7 +74,7 @@ namespace WFAplikacija
             this.loginPanel.Controls.Add(this.panel1);
             this.loginPanel.Location = new System.Drawing.Point(300, 129);
             this.loginPanel.Name = "loginPanel";
-            this.loginPanel.Size = new System.Drawing.Size(201, 229);
+            this.loginPanel.Size = new System.Drawing.Size(201, 223);
             this.loginPanel.TabIndex = 23;
             this.loginPanel.TabStop = true;
             // 
@@ -84,6 +84,7 @@ namespace WFAplikacija
             this.messageLabel.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.messageLabel.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.messageLabel.Location = new System.Drawing.Point(13, 199);
+            this.messageLabel.Margin = new System.Windows.Forms.Padding(3, 0, 3, 5);
             this.messageLabel.Name = "messageLabel";
             this.messageLabel.Size = new System.Drawing.Size(157, 19);
             this.messageLabel.TabIndex = 1;
@@ -178,7 +179,6 @@ namespace WFAplikacija
             this.langComboBox.Size = new System.Drawing.Size(94, 24);
             this.langComboBox.TabIndex = 24;
             this.langComboBox.SelectedIndexChanged += new System.EventHandler(this.langComboBox_SelectedIndexChanged);
-            this.langComboBox.SelectedIndex = 0; // By default set English
             // 
             // langSelectLabel
             // 
