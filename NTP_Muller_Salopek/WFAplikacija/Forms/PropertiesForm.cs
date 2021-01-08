@@ -28,21 +28,49 @@ namespace WFAplikacija
             appForm = mainForm;
             //konfiguracija izgleda            
             EditAndDeleteListShow(false);
+
+            //Ini manager
         }
 
-        //ProductManager tab
+        /// <summary>
+        /// Load layout from an INI file if exists
+        /// </summary>
+        public void LoadFormLayout()
+        {
+            IniFilesManager settings = new IniFilesManager(WFAplikacija.Properties.Resources.SettingsIniFile);
+
+            if (settings.KeyExists(WFAplikacija.Properties.Resources.IniWidthKey))
+                this.Width = Int32.Parse(settings.Read(WFAplikacija.Properties.Resources.IniWidthKey));
+            if (settings.KeyExists(WFAplikacija.Properties.Resources.IniHeightKey))
+                this.Height = Int32.Parse(settings.Read(WFAplikacija.Properties.Resources.IniHeightKey));
+            if (settings.KeyExists(WFAplikacija.Properties.Resources.IniXPosKey))
+                this.Left = Int32.Parse(settings.Read(WFAplikacija.Properties.Resources.IniXPosKey));
+            if (settings.KeyExists(WFAplikacija.Properties.Resources.IniYPosKey))
+                this.Top = Int32.Parse(settings.Read(WFAplikacija.Properties.Resources.IniYPosKey));
+        }
+
+        /// <summary>
+        /// Save layout to INI file
+        /// </summary>
+        public void SaveFormLayout()
+        {
+            IniFilesManager settings = new IniFilesManager(WFAplikacija.Properties.Resources.SettingsIniFile);
+
+            settings.Write(WFAplikacija.Properties.Resources.IniWidthKey, this.Width.ToString());
+            settings.Write(WFAplikacija.Properties.Resources.IniHeightKey, this.Height.ToString());
+            settings.Write(WFAplikacija.Properties.Resources.IniXPosKey, this.Left.ToString());
+            settings.Write(WFAplikacija.Properties.Resources.IniYPosKey, this.Top.ToString());
+        }
+
         private void cmbArticleManager_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //Refreshes list box
             listBoxArticleManagerArticles.Items.Clear();
             FIllListBox();
-
             switch (cmbArticleManager.SelectedItem.ToString())
             {
                 case "Insert product":
                     txtBoxEnabled(true);
                     EditAndDeleteListShow(false);
-                    //Generate next avalible ID for Product, max 1000
                     txtBoxArticleManagerId.Text = XmlManager.getNextIDArticle().ToString();
                     break;
                 case "Delete product":
@@ -60,13 +88,8 @@ namespace WFAplikacija
             }
         }
 
-        //ProductManager tab
         private void btnArticleManagerComplete_Click(object sender, EventArgs e)
         {
-            //Refresh list box
-            listBoxArticleManagerArticles.Items.Clear();
-            FIllListBox();
-
             switch (cmbArticleManager.SelectedItem.ToString())
             {
                 case "Insert article":                    
@@ -89,6 +112,9 @@ namespace WFAplikacija
                     {
                         XmlManager.ReplaceArticle(GetFormArticle());
                         InserAndEditControlsClear();
+
+                        listBoxArticleManagerArticles.Items.Clear();
+                        FIllListBox();
                     }                    
                     break;
                 default:
@@ -96,7 +122,6 @@ namespace WFAplikacija
             }
         }
 
-        //Gets selected article from listBox in ProductManager tab
         private void listBoxArticleManagerArticles_SelectedIndexChanged(object sender, EventArgs e)
         { 
             Article articleSelected = (Article)listBoxArticleManagerArticles.SelectedItem;
@@ -104,35 +129,33 @@ namespace WFAplikacija
 
         }
 
-        //Add product to sale tab
-        private void btnAddToSale_Click(object sender, EventArgs e)
-        {
-            if (!string.IsNullOrEmpty(cmbAddToSale.Text))
-            {
-                if (listBoxAddToSale.SelectedItems.Count != 0)
-                {
-                    Article articleSelected = (Article)listBoxAddToSale.SelectedItem;
-                    appForm.ChangeButtonText(cmbAddToSale.Text, articleSelected.buttonName);
 
-                    //Saves button names layout
-                    IniFilesManager MyIni = new IniFilesManager("Settings.ini");
-                    MyIni.Write(cmbAddToSale.Text, articleSelected.buttonName);
-                }
-                else
-                {
-                    MessageBox.Show("Plesae select article");
-                }
+//Functions used inside this class -------------------------------------------------------------------------------
+        private void InsertAndEditControlsShow(bool Show)
+        {
+            if (Show)
+            {
+                txtBoxArticleManagerId.Show();
+                txtBoxArticleManagerName.Show();
+                txtBoxArticleManagerBtnName.Show();
+                txtBoxArticleManagerPrice.Show();
+                lblArticleManagerID.Show();
+                lblArticleManagerName.Show();
+                lblArticleManagerbtnName.Show();
+                lblArticleManagerPrice.Show();
             }
             else
             {
-                MessageBox.Show("Please select button");
+                txtBoxArticleManagerId.Hide();
+                txtBoxArticleManagerName.Hide();
+                txtBoxArticleManagerBtnName.Hide();
+                txtBoxArticleManagerPrice.Hide();
+                lblArticleManagerID.Hide();
+                lblArticleManagerName.Hide();
+                lblArticleManagerbtnName.Hide();
+                lblArticleManagerPrice.Hide();
             }
-
         }
-
-
-//Helper functions used in product manager tab ------------------------------------------------------------------------------------
-        //clear txtBoxes at ProductManager tab
         private void InserAndEditControlsClear()
         {
             txtBoxArticleManagerId.Clear();
@@ -140,8 +163,7 @@ namespace WFAplikacija
             txtBoxArticleManagerBtnName.Clear();
             txtBoxArticleManagerPrice.Clear();
         }
-        //Show or hide article list at ProductManager tab
-        private void EditAndDeleteListShow(bool Show)            
+        private void EditAndDeleteListShow(bool Show)
         {
             if (Show)
             {
@@ -155,7 +177,6 @@ namespace WFAplikacija
             }
             
         }
-        //Enable or disable txtBoxes at ProductManager tab
         private void txtBoxEnabled(bool enabled)
         {
             if (enabled)
@@ -172,10 +193,6 @@ namespace WFAplikacija
             }
             
         }
-        //Create article from txtBoxes text in ProductManager tab
-        //If article is returned null it won't be saved
-        //WARNING!!! 
-        //Before calling this function make sure to check if value returned is not null
         private Article GetFormArticle()
         {
             Article article = new Article();
@@ -185,26 +202,19 @@ namespace WFAplikacija
             {
                 article.price = price;
             }
-            else
-            {
-                MessageBox.Show("Price must be number");
-                return null;
-            }
             
+            article.buttonName = txtBoxArticleManagerBtnName.Text;
             article.name = txtBoxArticleManagerName.Text;
             if (string.IsNullOrEmpty(txtBoxArticleManagerName.Text))
             {
                 MessageBox.Show("Name can not be empty");
                 return null;
             }
-
-            article.buttonName = txtBoxArticleManagerBtnName.Text;
             if (string.IsNullOrEmpty(txtBoxArticleManagerBtnName.Text))
             {
                 MessageBox.Show("Button name can not be empty");
                 return null;
             }
-
             if (string.IsNullOrEmpty(txtBoxArticleManagerPrice.Text))
             {
                 MessageBox.Show("Price can not be empty");
@@ -215,9 +225,9 @@ namespace WFAplikacija
                 MessageBox.Show("Warning, price is 0");
             }
 
+
             return article;
         }
-        //Puts info from article selected in listBox to txtBoxes in ProductManager tab
         private void FillTxtBoxesWithSelectedArticle(Article articleSelected)
         {
             txtBoxArticleManagerId.Text = articleSelected.ID.ToString();
@@ -225,7 +235,6 @@ namespace WFAplikacija
             txtBoxArticleManagerBtnName.Text = articleSelected.buttonName;
             txtBoxArticleManagerPrice.Text = articleSelected.price.ToString();
         }
-        //Fills listBox with all articles in product manager tab
         private void FIllListBox()
         {
             articlesCollection = XmlManager.GetArticles();
@@ -235,8 +244,6 @@ namespace WFAplikacija
             }
         }
 
-//Add product to sale tab----------------------------------------------------------------------------------------
-        //Fills list box with articles in add product to sale tab
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             listBoxAddToSale.Items.Clear();
@@ -247,6 +254,29 @@ namespace WFAplikacija
             }
         }
 
-        
+        private void btnAddToSale_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(cmbAddToSale.Text))
+            {
+                if (listBoxAddToSale.SelectedItems.Count != 0)
+                {
+                    Article articleSelected = (Article)listBoxAddToSale.SelectedItem;
+                    appForm.ChangeButtonText(cmbAddToSale.Text, articleSelected.buttonName);
+
+                    IniFilesManager MyIni = new IniFilesManager("Settings.ini");
+
+                    MyIni.Write(cmbAddToSale.Text, articleSelected.buttonName);
+                }
+                else
+                {
+                    MessageBox.Show("Plesae select article");
+                }                
+            }
+            else
+            {
+                MessageBox.Show("Please select button");
+            }
+            
+        }
     }
 }

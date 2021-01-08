@@ -70,11 +70,47 @@ namespace WFAplikacija.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to A.
+        ///   Looks up a localized string similar to FormHeight.
         /// </summary>
-        public static string testAB {
+        public static string IniHeightKey {
             get {
-                return ResourceManager.GetString("testAB", resourceCulture);
+                return ResourceManager.GetString("IniHeightKey", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to FormWidth.
+        /// </summary>
+        public static string IniWidthKey {
+            get {
+                return ResourceManager.GetString("IniWidthKey", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to FormXPos.
+        /// </summary>
+        public static string IniXPosKey {
+            get {
+                return ResourceManager.GetString("IniXPosKey", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to FormYPos.
+        /// </summary>
+        public static string IniYPosKey {
+            get {
+                return ResourceManager.GetString("IniYPosKey", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Settings.ini.
+        /// </summary>
+        public static string SettingsIniFile {
+            get {
+                return ResourceManager.GetString("SettingsIniFile", resourceCulture);
             }
         }
     }
