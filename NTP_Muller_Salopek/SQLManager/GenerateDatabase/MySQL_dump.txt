@@ -1,6 +1,6 @@
 ﻿-- This file should be run AFTER the following database is created:
 -- - Database/schema name: ntp2020
--- - Address: localhost (127.0.0.1)
+-- - Address/server: localhost (127.0.0.1)
 -- - Port: 3306
 
 DROP TABLE IF EXISTS `ntp2020`.`product`;
@@ -43,3 +43,27 @@ CREATE TABLE `ntp2020`.`user` (
 -- Default users: 'admin' and 'worker', password of both is hashed "123"
 INSERT INTO `ntp2020`.`user`(name, surname, username, hashpass, role) values ('Joe', 'Rogan', 'admin', 'A665A45920422F9D417E4867EFDC4FB8A04A1F3FFF1FA07E998E86F7F7A27AE3', 1);
 INSERT INTO `ntp2020`.`user`(name, surname, username, hashpass, role) values ('Petar', 'Peric', 'worker', 'A665A45920422F9D417E4867EFDC4FB8A04A1F3FFF1FA07E998E86F7F7A27AE3', 2);
+
+-- Create database user
+DROP USER IF EXISTS 'ntp2020_user'@'localhost';
+CREATE USER 'ntp2020_user'@'localhost' IDENTIFIED BY '123';
+GRANT ALL PRIVILEGES ON ntp2020.* TO 'ntp2020_user'@'localhost';
+
+/* Info (for copy-paste purposes):
+	-- - Database/schema name: ntp2020
+	-- - Address/server: localhost (127.0.0.1)
+	-- - Port: 3306
+	--
+	-- - User: ntp2020_user
+	-- - Password: 123
+	--
+	-- Tables:
+	-- Product - id INT, name VARCHAR, buttonName VARCHAR, price FLOAT
+	-- User - id INT, name VARCHAR, surname VARCHAR, username VARCHAR, hashpass VARCHAR, role INT FK
+	-- Userrole - id INT, name VARCHAR
+	--
+	-- - Userrole: { 1: 'admin', 2: 'worker' }
+	-- - Users:
+	--		- admin, password '123' hashed
+	--		- worker, password '123' hashed
+*/

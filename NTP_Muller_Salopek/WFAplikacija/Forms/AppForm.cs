@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using System.Net.Http;
 using WFAplikacija.Tools;
 using Microsoft.WindowsAPICodePack.Dialogs;
+using System.Collections.Specialized;
 
 namespace WFAplikacija
 {
@@ -116,10 +117,6 @@ namespace WFAplikacija
         {
             IniFilesManager settings = new IniFilesManager(WFAplikacija.Properties.Resources.SettingsIniFile);
 
-            if (settings.KeyExists(WFAplikacija.Properties.Resources.IniWidthKey))
-                this.Width = Int32.Parse(settings.Read(WFAplikacija.Properties.Resources.IniWidthKey));
-            if (settings.KeyExists(WFAplikacija.Properties.Resources.IniHeightKey))
-                this.Height = Int32.Parse(settings.Read(WFAplikacija.Properties.Resources.IniHeightKey));
             if (settings.KeyExists(WFAplikacija.Properties.Resources.IniXPosKey))
                 this.Left = Int32.Parse(settings.Read(WFAplikacija.Properties.Resources.IniXPosKey));
             if (settings.KeyExists(WFAplikacija.Properties.Resources.IniYPosKey))
@@ -254,21 +251,23 @@ namespace WFAplikacija
 
       private void sendSampleLoginButton_Click(object sender, EventArgs e)
         {
-            string url = WFAplikacija.Properties.Resources.CentralniServerURL + @"/User";
+            string urlBase = WFAplikacija.Properties.Resources.CentralniServerURL + @"/User/Login/?";
+            string url = urlBase;
+            NameValueCollection queryString = System.Web.HttpUtility.ParseQueryString(string.Empty);
 
             var usernameText = this.sampleLoginUsernameTextBox.Text;
             var passwordText = this.sampleLoginPasswordTextBox.Text;
+            var hashedPasswordText = WFAplikacija.Tools.Cryptography.GetHashString(passwordText);
 
-            //Moj edit da se rijesim errora
-            string hashedPasswordText = WFAplikacija.Tools.Cryptography.makeSha512(passwordText).ToString();
+            queryString.Add("username", usernameText);
+            queryString.Add("hashedPassword", hashedPasswordText);
+            url += queryString.ToString();
 
-            this.sampleLoginResponseLabel.Text = "Sending request to " + url +
+            this.sampleLoginResponseLabel.Text = "Sending request to " + urlBase +
                 "\nUser: " + usernameText +
                 "\nHashed password: " + hashedPasswordText;
-            var postRequestBody = new Dictionary<string, string>{
-                { "username", usernameText },
-                { "hashedPassword", hashedPasswordText }
-            };
+            var postRequestBody = new { };
+
             Action<string> onResponse = (string response) => { this.sampleLoginResponseLabel.Text = "Server response: " + response; };
             Action onError = () => { this.sampleLoginResponseLabel.Text = "ERROR - No response."; };
             WFAplikacija.Tools.RESTManager.Post(url, postRequestBody, onResponse, onError);

@@ -8,18 +8,11 @@ namespace WFAplikacija.Tools
 {
     class UserManager
     {
-        private static bool loggedIn = false;
-
-        public static bool Login(string username, string password)
+        public static bool Login(string username, string hashedPassword)
         {
-            int loginResponse = WFAplikacija.Tools.LoginManager.Login(username, password);
-            loggedIn = loginResponse != 0;
-
-                                // DEBUGGING //
-                                /**/ loggedIn = true; /**/
-                                // --------- //
+            int loginResponse = WFAplikacija.Tools.LoginManager.Login(username, hashedPassword);
                                 DataObjects.UserRole role = DataObjects.UserRole.Admin;
-            if (loggedIn)
+            if (true)
             {
                 //// Set correct role (1 = admin, -1 = worker)
                 //DataObjects.UserRole role = loginResponse == 1 ?
@@ -27,18 +20,8 @@ namespace WFAplikacija.Tools
                 //    DataObjects.UserRole.Worker;
                 WFAplikacija.Tools.Session.user = new DataObjects.User(_id: 0, _name: username, _surname: username, username, role);
             }
-            return loggedIn;
+            return true;
         }
 
-        public static bool Logout()
-        {
-            loggedIn = false;
-            return loggedIn;
-        }
-
-        public static bool UserLoggedIn()
-        {
-            return loggedIn;
-        }
     }
 }
