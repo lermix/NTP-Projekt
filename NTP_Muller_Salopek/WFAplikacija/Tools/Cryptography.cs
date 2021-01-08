@@ -13,17 +13,21 @@ namespace WFAplikacija.Tools
     {
         /// <summary>
         /// Method that calculates SHA512 hash and returns it as byte[] of length 64 (512 bits = 64 Bytes.
-        /// To get it as a string, use method WFAplikacija.Tools.Cryptography.byteArrayToString.
+        /// To get it as a string, use method WFAplikacija.Tools.Cryptography.GetHashString.
         /// </summary>
         public static byte[] makeSha512(string input)
         {
-            byte[] hash;
-            using (System.Security.Cryptography.SHA512 shaM = new System.Security.Cryptography.SHA512Managed())
-            {
-                var data = System.Text.Encoding.UTF8.GetBytes(input);
-                hash = shaM.ComputeHash(data);
-            }
-            return hash;
+            using (System.Security.Cryptography.HashAlgorithm algorithm = System.Security.Cryptography.SHA256.Create())
+                return algorithm.ComputeHash(Encoding.UTF8.GetBytes(input));
+        }
+
+        public static string GetHashString(string inputString)
+        {
+            StringBuilder sb = new StringBuilder();
+            foreach (byte b in makeSha512(inputString))
+                sb.Append(b.ToString("X2"));
+
+            return sb.ToString();
         }
     }
 }

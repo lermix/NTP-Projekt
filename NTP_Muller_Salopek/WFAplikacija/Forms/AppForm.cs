@@ -47,9 +47,7 @@ namespace WFAplikacija
 
             //konfiguracija racuna
             order.totalPrice = 0;
-
-            //Dohavti sve dostupne artikle u ArtiklListu            
-            articleCollection = XmlManager.GetArticles();                      
+                     
 
             //Reports conf
             lblBillInfo.Hide();
@@ -57,18 +55,58 @@ namespace WFAplikacija
             btnReportsBillInfo.Hide();
             btnReportsSaveAllBills.Hide();
 
-            //Load article layout
+            //Get all article and generate their buttons
+            articleCollection = XmlManager.GetArticles(); 
+            GenerateArticleButtons(this.tabArticle1, articleCollection.articles);
+        }
 
-            IniFilesManager MyIni = new IniFilesManager(WFAplikacija.Properties.Resources.SettingsIniFile);
+        public void ClearArticleButtons(System.Windows.Forms.TabPage articlePage)
+        {
+            articlePage.Controls.Clear();
+        }
 
-            foreach (Button button in getAllArticleButtons())
+        /// <summary>
+        /// Adds buttons with articles to a tab page
+        /// </summary>
+        /// <param name="articlePage">Tab inside TabControl object.</param>
+        /// <param name="articles">List of articles whose names are added as buttons</param>
+        public void GenerateArticleButtons(System.Windows.Forms.TabPage articlePage, List<Article> articles, int articlesPerRow=8)
+        {
+            // Clear previous buttons
+            ClearArticleButtons(articlePage);
+            int currRow = 1;
+            int currCol = 1;
+            foreach(Article a in articles)
             {
-                if (MyIni.KeyExists(button.Name))
+                // Calculate position
+                /* width = 75
+                 * height = 75
+                 * distance between buttons = 6
+                 */
+                int buttonX = 6 + (currCol - 1) * 81;
+                int buttonY = 6 + (currRow - 1) * 81;
+
+                // Generate button
+                Button button = new System.Windows.Forms.Button();
+                button.Location = new System.Drawing.Point(buttonX, buttonY);
+                button.Name = "btnArticle" + a.ID.ToString();
+                button.Size = new System.Drawing.Size(75, 75);
+                button.TabIndex = 1;
+                button.Text = a.buttonName;
+                button.UseVisualStyleBackColor = true;
+                button.Click += new System.EventHandler(this.ArticleButtonClicked);
+                // Add button
+                articlePage.Controls.Add(button);
+
+                // Adjust currRow, currCol
+                ++currCol;
+                if (currCol > articlesPerRow)
                 {
-                   button.Text = MyIni.Read(button.Name);
+                    // Go to next row
+                    currCol = 1;
+                    ++currRow;
                 }
             }
-
         }
 
         /// <summary>
@@ -180,6 +218,9 @@ namespace WFAplikacija
             propertiesForm.FormClosing += delegate {
                 // Save app layout
                 propertiesForm.SaveFormLayout();
+                // Update products in case they are changed
+                articleCollection = XmlManager.GetArticles();
+                GenerateArticleButtons(this.tabArticle1, articleCollection.articles);
                 // Closing PropertiesForm shows AppForm
                 this.LoadFormLayout();
                 this.Show();
@@ -236,6 +277,7 @@ namespace WFAplikacija
         private void programmableButton_Click(object sender, EventArgs e)
         {
             // Testing area
+            string res = WFAplikacija.Tools.Cryptography.GetHashString("123");
         }
 
         private void openPropertiesButton_Click(object sender, EventArgs e)

@@ -41,7 +41,7 @@
             this.lblTotal = new System.Windows.Forms.Label();
             this.btnComplete = new System.Windows.Forms.Button();
             this.tabControlArticles = new System.Windows.Forms.TabControl();
-            this.tabArctile1 = new System.Windows.Forms.TabPage();
+            this.tabArticle1 = new System.Windows.Forms.TabPage();
             this.btnArticle14 = new System.Windows.Forms.Button();
             this.btnArticle13 = new System.Windows.Forms.Button();
             this.btnArticle12 = new System.Windows.Forms.Button();
@@ -56,7 +56,6 @@
             this.btnArticle3 = new System.Windows.Forms.Button();
             this.btnArticle2 = new System.Windows.Forms.Button();
             this.btnArticle1 = new System.Windows.Forms.Button();
-            this.tabArticle2 = new System.Windows.Forms.TabPage();
             this.label1 = new System.Windows.Forms.Label();
             this.listViewArticles = new System.Windows.Forms.ListView();
             this.tabReports = new System.Windows.Forms.TabPage();
@@ -101,7 +100,7 @@
             this.tabMainControl.SuspendLayout();
             this.tabSale.SuspendLayout();
             this.tabControlArticles.SuspendLayout();
-            this.tabArctile1.SuspendLayout();
+            this.tabArticle1.SuspendLayout();
             this.tabReports.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtReports)).BeginInit();
             this.tabAdmin.SuspendLayout();
@@ -165,37 +164,36 @@
             // 
             // tabControlArticles
             // 
-            this.tabControlArticles.Controls.Add(this.tabArctile1);
-            this.tabControlArticles.Controls.Add(this.tabArticle2);
+            this.tabControlArticles.Controls.Add(this.tabArticle1);
             this.tabControlArticles.Location = new System.Drawing.Point(468, 7);
             this.tabControlArticles.Name = "tabControlArticles";
             this.tabControlArticles.SelectedIndex = 0;
             this.tabControlArticles.Size = new System.Drawing.Size(606, 306);
             this.tabControlArticles.TabIndex = 3;
             // 
-            // tabArctile1
+            // tabArticle1
             // 
-            this.tabArctile1.Controls.Add(this.btnArticle14);
-            this.tabArctile1.Controls.Add(this.btnArticle13);
-            this.tabArctile1.Controls.Add(this.btnArticle12);
-            this.tabArctile1.Controls.Add(this.btnArticle11);
-            this.tabArctile1.Controls.Add(this.btnArticle10);
-            this.tabArctile1.Controls.Add(this.btnArticle9);
-            this.tabArctile1.Controls.Add(this.btnArticle8);
-            this.tabArctile1.Controls.Add(this.btnArticle7);
-            this.tabArctile1.Controls.Add(this.btnArticle6);
-            this.tabArctile1.Controls.Add(this.btnArticle5);
-            this.tabArctile1.Controls.Add(this.btnArticle4);
-            this.tabArctile1.Controls.Add(this.btnArticle3);
-            this.tabArctile1.Controls.Add(this.btnArticle2);
-            this.tabArctile1.Controls.Add(this.btnArticle1);
-            this.tabArctile1.Location = new System.Drawing.Point(4, 25);
-            this.tabArctile1.Name = "tabArctile1";
-            this.tabArctile1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabArctile1.Size = new System.Drawing.Size(598, 277);
-            this.tabArctile1.TabIndex = 0;
-            this.tabArctile1.Text = global::WFAplikacija.Lang.Dictionary.AFProductTypeDrink;
-            this.tabArctile1.UseVisualStyleBackColor = true;
+            this.tabArticle1.Controls.Add(this.btnArticle14);
+            this.tabArticle1.Controls.Add(this.btnArticle13);
+            this.tabArticle1.Controls.Add(this.btnArticle12);
+            this.tabArticle1.Controls.Add(this.btnArticle11);
+            this.tabArticle1.Controls.Add(this.btnArticle10);
+            this.tabArticle1.Controls.Add(this.btnArticle9);
+            this.tabArticle1.Controls.Add(this.btnArticle8);
+            this.tabArticle1.Controls.Add(this.btnArticle7);
+            this.tabArticle1.Controls.Add(this.btnArticle6);
+            this.tabArticle1.Controls.Add(this.btnArticle5);
+            this.tabArticle1.Controls.Add(this.btnArticle4);
+            this.tabArticle1.Controls.Add(this.btnArticle3);
+            this.tabArticle1.Controls.Add(this.btnArticle2);
+            this.tabArticle1.Controls.Add(this.btnArticle1);
+            this.tabArticle1.Location = new System.Drawing.Point(4, 25);
+            this.tabArticle1.Name = "tabArticle1";
+            this.tabArticle1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabArticle1.Size = new System.Drawing.Size(598, 277);
+            this.tabArticle1.TabIndex = 0;
+            this.tabArticle1.Text = "Products";
+            this.tabArticle1.UseVisualStyleBackColor = true;
             // 
             // btnArticle14
             // 
@@ -324,16 +322,6 @@
             this.btnArticle1.Text = global::WFAplikacija.Lang.Dictionary.AFProductCocaCola;
             this.btnArticle1.UseVisualStyleBackColor = true;
             this.btnArticle1.Click += new System.EventHandler(this.ArticleButtonClicked);
-            // 
-            // tabArticle2
-            // 
-            this.tabArticle2.Location = new System.Drawing.Point(4, 25);
-            this.tabArticle2.Name = "tabArticle2";
-            this.tabArticle2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabArticle2.Size = new System.Drawing.Size(598, 277);
-            this.tabArticle2.TabIndex = 1;
-            this.tabArticle2.Text = global::WFAplikacija.Lang.Dictionary.AFProductTypeFood;
-            this.tabArticle2.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -768,7 +756,7 @@
             this.tabSale.ResumeLayout(false);
             this.tabSale.PerformLayout();
             this.tabControlArticles.ResumeLayout(false);
-            this.tabArctile1.ResumeLayout(false);
+            this.tabArticle1.ResumeLayout(false);
             this.tabReports.ResumeLayout(false);
             this.tabReports.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtReports)).EndInit();
@@ -783,10 +771,9 @@
         private System.Windows.Forms.TabControl tabMainControl;
         private System.Windows.Forms.TabPage tabSale;
         private System.Windows.Forms.TabControl tabControlArticles;
-        private System.Windows.Forms.TabPage tabArctile1;
+        private System.Windows.Forms.TabPage tabArticle1;
         private System.Windows.Forms.Button btnArticle2;
         private System.Windows.Forms.Button btnArticle1;
-        private System.Windows.Forms.TabPage tabArticle2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ListView listViewArticles;
         private System.Windows.Forms.TabPage tabAdmin;

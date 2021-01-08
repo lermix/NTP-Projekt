@@ -1,0 +1,45 @@
+﻿-- This file should be run AFTER the following database is created:
+-- - Database/schema name: ntp2020
+-- - Address: localhost (127.0.0.1)
+-- - Port: 3306
+
+DROP TABLE IF EXISTS `ntp2020`.`product`;
+DROP TABLE IF EXISTS `ntp2020`.`user`;
+DROP TABLE IF EXISTS `ntp2020`.`userrole`;
+
+-- Create product table
+CREATE TABLE `ntp2020`.`product` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(45) NULL,
+  `buttonName` VARCHAR(45) NULL,
+  `price` FLOAT NULL,
+  PRIMARY KEY (`id`)
+);
+
+-- Create user role table
+CREATE TABLE `ntp2020`.`userrole` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(15) NULL,
+  PRIMARY KEY (`id`)
+);
+
+-- Default roles: 'admin', 'worker'
+INSERT INTO `ntp2020`.`userrole`(name) values ('admin');		-- id=1
+INSERT INTO `ntp2020`.`userrole`(name) values ('worker');		-- id=2
+
+-- Create user table
+CREATE TABLE `ntp2020`.`user` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(45) NULL,
+  `surname` VARCHAR(45) NULL,
+  `username` VARCHAR(45) NULL,
+  `hashpass` VARCHAR(75) NOT NULL,
+  `role` INT NULL,
+  PRIMARY KEY (`id`),
+  CONSTRAINT `FK_role` FOREIGN KEY (`role`)
+  REFERENCES `ntp2020`.`userrole` (`id`)
+);
+
+-- Default users: 'admin' and 'worker', password of both is hashed "123"
+INSERT INTO `ntp2020`.`user`(name, surname, username, hashpass, role) values ('Joe', 'Rogan', 'admin', 'A665A45920422F9D417E4867EFDC4FB8A04A1F3FFF1FA07E998E86F7F7A27AE3', 1);
+INSERT INTO `ntp2020`.`user`(name, surname, username, hashpass, role) values ('Petar', 'Peric', 'worker', 'A665A45920422F9D417E4867EFDC4FB8A04A1F3FFF1FA07E998E86F7F7A27AE3', 2);

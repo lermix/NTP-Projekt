@@ -90,35 +90,37 @@ namespace WFAplikacija
 
         private void btnArticleManagerComplete_Click(object sender, EventArgs e)
         {
-            switch (cmbArticleManager.SelectedItem.ToString())
+            string selectedItem = cmbArticleManager.SelectedItem.ToString();
+            if (selectedItem == WFAplikacija.Lang.Dictionary.PFActionInsert)
             {
-                case "Insert article":                    
-                    if(GetFormArticle() != null)
-                    {
-                        XmlManager.addObjectToXml(GetFormArticle());
-                        InserAndEditControlsClear();
-                        txtBoxArticleManagerId.Text = XmlManager.getNextIDArticle().ToString();
-                    }                    
-                    break;
-                case "Delete article":
-                    if (GetFormArticle() != null)
-                    {
-                        XmlManager.DeleteArticle(GetFormArticle());
-                        InserAndEditControlsClear();
-                    }
-                    break;
-                case "Edit article":
-                    if (GetFormArticle() != null)
-                    {
-                        XmlManager.ReplaceArticle(GetFormArticle());
-                        InserAndEditControlsClear();
+                // Insert
+                if (GetFormArticle() != null)
+                {
+                    XmlManager.addObjectToXml(GetFormArticle());
+                    InserAndEditControlsClear();
+                    txtBoxArticleManagerId.Text = XmlManager.getNextIDArticle().ToString();
+                }
+            }
+            else if (selectedItem == WFAplikacija.Lang.Dictionary.PFActionDelete)
+            {
+                // Delete
+                if (GetFormArticle() != null)
+                {
+                    XmlManager.DeleteArticle(GetFormArticle());
+                    InserAndEditControlsClear();
+                }
+            }
+            else if (selectedItem == WFAplikacija.Lang.Dictionary.PFActionEdit)
+            {
+                // Edit
+                if (GetFormArticle() != null)
+                {
+                    XmlManager.ReplaceArticle(GetFormArticle());
+                    InserAndEditControlsClear();
 
-                        listBoxArticleManagerArticles.Items.Clear();
-                        FIllListBox();
-                    }                    
-                    break;
-                default:
-                    break;
+                    listBoxArticleManagerArticles.Items.Clear();
+                    FIllListBox();
+                }
             }
         }
 
