@@ -132,8 +132,6 @@ namespace WFAplikacija
             order.id = billCollection.Bills.Last().id+1;
             order.articles = orderArticles;
 
-            ChangeButtonText("btnArticle3", "Kava");
-
             if (order.articles.Count != 0)
             {
                 XmlManager.addObjectToXml(order);

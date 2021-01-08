@@ -14,13 +14,14 @@ using System.Xml.Xsl;
 namespace WFAplikacija.Tools
 {
 
-    //Bavi se xml fileovima
+    /// <summary>
+    /// Works with xml files.
+    /// Functions: add, replace, delete, getArticles, getBills, getNextIDArticle
+    /// </summary>
     public static class XmlManager
     {
         public static string AllArticlesXmlLoaction = "../../Data/AllArticlesXML.xml";
         public static string AllBillXmlLoaction = "../../Data/AllBills.xml";
-
-        static List<Article> allArticles = new List<Article>();
 
         static XDocument AllArticlesXml = XDocument.Load(AllArticlesXmlLoaction);
         static XDocument AllBillsXml = XDocument.Load(AllBillXmlLoaction);
@@ -47,9 +48,9 @@ namespace WFAplikacija.Tools
                 };
 
                 //Add atributes
-                foreach (XAttribute xElement in articleAtributes)
+                foreach (XAttribute xAtribut in articleAtributes)
                 {
-                    articleElement.Add(xElement);
+                    articleElement.Add(xAtribut);
                 }
 
                 //Add element
@@ -86,6 +87,7 @@ namespace WFAplikacija.Tools
                         new XAttribute("price", article.price),
                         new XAttribute("totalPrice", article.totalPrice)
                     };
+                    //Add atributes to article
                     foreach (XAttribute attribute in articleAttributes)
                     {
                         articleElement.Add(attribute);
@@ -107,15 +109,16 @@ namespace WFAplikacija.Tools
 
         }
 
-
-        //Dohvaca artikl prema buttonName atributu iz AllArticlesXML
         public static ArticleCollection GetArticles()
         {
             Console.WriteLine("reading Articles");
             ArticleCollection articles = new ArticleCollection();
 
+            //For it to work each class property needs definition as how will it be stored in xml  
+            //Each xElement is presented with a class and its properties with attributes
             XmlSerializer serializer = new XmlSerializer(typeof(ArticleCollection));
 
+            //Reads the document and stores it in reader variable
             using (StreamReader reader = new StreamReader(@"../../Data/AllArticlesXML.xml"))
             {
                 articles = (ArticleCollection)serializer.Deserialize(reader);
@@ -155,6 +158,7 @@ namespace WFAplikacija.Tools
             AllArticlesXml.Save("../../Data/AllArticlesXML.xml");
         }
 
+        //Max 1000 after that it collides with bills
         public static int getNextIDArticle()
         {
             int target = AllArticlesXml.Root.Elements().Max(e => (int)e.Attribute("ID"));

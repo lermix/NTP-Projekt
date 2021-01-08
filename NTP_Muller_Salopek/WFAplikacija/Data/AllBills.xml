@@ -23,4 +23,14 @@
   <Bill ID="1005" Time="06-01-2021 18:58" User="admin" SavedToDatabase="admin" Total="12">
     <Article ID="0" name="CocaCola" quantity="1" price="12" totalPrice="12" />
   </Bill>
+  <Bill ID="1006" Time="08-01-2021 01:11" User="admin" SavedToDatabase="admin" Total="99">
+    <Article ID="0" name="CocaCola" quantity="1" price="12" totalPrice="12" />
+    <Article ID="1" name="Sprite" quantity="1" price="12" totalPrice="12" />
+    <Article ID="5" name="Pan" quantity="3" price="20" totalPrice="60" />
+    <Article ID="3" name="Nescaffe vanilija" quantity="1" price="15" totalPrice="15" />
+  </Bill>
+  <Bill ID="1007" Time="08-01-2021 01:27" User="admin" SavedToDatabase="admin" Total="32">
+    <Article ID="1" name="Sprite" quantity="1" price="12" totalPrice="12" />
+    <Article ID="5" name="Pan" quantity="1" price="20" totalPrice="20" />
+  </Bill>
 </BillCollection>
