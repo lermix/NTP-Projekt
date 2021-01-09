@@ -124,7 +124,7 @@ namespace WFAplikacija.Tools
                 articles = (ArticleCollection)serializer.Deserialize(reader);
             }
 
-            Console.WriteLine("reading succesful");
+            Console.WriteLine("reading succesful, count: " + articles.articles.Count);
             return articles;
         }
 

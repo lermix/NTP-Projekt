@@ -25,12 +25,11 @@ namespace WFAplikacija
     {
         //Sale
         List<Article> orderArticles = new List<Article>();
-        ArticleCollection articleCollection = new ArticleCollection();
         Bill order = new Bill();
 
         //Collections
-        BillCollection billCollection = XmlManager.GetBills();
-        ArticleCollection articlesCollection = XmlManager.GetArticles();
+        BillCollection billCollection = new BillCollection();
+        ArticleCollection articleCollection = new ArticleCollection();
 
         //Reports
         string ShownObject = "";
@@ -56,8 +55,12 @@ namespace WFAplikacija
             btnReportsBillInfo.Hide();
             btnReportsSaveAllBills.Hide();
 
+            //Get allArticles and Bills
+            billCollection = XmlManager.GetBills();
+            articleCollection =  XmlManager.GetArticles();
+
             //Get all article and generate their buttons
-            GenerateArticleButtons(this.tabArticle1, articlesCollection.articles);
+            GenerateArticleButtons(this.tabArticle1, articleCollection.articles);
 
         }
 
@@ -146,7 +149,7 @@ namespace WFAplikacija
 
         private void btnComplete_Click(object sender, EventArgs e)
         {
-            //Dodaj racun u AllBills.xml
+            //add bill to AllBills.xml
             order.id = billCollection.Bills.Last().id+1;
             order.articles = orderArticles;
 
@@ -154,6 +157,12 @@ namespace WFAplikacija
             {
                 XmlManager.addObjectToXml(order);
             }
+
+            //Refresh xml 
+            billCollection = XmlManager.GetBills();
+
+            //Create bill file
+            TxtManager.WriteToFile(order);
 
             listViewArticles.Items.Clear();
             orderArticles.Clear();
@@ -235,7 +244,12 @@ namespace WFAplikacija
         private void programmableButton_Click(object sender, EventArgs e)
         {
             // Testing area
-            string res = WFAplikacija.Tools.Cryptography.GetHashString("123");
+            Action<string> lambda = delegate (string odgovor)
+            {
+                this.sampleLoginResponseLabel.Text = odgovor;
+            };
+
+           WFAplikacija.Tools.RESTManager.Get(WFAplikacija.Properties.Resources.CentralniServerURL + "/User/Get", lambda);
         }
 
         private void openPropertiesButton_Click(object sender, EventArgs e)
@@ -591,12 +605,12 @@ namespace WFAplikacija
             dtReports.Columns[2].Name = "price";
 
             //Add articles to dataGridView
-            for (int i = 0; i < articlesCollection.articles.Count; i++)
+            for (int i = 0; i < articleCollection.articles.Count; i++)
             {
                 dtReports.Rows.Add(new string[] {
-                    articlesCollection.articles[i].ID.ToString(),
-                    articlesCollection.articles[i].name,
-                    articlesCollection.articles[i].price.ToString()
+                    articleCollection.articles[i].ID.ToString(),
+                    articleCollection.articles[i].name,
+                    articleCollection.articles[i].price.ToString()
                 });
             }
 

@@ -24,5 +24,12 @@ namespace CentralniServer.Controllers
             else
                 return "Y";
         }
+
+        // /Users/Get
+        [HttpGet]
+        public string Get()
+        {
+            return "Foo";
+        }
     }
 }

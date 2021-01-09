@@ -35,10 +35,8 @@ namespace WFAplikacija.Tools
             PdfDocument doc = new PdfDocument();
             //Add a page
             PdfPage page = doc.Pages.Add();
-            PdfPage signaturePage = doc.Pages.Add();
             //Create PDF graphics for the page.
             PdfGraphics graphics = page.Graphics;
-            PdfGraphics signaturePageGraphics = signaturePage.Graphics;
             //Set the standard font.
             PdfFont font = new PdfStandardFont(PdfFontFamily.Helvetica, 20);
             //Draw the text.
@@ -92,18 +90,12 @@ namespace WFAplikacija.Tools
             //Creates a digital signature
             PdfSignature signature = new PdfSignature(doc, page, pdfCert, "Signature");
 
-            //Sets an image for signature field
-            PdfBitmap signatureImage = new PdfBitmap(@"signature.jpg");
-
             //Sets signature information
-            signature.Bounds = new RectangleF(new PointF(0, 0), signatureImage.PhysicalDimension);
             signature.ContactInfo = "projek@ntp.com";
             signature.LocationInfo = "Zagreb, Croatia";
             signature.Reason = "I am author of this document.";
 
-            //Draws the signature image
-            signaturePageGraphics.DrawImage(signatureImage, 0, 0);
-
+            
             //Save the document
             doc.Save(location);
             //Close the document

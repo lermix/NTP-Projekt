@@ -78,6 +78,7 @@ namespace CentralniServer.Data
                         role = reader.GetString("rolename")
                     });
                 }
+                dbCon.Close();
             }
             return users;
         }

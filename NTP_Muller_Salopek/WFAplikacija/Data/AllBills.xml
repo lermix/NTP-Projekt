@@ -42,4 +42,43 @@
     <Article ID="5" name="Pan" quantity="1" price="20" totalPrice="20" />
     <Article ID="3" name="Nescaffe vanilija" quantity="1" price="15" totalPrice="15" />
   </Bill>
+  <Bill ID="1009" Time="09-01-2021 17:49" User="" SavedToDatabase="" Total="20">
+    <Article ID="1" name="Sprite" quantity="1" price="12" totalPrice="12" />
+    <Article ID="2" name="Kava" quantity="1" price="8" totalPrice="8" />
+  </Bill>
+  <Bill ID="1010" Time="09-01-2021 17:50" User="" SavedToDatabase="" Total="20">
+    <Article ID="1" name="Sprite" quantity="1" price="12" totalPrice="12" />
+    <Article ID="2" name="Kava" quantity="1" price="8" totalPrice="8" />
+  </Bill>
+  <Bill ID="1011" Time="09-01-2021 17:52" User="" SavedToDatabase="" Total="35">
+    <Article ID="1" name="Sprite" quantity="1" price="12" totalPrice="12" />
+    <Article ID="2" name="Kava" quantity="1" price="8" totalPrice="8" />
+    <Article ID="3" name="Nescaffe vanilija" quantity="1" price="15" totalPrice="15" />
+  </Bill>
+  <Bill ID="1012" Time="09-01-2021 17:53" User="" SavedToDatabase="" Total="24">
+    <Article ID="0" name="CocaCola" quantity="1" price="12" totalPrice="12" />
+    <Article ID="1" name="Sprite" quantity="1" price="12" totalPrice="12" />
+  </Bill>
+  <Bill ID="1013" Time="09-01-2021 18:29" User="" SavedToDatabase="" Total="28">
+    <Article ID="2" name="Kava" quantity="2" price="8" totalPrice="16" />
+    <Article ID="1" name="Sprite" quantity="1" price="12" totalPrice="12" />
+  </Bill>
+  <Bill ID="1014" Time="09-01-2021 18:29" User="" SavedToDatabase="" Total="67">
+    <Article ID="1" name="Sprite" quantity="2" price="12" totalPrice="24" />
+    <Article ID="8" name="Jack Daniels" quantity="1" price="15" totalPrice="15" />
+  </Bill>
+  <Bill ID="1015" Time="09-01-2021 18:30" User="" SavedToDatabase="" Total="114">
+    <Article ID="0" name="CocaCola" quantity="1" price="12" totalPrice="12" />
+    <Article ID="1" name="Sprite" quantity="2" price="12" totalPrice="24" />
+    <Article ID="2" name="Kava" quantity="2" price="8" totalPrice="16" />
+    <Article ID="3" name="Nescaffe vanilija" quantity="1" price="15" totalPrice="15" />
+  </Bill>
+  <Bill ID="1016" Time="09-01-2021 18:31" User="" SavedToDatabase="" Total="138">
+    <Article ID="0" name="CocaCola" quantity="2" price="12" totalPrice="24" />
+  </Bill>
+  <Bill ID="1017" Time="09-01-2021 18:33" User="" SavedToDatabase="" Total="35">
+    <Article ID="8" name="Jack Daniels" quantity="1" price="15" totalPrice="15" />
+    <Article ID="1" name="Sprite" quantity="1" price="12" totalPrice="12" />
+    <Article ID="2" name="Kava" quantity="1" price="8" totalPrice="8" />
+  </Bill>
 </BillCollection>

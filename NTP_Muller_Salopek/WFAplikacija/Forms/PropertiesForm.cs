@@ -246,6 +246,46 @@ namespace WFAplikacija
             }
         }
 
-       
+        //CRYPTO---------------------------------------------------------------------------------
+        private void tabControlProperties_Click(object sender, EventArgs e)
+        {
+            if (TxtManager.setAES)
+            {
+                cmbCrypto.Text = "AES";
+            }
+            else
+            {
+                cmbCrypto.Text = "CES";
+            }
+
+        }
+
+        private void btnCryptoSet_Click(object sender, EventArgs e)
+        {
+            if (cmbCrypto.Text == "AES")
+            {
+                TxtManager.setAES = true;
+            }
+            else
+            {
+                TxtManager.setAES = false;
+            }
+        }
+
+        private void btnCryptoShow_Click(object sender, EventArgs e)
+        {
+            int id;
+
+            if (string.IsNullOrEmpty(txtBoxCrypto.Text)) { return; }
+            if (int.TryParse(txtBoxCrypto.Text, out id))
+            {
+                rtbCrypto.Text = TxtManager.ReadFromFile(id);
+            }
+            else
+            {
+                MessageBox.Show("Id must be number!");
+            }
+            
+        }
     }
 }

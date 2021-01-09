@@ -103,6 +103,7 @@
     <Compile Include="Tools\IniFilesManager.cs" />
     <Compile Include="Tools\LanguageManager.cs" />
     <Compile Include="Tools\Session.cs" />
+    <Compile Include="Tools\TxtManager.cs" />
     <Compile Include="Tools\UserManager.cs" />
     <Compile Include="Tools\Cryptography.cs" />
     <Compile Include="Tools\LoginManager.cs" />

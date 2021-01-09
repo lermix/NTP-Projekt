@@ -37,6 +37,7 @@
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
             this.tabMainControl = new System.Windows.Forms.TabControl();
             this.tabSale = new System.Windows.Forms.TabPage();
+            this.btnClear = new System.Windows.Forms.Button();
             this.lblTotalNum = new System.Windows.Forms.Label();
             this.lblTotal = new System.Windows.Forms.Label();
             this.btnComplete = new System.Windows.Forms.Button();
@@ -97,7 +98,6 @@
             this.checkServerResponseLabel = new System.Windows.Forms.Label();
             this.checkServerButton = new System.Windows.Forms.Button();
             this.pdfConfig1 = new Syncfusion.Pdf.PdfConfig();
-            this.btnClear = new System.Windows.Forms.Button();
             this.tabMainControl.SuspendLayout();
             this.tabSale.SuspendLayout();
             this.tabControlArticles.SuspendLayout();
@@ -135,6 +135,16 @@
             this.tabSale.TabIndex = 0;
             this.tabSale.Text = global::WFAplikacija.Lang.Dictionary.AFTabSale;
             this.tabSale.UseVisualStyleBackColor = true;
+            // 
+            // btnClear
+            // 
+            this.btnClear.Location = new System.Drawing.Point(393, 393);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(75, 23);
+            this.btnClear.TabIndex = 7;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // lblTotalNum
             // 
@@ -368,7 +378,7 @@
             // 
             // btnReportsSaveAllBills
             // 
-            this.btnReportsSaveAllBills.Location = new System.Drawing.Point(11, 434);
+            this.btnReportsSaveAllBills.Location = new System.Drawing.Point(13, 434);
             this.btnReportsSaveAllBills.Name = "btnReportsSaveAllBills";
             this.btnReportsSaveAllBills.Size = new System.Drawing.Size(127, 43);
             this.btnReportsSaveAllBills.TabIndex = 14;
@@ -469,11 +479,11 @@
             this.dtReports.AllowUserToDeleteRows = false;
             this.dtReports.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtReports.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dtReports.Location = new System.Drawing.Point(161, 6);
+            this.dtReports.Location = new System.Drawing.Point(146, 6);
             this.dtReports.Name = "dtReports";
             this.dtReports.RowHeadersWidth = 51;
             this.dtReports.RowTemplate.Height = 24;
-            this.dtReports.Size = new System.Drawing.Size(910, 528);
+            this.dtReports.Size = new System.Drawing.Size(923, 528);
             this.dtReports.TabIndex = 4;
             // 
             // radioButton2
@@ -744,16 +754,6 @@
             this.checkServerButton.Text = global::WFAplikacija.Lang.Dictionary.AFButtonSend;
             this.checkServerButton.UseVisualStyleBackColor = true;
             this.checkServerButton.Click += new System.EventHandler(this.checkServerButton_Click);
-            // 
-            // btnClear
-            // 
-            this.btnClear.Location = new System.Drawing.Point(393, 393);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(75, 23);
-            this.btnClear.TabIndex = 7;
-            this.btnClear.Text = "Clear";
-            this.btnClear.UseVisualStyleBackColor = true;
-            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // AppForm
             // 
