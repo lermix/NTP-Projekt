@@ -38,7 +38,7 @@ namespace WFAplikacija
         public AppForm()
         {
             InitializeComponent();
-           
+
             //Konfiguracija listViewArticles
             listViewArticles.View = View.Details;
             listViewArticles.Columns.Add("ID");
@@ -48,7 +48,7 @@ namespace WFAplikacija
 
             //konfiguracija racuna
             order.totalPrice = 0;
-                     
+
 
             //Reports conf
             lblBillInfo.Hide();
@@ -57,59 +57,12 @@ namespace WFAplikacija
             btnReportsSaveAllBills.Hide();
 
             //Get all article and generate their buttons
-            articleCollection = XmlManager.GetArticles(); 
-            GenerateArticleButtons(this.tabArticle1, articleCollection.articles);
+            GenerateArticleButtons(this.tabArticle1, articlesCollection.articles);
+
         }
 
-        public void ClearArticleButtons(System.Windows.Forms.TabPage articlePage)
-        {
-            articlePage.Controls.Clear();
-        }
-
-        /// <summary>
-        /// Adds buttons with articles to a tab page
-        /// </summary>
-        /// <param name="articlePage">Tab inside TabControl object.</param>
-        /// <param name="articles">List of articles whose names are added as buttons</param>
-        public void GenerateArticleButtons(System.Windows.Forms.TabPage articlePage, List<Article> articles, int articlesPerRow=8)
-        {
-            // Clear previous buttons
-            ClearArticleButtons(articlePage);
-            int currRow = 1;
-            int currCol = 1;
-            foreach(Article a in articles)
-            {
-                // Calculate position
-                /* width = 75
-                 * height = 75
-                 * distance between buttons = 6
-                 */
-                int buttonX = 6 + (currCol - 1) * 81;
-                int buttonY = 6 + (currRow - 1) * 81;
-
-                // Generate button
-                Button button = new System.Windows.Forms.Button();
-                button.Location = new System.Drawing.Point(buttonX, buttonY);
-                button.Name = "btnArticle" + a.ID.ToString();
-                button.Size = new System.Drawing.Size(75, 75);
-                button.TabIndex = 1;
-                button.Text = a.buttonName;
-                button.UseVisualStyleBackColor = true;
-                button.Click += new System.EventHandler(this.ArticleButtonClicked);
-                // Add button
-                articlePage.Controls.Add(button);
-
-                // Adjust currRow, currCol
-                ++currCol;
-                if (currCol > articlesPerRow)
-                {
-                    // Go to next row
-                    currCol = 1;
-                    ++currRow;
-                }
-            }
-        }
-
+        //FORM LAYOUT AND INI----------------------------------------------------------------------------------------------
+        #region FORM LAYOUT AND INI
         /// <summary>
         /// Load layout from an INI file if exists
         /// </summary>
@@ -135,9 +88,9 @@ namespace WFAplikacija
             settings.Write(WFAplikacija.Properties.Resources.IniXPosKey, this.Left.ToString());
             settings.Write(WFAplikacija.Properties.Resources.IniYPosKey, this.Top.ToString());
         }
-
+        #endregion
         //SALE---------------------------------------------------------------------------------------------------------------
-
+        #region SALE
         private void ArticleButtonClicked(object sender, EventArgs e)
         {         
             //Dohvati koji button je stisnut
@@ -206,8 +159,14 @@ namespace WFAplikacija
             orderArticles.Clear();
         }
 
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            listViewArticles.Items.Clear();
+        }
 
-//ADMIN-------------------------------------------------------------------------------------------------------
+        #endregion
+        //ADMIN-------------------------------------------------------------------------------------------------------
+        #region ADMIN
         private void btnAdminLogin_Click(object sender, EventArgs e)
         {
             PropertiesForm propertiesForm = new PropertiesForm(this);
@@ -224,9 +183,9 @@ namespace WFAplikacija
             };
             propertiesForm.ShowDialog();
         }
-
-//SERVER-------------------------------------------------------------------------------------------------------
-
+        #endregion
+        //SERVER-------------------------------------------------------------------------------------------------------
+        #region SERVER
         private void checkServerButton_Click(object sender, EventArgs e)
         {
             string url = WFAplikacija.Properties.Resources.CentralniServerURL + @"/Status";
@@ -294,8 +253,9 @@ namespace WFAplikacija
             };
             propertiesForm.ShowDialog();
         }
-
-// HELPING FUNCTIONS -------------------------------------------------------------------------------------------------------
+        #endregion
+        // HELPING FUNCTIONS -------------------------------------------------------------------------------------------------------
+        #region HELPING FUNCTIONS
         private List<Button> getAllArticleButtons()
         {
             List<Button> allArticleButton = new List<Button> {
@@ -320,11 +280,61 @@ namespace WFAplikacija
             }
         }
 
-//REPORTS-------------------------------------------------------------------------------------------------------------------
-//dtReports uses tag property to keep track of what is shown so it is easier to add shown objects to list
-//WARNING: when adding to dtReports change tag accordingly tags(Bills, Articles, BillArticles)
-//         *BillArticles have quantity and totalPrice
+        public void ClearArticleButtons(System.Windows.Forms.TabPage articlePage)
+        {
+            articlePage.Controls.Clear();
+        }
 
+        /// <summary>
+        /// Adds buttons with articles to a tab page
+        /// </summary>
+        /// <param name="articlePage">Tab inside TabControl object.</param>
+        /// <param name="articles">List of articles whose names are added as buttons</param>
+        public void GenerateArticleButtons(System.Windows.Forms.TabPage articlePage, List<Article> articles, int articlesPerRow = 7)
+        {
+            // Clear previous buttons
+            ClearArticleButtons(articlePage);
+            int currRow = 1;
+            int currCol = 1;
+            foreach (Article a in articles)
+            {
+                // Calculate position
+                /* width = 75
+                 * height = 75
+                 * distance between buttons = 6
+                 */
+                int buttonX = 6 + (currCol - 1) * 81;
+                int buttonY = 6 + (currRow - 1) * 81;
+
+                // Generate button
+                Button button = new System.Windows.Forms.Button();
+                button.Location = new System.Drawing.Point(buttonX, buttonY);
+                button.Name = "btnArticle" + a.ID.ToString();
+                button.Size = new System.Drawing.Size(75, 75);
+                button.TabIndex = 1;
+                button.Text = a.buttonName;
+                button.UseVisualStyleBackColor = true;
+                button.Click += new System.EventHandler(this.ArticleButtonClicked);
+                // Add button
+                articlePage.Controls.Add(button);
+
+                // Adjust currRow, currCol
+                ++currCol;
+                if (currCol > articlesPerRow)
+                {
+                    // Go to next row
+                    currCol = 1;
+                    ++currRow;
+                }
+            }
+        }
+        #endregion
+        //REPORTS-------------------------------------------------------------------------------------------------------------------
+        //dtReports uses tag property to keep track of what is shown so it is easier to add shown objects to list
+        //WARNING: when adding to dtReports change tag accordingly tags(Bills, Articles, BillArticles)
+        //         *BillArticles have quantity and totalPrice
+        #region REPORTS
+        //Bills radio button selected
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
             AddBillsToDtReports();
@@ -334,7 +344,7 @@ namespace WFAplikacija
             btnReportsBillInfo.Show();
             btnReportsSaveAllBills.Show();
         }
-
+        //Articles radio button  selected
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
             addArticlesToDtReports();
@@ -374,13 +384,10 @@ namespace WFAplikacija
                     MessageBox.Show("You selected: " + saveLocation);
                     PDFManager.createPDFfromList<Article>(DataGridBillArticlesToList(), "Bill articles", @saveLocation, false);
                 }
-                
-                //PDFManager.BillsXmlToPdf(@saveLocation);
-                //PDFManager.createPDFfromList<Bill>(dtReports.Rows, "Bills", @saveLocation);
             }
         }
 
-
+        //Put all bills presented in dataGrid to list
         private List<Bill> DataGridBillsToList()
         {
             List<Bill> billsFromDataGridList = new List<Bill>();
@@ -402,6 +409,7 @@ namespace WFAplikacija
             return billsFromDataGridList;
         }
 
+        //Put all articles presented in datagrid to list
         private List<Article> DataGridArticlesToList()
         {
             List<Article> articleFromDataGridList = new List<Article>();
@@ -419,6 +427,7 @@ namespace WFAplikacija
             return articleFromDataGridList;
         }
 
+        //Put all bill articles presented in datagrid to list
         private List<Article> DataGridBillArticlesToList()
         {
             List<Article> articleFromDataGridList = new List<Article>();
@@ -437,11 +446,13 @@ namespace WFAplikacija
             return articleFromDataGridList;
         }
 
+        //Filter 
         private void btnFilter_Click(object sender, EventArgs e)
         {
             List<DataGridViewRow> rowsToRemove = new List<DataGridViewRow>();
             int reportNum, userInput;
 
+            //Check for correct input
             if (string.IsNullOrEmpty(cmbFilterColumn.Text))
             {
                 MessageBox.Show("You must select column to filter before filtering");
@@ -453,15 +464,18 @@ namespace WFAplikacija
                 return;
             }
 
+            //Bills selected
             if (radioButton1.Checked)
             {
                 AddBillsToDtReports();
             }
+            //Articles selected
             else if (radioButton2.Checked)
             {
                 addArticlesToDtReports();
             }
 
+            //Filter
             for (int i = 0; i < dtReports.Rows.Count; i++)
             {
 
@@ -520,6 +534,7 @@ namespace WFAplikacija
                 }                
             }
 
+            //remove filtered out data
             foreach (DataGridViewRow row in rowsToRemove)
             {
                 dtReports.Rows.Remove(row);
@@ -593,6 +608,7 @@ namespace WFAplikacija
             }
         }
 
+        //Open bill
         private void btnReportsBillInfo_Click(object sender, EventArgs e)
         {
             try
@@ -644,6 +660,7 @@ namespace WFAplikacija
             dtReports.Tag = "Bills";
         }
 
+        //Choose save location
         private void button1_Click(object sender, EventArgs e)
         {
             CommonOpenFileDialog dialog = new CommonOpenFileDialog();
@@ -658,6 +675,8 @@ namespace WFAplikacija
                 PDFManager.BillsXmlToPdf(@saveLocation);
             }
         }
+        #endregion
+
     }
 
 }

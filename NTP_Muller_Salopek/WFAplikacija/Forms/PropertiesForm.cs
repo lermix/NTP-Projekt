@@ -246,39 +246,6 @@ namespace WFAplikacija
             }
         }
 
-        private void btnRefresh_Click(object sender, EventArgs e)
-        {
-            listBoxAddToSale.Items.Clear();
-            articlesCollection = XmlManager.GetArticles();
-            for (int i = 0; i < articlesCollection.articles.Count; i++)
-            {
-                listBoxAddToSale.Items.Add(articlesCollection.articles[i]);
-            }
-        }
-
-        private void btnAddToSale_Click(object sender, EventArgs e)
-        {
-            if (!string.IsNullOrEmpty(cmbAddToSale.Text))
-            {
-                if (listBoxAddToSale.SelectedItems.Count != 0)
-                {
-                    Article articleSelected = (Article)listBoxAddToSale.SelectedItem;
-                    appForm.ChangeButtonText(cmbAddToSale.Text, articleSelected.buttonName);
-
-                    IniFilesManager MyIni = new IniFilesManager(WFAplikacija.Properties.Resources.SettingsIniFile);
-
-                    MyIni.Write(cmbAddToSale.Text, articleSelected.buttonName);
-                }
-                else
-                {
-                    MessageBox.Show("Plesae select article");
-                }                
-            }
-            else
-            {
-                MessageBox.Show("Please select button");
-            }
-            
-        }
+       
     }
 }

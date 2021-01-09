@@ -16,6 +16,7 @@ using Syncfusion.HtmlConverter;
 using System.IO;
 using System.Collections;
 using WFAplikacija.DataObjects;
+using Syncfusion.Pdf.Security;
 
 // Syncfusion.Pdf.WinForms nuGet package needed
 namespace WFAplikacija.Tools
@@ -34,8 +35,10 @@ namespace WFAplikacija.Tools
             PdfDocument doc = new PdfDocument();
             //Add a page
             PdfPage page = doc.Pages.Add();
+            PdfPage signaturePage = doc.Pages.Add();
             //Create PDF graphics for the page.
             PdfGraphics graphics = page.Graphics;
+            PdfGraphics signaturePageGraphics = signaturePage.Graphics;
             //Set the standard font.
             PdfFont font = new PdfStandardFont(PdfFontFamily.Helvetica, 20);
             //Draw the text.
@@ -80,6 +83,27 @@ namespace WFAplikacija.Tools
             pdfGrid.DataSource = dataTable;
             //Draw grid to the page of PDF document
             pdfGrid.Draw(page, new PointF(0, 50));
+
+            //SIGNATURE
+            //Creates a certificate instance from PFX file with private key
+            //xca program used to create pfx file
+            PdfCertificate pdfCert = new PdfCertificate(@"cer1.p12", "258456");
+
+            //Creates a digital signature
+            PdfSignature signature = new PdfSignature(doc, page, pdfCert, "Signature");
+
+            //Sets an image for signature field
+            PdfBitmap signatureImage = new PdfBitmap(@"signature.jpg");
+
+            //Sets signature information
+            signature.Bounds = new RectangleF(new PointF(0, 0), signatureImage.PhysicalDimension);
+            signature.ContactInfo = "projek@ntp.com";
+            signature.LocationInfo = "Zagreb, Croatia";
+            signature.Reason = "I am author of this document.";
+
+            //Draws the signature image
+            signaturePageGraphics.DrawImage(signatureImage, 0, 0);
+
             //Save the document
             doc.Save(location);
             //Close the document

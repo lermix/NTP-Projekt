@@ -165,6 +165,26 @@ namespace WFAplikacija.Tools
             return target+1;
         }
 
+        public static void DeleteAllArticles()
+        {
+            var target = AllArticlesXml.Root.Elements();
+            target.Remove();
+        }
+
+        public static void DeleteAllBills()
+        {
+            var target = AllBillsXml.Root.Elements();
+            target.Remove();
+        }
+
+        public static void AddList(List<Object> listToAdd)
+        {
+            foreach (Object item in listToAdd)
+            {
+                addObjectToXml(item);
+            }
+        }
+
 
         
 

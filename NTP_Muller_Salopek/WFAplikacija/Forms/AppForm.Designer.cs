@@ -97,6 +97,7 @@
             this.checkServerResponseLabel = new System.Windows.Forms.Label();
             this.checkServerButton = new System.Windows.Forms.Button();
             this.pdfConfig1 = new Syncfusion.Pdf.PdfConfig();
+            this.btnClear = new System.Windows.Forms.Button();
             this.tabMainControl.SuspendLayout();
             this.tabSale.SuspendLayout();
             this.tabControlArticles.SuspendLayout();
@@ -120,6 +121,7 @@
             // 
             // tabSale
             // 
+            this.tabSale.Controls.Add(this.btnClear);
             this.tabSale.Controls.Add(this.lblTotalNum);
             this.tabSale.Controls.Add(this.lblTotal);
             this.tabSale.Controls.Add(this.btnComplete);
@@ -743,6 +745,16 @@
             this.checkServerButton.UseVisualStyleBackColor = true;
             this.checkServerButton.Click += new System.EventHandler(this.checkServerButton_Click);
             // 
+            // btnClear
+            // 
+            this.btnClear.Location = new System.Drawing.Point(393, 393);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(75, 23);
+            this.btnClear.TabIndex = 7;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
             // AppForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -830,6 +842,7 @@
         private System.Windows.Forms.Button btnArticle5;
         private System.Windows.Forms.Button btnArticle4;
         private System.Windows.Forms.Button btnArticle3;
+        private System.Windows.Forms.Button btnClear;
     }
 }
 
