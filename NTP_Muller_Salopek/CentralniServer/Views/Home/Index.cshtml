@@ -101,6 +101,8 @@
             addOption("GET", baseUrl + "/User/Get/id?", ``,
                 `(id sent, one user): { id, name, surname, username, password, role }<br />
                 (no id, all users): [{...}, {...}, ...]`);
+            addOption("POST", baseUrl + "/User/Delete/id?", null, "Y<br/>or<br/>N");
+            addOption("POST", baseUrl + "/User/Add/?", "name=example_name&surname=example&username=example&<br/>hashedPassword=example&role=admin_or_worker", "Y (success)<br/>N_ERROR_NAME (Error name can be 'parameters' etc)");
         }
 
         onLoad();
