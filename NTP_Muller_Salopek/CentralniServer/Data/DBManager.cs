@@ -73,6 +73,7 @@ namespace CentralniServer.Data
 
                         if (r.HasRows == false)
                             return null;
+                        r.Read();
                         dynamic user = new
                         {
                             id = r.GetInt32(0),

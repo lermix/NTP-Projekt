@@ -53,17 +53,19 @@
             this.label1 = new System.Windows.Forms.Label();
             this.cmbCrypto = new System.Windows.Forms.ComboBox();
             this.tabAddUser = new System.Windows.Forms.TabPage();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtBoxAddUserName = new System.Windows.Forms.TextBox();
-            this.txtBoxAddUserSurname = new System.Windows.Forms.TextBox();
-            this.txtBoxAddUserUsername = new System.Windows.Forms.TextBox();
-            this.txtBoxAddUserPassword = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.btnAddUser = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtBoxAddUserPassword = new System.Windows.Forms.TextBox();
+            this.txtBoxAddUserUsername = new System.Windows.Forms.TextBox();
+            this.txtBoxAddUserSurname = new System.Windows.Forms.TextBox();
+            this.txtBoxAddUserName = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.cmbFileType = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.tabArticleManager.SuspendLayout();
             this.tabControlProperties.SuspendLayout();
             this.tabPageBillsCrypto.SuspendLayout();
@@ -225,6 +227,8 @@
             // 
             // tabPageBillsCrypto
             // 
+            this.tabPageBillsCrypto.Controls.Add(this.label8);
+            this.tabPageBillsCrypto.Controls.Add(this.cmbFileType);
             this.tabPageBillsCrypto.Controls.Add(this.rtbCrypto);
             this.tabPageBillsCrypto.Controls.Add(this.btnCryptoShow);
             this.tabPageBillsCrypto.Controls.Add(this.txtBoxCrypto);
@@ -325,78 +329,15 @@
             this.tabAddUser.Text = "Add user";
             this.tabAddUser.UseVisualStyleBackColor = true;
             // 
-            // label3
+            // btnAddUser
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(14, 31);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(45, 17);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Name";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(14, 63);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(65, 17);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "Surname";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(14, 91);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(73, 17);
-            this.label5.TabIndex = 2;
-            this.label5.Text = "Username";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(14, 124);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(69, 17);
-            this.label6.TabIndex = 3;
-            this.label6.Text = "Password";
-            // 
-            // txtBoxAddUserName
-            // 
-            this.txtBoxAddUserName.Location = new System.Drawing.Point(93, 31);
-            this.txtBoxAddUserName.Name = "txtBoxAddUserName";
-            this.txtBoxAddUserName.Size = new System.Drawing.Size(125, 22);
-            this.txtBoxAddUserName.TabIndex = 4;
-            // 
-            // txtBoxAddUserSurname
-            // 
-            this.txtBoxAddUserSurname.Location = new System.Drawing.Point(93, 63);
-            this.txtBoxAddUserSurname.Name = "txtBoxAddUserSurname";
-            this.txtBoxAddUserSurname.Size = new System.Drawing.Size(125, 22);
-            this.txtBoxAddUserSurname.TabIndex = 5;
-            // 
-            // txtBoxAddUserUsername
-            // 
-            this.txtBoxAddUserUsername.Location = new System.Drawing.Point(93, 91);
-            this.txtBoxAddUserUsername.Name = "txtBoxAddUserUsername";
-            this.txtBoxAddUserUsername.Size = new System.Drawing.Size(125, 22);
-            this.txtBoxAddUserUsername.TabIndex = 6;
-            // 
-            // txtBoxAddUserPassword
-            // 
-            this.txtBoxAddUserPassword.Location = new System.Drawing.Point(93, 119);
-            this.txtBoxAddUserPassword.Name = "txtBoxAddUserPassword";
-            this.txtBoxAddUserPassword.Size = new System.Drawing.Size(125, 22);
-            this.txtBoxAddUserPassword.TabIndex = 7;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(14, 150);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(37, 17);
-            this.label7.TabIndex = 8;
-            this.label7.Text = "Role";
+            this.btnAddUser.Location = new System.Drawing.Point(144, 205);
+            this.btnAddUser.Name = "btnAddUser";
+            this.btnAddUser.Size = new System.Drawing.Size(74, 26);
+            this.btnAddUser.TabIndex = 10;
+            this.btnAddUser.Text = "Add";
+            this.btnAddUser.UseVisualStyleBackColor = true;
+            this.btnAddUser.Click += new System.EventHandler(this.btnAddUser_Click);
             // 
             // comboBox1
             // 
@@ -410,15 +351,100 @@
             this.comboBox1.TabIndex = 9;
             this.comboBox1.Text = "Worker";
             // 
-            // btnAddUser
+            // label7
             // 
-            this.btnAddUser.Location = new System.Drawing.Point(144, 205);
-            this.btnAddUser.Name = "btnAddUser";
-            this.btnAddUser.Size = new System.Drawing.Size(74, 26);
-            this.btnAddUser.TabIndex = 10;
-            this.btnAddUser.Text = "Add";
-            this.btnAddUser.UseVisualStyleBackColor = true;
-            this.btnAddUser.Click += new System.EventHandler(this.btnAddUser_Click);
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(14, 150);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(37, 17);
+            this.label7.TabIndex = 8;
+            this.label7.Text = "Role";
+            // 
+            // txtBoxAddUserPassword
+            // 
+            this.txtBoxAddUserPassword.Location = new System.Drawing.Point(93, 119);
+            this.txtBoxAddUserPassword.Name = "txtBoxAddUserPassword";
+            this.txtBoxAddUserPassword.Size = new System.Drawing.Size(125, 22);
+            this.txtBoxAddUserPassword.TabIndex = 7;
+            // 
+            // txtBoxAddUserUsername
+            // 
+            this.txtBoxAddUserUsername.Location = new System.Drawing.Point(93, 91);
+            this.txtBoxAddUserUsername.Name = "txtBoxAddUserUsername";
+            this.txtBoxAddUserUsername.Size = new System.Drawing.Size(125, 22);
+            this.txtBoxAddUserUsername.TabIndex = 6;
+            // 
+            // txtBoxAddUserSurname
+            // 
+            this.txtBoxAddUserSurname.Location = new System.Drawing.Point(93, 63);
+            this.txtBoxAddUserSurname.Name = "txtBoxAddUserSurname";
+            this.txtBoxAddUserSurname.Size = new System.Drawing.Size(125, 22);
+            this.txtBoxAddUserSurname.TabIndex = 5;
+            // 
+            // txtBoxAddUserName
+            // 
+            this.txtBoxAddUserName.Location = new System.Drawing.Point(93, 31);
+            this.txtBoxAddUserName.Name = "txtBoxAddUserName";
+            this.txtBoxAddUserName.Size = new System.Drawing.Size(125, 22);
+            this.txtBoxAddUserName.TabIndex = 4;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(14, 124);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(69, 17);
+            this.label6.TabIndex = 3;
+            this.label6.Text = "Password";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(14, 91);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(73, 17);
+            this.label5.TabIndex = 2;
+            this.label5.Text = "Username";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(14, 63);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(65, 17);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "Surname";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(14, 31);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(45, 17);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Name";
+            // 
+            // cmbFileType
+            // 
+            this.cmbFileType.FormattingEnabled = true;
+            this.cmbFileType.Items.AddRange(new object[] {
+            ".txt",
+            ".capp"});
+            this.cmbFileType.Location = new System.Drawing.Point(6, 118);
+            this.cmbFileType.Name = "cmbFileType";
+            this.cmbFileType.Size = new System.Drawing.Size(121, 24);
+            this.cmbFileType.TabIndex = 10;
+            this.cmbFileType.Text = ".txt";
+            this.cmbFileType.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(3, 98);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(100, 17);
+            this.label8.TabIndex = 11;
+            this.label8.Text = "Select file type";
             // 
             // PropertiesForm
             // 
@@ -477,5 +503,7 @@
         private System.Windows.Forms.TextBox txtBoxAddUserName;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ComboBox cmbFileType;
     }
 }

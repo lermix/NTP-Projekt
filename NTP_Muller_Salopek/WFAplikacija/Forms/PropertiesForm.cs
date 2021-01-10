@@ -305,5 +305,10 @@ namespace WFAplikacija
 
 
         }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            TxtManager.fileType = cmbFileType.Text;
+        }
     }
 }
