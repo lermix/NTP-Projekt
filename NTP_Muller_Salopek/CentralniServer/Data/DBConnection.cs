@@ -7,7 +7,7 @@ using MySql.Data.MySqlClient;
 
 namespace CentralniServer.Data
 {
-    public class DBConnection
+    public class DBConnection : IDisposable
     {
         private DBConnection()
         {
@@ -21,13 +21,13 @@ namespace CentralniServer.Data
         private MySqlConnection Connection { get; set; }
 
         private static DBConnection _instance = null;
-        public static DBConnection Instance()
-        {
-            if (_instance == null)
-                _instance = new DBConnection();
-            return _instance;
-        }
-        public static DBConnection Instance(string server, string database, string username, string password)
+        //public static DBConnection Instance()
+        //{
+        //    if (_instance == null)
+        //        _instance = new DBConnection();
+        //    return _instance;
+        //}
+        public static DBConnection Instance(string server = "localhost", string database = "ntp2020", string username = "ntp2020_user", string password = "123")
         {
             if (_instance == null)
                 _instance = new DBConnection();
@@ -55,6 +55,12 @@ namespace CentralniServer.Data
             }
 
             return true;
+        }
+
+        public void Dispose()
+        {
+            this.Close();
+            Connection = null;
         }
 
         public void Close()

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.IO;
+using Newtonsoft.Json;
 
 namespace CentralniServer.Controllers
 {
@@ -13,8 +14,7 @@ namespace CentralniServer.Controllers
         [HttpPost]
         public string Login(string username, string hashedPassword)
         {
-            CentralniServer.Data.DBManager dbManager = new Data.DBManager();
-            List<dynamic> users = dbManager.FetchUsers();
+            List<dynamic> users = Data.DBManager.FetchUsers();
             users = users.FindAll(u => u.username == username);
 
             if (users.Count != 1)
@@ -27,9 +27,12 @@ namespace CentralniServer.Controllers
 
         // /Users/Get
         [HttpGet]
-        public string Get()
+        public string Get(int id)
         {
-            return "Foo";
+            var user_s = id > 0 ? Data.DBManager.FetchUser(id) : Data.DBManager.FetchUsers();
+
+            string res = user_s != null ? JsonConvert.SerializeObject(user_s) : "{}";
+            return res;
         }
     }
 }

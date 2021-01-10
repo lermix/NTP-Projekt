@@ -128,3 +128,4 @@ C:\Users\Alen\Desktop\faks\NTP projekt\NTP-Projekt\NTP_Muller_Salopek\CentralniS
 C:\Users\Alen\Desktop\faks\NTP projekt\NTP-Projekt\NTP_Muller_Salopek\CentralniServer\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
 C:\Users\Alen\Desktop\faks\NTP projekt\NTP-Projekt\NTP_Muller_Salopek\CentralniServer\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
 C:\Users\Alen\Desktop\faks\NTP projekt\NTP-Projekt\NTP_Muller_Salopek\CentralniServer\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\stjep\OneDrive\Dokumenti\GitHub\NTP-Projekt\NTP_Muller_Salopek\CentralniServer\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll

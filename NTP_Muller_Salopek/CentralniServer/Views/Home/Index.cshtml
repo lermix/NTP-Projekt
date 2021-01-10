@@ -54,8 +54,7 @@
                         Link
                     </td>
                     <td>
-                        Body aguments (if any)<br />
-                        Shown in format: "var_1": "value_1", "var_2": "value_2", ...
+                        URL aguments (if any)
                     </td>
                     <td>
                         Response
@@ -85,8 +84,6 @@
         function addOption(method, link, body, response) {
             if (!body)
                 body = "No body.";
-            else
-                body = JSON.stringify(body);
 
             table_body.insertAdjacentHTML("beforeend",
                 option_html.replace(`{method}`, method).replace(`{link}`, link).replace(`{body}`, body).replace(`{response}`, response)
@@ -96,11 +93,14 @@
         function onLoad() {
             addOption("GET", baseUrl + " (+ /Home/Index)", null, `HTML of this page.`);
             addOption("GET", baseUrl + "/Status", null, `"OK" (server is alive)`);
-            addOption("POST", baseUrl + "/User", { username: "admin", password: "falkjsdnfalkjsdnflkjasndf ('123' after SHA512 hash)" },
+            addOption("POST", baseUrl + "/User/Login", `username=exampleUsername&amp;password=ExamplePassword`,
                 `"Y" (correct) <br />
                 "N_Username" (incorrect username) <br />
                 "N_Password" (incorrect password)`
             );
+            addOption("GET", baseUrl + "/User/Get/id?", ``,
+                `(id sent, one user): { id, name, surname, username, password, role }<br />
+                (no id, all users): [{...}, {...}, ...]`);
         }
 
         onLoad();

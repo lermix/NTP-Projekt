@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "YU4i+TmO4NeraWOpI9MBTKNL6sVgQGdPZk2Wl2d2flK7Tv0rXvmP4gzhn5Q5aHLiNVpzKOj6FkUoayVp/s2lFw==",
+  "dgSpecHash": "RrQw+5bBYwr6xHH+q6N7mEs7lzYXoeyaN7Wj/6bXyGl+DTnfwtH7ZIy/faUbHOel43sKUUySIU5xwdOVkIGpqw==",
   "success": true,
   "projectFilePath": "C:\\Users\\stjep\\OneDrive\\Dokumenti\\GitHub\\NTP-Projekt\\NTP_Muller_Salopek\\CentralniServer\\CentralniServer.csproj",
   "expectedPackageFiles": [
@@ -16,6 +16,7 @@
     "C:\\Users\\stjep\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
     "C:\\Users\\stjep\\.nuget\\packages\\mysql.data\\8.0.22\\mysql.data.8.0.22.nupkg.sha512",
     "C:\\Users\\stjep\\.nuget\\packages\\netstandard.library\\1.6.0\\netstandard.library.1.6.0.nupkg.sha512",
+    "C:\\Users\\stjep\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
     "C:\\Users\\stjep\\.nuget\\packages\\runtime.native.system\\4.0.0\\runtime.native.system.4.0.0.nupkg.sha512",
     "C:\\Users\\stjep\\.nuget\\packages\\runtime.native.system.io.compression\\4.1.0\\runtime.native.system.io.compression.4.1.0.nupkg.sha512",
     "C:\\Users\\stjep\\.nuget\\packages\\runtime.native.system.net.http\\4.0.1\\runtime.native.system.net.http.4.0.1.nupkg.sha512",

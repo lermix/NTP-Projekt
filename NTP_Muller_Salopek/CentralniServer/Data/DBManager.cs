@@ -8,7 +8,7 @@ using MySql.Data.MySqlClient;
 namespace CentralniServer.Data
 {
     /// <summary>
-    /// Class that manages MySQL connection and closes it in the finalizer
+    /// Class that contains various MySql methods
     /// </summary>
     public class DBManager
     {
@@ -31,54 +31,106 @@ namespace CentralniServer.Data
 	        --		- worker, password '123' hashed
         */
 
-        private DBConnection dbCon;
+        //private DBConnection dbCon;
 
-        public DBManager(string server="localhost", string database="ntp2020", string username="ntp2020_user", string password="123")
-        {
-            this.dbCon = DBConnection.Instance(server, database, username, password);
-        }
-
-        ~DBManager()
-        {
-            this.dbCon.Close();
-        }
-
-        private void ExecuteQuery(string query = "select * from user")
-        {
-            if (dbCon.IsConnected())
+        private DBManager() { }
+        
+        // Example read:
+        //  while (reader.Read())
+        //      User u = new User(name: reader.GetString(1), username: reader.GetString("Username"));
+        /*using (DBConnection dbCon = DBConnection.Instance())
             {
-                //suppose col0 and col1 are defined as VARCHAR in the DB
-                var cmd = new MySqlCommand(query, dbCon.GetConnection());
-                var reader = cmd.ExecuteReader();
-                while (reader.Read())
+                if (dbCon.IsConnected())
                 {
-                    int id = reader.GetInt32(0);
-                    string name = reader.GetString(1);
-                    string surname = reader.GetString(2);
+                    var cmd = new MySqlCommand(query, dbCon.GetConnection());
+    MySqlDataReader r = cmd.ExecuteReader();
+
+                    if (r.HasRows == false)
+                        return null;
                 }
+            }
+        */
+
+// id=0 fetches all users
+        public static dynamic FetchUser(int id)
+        {
+            if (!(id > 0))
+                throw new Exception("id must be >0");
+            try
+            {
+                string query = @"select u.*, ur.name as rolename " +
+                        @"from user as u " +
+                        @"inner join userrole as ur " +
+                        @"on u.role = ur.id " +
+                        @"where u.id=" + id;
+
+                using (DBConnection dbCon = DBConnection.Instance())
+                {
+                    if (dbCon.IsConnected())
+                    {
+                        var cmd = new MySqlCommand(query, dbCon.GetConnection());
+                        MySqlDataReader r = cmd.ExecuteReader();
+
+                        if (r.HasRows == false)
+                            return null;
+                        dynamic user = new
+                        {
+                            id = r.GetInt32(0),
+                            name = r.GetString(1),
+                            surname = r.GetString(2),
+                            username = r.GetString(3),
+                            password = r.GetString(4),
+                            role = r.GetString(6)   // ur.name as rolename
+                        };
+                        return user;
+                    }
+                    else throw new Exception("Can't connect.");
+                }
+            }
+            catch
+            {
+                return null;
             }
         }
 
-        public List<dynamic> FetchUsers()
+        public static List<dynamic> FetchUsers()
         {
             List<dynamic> users = new List<dynamic>();
-            if (dbCon.IsConnected())
+            try
             {
-                var cmd = new MySqlCommand(@"SELECT U.*, UR.NAME ROLENAME FROM USER U INNER JOIN USERROLE UR ON U.ROLE=UR.ID;", dbCon.GetConnection());
-                var reader = cmd.ExecuteReader();
-	        // User - id INT, name VARCHAR, surname VARCHAR, username VARCHAR, hashpass VARCHAR, role INT FK
-                while(reader.Read())
+                string query = @"select u.*, ur.name as rolename " +
+                        @"from user as u " +
+                        @"inner join userrole as ur " +
+                        @"on u.role = ur.id;";
+
+                using (DBConnection dbCon = DBConnection.Instance())
                 {
-                    users.Add(new {
-                        id = reader.GetInt32("id"),
-                        name = reader.GetString("name"),
-                        surname = reader.GetString("surname"),
-                        username = reader.GetString("username"),
-                        password = reader.GetString("hashpass"),
-                        role = reader.GetString("rolename")
-                    });
+                    if (dbCon.IsConnected())
+                    {
+                        var cmd = new MySqlCommand(query, dbCon.GetConnection());
+                        MySqlDataReader r = cmd.ExecuteReader();
+
+                        while (r.Read())
+                        {
+                            // User - id INT, name VARCHAR, surname VARCHAR, username VARCHAR, hashpass VARCHAR, role INT FK
+                            users.Add(new
+                            {
+                                id = r.GetInt32(0),
+                                name = r.GetString(1),
+                                surname = r.GetString(2),
+                                username = r.GetString(3),
+                                password = r.GetString(4),
+                                role = r.GetString(6)   // ur.name as rolename
+                            });
+                        }
+                    }
+                    else throw new Exception("Can't connect.");
                 }
-                dbCon.Close();
+                
+            }
+            catch
+            {
+                // Error
             }
             return users;
         }
