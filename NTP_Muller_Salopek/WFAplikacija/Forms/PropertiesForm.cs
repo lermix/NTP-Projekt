@@ -287,5 +287,23 @@ namespace WFAplikacija
             }
             
         }
+
+
+        //USER TAB
+        private void btnAddUser_Click(object sender, EventArgs e)
+        {
+            string name, username, password, surname, role;
+            if (string.IsNullOrEmpty(txtBoxAddUserName.Text)){MessageBox.Show("Name can't be empty");return;}
+            else{name = txtBoxAddUserName.Text;   }
+            if (string.IsNullOrEmpty(txtBoxAddUserPassword.Text)){MessageBox.Show("Password can't be empty");return;}
+            else{password = txtBoxAddUserPassword.Text;}
+            if (string.IsNullOrEmpty(txtBoxAddUserSurname.Text)){MessageBox.Show("Surname can't be empty");return;}
+            else{surname = txtBoxAddUserSurname.Text;       }
+            if (string.IsNullOrEmpty(txtBoxAddUserUsername.Text)){MessageBox.Show("Username can't be empty");return;}
+            else{username = txtBoxAddUserUsername.Text;}
+
+
+
+        }
     }
 }

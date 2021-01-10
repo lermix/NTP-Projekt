@@ -45,16 +45,29 @@
             this.cmbArticleManager = new System.Windows.Forms.ComboBox();
             this.tabControlProperties = new System.Windows.Forms.TabControl();
             this.tabPageBillsCrypto = new System.Windows.Forms.TabPage();
-            this.cmbCrypto = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnCryptoSet = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtBoxCrypto = new System.Windows.Forms.TextBox();
-            this.btnCryptoShow = new System.Windows.Forms.Button();
             this.rtbCrypto = new System.Windows.Forms.RichTextBox();
+            this.btnCryptoShow = new System.Windows.Forms.Button();
+            this.txtBoxCrypto = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnCryptoSet = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cmbCrypto = new System.Windows.Forms.ComboBox();
+            this.tabAddUser = new System.Windows.Forms.TabPage();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtBoxAddUserName = new System.Windows.Forms.TextBox();
+            this.txtBoxAddUserSurname = new System.Windows.Forms.TextBox();
+            this.txtBoxAddUserUsername = new System.Windows.Forms.TextBox();
+            this.txtBoxAddUserPassword = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.btnAddUser = new System.Windows.Forms.Button();
             this.tabArticleManager.SuspendLayout();
             this.tabControlProperties.SuspendLayout();
             this.tabPageBillsCrypto.SuspendLayout();
+            this.tabAddUser.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabArticleManager
@@ -202,6 +215,7 @@
             // 
             this.tabControlProperties.Controls.Add(this.tabArticleManager);
             this.tabControlProperties.Controls.Add(this.tabPageBillsCrypto);
+            this.tabControlProperties.Controls.Add(this.tabAddUser);
             this.tabControlProperties.Location = new System.Drawing.Point(2, 2);
             this.tabControlProperties.Name = "tabControlProperties";
             this.tabControlProperties.SelectedIndex = 0;
@@ -226,51 +240,13 @@
             this.tabPageBillsCrypto.Text = "Bills cryptography";
             this.tabPageBillsCrypto.UseVisualStyleBackColor = true;
             // 
-            // cmbCrypto
+            // rtbCrypto
             // 
-            this.cmbCrypto.FormattingEnabled = true;
-            this.cmbCrypto.Items.AddRange(new object[] {
-            "AES",
-            "CES"});
-            this.cmbCrypto.Location = new System.Drawing.Point(6, 34);
-            this.cmbCrypto.Name = "cmbCrypto";
-            this.cmbCrypto.Size = new System.Drawing.Size(121, 24);
-            this.cmbCrypto.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(7, 11);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(146, 17);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Select Crypto function";
-            // 
-            // btnCryptoSet
-            // 
-            this.btnCryptoSet.Location = new System.Drawing.Point(6, 64);
-            this.btnCryptoSet.Name = "btnCryptoSet";
-            this.btnCryptoSet.Size = new System.Drawing.Size(75, 23);
-            this.btnCryptoSet.TabIndex = 3;
-            this.btnCryptoSet.Text = "Set";
-            this.btnCryptoSet.UseVisualStyleBackColor = true;
-            this.btnCryptoSet.Click += new System.EventHandler(this.btnCryptoSet_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(435, 14);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(47, 17);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Bill ID:";
-            // 
-            // txtBoxCrypto
-            // 
-            this.txtBoxCrypto.Location = new System.Drawing.Point(488, 11);
-            this.txtBoxCrypto.Name = "txtBoxCrypto";
-            this.txtBoxCrypto.Size = new System.Drawing.Size(100, 22);
-            this.txtBoxCrypto.TabIndex = 6;
+            this.rtbCrypto.Location = new System.Drawing.Point(438, 49);
+            this.rtbCrypto.Name = "rtbCrypto";
+            this.rtbCrypto.Size = new System.Drawing.Size(310, 239);
+            this.rtbCrypto.TabIndex = 9;
+            this.rtbCrypto.Text = "";
             // 
             // btnCryptoShow
             // 
@@ -282,13 +258,167 @@
             this.btnCryptoShow.UseVisualStyleBackColor = true;
             this.btnCryptoShow.Click += new System.EventHandler(this.btnCryptoShow_Click);
             // 
-            // rtbCrypto
+            // txtBoxCrypto
             // 
-            this.rtbCrypto.Location = new System.Drawing.Point(438, 49);
-            this.rtbCrypto.Name = "rtbCrypto";
-            this.rtbCrypto.Size = new System.Drawing.Size(310, 239);
-            this.rtbCrypto.TabIndex = 9;
-            this.rtbCrypto.Text = "";
+            this.txtBoxCrypto.Location = new System.Drawing.Point(488, 11);
+            this.txtBoxCrypto.Name = "txtBoxCrypto";
+            this.txtBoxCrypto.Size = new System.Drawing.Size(100, 22);
+            this.txtBoxCrypto.TabIndex = 6;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(435, 14);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(47, 17);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Bill ID:";
+            // 
+            // btnCryptoSet
+            // 
+            this.btnCryptoSet.Location = new System.Drawing.Point(6, 64);
+            this.btnCryptoSet.Name = "btnCryptoSet";
+            this.btnCryptoSet.Size = new System.Drawing.Size(75, 23);
+            this.btnCryptoSet.TabIndex = 3;
+            this.btnCryptoSet.Text = "Set";
+            this.btnCryptoSet.UseVisualStyleBackColor = true;
+            this.btnCryptoSet.Click += new System.EventHandler(this.btnCryptoSet_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(7, 11);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(146, 17);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Select Crypto function";
+            // 
+            // cmbCrypto
+            // 
+            this.cmbCrypto.FormattingEnabled = true;
+            this.cmbCrypto.Items.AddRange(new object[] {
+            "AES",
+            "CES"});
+            this.cmbCrypto.Location = new System.Drawing.Point(6, 34);
+            this.cmbCrypto.Name = "cmbCrypto";
+            this.cmbCrypto.Size = new System.Drawing.Size(121, 24);
+            this.cmbCrypto.TabIndex = 0;
+            // 
+            // tabAddUser
+            // 
+            this.tabAddUser.Controls.Add(this.btnAddUser);
+            this.tabAddUser.Controls.Add(this.comboBox1);
+            this.tabAddUser.Controls.Add(this.label7);
+            this.tabAddUser.Controls.Add(this.txtBoxAddUserPassword);
+            this.tabAddUser.Controls.Add(this.txtBoxAddUserUsername);
+            this.tabAddUser.Controls.Add(this.txtBoxAddUserSurname);
+            this.tabAddUser.Controls.Add(this.txtBoxAddUserName);
+            this.tabAddUser.Controls.Add(this.label6);
+            this.tabAddUser.Controls.Add(this.label5);
+            this.tabAddUser.Controls.Add(this.label4);
+            this.tabAddUser.Controls.Add(this.label3);
+            this.tabAddUser.Location = new System.Drawing.Point(4, 25);
+            this.tabAddUser.Name = "tabAddUser";
+            this.tabAddUser.Padding = new System.Windows.Forms.Padding(3);
+            this.tabAddUser.Size = new System.Drawing.Size(790, 407);
+            this.tabAddUser.TabIndex = 2;
+            this.tabAddUser.Text = "Add user";
+            this.tabAddUser.UseVisualStyleBackColor = true;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(14, 31);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(45, 17);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Name";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(14, 63);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(65, 17);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "Surname";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(14, 91);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(73, 17);
+            this.label5.TabIndex = 2;
+            this.label5.Text = "Username";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(14, 124);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(69, 17);
+            this.label6.TabIndex = 3;
+            this.label6.Text = "Password";
+            // 
+            // txtBoxAddUserName
+            // 
+            this.txtBoxAddUserName.Location = new System.Drawing.Point(93, 31);
+            this.txtBoxAddUserName.Name = "txtBoxAddUserName";
+            this.txtBoxAddUserName.Size = new System.Drawing.Size(125, 22);
+            this.txtBoxAddUserName.TabIndex = 4;
+            // 
+            // txtBoxAddUserSurname
+            // 
+            this.txtBoxAddUserSurname.Location = new System.Drawing.Point(93, 63);
+            this.txtBoxAddUserSurname.Name = "txtBoxAddUserSurname";
+            this.txtBoxAddUserSurname.Size = new System.Drawing.Size(125, 22);
+            this.txtBoxAddUserSurname.TabIndex = 5;
+            // 
+            // txtBoxAddUserUsername
+            // 
+            this.txtBoxAddUserUsername.Location = new System.Drawing.Point(93, 91);
+            this.txtBoxAddUserUsername.Name = "txtBoxAddUserUsername";
+            this.txtBoxAddUserUsername.Size = new System.Drawing.Size(125, 22);
+            this.txtBoxAddUserUsername.TabIndex = 6;
+            // 
+            // txtBoxAddUserPassword
+            // 
+            this.txtBoxAddUserPassword.Location = new System.Drawing.Point(93, 119);
+            this.txtBoxAddUserPassword.Name = "txtBoxAddUserPassword";
+            this.txtBoxAddUserPassword.Size = new System.Drawing.Size(125, 22);
+            this.txtBoxAddUserPassword.TabIndex = 7;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(14, 150);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(37, 17);
+            this.label7.TabIndex = 8;
+            this.label7.Text = "Role";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Worker",
+            "Admin"});
+            this.comboBox1.Location = new System.Drawing.Point(93, 150);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(125, 24);
+            this.comboBox1.TabIndex = 9;
+            this.comboBox1.Text = "Worker";
+            // 
+            // btnAddUser
+            // 
+            this.btnAddUser.Location = new System.Drawing.Point(144, 205);
+            this.btnAddUser.Name = "btnAddUser";
+            this.btnAddUser.Size = new System.Drawing.Size(74, 26);
+            this.btnAddUser.TabIndex = 10;
+            this.btnAddUser.Text = "Add";
+            this.btnAddUser.UseVisualStyleBackColor = true;
+            this.btnAddUser.Click += new System.EventHandler(this.btnAddUser_Click);
             // 
             // PropertiesForm
             // 
@@ -304,6 +434,8 @@
             this.tabControlProperties.ResumeLayout(false);
             this.tabPageBillsCrypto.ResumeLayout(false);
             this.tabPageBillsCrypto.PerformLayout();
+            this.tabAddUser.ResumeLayout(false);
+            this.tabAddUser.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -333,5 +465,17 @@
         private System.Windows.Forms.TextBox txtBoxCrypto;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.RichTextBox rtbCrypto;
+        private System.Windows.Forms.TabPage tabAddUser;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnAddUser;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtBoxAddUserPassword;
+        private System.Windows.Forms.TextBox txtBoxAddUserUsername;
+        private System.Windows.Forms.TextBox txtBoxAddUserSurname;
+        private System.Windows.Forms.TextBox txtBoxAddUserName;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
     }
 }
