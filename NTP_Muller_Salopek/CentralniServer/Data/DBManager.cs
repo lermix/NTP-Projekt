@@ -135,5 +135,55 @@ namespace CentralniServer.Data
             return users;
         }
 
+        public static bool AddUser(dynamic user)
+        {
+            try
+            {
+                using (DBConnection dbCon = DBConnection.Instance())
+                {
+                    if (dbCon.IsConnected())
+                    {
+                        string name = user.name.Replace("'", "");
+                        string surname = user.surname.Replace("'", "");
+                        string username = user.username.Replace("'", "");
+                        string password = user.password.Replace("'", "");
+                        int roleId = user.role.ToLower() == "admin" ? 1 : 2;
+
+                        string query = @"insert into user(name, surname, username, hashpass, role) " +
+                            $"values ('{name}', '{surname}', '{username}', '{password}', {roleId});";
+                        var cmd = new MySqlCommand(query, dbCon.GetConnection());
+                        cmd.ExecuteNonQuery();
+                    }
+                    else return false;
+                }
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public static bool DeleteUser(int id)
+        {
+            try
+            {
+                using (DBConnection dbCon = DBConnection.Instance())
+                {
+                    if (dbCon.IsConnected())
+                    {
+                        var cmd = new MySqlCommand(@"delete from user where id=" + id, dbCon.GetConnection());
+                        cmd.ExecuteNonQuery();
+                        return true;
+                    }
+                    else return false;
+                }
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
     }
 }
