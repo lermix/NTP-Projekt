@@ -412,5 +412,10 @@ namespace WFAplikacija
             };
             WFAplikacija.Tools.RESTManager.Post(url, postRequestBody, onResponse, onError);
         }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            TxtManager.fileType = cmbFileType.Text;
+        }
     }
 }

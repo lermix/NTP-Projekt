@@ -64,6 +64,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.cmbFileType = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.tabArticleManager.SuspendLayout();
             this.tabControlProperties.SuspendLayout();
             this.tabPageBillsCrypto.SuspendLayout();
@@ -225,6 +227,8 @@
             // 
             // tabPageBillsCrypto
             // 
+            this.tabPageBillsCrypto.Controls.Add(this.label8);
+            this.tabPageBillsCrypto.Controls.Add(this.cmbFileType);
             this.tabPageBillsCrypto.Controls.Add(this.rtbCrypto);
             this.tabPageBillsCrypto.Controls.Add(this.btnCryptoShow);
             this.tabPageBillsCrypto.Controls.Add(this.txtBoxCrypto);
@@ -420,6 +424,28 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "Name";
             // 
+            // cmbFileType
+            // 
+            this.cmbFileType.FormattingEnabled = true;
+            this.cmbFileType.Items.AddRange(new object[] {
+            ".txt",
+            ".capp"});
+            this.cmbFileType.Location = new System.Drawing.Point(6, 118);
+            this.cmbFileType.Name = "cmbFileType";
+            this.cmbFileType.Size = new System.Drawing.Size(121, 24);
+            this.cmbFileType.TabIndex = 10;
+            this.cmbFileType.Text = ".txt";
+            this.cmbFileType.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(3, 98);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(100, 17);
+            this.label8.TabIndex = 11;
+            this.label8.Text = "Select file type";
+            // 
             // PropertiesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -477,5 +503,7 @@
         private System.Windows.Forms.TextBox txtBoxAddUserName;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ComboBox cmbFileType;
     }
 }

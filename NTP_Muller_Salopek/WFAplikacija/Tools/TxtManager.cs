@@ -11,11 +11,13 @@ namespace WFAplikacija.Tools
     {
         private static string location = @"../../Bills/";
 
+        public static string fileType = ".txt";
+
         public static bool setAES = false; 
 
         public static void WriteToFile(Bill bill)
         {
-            string fileName = "Bill_ID_" + bill.id + ".txt";
+            string fileName = "Bill_ID_" + bill.id + fileType;
             string text = bill.ToString();
             if (setAES)
             {
@@ -30,7 +32,7 @@ namespace WFAplikacija.Tools
 
         public static string ReadFromFile(int ID)
         {
-            string fileName = "Bill_ID_" + ID + ".txt";
+            string fileName = "Bill_ID_" + ID + fileType;
             try
             {
                 string text = System.IO.File.ReadAllText(location + fileName);

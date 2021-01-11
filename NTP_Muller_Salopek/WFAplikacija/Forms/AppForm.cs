@@ -581,7 +581,7 @@ namespace WFAplikacija
                     billCollection.Bills[i].id.ToString(),
                     billCollection.Bills[i].user,
                     billCollection.Bills[i].totalPrice.ToString(),
-                    billCollection.Bills[i].dateTime.ToString(),
+                    billCollection.Bills[i].dateTimeString,
                     billCollection.Bills[i].articles.Count.ToString()
                 });
             }

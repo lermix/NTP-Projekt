@@ -19,9 +19,9 @@ namespace WFAplikacija.DataObjects
         public string buttonName { get; set; }
         [XmlAttribute("price")]
         public float price { get; set; }
-        [XmlAttribute("quantity")]
+        [XmlAttribute("quantity")] //samo u racunu
         public float quantity { get; set; } 
-        [XmlAttribute("totalPrice")]
+        [XmlAttribute("totalPrice")] // samo u racunu
         public float totalPrice { get { return price * quantity; } }
 
         public Article (int _ID, string _name, string _buttonName, float _price)
