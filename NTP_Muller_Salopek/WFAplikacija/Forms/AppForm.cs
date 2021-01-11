@@ -252,7 +252,14 @@ namespace WFAplikacija
 
         private void programmableButton_Click(object sender, EventArgs e)
         {
-            // Testing area
+            PropertiesForm.GetArticlesFromServer((List<Article> articles) => {
+                XmlManager.DeleteAllArticles();
+                foreach (Article article in articles)
+                {
+                    XmlManager.addObjectToXml(article);
+                }
+            });
+            
         }
 
         private void openPropertiesButton_Click(object sender, EventArgs e)
@@ -596,6 +603,9 @@ namespace WFAplikacija
 
         private void addArticlesToDtReports()
         {
+            //Refresh articles
+            articleCollection = XmlManager.GetArticles();
+
             // Clear previous data
             dtReports.Columns.Clear();
             dtReports.Rows.Clear();

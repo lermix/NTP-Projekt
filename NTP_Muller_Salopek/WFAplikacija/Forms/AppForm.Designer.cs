@@ -74,6 +74,7 @@
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.tabAdmin = new System.Windows.Forms.TabPage();
+            this.webBrowser = new System.Windows.Forms.WebBrowser();
             this.label3 = new System.Windows.Forms.Label();
             this.openPropertiesButton = new System.Windows.Forms.Button();
             this.programmableButton = new System.Windows.Forms.Button();
@@ -98,7 +99,6 @@
             this.checkServerResponseLabel = new System.Windows.Forms.Label();
             this.checkServerButton = new System.Windows.Forms.Button();
             this.pdfConfig1 = new Syncfusion.Pdf.PdfConfig();
-            this.webBrowser = new System.Windows.Forms.WebBrowser();
             this.tabMainControl.SuspendLayout();
             this.tabSale.SuspendLayout();
             this.tabControlArticles.SuspendLayout();
@@ -541,6 +541,14 @@
             this.tabAdmin.Text = "Server";
             this.tabAdmin.UseVisualStyleBackColor = true;
             // 
+            // webBrowser
+            // 
+            this.webBrowser.Location = new System.Drawing.Point(413, 90);
+            this.webBrowser.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowser.Name = "webBrowser";
+            this.webBrowser.Size = new System.Drawing.Size(656, 444);
+            this.webBrowser.TabIndex = 24;
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -564,7 +572,7 @@
             // 
             this.programmableButton.BackColor = System.Drawing.Color.Red;
             this.programmableButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.programmableButton.Location = new System.Drawing.Point(15, 352);
+            this.programmableButton.Location = new System.Drawing.Point(15, 396);
             this.programmableButton.Name = "programmableButton";
             this.programmableButton.Size = new System.Drawing.Size(30, 30);
             this.programmableButton.TabIndex = 21;
@@ -575,11 +583,11 @@
             // 
             this.programmableButtonLabel.AutoSize = true;
             this.programmableButtonLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.programmableButtonLabel.Location = new System.Drawing.Point(51, 353);
+            this.programmableButtonLabel.Location = new System.Drawing.Point(51, 397);
             this.programmableButtonLabel.Name = "programmableButtonLabel";
-            this.programmableButtonLabel.Size = new System.Drawing.Size(198, 25);
+            this.programmableButtonLabel.Size = new System.Drawing.Size(210, 25);
             this.programmableButtonLabel.TabIndex = 20;
-            this.programmableButtonLabel.Text = "Programmable button";
+            this.programmableButtonLabel.Text = "Refresh local database";
             // 
             // sampleLoginExampleBodyLabel
             // 
@@ -754,14 +762,6 @@
             this.checkServerButton.Text = global::WFAplikacija.Lang.Dictionary.AFButtonSend;
             this.checkServerButton.UseVisualStyleBackColor = true;
             this.checkServerButton.Click += new System.EventHandler(this.checkServerButton_Click);
-            // 
-            // webBrowser
-            // 
-            this.webBrowser.Location = new System.Drawing.Point(413, 90);
-            this.webBrowser.MinimumSize = new System.Drawing.Size(20, 20);
-            this.webBrowser.Name = "webBrowser";
-            this.webBrowser.Size = new System.Drawing.Size(656, 444);
-            this.webBrowser.TabIndex = 24;
             // 
             // AppForm
             // 
