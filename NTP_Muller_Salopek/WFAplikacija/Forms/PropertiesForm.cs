@@ -10,6 +10,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WFAplikacija.DataObjects;
 using WFAplikacija.Tools;
+using System.Collections.Specialized;
+using Newtonsoft.Json;
 
 namespace WFAplikacija
 {
@@ -29,7 +31,72 @@ namespace WFAplikacija
             //konfiguracija izgleda            
             EditAndDeleteListShow(false);
 
-            //Ini manager
+            List<Article> articles = XmlManager.GetArticles().articles;
+            foreach (Article a in articles)
+            {
+                AddArticleToServer(a);
+            }
+            MessageBox.Show("Articles added to server");
+        }
+
+        public static void GetArticlesFromServer(Action<List<Article>> callbackFn)
+        {
+            string url = WFAplikacija.Properties.Resources.CentralniServerURL + @"/Product/";
+
+            Action<string> onResponse = (string response) => {
+                List<Article> products = JsonConvert.DeserializeObject<List<Article>>(response);
+                callbackFn(products);
+            };
+            WFAplikacija.Tools.RESTManager.Get(url, onResponse);
+        }
+
+        private void DeleteArticleFromServer(int id)
+        {
+            string url = WFAplikacija.Properties.Resources.CentralniServerURL + @"/Product/Delete/" + id;
+
+            Action<string> onResponse = (string response) => {
+                if (response[0] == 'Y')
+                {
+                    MessageBox.Show("Product " + id + " successfully dleted!");
+                }
+                else
+                {
+                    MessageBox.Show("Fail. Error response received: " + response.Replace("_", " "));
+                }
+            };
+            Action onError = () => {
+                MessageBox.Show("Failed while connecting to the server.");
+            };
+            WFAplikacija.Tools.RESTManager.Get(url, onResponse, onError);
+        }
+
+        private void AddArticleToServer(Article article)
+        {
+            string urlBase = WFAplikacija.Properties.Resources.CentralniServerURL + @"/Product/Add/?";
+            string url = urlBase;
+            NameValueCollection queryString = System.Web.HttpUtility.ParseQueryString(string.Empty);
+
+            queryString.Add("name", article.name);
+            queryString.Add("buttonName", article.buttonName);
+            queryString.Add("price", article.price.ToString());
+            url += queryString.ToString();
+
+            var postRequestBody = new { };
+
+            Action<string> onResponse = (string response) => {
+                if (response[0] == 'Y')
+                {
+                    MessageBox.Show("Product " + article.name + " successfully added!");
+                }
+                else
+                {
+                    MessageBox.Show("Fail. Error response received: " + response.Replace("_", " "));
+                }
+            };
+            Action onError = () => {
+                MessageBox.Show("Failed while connecting to the server.");
+            };
+            WFAplikacija.Tools.RESTManager.Post(url, postRequestBody, onResponse, onError);
         }
 
         /// <summary>
@@ -93,12 +160,15 @@ namespace WFAplikacija
             string selectedItem = cmbArticleManager.SelectedItem.ToString();
             if (selectedItem == WFAplikacija.Lang.Dictionary.PFActionInsert)
             {
+                Article a = GetFormArticle();
                 // Insert
-                if (GetFormArticle() != null)
+                if (a != null)
                 {
                     XmlManager.addObjectToXml(GetFormArticle());
                     InserAndEditControlsClear();
                     txtBoxArticleManagerId.Text = XmlManager.getNextIDArticle().ToString();
+
+                    AddArticleToServer(a);
                 }
             }
             else if (selectedItem == WFAplikacija.Lang.Dictionary.PFActionDelete)
@@ -227,7 +297,6 @@ namespace WFAplikacija
                 MessageBox.Show("Warning, price is 0");
             }
 
-
             return article;
         }
         private void FillTxtBoxesWithSelectedArticle(Article articleSelected)
@@ -292,6 +361,7 @@ namespace WFAplikacija
         //USER TAB
         private void btnAddUser_Click(object sender, EventArgs e)
         {
+            // Check parameters
             string name, username, password, surname, role;
             if (string.IsNullOrEmpty(txtBoxAddUserName.Text)){MessageBox.Show("Name can't be empty");return;}
             else{name = txtBoxAddUserName.Text;   }
@@ -301,9 +371,46 @@ namespace WFAplikacija
             else{surname = txtBoxAddUserSurname.Text;       }
             if (string.IsNullOrEmpty(txtBoxAddUserUsername.Text)){MessageBox.Show("Username can't be empty");return;}
             else{username = txtBoxAddUserUsername.Text;}
+            if (addUserRoleComboBox.Text == "Worker")
+                role = "worker";
+            else if (addUserRoleComboBox.Text == "Admin")
+                role = "admin";
+            else { MessageBox.Show("Invalid role"); return; }
 
+            // Add user
+            string urlBase = WFAplikacija.Properties.Resources.CentralniServerURL + @"/User/Add/?";
+            string url = urlBase;
+            NameValueCollection queryString = System.Web.HttpUtility.ParseQueryString(string.Empty);
 
+            var hashedPassword = WFAplikacija.Tools.Cryptography.GetHashString(password);
 
+            queryString.Add("name", name);
+            queryString.Add("surname", surname);
+            queryString.Add("username", username);
+            queryString.Add("hashedPassword", hashedPassword);
+            queryString.Add("role", role);
+            url += queryString.ToString();
+
+            var postRequestBody = new { };
+
+            Action<string> onResponse = (string response) => {
+                if (response[0] == 'Y')
+                {
+                    MessageBox.Show("User " + name + " " + surname + " successfully added!");
+                    txtBoxAddUserName.Text = "";
+                    txtBoxAddUserSurname.Text = "";
+                    txtBoxAddUserUsername.Text = "";
+                    txtBoxAddUserPassword.Text = "";
+                }
+                else
+                {
+                    MessageBox.Show("Fail. Error response received: " + response.Replace("_", " "));
+                }
+            };
+            Action onError = () => {
+                MessageBox.Show("Failed while connecting to the server.");
+            };
+            WFAplikacija.Tools.RESTManager.Post(url, postRequestBody, onResponse, onError);
         }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)

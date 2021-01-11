@@ -54,7 +54,7 @@
             this.cmbCrypto = new System.Windows.Forms.ComboBox();
             this.tabAddUser = new System.Windows.Forms.TabPage();
             this.btnAddUser = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.addUserRoleComboBox = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txtBoxAddUserPassword = new System.Windows.Forms.TextBox();
             this.txtBoxAddUserUsername = new System.Windows.Forms.TextBox();
@@ -311,7 +311,7 @@
             // tabAddUser
             // 
             this.tabAddUser.Controls.Add(this.btnAddUser);
-            this.tabAddUser.Controls.Add(this.comboBox1);
+            this.tabAddUser.Controls.Add(this.addUserRoleComboBox);
             this.tabAddUser.Controls.Add(this.label7);
             this.tabAddUser.Controls.Add(this.txtBoxAddUserPassword);
             this.tabAddUser.Controls.Add(this.txtBoxAddUserUsername);
@@ -339,17 +339,17 @@
             this.btnAddUser.UseVisualStyleBackColor = true;
             this.btnAddUser.Click += new System.EventHandler(this.btnAddUser_Click);
             // 
-            // comboBox1
+            // addUserRoleComboBox
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.addUserRoleComboBox.FormattingEnabled = true;
+            this.addUserRoleComboBox.Items.AddRange(new object[] {
             "Worker",
             "Admin"});
-            this.comboBox1.Location = new System.Drawing.Point(93, 150);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(125, 24);
-            this.comboBox1.TabIndex = 9;
-            this.comboBox1.Text = "Worker";
+            this.addUserRoleComboBox.Location = new System.Drawing.Point(93, 150);
+            this.addUserRoleComboBox.Name = "addUserRoleComboBox";
+            this.addUserRoleComboBox.Size = new System.Drawing.Size(125, 24);
+            this.addUserRoleComboBox.TabIndex = 9;
+            this.addUserRoleComboBox.Text = "Worker";
             // 
             // label7
             // 
@@ -495,7 +495,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnAddUser;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox addUserRoleComboBox;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtBoxAddUserPassword;
         private System.Windows.Forms.TextBox txtBoxAddUserUsername;

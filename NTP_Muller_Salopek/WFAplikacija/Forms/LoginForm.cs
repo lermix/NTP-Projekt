@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WFAplikacija.Tools;
+using WFAplikacija.DataObjects;
 
 namespace WFAplikacija
 {
@@ -86,22 +87,29 @@ namespace WFAplikacija
             app.Width = 50;
         }
 
-        private void loginButton_Click(object sender, EventArgs e)
+        private async void loginButton_Click(object sender, EventArgs e)
         {
             string username = usernameTextBox.Text;
             string password = passwordTextBox.Text;
-
-            // For now ignore login == true all the time
-            if (WFAplikacija.Tools.UserManager.Login(username, password))
+            Action<User> callbackFn = delegate (User u)
             {
-                this.ShowMainApp();
-            }
-            else
+                if (u != null)
+                    this.ShowMainApp();
+                else
+                {
+                    usernameTextBox.Text = "";
+                    passwordTextBox.Text = "";
+                    messageLabel.Text = "Invalid login.";
+                }
+            };
+            Action onError = delegate
             {
                 usernameTextBox.Text = "";
                 passwordTextBox.Text = "";
-                messageLabel.Text = "Invalid login.";
-            }
+                messageLabel.Text = "Server error.";
+            };
+
+            WFAplikacija.Tools.LoginManager.Login(username, password, callbackFn, onError);
         }
 
         private void usernameTextBox_TextChanged(object sender, EventArgs e)
