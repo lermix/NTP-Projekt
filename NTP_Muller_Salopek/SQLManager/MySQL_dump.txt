@@ -44,6 +44,15 @@ CREATE TABLE `ntp2020`.`user` (
 INSERT INTO `ntp2020`.`user`(name, surname, username, hashpass, role) values ('Joe', 'Rogan', 'admin', 'A665A45920422F9D417E4867EFDC4FB8A04A1F3FFF1FA07E998E86F7F7A27AE3', 1);
 INSERT INTO `ntp2020`.`user`(name, surname, username, hashpass, role) values ('Petar', 'Peric', 'worker', 'A665A45920422F9D417E4867EFDC4FB8A04A1F3FFF1FA07E998E86F7F7A27AE3', 2);
 
+INSERT INTO PRODUCT VALUES (0, 'CocaCola', 'CocaCola', 12);
+INSERT INTO PRODUCT VALUES (1, 'Sprite', 'Sprite', 12);
+INSERT INTO PRODUCT VALUES (2, 'Kava', 'Kava', 8);
+INSERT INTO PRODUCT VALUES (3, 'Nescaffe vanilija', 'Ness Vanilija', 15);
+INSERT INTO PRODUCT VALUES (4, 'Nescaffe Cokolada', 'Ness Cokolada', 15);
+INSERT INTO PRODUCT VALUES (5, 'Pan', 'Pan', 20);
+INSERT INTO PRODUCT VALUES (7, 'Vodka', 'Vodka', 12);
+INSERT INTO PRODUCT VALUES (8, 'Jack Daniels', 'jackie', 15);
+
 -- Create database user
 DROP USER IF EXISTS 'ntp2020_user'@'localhost';
 CREATE USER 'ntp2020_user'@'localhost' IDENTIFIED BY '123';
