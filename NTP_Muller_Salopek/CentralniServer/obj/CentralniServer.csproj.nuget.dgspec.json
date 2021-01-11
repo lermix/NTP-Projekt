@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\stjep\\OneDrive\\Dokumenti\\GitHub\\NTP-Projekt\\NTP_Muller_Salopek\\CentralniServer\\CentralniServer.csproj": {}
+    "C:\\Users\\Alen\\Desktop\\faks\\NTP projekt\\NTP-Projekt\\NTP_Muller_Salopek\\CentralniServer\\CentralniServer.csproj": {}
   },
   "projects": {
-    "C:\\Users\\stjep\\OneDrive\\Dokumenti\\GitHub\\NTP-Projekt\\NTP_Muller_Salopek\\CentralniServer\\CentralniServer.csproj": {
+    "C:\\Users\\Alen\\Desktop\\faks\\NTP projekt\\NTP-Projekt\\NTP_Muller_Salopek\\CentralniServer\\CentralniServer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\stjep\\OneDrive\\Dokumenti\\GitHub\\NTP-Projekt\\NTP_Muller_Salopek\\CentralniServer\\CentralniServer.csproj",
+        "projectUniqueName": "C:\\Users\\Alen\\Desktop\\faks\\NTP projekt\\NTP-Projekt\\NTP_Muller_Salopek\\CentralniServer\\CentralniServer.csproj",
         "projectName": "CentralniServer",
-        "projectPath": "C:\\Users\\stjep\\OneDrive\\Dokumenti\\GitHub\\NTP-Projekt\\NTP_Muller_Salopek\\CentralniServer\\CentralniServer.csproj",
-        "packagesPath": "C:\\Users\\stjep\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\stjep\\OneDrive\\Dokumenti\\GitHub\\NTP-Projekt\\NTP_Muller_Salopek\\CentralniServer\\obj\\",
+        "projectPath": "C:\\Users\\Alen\\Desktop\\faks\\NTP projekt\\NTP-Projekt\\NTP_Muller_Salopek\\CentralniServer\\CentralniServer.csproj",
+        "packagesPath": "C:\\Users\\Alen\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Alen\\Desktop\\faks\\NTP projekt\\NTP-Projekt\\NTP_Muller_Salopek\\CentralniServer\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\stjep\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Alen\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,7 +26,6 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
-            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -38,7 +37,6 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "MySql.Data": {
               "target": "Package",
@@ -67,7 +65,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
         }
       }
     }

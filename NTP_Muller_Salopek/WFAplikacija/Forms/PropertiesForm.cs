@@ -31,12 +31,6 @@ namespace WFAplikacija
             //konfiguracija izgleda            
             EditAndDeleteListShow(false);
 
-            List<Article> articles = XmlManager.GetArticles().articles;
-            foreach (Article a in articles)
-            {
-                AddArticleToServer(a);
-            }
-            MessageBox.Show("Articles added to server");
         }
 
         public static void GetArticlesFromServer(Action<List<Article>> callbackFn)

@@ -8,4 +8,5 @@
   <Article ID="5" name="Pan" buttonName="Pan" price="20" />
   <Article ID="7" name="Vodka" buttonName="Vodka" price="12" />
   <Article ID="8" name="Jack Daniels" buttonName="jackie" price="15" />
+  <Article ID="9" name="pelinkovac" buttonName="pelin" price="14" />
 </ArticleCollection>
