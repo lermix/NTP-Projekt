@@ -34,7 +34,7 @@ namespace CentralniServer.Data
         //private DBConnection dbCon;
 
         private DBManager() { }
-        
+
         // Example read:
         //  while (reader.Read())
         //      User u = new User(name: reader.GetString(1), username: reader.GetString("Username"));
@@ -51,18 +51,23 @@ namespace CentralniServer.Data
             }
         */
 
-// id=0 fetches all users
-        public static dynamic FetchUser(int id)
+        // id=0 fetches all users
+        public static dynamic FetchUser(int id, string username)
         {
-            if (!(id > 0))
-                throw new Exception("id must be >0");
+            if (!(id > 0) && string.IsNullOrWhiteSpace(username))
+                throw new Exception("To get all users, call FetchUsers");
             try
             {
                 string query = @"select u.*, ur.name as rolename " +
                         @"from user as u " +
                         @"inner join userrole as ur " +
                         @"on u.role = ur.id " +
-                        @"where u.id=" + id;
+                        @"where 1=1 ";
+                if (id > 0)
+                    query += @"and u.id=" + id + " ";
+                if (!string.IsNullOrWhiteSpace(username))
+                    query += @"and u.username='" + username + "';";
+
 
                 using (DBConnection dbCon = DBConnection.Instance())
                 {
@@ -73,6 +78,8 @@ namespace CentralniServer.Data
 
                         if (r.HasRows == false)
                             return null;
+
+                        r.Read();
                         dynamic user = new
                         {
                             id = r.GetInt32(0),
@@ -126,7 +133,7 @@ namespace CentralniServer.Data
                     }
                     else throw new Exception("Can't connect.");
                 }
-                
+
             }
             catch
             {
@@ -173,6 +180,92 @@ namespace CentralniServer.Data
                     if (dbCon.IsConnected())
                     {
                         var cmd = new MySqlCommand(@"delete from user where id=" + id, dbCon.GetConnection());
+                        cmd.ExecuteNonQuery();
+                        return true;
+                    }
+                    else return false;
+                }
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public static List<dynamic> FetchProducts()
+        {
+            List<dynamic> products = new List<dynamic>();
+            try
+            {
+                string query = @"select * from product";
+
+                using (DBConnection dbCon = DBConnection.Instance())
+                {
+                    if (dbCon.IsConnected())
+                    {
+                        var cmd = new MySqlCommand(query, dbCon.GetConnection());
+                        MySqlDataReader r = cmd.ExecuteReader();
+
+                        while (r.Read())
+                        {
+                            // Product - id INT, name VARCHAR, buttonName VARCHAR, price FLOAT
+                            products.Add(new
+                            {
+                                id = r.GetInt32(0),
+                                name = r.GetString(1),
+                                buttonName = r.GetString(2),
+                                price = r.GetFloat(3)
+                            });
+                        }
+                    }
+                    else throw new Exception("Can't connect.");
+                }
+
+            }
+            catch
+            {
+                // Error
+            }
+            return products;
+        }
+
+        public static bool AddProduct(dynamic product)
+        {
+            try
+            {
+                using (DBConnection dbCon = DBConnection.Instance())
+                {
+                    if (dbCon.IsConnected())
+                    {
+                        // Product - id INT, name VARCHAR, buttonName VARCHAR, price FLOAT
+                        string name = product.name;
+                        string buttonName = product.buttonName;
+                        float price = product.price;
+
+                        string query = @"insert into product(name, buttonName, price) " +
+                            $"values ('{name}', '{buttonName}', {price});";
+                        var cmd = new MySqlCommand(query, dbCon.GetConnection());
+                        cmd.ExecuteNonQuery();
+                    }
+                    else return false;
+                }
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public static bool DeleteProduct(int id)
+        {
+            try
+            {
+                using (DBConnection dbCon = DBConnection.Instance())
+                {
+                    if (dbCon.IsConnected())
+                    {
+                        var cmd = new MySqlCommand(@"delete from product where id=" + id, dbCon.GetConnection());
                         cmd.ExecuteNonQuery();
                         return true;
                     }

@@ -56,11 +56,11 @@ namespace CentralniServer.Controllers
 
         // /Users/Get
         [HttpGet]
-        public string Get(int id)
+        public string Get(int id, string username)
         {
-            var user_s = id > 0 ? Data.DBManager.FetchUser(id) : Data.DBManager.FetchUsers();
+            var user_s = id > 0 || !string.IsNullOrWhiteSpace(username) ? Data.DBManager.FetchUser(id, username) : Data.DBManager.FetchUsers();
 
-            string res = user_s != null ? JsonConvert.SerializeObject(user_s) : "{}";
+            string res = user_s != null ? JsonConvert.SerializeObject(user_s) : "";
             return res;
         }
     }

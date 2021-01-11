@@ -86,23 +86,25 @@
                 body = "No body.";
 
             table_body.insertAdjacentHTML("beforeend",
-                option_html.replace(`{method}`, method).replace(`{link}`, link).replace(`{body}`, body).replace(`{response}`, response)
+                option_html.replace('{method}', method).replace('{link}', link).replace('{body}', body).replace('{response}', response)
             );
         }
 
         function onLoad() {
-            addOption("GET", baseUrl + " (+ /Home/Index)", null, `HTML of this page.`);
-            addOption("GET", baseUrl + "/Status", null, `"OK" (server is alive)`);
-            addOption("POST", baseUrl + "/User/Login", `username=exampleUsername&amp;password=ExamplePassword`,
-                `"Y" (correct) <br />
+            addOption("GET", baseUrl + " (+ /Home/Index)", null, 'HTML of this page.');
+            addOption("GET", baseUrl + "/Status", null, '"OK" (server is alive)');
+            addOption("POST", baseUrl + "/User/Login", 'username=exampleUsername&amp;password=ExamplePassword',
+                '"Y" (correct) <br />
                 "N_Username" (incorrect username) <br />
-                "N_Password" (incorrect password)`
+                "N_Password" (incorrect password)'
             );
-            addOption("GET", baseUrl + "/User/Get/id?", ``,
-                `(id sent, one user): { id, name, surname, username, password, role }<br />
-                (no id, all users): [{...}, {...}, ...]`);
+            addOption("GET", baseUrl + "/User/Get/id?", '',
+                '(id sent, one user): { id, name, surname, username, password, role }<br />(no id, all users): [{...}, {...}, ...]');
             addOption("POST", baseUrl + "/User/Delete/id?", null, "Y<br/>or<br/>N");
             addOption("POST", baseUrl + "/User/Add/?", "name=example_name&surname=example&username=example&<br/>hashedPassword=example&role=admin_or_worker", "Y (success)<br/>N_ERROR_NAME (Error name can be 'parameters' etc)");
+            addOption("GET", baseUrl + "/Product (+ /Get)", null, '[{"id":1,"name":"cocacola","buttonName":"Cola","price":13.2}, {...}, ...]');
+            addOption("GET", baseUrl + "/Product/Delete/id?", null, "Y<br/>or<br/>N");
+            addOption("POST", baseUrl + "/Product/Add/?", "name=example_Name&buttonName=example&price=13.2", "Y (success)<br/>N_ERROR_NAME (error can be 'parameters' etc)")
         }
 
         onLoad();

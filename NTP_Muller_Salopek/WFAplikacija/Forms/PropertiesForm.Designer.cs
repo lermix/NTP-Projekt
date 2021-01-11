@@ -53,17 +53,17 @@
             this.label1 = new System.Windows.Forms.Label();
             this.cmbCrypto = new System.Windows.Forms.ComboBox();
             this.tabAddUser = new System.Windows.Forms.TabPage();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtBoxAddUserName = new System.Windows.Forms.TextBox();
-            this.txtBoxAddUserSurname = new System.Windows.Forms.TextBox();
-            this.txtBoxAddUserUsername = new System.Windows.Forms.TextBox();
-            this.txtBoxAddUserPassword = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.btnAddUser = new System.Windows.Forms.Button();
+            this.addUserRoleComboBox = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtBoxAddUserPassword = new System.Windows.Forms.TextBox();
+            this.txtBoxAddUserUsername = new System.Windows.Forms.TextBox();
+            this.txtBoxAddUserSurname = new System.Windows.Forms.TextBox();
+            this.txtBoxAddUserName = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.tabArticleManager.SuspendLayout();
             this.tabControlProperties.SuspendLayout();
             this.tabPageBillsCrypto.SuspendLayout();
@@ -307,7 +307,7 @@
             // tabAddUser
             // 
             this.tabAddUser.Controls.Add(this.btnAddUser);
-            this.tabAddUser.Controls.Add(this.comboBox1);
+            this.tabAddUser.Controls.Add(this.addUserRoleComboBox);
             this.tabAddUser.Controls.Add(this.label7);
             this.tabAddUser.Controls.Add(this.txtBoxAddUserPassword);
             this.tabAddUser.Controls.Add(this.txtBoxAddUserUsername);
@@ -325,69 +325,27 @@
             this.tabAddUser.Text = "Add user";
             this.tabAddUser.UseVisualStyleBackColor = true;
             // 
-            // label3
+            // btnAddUser
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(14, 31);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(45, 17);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Name";
+            this.btnAddUser.Location = new System.Drawing.Point(144, 205);
+            this.btnAddUser.Name = "btnAddUser";
+            this.btnAddUser.Size = new System.Drawing.Size(74, 26);
+            this.btnAddUser.TabIndex = 10;
+            this.btnAddUser.Text = "Add";
+            this.btnAddUser.UseVisualStyleBackColor = true;
+            this.btnAddUser.Click += new System.EventHandler(this.btnAddUser_Click);
             // 
-            // label4
+            // addUserRoleComboBox
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(14, 63);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(65, 17);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "Surname";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(14, 91);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(73, 17);
-            this.label5.TabIndex = 2;
-            this.label5.Text = "Username";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(14, 124);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(69, 17);
-            this.label6.TabIndex = 3;
-            this.label6.Text = "Password";
-            // 
-            // txtBoxAddUserName
-            // 
-            this.txtBoxAddUserName.Location = new System.Drawing.Point(93, 31);
-            this.txtBoxAddUserName.Name = "txtBoxAddUserName";
-            this.txtBoxAddUserName.Size = new System.Drawing.Size(125, 22);
-            this.txtBoxAddUserName.TabIndex = 4;
-            // 
-            // txtBoxAddUserSurname
-            // 
-            this.txtBoxAddUserSurname.Location = new System.Drawing.Point(93, 63);
-            this.txtBoxAddUserSurname.Name = "txtBoxAddUserSurname";
-            this.txtBoxAddUserSurname.Size = new System.Drawing.Size(125, 22);
-            this.txtBoxAddUserSurname.TabIndex = 5;
-            // 
-            // txtBoxAddUserUsername
-            // 
-            this.txtBoxAddUserUsername.Location = new System.Drawing.Point(93, 91);
-            this.txtBoxAddUserUsername.Name = "txtBoxAddUserUsername";
-            this.txtBoxAddUserUsername.Size = new System.Drawing.Size(125, 22);
-            this.txtBoxAddUserUsername.TabIndex = 6;
-            // 
-            // txtBoxAddUserPassword
-            // 
-            this.txtBoxAddUserPassword.Location = new System.Drawing.Point(93, 119);
-            this.txtBoxAddUserPassword.Name = "txtBoxAddUserPassword";
-            this.txtBoxAddUserPassword.Size = new System.Drawing.Size(125, 22);
-            this.txtBoxAddUserPassword.TabIndex = 7;
+            this.addUserRoleComboBox.FormattingEnabled = true;
+            this.addUserRoleComboBox.Items.AddRange(new object[] {
+            "Worker",
+            "Admin"});
+            this.addUserRoleComboBox.Location = new System.Drawing.Point(93, 150);
+            this.addUserRoleComboBox.Name = "addUserRoleComboBox";
+            this.addUserRoleComboBox.Size = new System.Drawing.Size(125, 24);
+            this.addUserRoleComboBox.TabIndex = 9;
+            this.addUserRoleComboBox.Text = "Worker";
             // 
             // label7
             // 
@@ -398,27 +356,69 @@
             this.label7.TabIndex = 8;
             this.label7.Text = "Role";
             // 
-            // comboBox1
+            // txtBoxAddUserPassword
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Worker",
-            "Admin"});
-            this.comboBox1.Location = new System.Drawing.Point(93, 150);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(125, 24);
-            this.comboBox1.TabIndex = 9;
-            this.comboBox1.Text = "Worker";
+            this.txtBoxAddUserPassword.Location = new System.Drawing.Point(93, 119);
+            this.txtBoxAddUserPassword.Name = "txtBoxAddUserPassword";
+            this.txtBoxAddUserPassword.Size = new System.Drawing.Size(125, 22);
+            this.txtBoxAddUserPassword.TabIndex = 7;
             // 
-            // btnAddUser
+            // txtBoxAddUserUsername
             // 
-            this.btnAddUser.Location = new System.Drawing.Point(144, 205);
-            this.btnAddUser.Name = "btnAddUser";
-            this.btnAddUser.Size = new System.Drawing.Size(74, 26);
-            this.btnAddUser.TabIndex = 10;
-            this.btnAddUser.Text = "Add";
-            this.btnAddUser.UseVisualStyleBackColor = true;
-            this.btnAddUser.Click += new System.EventHandler(this.btnAddUser_Click);
+            this.txtBoxAddUserUsername.Location = new System.Drawing.Point(93, 91);
+            this.txtBoxAddUserUsername.Name = "txtBoxAddUserUsername";
+            this.txtBoxAddUserUsername.Size = new System.Drawing.Size(125, 22);
+            this.txtBoxAddUserUsername.TabIndex = 6;
+            // 
+            // txtBoxAddUserSurname
+            // 
+            this.txtBoxAddUserSurname.Location = new System.Drawing.Point(93, 63);
+            this.txtBoxAddUserSurname.Name = "txtBoxAddUserSurname";
+            this.txtBoxAddUserSurname.Size = new System.Drawing.Size(125, 22);
+            this.txtBoxAddUserSurname.TabIndex = 5;
+            // 
+            // txtBoxAddUserName
+            // 
+            this.txtBoxAddUserName.Location = new System.Drawing.Point(93, 31);
+            this.txtBoxAddUserName.Name = "txtBoxAddUserName";
+            this.txtBoxAddUserName.Size = new System.Drawing.Size(125, 22);
+            this.txtBoxAddUserName.TabIndex = 4;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(14, 124);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(69, 17);
+            this.label6.TabIndex = 3;
+            this.label6.Text = "Password";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(14, 91);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(73, 17);
+            this.label5.TabIndex = 2;
+            this.label5.Text = "Username";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(14, 63);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(65, 17);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "Surname";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(14, 31);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(45, 17);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Name";
             // 
             // PropertiesForm
             // 
@@ -469,7 +469,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnAddUser;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox addUserRoleComboBox;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtBoxAddUserPassword;
         private System.Windows.Forms.TextBox txtBoxAddUserUsername;

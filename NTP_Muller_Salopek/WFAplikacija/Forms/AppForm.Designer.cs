@@ -98,6 +98,7 @@
             this.checkServerResponseLabel = new System.Windows.Forms.Label();
             this.checkServerButton = new System.Windows.Forms.Button();
             this.pdfConfig1 = new Syncfusion.Pdf.PdfConfig();
+            this.webBrowser = new System.Windows.Forms.WebBrowser();
             this.tabMainControl.SuspendLayout();
             this.tabSale.SuspendLayout();
             this.tabControlArticles.SuspendLayout();
@@ -321,7 +322,6 @@
             this.btnArticle2.Name = "btnArticle2";
             this.btnArticle2.Size = new System.Drawing.Size(75, 75);
             this.btnArticle2.TabIndex = 1;
-            this.btnArticle2.Text = global::WFAplikacija.Lang.Dictionary.AFProductSprite;
             this.btnArticle2.UseVisualStyleBackColor = true;
             this.btnArticle2.Click += new System.EventHandler(this.ArticleButtonClicked);
             // 
@@ -331,7 +331,6 @@
             this.btnArticle1.Name = "btnArticle1";
             this.btnArticle1.Size = new System.Drawing.Size(75, 75);
             this.btnArticle1.TabIndex = 0;
-            this.btnArticle1.Text = global::WFAplikacija.Lang.Dictionary.AFProductCocaCola;
             this.btnArticle1.UseVisualStyleBackColor = true;
             this.btnArticle1.Click += new System.EventHandler(this.ArticleButtonClicked);
             // 
@@ -510,6 +509,7 @@
             // 
             // tabAdmin
             // 
+            this.tabAdmin.Controls.Add(this.webBrowser);
             this.tabAdmin.Controls.Add(this.label3);
             this.tabAdmin.Controls.Add(this.openPropertiesButton);
             this.tabAdmin.Controls.Add(this.programmableButton);
@@ -538,7 +538,7 @@
             this.tabAdmin.Padding = new System.Windows.Forms.Padding(3);
             this.tabAdmin.Size = new System.Drawing.Size(1077, 542);
             this.tabAdmin.TabIndex = 2;
-            this.tabAdmin.Text = global::WFAplikacija.Lang.Dictionary.AFTabAdmin;
+            this.tabAdmin.Text = "Server";
             this.tabAdmin.UseVisualStyleBackColor = true;
             // 
             // label3
@@ -564,7 +564,7 @@
             // 
             this.programmableButton.BackColor = System.Drawing.Color.Red;
             this.programmableButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.programmableButton.Location = new System.Drawing.Point(15, 410);
+            this.programmableButton.Location = new System.Drawing.Point(15, 352);
             this.programmableButton.Name = "programmableButton";
             this.programmableButton.Size = new System.Drawing.Size(30, 30);
             this.programmableButton.TabIndex = 21;
@@ -575,7 +575,7 @@
             // 
             this.programmableButtonLabel.AutoSize = true;
             this.programmableButtonLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.programmableButtonLabel.Location = new System.Drawing.Point(51, 411);
+            this.programmableButtonLabel.Location = new System.Drawing.Point(51, 353);
             this.programmableButtonLabel.Name = "programmableButtonLabel";
             this.programmableButtonLabel.Size = new System.Drawing.Size(198, 25);
             this.programmableButtonLabel.TabIndex = 20;
@@ -755,6 +755,14 @@
             this.checkServerButton.UseVisualStyleBackColor = true;
             this.checkServerButton.Click += new System.EventHandler(this.checkServerButton_Click);
             // 
+            // webBrowser
+            // 
+            this.webBrowser.Location = new System.Drawing.Point(413, 90);
+            this.webBrowser.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowser.Name = "webBrowser";
+            this.webBrowser.Size = new System.Drawing.Size(656, 444);
+            this.webBrowser.TabIndex = 24;
+            // 
             // AppForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -843,6 +851,7 @@
         private System.Windows.Forms.Button btnArticle4;
         private System.Windows.Forms.Button btnArticle3;
         private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.WebBrowser webBrowser;
     }
 }
 

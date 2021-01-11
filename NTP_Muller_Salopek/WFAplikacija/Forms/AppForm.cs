@@ -59,9 +59,11 @@ namespace WFAplikacija
             billCollection = XmlManager.GetBills();
             articleCollection =  XmlManager.GetArticles();
 
+            // At first hide Web browser (it is shown in custom GET response)
+            this.webBrowser.Hide();
+
             //Get all article and generate their buttons
             GenerateArticleButtons(this.tabArticle1, articleCollection.articles);
-
         }
 
         //FORM LAYOUT AND INI----------------------------------------------------------------------------------------------
@@ -212,8 +214,15 @@ namespace WFAplikacija
             string url = this.customGetRequestBaseTextBox.Text + this.customGetRequestActionTextBox.Text;
             this.customGetRequestResponseLabel.Text = "Sending request to " + url;
 
-            Action<string> onResponse = (string response) => { this.customGetRequestResponseLabel.Text = "Server response: " + response; };
-            Action onError = () => { this.customGetRequestResponseLabel.Text = "ERROR - No response."; };
+            Action<string> onResponse = (string response) => {
+                this.customGetRequestResponseLabel.Text = "Server response: " + response;
+                this.webBrowser.Url = new System.Uri(url);
+                this.webBrowser.Show();
+            };
+            Action onError = () => { 
+                this.customGetRequestResponseLabel.Text = "ERROR - No response.";
+                this.webBrowser.Hide();
+            };
             WFAplikacija.Tools.RESTManager.Get(url, onResponse, onError);
         }
 
@@ -244,12 +253,6 @@ namespace WFAplikacija
         private void programmableButton_Click(object sender, EventArgs e)
         {
             // Testing area
-            Action<string> lambda = delegate (string odgovor)
-            {
-                this.sampleLoginResponseLabel.Text = odgovor;
-            };
-
-           WFAplikacija.Tools.RESTManager.Get(WFAplikacija.Properties.Resources.CentralniServerURL + "/User/Get", lambda);
         }
 
         private void openPropertiesButton_Click(object sender, EventArgs e)
