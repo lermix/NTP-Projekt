@@ -12,6 +12,7 @@ using WFAplikacija.DataObjects;
 using WFAplikacija.Tools;
 using System.Collections.Specialized;
 using Newtonsoft.Json;
+using System.Threading;
 
 namespace WFAplikacija
 {
@@ -158,11 +159,27 @@ namespace WFAplikacija
                 // Insert
                 if (a != null)
                 {
-                    XmlManager.addObjectToXml(GetFormArticle());
-                    InserAndEditControlsClear();
-                    txtBoxArticleManagerId.Text = XmlManager.getNextIDArticle().ToString();
-
-                    AddArticleToServer(a);
+                    ThreadStart updateXml = () => {
+                        lock (a)
+                        {
+                            XmlManager.addObjectToXml(a);
+                        }
+                    };
+                    ThreadStart updateDb = () => {
+                        lock (a)
+                            AddArticleToServer(a);
+                    };
+                    ThreadStart updateForm = () =>
+                    {
+                        InserAndEditControlsClear();
+                        txtBoxArticleManagerId.Text = XmlManager.getNextIDArticle().ToString();
+                    };
+                    Thread updateXmlThread = new Thread(updateXml);
+                    Thread updateDbThread = new Thread(updateDb);
+                    Thread updateFormThread = new Thread(updateForm);
+                    updateXmlThread.Start();
+                    updateDbThread.Start();
+                    updateFormThread.Start();
                 }
             }
             else if (selectedItem == WFAplikacija.Lang.Dictionary.PFActionDelete)

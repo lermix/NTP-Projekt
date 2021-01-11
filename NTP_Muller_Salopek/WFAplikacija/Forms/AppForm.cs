@@ -250,6 +250,7 @@ namespace WFAplikacija
             WFAplikacija.Tools.RESTManager.Post(url, postRequestBody, onResponse, onError);
         }
 
+        // Adds all products/articles from server to local XML file
         private void programmableButton_Click(object sender, EventArgs e)
         {
             PropertiesForm.GetArticlesFromServer((List<Article> articles) => {

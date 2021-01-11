@@ -6,4 +6,5 @@
   <Article ID="4" name="Sprite" buttonName="Sprite" price="12" />
   <Article ID="5" name="Jackie" buttonName="Jackie" price="20" />
   <Article ID="6" name="Vodka" buttonName="Vodka" price="11" />
+  <Article ID="7" name="test_product____" buttonName="test" price="123" />
 </ArticleCollection>

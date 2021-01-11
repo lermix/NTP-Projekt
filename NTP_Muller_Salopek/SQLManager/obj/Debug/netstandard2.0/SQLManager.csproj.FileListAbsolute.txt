@@ -14,4 +14,3 @@ C:\Users\stjep\OneDrive\Dokumenti\GitHub\NTP-Projekt\NTP_Muller_Salopek\SQLManag
 C:\Users\stjep\OneDrive\Dokumenti\GitHub\NTP-Projekt\NTP_Muller_Salopek\SQLManager\obj\Debug\netstandard2.0\SQLManager.csproj.CoreCompileInputs.cache
 C:\Users\stjep\OneDrive\Dokumenti\GitHub\NTP-Projekt\NTP_Muller_Salopek\SQLManager\obj\Debug\netstandard2.0\SQLManager.dll
 C:\Users\stjep\OneDrive\Dokumenti\GitHub\NTP-Projekt\NTP_Muller_Salopek\SQLManager\obj\Debug\netstandard2.0\SQLManager.pdb
-C:\Users\stjep\OneDrive\Dokumenti\GitHub\NTP-Projekt\NTP_Muller_Salopek\SQLManager\obj\Debug\netstandard2.0\SQLManager.csprojAssemblyReference.cache
